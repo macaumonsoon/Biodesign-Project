@@ -1,57 +1,54 @@
-# Slide decks — Extinction Archive (Mammoth)
+# Extinction Archive — Slides
 
-Two independent Marp sources:
+Theme: **archival biodigital** — dark earth background, ochre accent (`#c45c2a`), signal teal (`#5cb89a`), museum-style top rule.
 
-| Language | Marp source | Exported PDF | Exported PPTX |
-|----------|-------------|--------------|----------------|
-| English | `BDC_Extinction_Archive_Mammoth.md` | `export/BDC_Deck_EN.pdf` | `export/BDC_Deck_EN.pptx` |
-| 中文 | `BDC_Extinction_Archive_Mammoth_zh.md` | `export/BDC_Deck_ZH.pdf` | `export/BDC_Deck_ZH.pptx` |
+**Slide geometry:** PDFs use **standard widescreen 16:9** — same as PowerPoint / Keynote default (**13.333″ × 7.5″**, i.e. **338.67 mm × 190.5 mm**), so you can match layouts when rebuilding in PPT.
 
-## Build (PDF + PPTX)
+## PDF exports (official deck)
 
-From the **repository root** (`Biodesign_Project_2/`):
+| File | Language |
+|------|----------|
+| [`export/Extinction_Archive_EN.pdf`](./export/Extinction_Archive_EN.pdf) | English |
+| [`export/Extinction_Archive_ZH.pdf`](./export/Extinction_Archive_ZH.pdf) | 中文 |
 
-```bash
-cd slides
-mkdir -p export
-
-# Use --no-stdin so Marp does not hang in automated shells / CI.
-
-npx --yes @marp-team/marp-cli --no-stdin BDC_Extinction_Archive_Mammoth.md --pdf --allow-local-files -o export/BDC_Deck_EN.pdf
-npx --yes @marp-team/marp-cli --no-stdin BDC_Extinction_Archive_Mammoth.md --pptx --allow-local-files -o export/BDC_Deck_EN.pptx
-
-npx --yes @marp-team/marp-cli --no-stdin BDC_Extinction_Archive_Mammoth_zh.md --pdf --allow-local-files -o export/BDC_Deck_ZH.pdf
-npx --yes @marp-team/marp-cli --no-stdin BDC_Extinction_Archive_Mammoth_zh.md --pptx --allow-local-files -o export/BDC_Deck_ZH.pptx
-```
-
-**Notes**
-
-- Marp needs a **Chromium-based** browser for PDF/PPTX. If conversion fails, install Chrome or set `CHROME_PATH` / `MARP_CHROME_PATH` per [Marp CLI](https://github.com/marp-team/marp-cli).
-- **`--pptx-editable`** requires **LibreOffice** (`soffice`). Without it, use plain `--pptx` (default above) — slides are still openable in Microsoft PowerPoint / Keynote.
-
-One-liner alternative (PDF only, from `slides/`):
+**Regenerate PDFs** (requires macOS `Arial Unicode.ttf` for CJK):
 
 ```bash
-npx --yes @marp-team/marp-cli *.md -I . --pdf -o export/
+pip3 install fpdf2
+python3 scripts/build_extinction_archive_slides.py
 ```
 
-…then rename outputs if needed (CLI may derive names from input filenames).
+**Marp source** (optional; needs Chromium for `--pdf`):
 
-## Preview links (local)
+- [`Extinction_Archive_EN.md`](./Extinction_Archive_EN.md)
+- [`Extinction_Archive_ZH.md`](./Extinction_Archive_ZH.md)
+- Theme: [`themes/extinction-archive.css`](./themes/extinction-archive.css)
 
-- Open **`slides/preview.html`** in your browser (double-click or Cursor → Open in Browser).  
-  This page links to `export/*.pdf` and `export/*.pptx` **after** you run the build.
+## Browser preview (HTML)
 
-**There is no built-in public URL** for files on disk. Paths for manual paste:
+Open locally (full paths):
 
-- `file://` + full path to `slides/preview.html` (works on your machine only).  
-  Example pattern: `file:///Users/you/Desktop/Cursor/Biodesign_Project_2/slides/preview.html`
+- **English:** `preview/Extinction_Archive_preview_EN.html`
+- **中文:** `preview/Extinction_Archive_preview_ZH.html`
 
-## Cursor-specific
+macOS Terminal:
 
-1. **Marp preview:** Extension “Marp for VS Code” → open `BDC_Extinction_Archive_Mammoth.md` → use the Marp icon / preview.
-2. **Live Preview:** Optional extension to preview `preview.html` (static HTML + relative links).
+```bash
+open "/Users/dad71/Desktop/Cursor/Biodesign_Project_2/slides/preview/Extinction_Archive_preview_EN.html"
+open "/Users/dad71/Desktop/Cursor/Biodesign_Project_2/slides/preview/Extinction_Archive_preview_ZH.html"
+```
 
-## Citations note
+Or use **Live Server** / “Open with Browser” in your editor.
 
-Core papers (Wooller et al. 2021 *Science*; Lynch et al. 2015 *Cell Reports*; Nogués-Bravo et al. 2008 *PLoS Biology*) + software (+1) are embedded in both decks. Swap years for R if you standardize on a different R release for your Methods slide.
+### Download links from preview
+
+Each HTML page has a top-right link to download the matching PDF from `../export/`.
+
+## Push to GitHub (optional)
+
+After you commit `slides/` (for example under `docs/bdc-umwelt-archive/slides/`), use **Raw** links:
+
+- `https://github.com/macaumonsoon/Biodesign-Project/raw/main/docs/bdc-umwelt-archive/slides/export/Extinction_Archive_EN.pdf`
+- `https://github.com/macaumonsoon/Biodesign-Project/raw/main/docs/bdc-umwelt-archive/slides/export/Extinction_Archive_ZH.pdf`
+
+If you keep slides at repo root instead, change the path segment accordingly. Opening a `raw` PDF link in a browser **downloads or previews** the file. HTML previews work best **locally** or via **GitHub Pages** (raw HTML is often served as plain text).
