@@ -1,227 +1,153 @@
-# Umwelt Archive — Biodesign Challenge 2026 Project Plan
+# Biodesign Project Plan — Extinction Archive (Mammoth)
 
-**Working title:** *Umwelt Archive* (Extinction Archive · Sensory–Temporal Dossiers)  
-**Exhibition frame:** BDC 2026 · *Convergent Life*  
-**Course:** Digital Art & AI Technology (MDes)  
-**Team:** GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293)  
+**Document type:** Planning & scope baseline for course / BDC-aligned development  
+**Team:** 2 people · **Timeline:** 2–3 weeks (MVP sprint)  
 **Last updated:** 2026-04-04  
 
-This document is the **single source of truth** for scope, narrative, science communication, build plan, and BDC deliverables. Pair with `SLIDE_DECK.md` for presentation structure.
+**中文摘要：** 真猛犸 *Mammuthus primigenius* 单物种深做；浏览器主路径 + 可选手机 WebAR；三件式产品：**Dossier（档案）→ Mixer（节律声景）→ Ethics（分支伦理 + 证据门禁）**；全链路标注 **Cited / Modeled / Speculative**；实体为 **3D 打印 + AR** 轻量化配套。
+
+**Related:** Operational detail (day-by-day, ethics copy, risk) lives in [`biodesign.md`](./biodesign.md); competition context in [`biodesign_cursor_agent.md`](./biodesign_cursor_agent.md).
 
 ---
 
-## 1. Executive summary
+## 1. Project identity
 
-**Provocation:** Species extinction is not only ecological absence—it is also **the fracture of shared human memory and responsibility**. When a lineage ends, its **temporal niche** (daily and seasonal rhythms, migration budgets, social synchrony) vanishes from the living world; our cultures simultaneously lose legible traces of coexistence.
-
-**Project:** *Umwelt Archive* is a **biodigital installation + web experience** that turns **geo-temporal evidence** into an **honest, constrained sensory interface**. Users navigate a **planetary memory map**, open **species dossiers** grounded in published biology, layer **chrono-music** driven by rhythm and population dynamics, and conclude in an **ethics console** that links **funding/attention** to **memory politics** (who is written into the canon, who is muted).
-
-**Prize alignment:** **Biodigital Excellence** (biology + computation load-bearing); **Outstanding Digital Submission** (interactive web / WebXR); strong **Context** (ethics, equity, risk); **Reflection** (AI + iteration logs, uncertainty UI).
-
----
-
-## 2. Problem, insight, solution, impact
-
-| Block | Content |
+| Field | Content |
 |-------|---------|
-| **Problem** | Extinction removes **bodies** and **ecological function**; it also erodes **public sense of loss** (shifting baselines, hype cycles, uneven archives). Digital “revival” can distract from present conservation—or clarify stakes if designed as **critical infrastructure**. |
-| **Insight** | Paleo-sensory and **chrono-biology** traces (isotopes, morphology, behavior histories, acoustics proxies) can **parameterize** experience without pretending to recover “truth footage.” |
-| **Solution** | A **three-act** experience: **Absent Planet** (map + amnesia mechanics) → **Umwelt Capsule** (WebXR / 360 + chrono-music + living telemetry) → **Ethics Console** (tradeoffs + consequences on “default memory layers”). |
-| **Impact** | Visitors leave with **epistemic discipline** (what evidence can/can’t imply), **emotional stake** (rhythm and synchrony loss), and **actionable framing** for de-extinction vs digital memorial vs funding reallocation. |
+| **Working title** | Extinction Archive / *Umwelt Archive* — sensory–temporal capsule |
+| **Hero species (locked)** | Woolly mammoth — *Mammuthus primigenius* |
+| **Module baseline (locked)** | **Group1Slim** — Dossier + Mixer + full short Ethics (~2 min in talk) |
+| **Competition lens** | Biodesign Challenge 2026 — **Biodigital Excellence**; strong Narrative & Context via ethics + labeling |
+| **Exhibition theme (2026)** | *Convergent Life* — framed as biological–digital convergence around **lost temporal niches** |
 
 ---
 
-## 3. Biodesign positioning (biology + code both essential)
+## 2. Problem & design thesis
 
-### 3.1 Definition fit
+**Problem.** When a species goes extinct, we lose not only bodies but **patterns in time**: seasonal movement, light–dark entrainment, social rhythms, and sensory worlds (*Umwelt*). Public memory often flattens into icons; rigorous science stays in PDFs.
 
-- **Biology is load-bearing:** Dossier parameters derive from **literature-class evidence** (per-species ladder); **living organisms** (plant photoperiod response + microbial metabolism proxy) provide **“still ticking time”** contrasted with **“stopped clocks”** of extinct lineages.  
-- **Digital is load-bearing:** Amnesia **mechanics**, prior **fences** for generative media, **Web Audio** rhythm engine, **R → JSON** pipelines for isotope/time-series, **WebXR** dossier depth, **AR** evidence layers.
+**Thesis.** *Extinction Archive* is a **browser-first interactive memorial** that reconstructs a **hypothesis-grade Umwelt** for one mammoth, grounded in **citable biology** (e.g. tusk isotope stratigraphy, circadian / Arctic adaptation literature), expressed through **parameterized visuals + Web Audio**, and closed with **branching ethics** and **explicit uncertainty** — so digital “resurrection” does not replace conservation urgency.
 
-### 3.2 Red-flag tests
-
-- Remove **evidence constraints** → experience collapses to spectacle (**fail**).  
-- Remove **code** → cannot enact map mechanics, music mapping, or transparency logs (**fail**).  
-- Remove **living layer** → weaker **biodesign** claim; compensate only if instructor agrees to “design *from* biology” framing with extra material honesty (**risk**).
+**Secondary thread (narrative only).** “Collective amnesia” ties ecological absence to cultural memory — **not** a separate system.
 
 ---
 
-## 4. User experience architecture (locked)
+## 3. Scope
 
-### Act I — Absent Planet (browser)
+### 3.1 MVP (must ship)
 
-- **Planetary / archival VI:** administrative UI over heat-style extinction geography.  
-- **Amnesia mechanics (primary):**  
-  - **A · Zoom:** evidence density ↓, noise/glitch ↑ in “thin” regions.  
-  - **B · Timeline scrub:** dossier **thickness** decreases toward last records.  
-  - **C · Memory regime toggle:** museum / folk / institutional layers—**same coordinates, conflicting narratives**.  
-- **Outcome:** user selects **three dossier anchors** (see §6).
+1. **Dossier (single-species deep)**  
+   - Geographic & temporal anchors for mammoth range (LGM–Early Holocene framing); every claim tagged **Cited / Modeled / Speculative**.  
+   - **Science foldout:** tusk **Sr / O (etc.)** isotope profiles and published individual-life reconstructions → **1–2 static `ggplot` figures** for slides + web thumbnail.  
+   - Immersive **360° / panorama placeholder** scene driven by **lit parameters** (season, sun height, fog), not raw “magic prompt.”
 
-### Act II — Species dossier · Umwelt capsule
+2. **Mixer (Web Audio)**  
+   - ≥3 layers (recommended): **seasonal / photoperiod pulse**, **steppe–tundra sound bed** (mark elephant-relative parts *Speculative*), **Anthropocene pressure layer** (*Cited/Modeled* where possible).  
+   - **Harmony → conflict** via documented DSP rules (compress/limit/dissonance when layers compete) — rules summarized on one slide + README.
 
-- **Entry:** browser-first; **deep dive** via **WebXR** (single hero station per species to cap scope).  
-- **Visual rule:** **naturalistic rendering only inside the “prior window”**; outer frame stays archival/planetary; **glitch** signals uncertainty.  
-- **Chrono-music station:** multi-track mapping of **seasonality**, **migration budgets**, **acoustic density**; **passenger pigeon** implements **synchrony threshold** (population N → phase lock / collapse).  
-- **Living telemetry (sidecar):** plant + microbe channels—**never equivalent** to extinct taxa; fixed copy: *“Non-equivalent, co-present time.”*
+3. **Ethics (short)**  
+   - **Gate C:** ~45s, 3 statements (evidence literacy).  
+   - **Branch B:** 2–3 cards (e.g. conservation vs de-extinction funding; invasive-species management framing; data/sovereignty reflection) → different **ending mix preset** + caption.
 
-### Act III — Ethics console
+4. **Physical + AR (light)**  
+   - One **3D print**: e.g. abstract **tusk growth “core”** or skull silhouette token.  
+   - **Mobile WebAR** (`?ar=1` or dedicated entry): same GLB/stems as desktop; QR fallback to dossier anchor.
 
-- **Axes:** **A** funding & attention (extant vs flagship de-extinction vs digital memorial); **D** memory politics (who authors the map, who is default-visible).  
-- **Consequence model:** not prophecy—**re-map default layers** (highlights/mutes) based on choices.  
-- **Exit:** link or QR to **AI execution log** summary.
+5. **BDC-aligned deliverable bundle**  
+   - Talk (target **8 min + 2 min demo**).  
+   - Visuals: UI screen capture + 3–5 stills.  
+   - Physical artifact + AR capture.  
+   - **45–90 s** trailer (Mixer + Ethics pivot + label flash).  
+   - Deck: **Methods · Citations · Limitations** (minimum 3 slides).
 
----
+### 3.2 Stretch (only if time remains)
 
-## 5. Physical & AR deliverables
-
-| Artifact | Intent |
-|----------|--------|
-| **3D print / tactile maquette** | Species- or habitat-referenced **museum-politics object** (labels: last record dates, gaps, contested attributions). |
-| **Mobile AR** | **A:** evidence stack (rights-safe media, citations); **B:** short **controlled Umwelt loop** with on-screen priors + confidence. |
-| **Living bench** | **Plant** (photoperiod) + **microbe** proxy (class-safe, sealed)—real-time plot to dashboard. |
-
----
-
-## 6. Species dossiers (depth targets)
-
-| Species | Hero evidence | Hero interaction | Honesty note |
-|---------|---------------|------------------|--------------|
-| **Woolly mammoth lineage** | Isotope seasonality + Arctic adaptation narrative | Drag season / isotope → **color temperature + low-frequency rhythm** | No identifiable “hero animal” claims; aggregated public science only |
-| **Passenger pigeon** | Social synchrony, historic roost geography | Flock **N** slider → **phase lock → cascade mute** at threshold | **N_c** didactic; cite Allee / flock literature |
-| **Thylacine** | Diel activity priors + political memory layers | Toggle memory regime → **same prior window, different annotations / voiceover policy** | Sensitive history—**no sensationalism**; oral/Indigenous layers only with partners or explicit blank |
-
-**Map rule:** many dots possible; **live demo rehearses only the 3-dossier loop**.
+- Tactile **material token** (non-food) + card copy.  
+- Optional **second “ghost” layer** in Mixer only (no second dossier).  
+- Optional desk **plant + light/moisture read** as **“still here”** contrast — labeled as metaphor, not habitat reconstruction.
 
 ---
 
-## 7. Sensory strategy
+## 4. Science pillars (mammoth)
 
-| Channel | Role |
-|---------|------|
-| **Vision** | Primary; split **prior window** vs **archive shell** |
-| **Hearing** | Primary; **chrono-music** + constrained soundscape |
-| **Smell / taste (auxiliary)** | **Absence-first:** chemical **signifiers** as icons/text, optional ultra-weak scent only if institutionally approved; **no** memory-implant claims |
+| Pillar | Role in experience | Evidence posture |
+|--------|--------------------|------------------|
+| **Isotope + growth layers** | Dossier foldout + R figures; optional printed “year ring” metaphor | Mostly **Cited**; plotting = **Modeled** |
+| **Photoperiod / seasonality** | Mixer pulse + scene lighting | **Cited + Modeled** split explicit |
+| **Sensory / social proxies** | Scene composition; low-acuity / elephant-relative cues | Visual detail **Speculative** |
+| **Extinction narrative** | Context slide + ethics copy | Consensus **Cited**; avoid single-cause dogma |
 
----
-
-## 8. AI governance (full stack)
-
-**Roles:** fenced **scene synthesis**; **draft** curatorial copy (human final edit); **parametric** audio / spectrogram-informed layers.
-
-**Non-negotiables:**
-
-- `CLAIMS_REGISTER` — every audience-facing sentence → id + source or `speculative`.  
-- `AI_EXECUTION_LOG.md` — model, prompt hash, params, failure dumps, deprecated outputs.  
-- UI **confidence** and **“inferred, not footage”** badges on all generative windows.
+**Frozen boundary:** No parallel hero species (passenger pigeon / thylacine) in MVP.
 
 ---
 
-## 9. Visual identity system (four registers, one grammar)
+## 5. Bio + digital architecture
 
-1. **Archival administrative** (primary UI chrome)  
-2. **Planetary heat / absence** (map base)  
-3. **Prior-window naturalism** (only inside fenced media)  
-4. **Glitch / redaction** (uncertainty + amnesia)
+| Layer | Inputs | Outputs | Stack (suggested) |
+|-------|--------|---------|-------------------|
+| Bio | ≥3 core papers (isotope case + adaptation review + extinction framing); museum dates | `dossier.json` + bib | Zotero |
+| Viz | JSON → sun band, fog, ground | R3F / Three + shaders | Vite |
+| Gen AI (**B main, A assist**) | Masks / palettes / control maps | Texture or detail pass | Local SD or API — cost/policy checked |
+| Audio | STEM design table + tags | `AudioContext` layers | Web Audio; optional DAW bounce |
+| Ethics | Branch JSON | Mixer master + captions | React state |
 
-**Internal rule:** *Archives frame everything; heat reads the globe; realism lives only in the prior aperture; cracks are honest.*
-
----
-
-## 10. Technical stack (recommended)
-
-| Layer | Tools |
-|-------|--------|
-| Web app | HTML/TS or framework already used in course; **Three.js** |
-| WebXR | **A-Frame** or Three.js WebXR; **one station** per dossier |
-| Shaders | Uncertainty, map thinning, prior-window mask |
-| Audio | **Web Audio API**; optional FAUST/Tone.js; keep mapping functions in code |
-| Data | **R** tidy pipeline → JSON schema shared by viz + audio |
-| AR | WebXR hit-test or lightweight marker flow linked to printed artifact IDs |
-| AI | API per course policy; logs required |
+**Living bio:** Not required for thesis (Step 3 stance **B**); stretch only with disclaimers.
 
 ---
 
-## 11. Data → parameter contract (schema sketch)
+## 6. Narrative arc (10-minute talk target)
 
-**Per species JSON (minimum keys):**
-
-```text
-species_id, display_name, geo_anchor, evidence_tier,
-timeseries: [{ t, value, provenance_id }],
-priors: { diel_activity, acoustic_proxy, notes },
-uncertainty: { global: 0-1, per_channel: {...} },
-ui_bindings: { color_temp_K: fn, audio_subdivision: fn, flock_nc: value_or_null }
-```
-
-**Living telemetry JSON:**
-
-```text
-channel_id, organism_class, sample_hz, safety_tier, narrative_label
-```
+| Segment | Time | Focus |
+|---------|------|--------|
+| Hook | 0:45 | Memory × Umwelt |
+| Dossier demo | 3:30 | Mammoth deep dive + **C/M/S** labels + isotope foldout |
+| Mixer demo | 3:00 | Layers + conflict rules |
+| Ethics | 2:00 | Gate C + Branch B + finale |
+| Reflection | 1:00 | Iteration, limits, next steps |
 
 ---
 
-## 12. Timeline (suggested for 10-week studio)
+## 7. Timeline (summary)
 
-| Phase | Weeks | Outputs |
-|-------|-------|---------|
-| **Discovery** | 1–2 | Claims register v0; 3 species bibliographies; UX storyboard; risk list |
-| **Prototype** | 3–5 | Act I map + one dossier pass; first R→audio mapping; print mock |
-| **Integration** | 6–8 | WebXR stations; chrono-music; living bench; AR pass |
-| **Polish** | 9–10 | Ethics console; trailer cut; slide deck; mock Q&A; gallery layout |
+- **Week 1:** Stack + Dossier UI + mammoth data JSON + scene + Mixer prototype; **evidence audit #1**; ggplot v1.  
+- **Week 2:** Ethics UI + GLB + WebAR minimal + print + slides (Methods / Citations / Limits) + rehearsal + trailer.  
+- **Week 3 (if available):** Polish, accessibility, mock Q&A, P0 bugs only.
 
-**Two-person guardrails:** parallelize **science/register** vs **engine/shaders**; **weekly 4h integration** on one shared JSON example end-to-end.
+Full day-by-day grid: [`biodesign.md` §9](./biodesign.md).
 
 ---
 
-## 13. BDC deliverables checklist
+## 8. Success criteria (Definition of Done)
 
-| Deliverable | Status | Notes |
-|-------------|--------|--------|
-| 10 min presentation + 5 min Q&A | ☐ | Rehearse **two** failure questions weekly |
-| Visual renderings / illustrations | ☐ | Prior fence diagrams + map layers |
-| Physical model | ☐ | Print + plant/micro enclosure + labeling |
-| 1–5 min creative trailer | ☐ | Not a screen capture of slides |
-| Slides (PPT/Keynote) → Drive | ☐ | Export from `SLIDE_DECK.md` |
-| Optional website + @biodesigned | ☐ | Host `AI_EXECUTION_LOG` summary |
+- [ ] Happy path without a guide: Dossier → Mixer → Ethics → finale.  
+- [ ] Every **Cited** claim has bibliographic metadata.  
+- [ ] ≥3 explicit **Speculative** UI disclosures.  
+- [ ] Mixer rules documented (non-black-box).  
+- [ ] 3D print + AR backup recording.  
+- [ ] Methods / Citations / Limitations slides complete.  
+- [ ] README: run instructions + asset provenance + trade-offs.
 
 ---
 
-## 14. Risk register (short)
+## 9. Risks & mitigations
 
 | Risk | Mitigation |
 |------|------------|
-| Over-scoped WebXR / 3 species | Single XR vantage each; browser fallback path **100% feature-complete** |
-| AI “fake nature” backlash | Fences + logs + explicit inferential language |
-| Living hardware failure | Prerecorded telemetry + “frozen frame” museum mode |
-| Sensitive histories (thylacine) | Partner review or deliberate **intentional blanks** |
-| Smell/taste overclaim | Default to **absence design** |
+| Generative imagery over-truth | Controlled generation + labels + muted palette / optional watermark |
+| Literature overload | **Cap at 5** core papers; rest appendix |
+| WebAR fragmentation | Desktop recording primary; AR bonus + QR fallback |
+| Overclaiming mammoth “experience” | Elephant-relative **Modeled**; sounds & fine visuals **Speculative** |
+| Scope creep | Species & module baseline **locked** (§1) |
 
 ---
 
-## 15. Open decisions log
+## 10. Locked parameters (archive)
 
-_Use this table during studio; do not delete rows—append resolutions._
-
-| Date | Question | Decision | Owner |
-|------|----------|----------|-------|
-| | | | |
-
----
-
-## 16. References (seed — replace with formal citations)
-
-- BDC official: judging, prizes, guidelines (`biodesignchallenge.org`)  
-- Team literature binders per species (genomics, isotope ecology, Allee/flocking, thylacine history)  
-- Course materials: `biodesign_cursor_agent` workbook steps  
+```text
+Species = Mammoth
+Group2 = Group1Slim
+```
 
 ---
 
-## 17. File index (repo)
-
-| File | Purpose |
-|------|---------|
-| `PROJECT_PLAN.md` | This document |
-| `SLIDE_DECK.md` | Slide-by-slide outline for Keynote / Google Slides |
-| `CLAIMS_REGISTER.csv` | *(create)* evidence ↔ UI strings |
-| `AI_EXECUTION_LOG.md` | *(create)* model + prompt governance |
+*End of PROJECT_PLAN.md*

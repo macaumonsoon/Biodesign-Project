@@ -1,5 +1,6 @@
 # macOS
 .DS_Store
+Thumbs.db
 
 # Editor / local tooling (keep repo clean; add shared .vscode if the team wants it)
 .idea/
@@ -19,6 +20,9 @@ node_modules/
 dist/
 .next/
 .turbo/
+
+# Logs
+*.log
 
 # Env secrets — never commit
 .env
