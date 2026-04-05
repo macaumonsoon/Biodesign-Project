@@ -45,6 +45,18 @@ git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git push -u origin main
 ```
 
+### This project: `origin` may already be configured
+
+If `git remote -v` shows `https://github.com/dad71/Biodesign_Project_2.git`, then:
+
+1. On GitHub, create an **empty** repository named **`Biodesign_Project_2`** under the account **`dad71`** (no README / .gitignore / license), **or** point `origin` at your real URL:  
+   `git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_ACTUAL_REPO.git`
+2. Sign in (HTTPS **Personal Access Token** or **SSH key** — see below).
+3. Push:  
+   `git push -u origin main`
+
+If push prints **“Repository not found”**, either the repo does not exist yet, the name/user is wrong, or GitHub is hiding a **private** repo until you authenticate.
+
 ### Authentication
 
 - **HTTPS:** GitHub may prompt for a **Personal Access Token** (not your password). Create one under **Settings → Developer settings → Personal access tokens**.  
