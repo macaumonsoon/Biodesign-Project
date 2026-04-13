@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Build Extinction Archive slide PDFs (EN + ZH) — theme: archival biodigital.
+Build Extinction Archive slide PDFs (EN + ZH) — theme: archival biodigital (dark base, accent rule).
+Output: REPO_ROOT/slides/export/ — EN file *Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf*.
 Requires: pip install fpdf2
 Font: Arial Unicode (macOS) for Latin + CJK.
 """
@@ -11,8 +12,9 @@ from pathlib import Path
 
 from fpdf import FPDF
 
-ROOT = Path(__file__).resolve().parents[1]
-EXPORT = ROOT / "slides" / "export"
+# Repo root: .../Biodesign_Project_2 (scripts live under docs/bdc-umwelt-archive/scripts/)
+REPO_ROOT = Path(__file__).resolve().parents[3]
+EXPORT = REPO_ROOT / "slides" / "export"
 # macOS Arial Unicode paths
 FONT_CANDIDATES = [
     Path("/Library/Fonts/Arial Unicode.ttf"),
@@ -139,114 +141,144 @@ def build_en(font: Path) -> None:
     d = Deck(font)
     d.title_slide(
         "Extinction Archive",
-        "Umwelt Archive · Collective memory fracture",
+        "Umwelt Hypothesis Dossiers — A Sensory Time Capsule",
         [
             "Biodesign Challenge 2026 · Convergent Life",
-            "Digital Art & AI Technology · MDes",
-            "Biodigital memorial — not resurrection.",
+            "AI memorial for lost species — literature-grounded, not resurrection",
+            "WebXR build · heavy content, light hardware",
         ],
     )
     d.body_slide(
-        "The fracture",
+        "The fracture (Umwelt + time)",
         [
-            "Extinction removes species and ecological function.",
-            "It erodes shared memory: shifting baselines, de-extinction hype.",
-            "We lose temporal coexistence: migrations, synchrony, daily & seasonal rhythms.",
-            "This project makes absence and evidence discussable.",
+            "Extinction removes DNA and ecological roles — and temporal niches (day, season, social synchrony).",
+            "Public memory flattens into icons; we lose how another species lived in time.",
+            "Collective amnesia about biodiversity integrity — shifting baselines, de-extinction hype.",
+            "This dossier makes absence narratable with structured uncertainty.",
         ],
     )
     d.body_slide(
-        "Design questions",
+        "Three guiding questions",
         [
-            'How do we translate "extinction–absence" into perceivable experience?',
-            "How can AI + biological data support disciplined public memory?",
-            "How do we land in accountability (conservation tradeoffs), not only immersion?",
+            "How can extinction–absence become perceivable without false precision?",
+            "How can AI + biological data evoke memory transparently (no replacement for conservation or Indigenous knowledge)?",
+            "How can touch, sight, smell, sound act as gentle cues — optional layers, no sensory overload?",
         ],
     )
     d.body_slide(
-        "Concept",
+        "Experience spine",
         [
-            "Interactive memorial: peer-reviewed traces become a constrained Umwelt.",
-            "Species Dossier + Polyphony Mixer (Web Audio) + Ethics Console.",
-            "Citations and confidence on every layer.",
+            "Planetary map to coordinate to species dossier (vision; WebXR MVP = two deep species).",
+            "Bio layer: genomics, morphology, isotopes, museum & GBIF records.",
+            "Digital layer: constrained generative scenes + Web Audio sonification / stem metaphor.",
+            "Exit: ethics fork + reflection — stewardship of extant life.",
         ],
     )
     d.table_slide(
-        "Three modules",
+        "Three load-bearing modules",
         ("Module", "Role"),
         [
-            ("Species Dossier", "Time, movement, sensory proxies — carefully cited"),
-            ("Polyphony Mixer", "Seasons, flock sync, migration tempo — consonance / collapse"),
-            ("Ethics Console", "Branching cards + evidence gate — different sonic finales"),
+            ("Species Dossier", "Evidence cards, sensory proxies, extinction drivers — scene to citation"),
+            ("Polyphony Mixer", "Seasonal / diel / migration / density — harmony vs collapse"),
+            ("Ethics Console", "Trade-offs (funding, invasion risk, sovereignty) + evidence gate"),
         ],
     )
     d.table_slide(
-        "Hero species (locked)",
-        ("Species", "Anchors", "Metaphor"),
-        (
+        "Species tiers (research + build)",
+        ("Tier", "Taxa", "Role"),
+        [
             (
-                "Woolly mammoth\nM. primigenius",
-                "Tusk isotopes, Arctic photoperiod, genomics",
-                "Long cycles, low-frequency tempo",
+                "P0 WebXR",
+                "Mammuthus primigenius\nThylacinus cynocephalus",
+                "Full interactive depth; chronobiology + orbit/POV; citation strip",
             ),
             (
-                "Passenger pigeon\nE. migratorius",
-                "Social synchrony, historic megaflocks",
-                "Phase lock to silence as N falls (Modeled)",
+                "P0 dossier",
+                "Ectopistes migratorius",
+                "Deck / appendix: Martha, synchrony, acoustic absence (xeno-canto may be empty)",
             ),
-        ),
-    )
-    d.body_slide(
-        "Bio + Digital (both essential)",
-        [
-            "Biology: paleo-sensory proxies, isotopes, ethology — traceable sources.",
-            "Digital: conditional generation (B) + procedural/shader base (A); WebAR + desktop.",
-            "Remove either layer and the project collapses.",
-        ],
-    )
-    d.body_slide(
-        "Honesty UI: Cited · Modeled · Speculative",
-        [
-            "Cited — literature / dataset",
-            "Modeled — inference with stated limits",
-            "Speculative — creative extension; never sold as footage",
-            'Motto: "Inferred — not recovered reality."',
-        ],
-    )
-    d.body_slide(
-        "Living contrast + Physical AR",
-        [
-            "Plants + soil moisture / light / temp → live telemetry (index of present life).",
-            "Drives one Mixer parameter — one biodigital pipe.",
-            "3D print token + mobile WebAR; desktop fallback + recorded demo.",
-        ],
-    )
-    d.body_slide(
-        "Ethics console",
-        [
-            "Gate (C): sort statements into Cited / Modeled / Speculative.",
-            "Branches (B): funding, invasion risk, land / knowledge — incompatible choices.",
-            "Output: remixed ending mix + short system consequence (rules-first).",
-        ],
-    )
-    d.table_slide(
-        "BDC alignment",
-        ("Need", "Mapping"),
-        [
-            ("10 min + Q&A, visuals, physical, 1–5 min trailer, slides on Drive", "All tied to Dossier / Mixer / Ethics"),
-            ("Judging 4×4", "Narrative, Concept, Context, Reflection — Platinum ≥2.75 each"),
+            (
+                "P1 dossier",
+                "Raphus · Pinguinus",
+                "14+ curated URLs each — islands, BHL, Smithsonian exhibits",
+            ),
         ],
         small=True,
     )
     d.body_slide(
-        "Prize focus & sprint",
+        "Bio + Digital (web-only shipped build)",
         [
-            "Primary: BDC Prize for Biodigital Excellence.",
-            "4-week core: W1 evidence + storyboard; W2 mammoth slice; W3 pigeon + ethics + AR; W4 audit + trailer.",
-            "Thank you — Q&A.",
+            "Biology: palaeo-chronobiology, isotope trails (e.g. tusk mobility), orbit to diel activity — papers first.",
+            "Digital: A-Frame / Three.js WebXR; generative env with prompt + constraint doc; epistemic UI always on-screen.",
+            "No live biosensor demo in course build — optional public daylight API vs paleo-latitude if time.",
         ],
     )
-    out = EXPORT / "Extinction_Archive_EN.pdf"
+    d.body_slide(
+        "Honesty UI: Cited · Interpolated · Speculative",
+        [
+            "Cited — peer-reviewed paper, museum catalogue, or dataset row.",
+            "Interpolated — justified inference (e.g. RGC model not measured on thylacine).",
+            "Speculative — creative extension; never sold as recovered reality.",
+            "Archival media (NFSA, SI): licence check before trailer or embed.",
+        ],
+    )
+    d.table_slide(
+        "Data layer in repository",
+        ("Asset", "Purpose"),
+        [
+            ("animals_full.csv (51 taxa)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
+            ("archive.json + archive_import.sql", "Frontend bundle + PostgreSQL animals / media / refs"),
+            ("archival_media_research.csv", "~350 rows: IUCN, GBIF, BHL, NFSA, BOW, PMC…"),
+            ("extinction_archive_schema.*", "Future map sites + reconstruction_layer + scenes"),
+        ],
+        small=True,
+    )
+    d.body_slide(
+        "Mammoth — cited anchors",
+        [
+            "Comparative genomics & circadian-related gene enrichment (Lynch et al., 2015) — conservative on PER2 until PDF verified.",
+            "Mammoth steppe habitat framing (Zimov et al., 2012).",
+            "Lifetime mobility from tusk isotopes (Wooller et al., 2021, Science) — migration as sonification input.",
+        ],
+    )
+    d.body_slide(
+        "Thylacine — archives + ethics",
+        [
+            "Orbit to crepuscular / nocturnal niche (Pozniak et al., 2018); POV filter Interpolated from RGC topology methods.",
+            "Moving image: NFSA collection — clearance required; TMAG / NMA for specimen narrative.",
+            "Context: Palawa-led sources + Clements / Schlunke on sovereignty vs de-extinction spectacle.",
+        ],
+    )
+    d.body_slide(
+        "Passenger pigeon — dossier beat",
+        [
+            "Smithsonian Martha + Project Passenger Pigeon + Birds of the World account.",
+            "Social synchrony collapse: sonic metaphor of phase lock breaking.",
+            "Empty or sparse sound archives = evidence of acoustic loss — honest UI copy.",
+        ],
+    )
+    d.table_slide(
+        "BDC judging map",
+        ("Dimension", "We show"),
+        [
+            ("Narrative", "Rhythm of immersion then uncertainty then ethical fork"),
+            ("Concept", "Umwelt + temporal phenotype + biodigital coupling"),
+            ("Context", "De-extinction trade-offs, pharm/trade where relevant, colonial archive politics"),
+            ("Reflection", "AI limits, what archives omit, user reflection stub"),
+        ],
+        small=True,
+    )
+    d.body_slide(
+        "Deliverables & 4-week spine",
+        [
+            "Live WebXR demo · scene-to-citation grid · one ethical choice + reflection.",
+            "Slides + methods PDF; 1–5 min trailer; single QR physical anchor.",
+            "W1 literature + archival URLs · W2 mammoth + epistemic UI · W3 thylacine + ethics · W4 polish + Q&A.",
+            "Primary prize target: Biodigital Excellence. Thank you — Q&A.",
+        ],
+        small=True,
+    )
+    out = EXPORT / "Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf"
     d.output(out)
     print(f"Wrote {out}")
 
@@ -322,11 +354,11 @@ def build_zh(font: Path) -> None:
         ],
     )
     d.body_slide(
-        "活体对照 + 实体 AR",
+        "实体入口（轻装置）",
         [
-            "植物 + 湿度 / 光 / 温度 — 「仍在场」指数，非生境仿真。",
-            "驱动 Mixer 参数 — 同一 biodigital 管道。",
-            "3D 打印 + 手机 WebAR；录屏备用。",
+            "课程构建：Web-only，无活体生物传感器演示。",
+            "一件 3D 打印或卡片 + QR → WebXR；可选一页 scene→citation 备忘。",
+            "完整 ideation 中的植物/传感层可作为展陈愿景，不进入 MVP 范围。",
         ],
     )
     d.body_slide(

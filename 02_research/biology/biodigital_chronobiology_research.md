@@ -1,6 +1,29 @@
 # **Biodigital Chronobiology: Reconstructing the Temporal Niches of Extinct Species within the Extinction Archive**
 
-The "Extinction Archive" represents a transformative shift in conservation biology, moving beyond the static preservation of biological remains toward the active reconstruction of lost sensory and temporal experiences.1 By merging chronobiology—the study of biological rhythms—with generative AI, researchers can restore the daily and seasonal "temporal phenotypes" of species that have long vanished.2 This synthesis is grounded in the understanding that life is fundamentally rhythmic, governed by endogenous clocks evolved to anticipate cycles of light and temperature driven by the Earth’s rotation.3 When a species is lost, its unique partitioning of time—its waking moments, migration durations, and social pulses—is erased from the ecological symphony.5
+## **Umwelt Archive — A Sensory Time Capsule (conceptual frame)**
+
+The **Extinction Archive** paired with the **Umwelt Archive** names a design-research direction: treat extinction not only as loss of genomes and niches but as a **fracture in humanity’s collective memory** of species diversity and ecological integrity.1 The German ethologist Jakob von Uexküll’s *Umwelt*—the world-as-sensed by an organism—here becomes a metaphor for a **sensory time capsule**: reconstructing what it might have been like to inhabit another species’ temporal and perceptual niche, under strict epistemic honesty about inference limits.
+
+Three questions orient the Biodesign Chronobiology research report and the eventual experience:
+
+1. How can the **“extinction–absence”** of a species be translated into a **perceptible, narratable absence** in collective memory (so that loss is felt as structured uncertainty, not as false certainty)?
+2. How might **AI and biological data** be used **transparently** to evoke and partially reconstruct memory of lost biodiversity—without replacing field conservation or Indigenous knowledge systems?
+3. In what ways can **touch, sight, smell, hearing, and taste** act as **gentle memory cues** that deepen empathy and responsibility **without sensory overload**—e.g. calibrated intensity, optional layers, and clear labels for *cited / interpolated / speculative* content?
+
+This report’s scientific core remains **chronobiology and palaeo-inference** (clocks, orbits, isotopes, sound). The ideation layer adds **interaction design, multisensory staging, geographic memorialization, and ethical decision interfaces** that connect those findings to public deliberation on de-extinction and conservation priorities.
+
+The "Extinction Archive" marks a shift in conservation communication: beyond static specimens toward **active, evidence-graded reconstruction** of lost sensory and temporal experience.1 By merging chronobiology with generative AI, the project explores how daily and seasonal **temporal phenotypes** of vanished species might be re-encountered.2 Life is fundamentally rhythmic, tuned to light and temperature cycles imposed by Earth’s rotation.3 When a species disappears, its partitioning of time—wake, migration, social pulses—drops out of the ecological symphony; public memory often **flattens** that loss into a still image or a name.5 The research task is to **re-thicken** time and sensation using the best available proxies while naming every gap.
+
+## **Geographic Memorial, Digital Archive, and Physical Anchors**
+
+The experience design posits a **living planetary biological map**: participants zoom across coordinates, focus on a **last known habitat** (or culturally salient place), and open a **species archive**—360° environment, dynamic soundscape, and narration generated under constraints from **palaeoecology, anatomy, and genomics** (for example: visual reconstruction informed by ocular and orbital evidence; auditory elements guided by middle-ear and vocal tract inference; olfactory prompts suggested by habitat chemistry and, where responsibly used, nasal / chemosensory morphology—not as perfumery “proof,” but as **evocative, labeled simulation**).
+
+**Bio + digital layering** differentiates:
+
+- **Biological layer:** Authentic proxies—measurements, published reconstructions, clock genes, isotope transects—surfaced with citations.
+- **Digital layer:** Real-time generative stacks (prompt engineering, diffusion and audio models, Web Audio API, interactive music systems) so users can move through space and shift perspective.
+
+A **physical** strand complements the digital one: **3D-printed** skeletal elements or miniature habitats that **activate in mobile AR** when scanned, bridging tangible museum grammar with immersive narrative. A fuller exhibition vision couples this with **living plants and microbial or simple biosensor readouts** representing *present* ecosystems; course and team constraints may scope the shipped build to **web-first / WebXR** while retaining the layered concept in documentation and judging narrative.1
 
 ## **Theoretical Framework of Palaeo-Chronobiology and the Temporal Niche**
 
@@ -12,9 +35,9 @@ Life on Earth evolved under cyclic light-dark conditions due to the planet's rot
 
 | Epoch/Period | Solar Day Duration | Dominant Rhythmic Adaptation |
 | :---- | :---- | :---- |
-| Proterozoic (2.5 \- 0.5 Ga) | ![][image1] 18-20 hours | Ancestral Kai-protein oscillators in cyanobacteria 13 |
-| Permian (298 \- 252 Ma) | ![][image1] 22-23 hours | Early mammalian ancestors; longer circadian cycles 14 |
-| Mesozoic (252 \- 66 Ma) | ![][image1] 23-23.5 hours | Avian ancestors; shorter circadian cycles evolved 14 |
+| Proterozoic (2.5 \- 0.5 Ga) | ~18–20 hours (model-dependent) | Ancestral Kai-protein oscillators in cyanobacteria 13 |
+| Permian (298 \- 252 Ma) | ~22–23 hours | Early mammalian ancestors; longer circadian cycles 14 |
+| Mesozoic (252 \- 66 Ma) | ~23–23.5 hours | Avian ancestors; shorter circadian cycles evolved 14 |
 | Cenozoic to Present | 24 hours | Standardized mammalian and modern avian clocks 15 |
 
 The acceleration of the Earth's rotation, potentially influenced by meteorite impacts at the end of the Permian, may have created a "circadian mismatch" for surviving lineages.14
@@ -62,7 +85,7 @@ Stable isotope analysis tracks the movement of organisms through time and space.
 
 ### **Incremental Tusk Growth**
 
-Mammoth tusks grew in daily layers, analogous to tree rings.35 Isotopes like Strontium (![][image2]) and Oxygen (![][image3]) preserved in these layers provide a chemical fingerprint of geology and climate.35 The 28-year life of the mammoth "Kik" was reconstructed using an isotope-guided random walk model, revealing he traveled nearly 70,000 kilometers, with seasonal movements between the Alaskan interior and the North Slope.35
+Mammoth tusks grew in daily layers, analogous to tree rings.35 Isotopes such as strontium (Sr) and oxygen (O) preserved in these layers provide a chemical fingerprint of geology and climate.35 The 28-year life of the mammoth "Kik" was reconstructed using an isotope-guided random walk model, revealing he traveled nearly 70,000 kilometers, with seasonal movements between the Alaskan interior and the North Slope.35
 
 ## **Case Study: The Passenger Pigeon**
 
@@ -74,39 +97,59 @@ The Passenger Pigeon (*Ectopistes migratorius*) offers a dramatic example of a s
 
 ## **AI-Driven Sensory Reconstruction and Sonification**
 
-The Extinction Archive uses AI to translate fragmented data into immersive sound and vision.32
+The Extinction Archive uses AI to translate fragmented data into immersive sound and vision.32 The ideation specifies **multisensory vignettes**—e.g. **cool-season grassland volatiles** evoking mammoth steppe context, or **distant thylacine-like vocal textures** derived from bioacoustic models and sparse archival audio—always framed so users understand **reconstruction ≠ resurrection**.
 
 ### **Generative Video and Motion**
 
-Diffusion-based multimodal models create dynamic visual scenes guided by textual ethological prompts and visual habitat anchors.32 This enables "digital twins" that animate based on biomechanical constraints, simulating a mammoth's slow, ground-level grazing gait.32
+Diffusion-based multimodal models create dynamic visual scenes guided by textual ethological prompts and visual habitat anchors.32 This enables "digital twins" that animate based on biomechanical constraints, simulating a mammoth's slow, ground-level grazing gait.32 Prompt logs and seed constraints can be exposed as a **documented creative pipeline**, supporting BDC expectations around **transparency** and **reflection**.
 
 ### **Bioacoustic Restoration**
 
 AI models like **Perch** (Google DeepMind) and **ECOGEN** are used to identify and generate life-like animal vocalizations.42 ECOGEN uses spectrogram-to-spectrogram translation to create synthetic songs for species with scarce recordings, allowing the archive to "restore" the calls of the Passenger Pigeon.42
 
-### **Sonification of Rhythms**
+### **Sonification of Rhythms and Layered “Ecological Harmony”**
 
-The "Biorhythm Composer" concept sonifies non-acoustic data like gene sequences or migration patterns.1 Mapping data to musical parameters (pitch, timbre, tempo) allows users to "hear" complex patterns.44 For example, mapping a mammoth’s Arctic clock period to pitch frequency turns molecular data into a visceral experience of adaptation.46
+The **Biorhythm Composer** concept sonifies non-acoustic data—gene variants, migration legs, reconstructed heart-rate envelopes, call timing—into **layered, evolving musical textures**.1 Mapping data to pitch, timbre, tempo, and spatial panning lets visitors **hear** circadian and seasonal structure.44 For example, associating a mammoth’s Arctic clock-related variation with slow harmonic rhythm turns molecular and isotopic narrative into a visceral cue for adaptation.46
+
+An interactive extension (aligned with group ideation) invites users to **blend stems** from multiple species: moments of **consonance** versus **dissonance** become an auditory metaphor for **shared versus conflicting niches**, predation, competition, and **lost synchrony** (as in mass-nesting social species).38 This supports emotional understanding of **interconnectedness** without implying precise historical soundscapes.
+
+### **Gentle Multisensory Load**
+
+Research on **data sonification** and museum accessibility suggests pacing, **defaults-off** channels, and **intensity caps** for scent or low-frequency audio to avoid overload.45 Design heuristics should pair strong affect with **exit ramps**—short sessions, textual summaries, and the epistemic UI—so empathy scales to cognitive bandwidth.
+
+### **Design–research alignment (group ideation)**
+
+The preliminary concept emphasizes **narrative depth** and species-grounded emotion; **ethical reflection** through contextual trade-offs rather than spectacle alone; **documented AI prompt workflows** for transparency and pedagogy; **music and stem-layering** as both affective device and metaphor for niche overlap and lost synchrony; and **cross-sensory convergence** disciplined by citation and uncertainty labels so the installation reads as conservation biology–aligned cultural work, not theme-park simulation.
 
 ## **Technical Implementation and Strategy**
 
-Realized as an interactive Web AR installation for the 2026 Biodesign Challenge.1
+Primary delivery is an **interactive Web / WebXR** layer for the 2026 Biodesign Challenge, optionally extended by **AR glasses or room-scale XR** where venues allow.1 The **planetary map → coordinate → archive** pattern can ship as **2D Web GIS + scene loader** or fully spatial UI; both honor the same **evidence tagging**.
 
-* **WebXR Framework:** Built using **A-Frame** and **Three.js** to make immersive experiences accessible in-browser.47  
-* **Interactivity:** The use of **ar-hit-test** positions 3D extinct animals in the user's real world 49, while the **Web Audio API** enables real-time synthesis of biological oscillators.50  
-* **BDC Strategy:** To target the **Biodigital Excellence** prize, the project ensures both biological data (aDNA, isotopes) and digital code (AI, sonification) are "load-bearing" and essential.1
+* **WebXR Framework:** **A-Frame** and **Three.js** keep immersive experiences accessible in-browser.47  
+* **Interactivity:** **ar-hit-test** can anchor 3D specimens or 3D-print QR targets in the user’s environment49; **Web Audio API** drives real-time synthesis and stem mixing tied to biological parameters.50  
+* **AI stack:** Diffusion / multimodal models for visuals; audio models and hand-tuned synthesis for calls and music; **structured prompts** stored for auditability.32  
+* **BDC Strategy:** Biological data (aDNA, isotopes, morphology) and digital implementation remain **load-bearing**, not decorative.1 **Narrative, Context, Reflection** judging lanes are served by **ethical decision interfaces** (below) and **reflection capture** after immersion.
 
 ## **Ethical Considerations**
 
-Digital de-extinction addresses the "moral obligation" to repair anthropogenic damage 52 without the risks of physical resurrection, such as the suffering of isolated social animals.53 However, the "moral hazard" remains—digital archives might diminish the urgency of current conservation if extinction is perceived as "reversible".53 The archive mitigates this by highlighting the tragedy of the last individuals and maintaining transparency about AI speculation.55
+Digital de-extinction discourse spans **moral obligation** to address anthropogenic harm52 against risks of **physical** resurrection—welfare of engineered individuals, ecological naïveté, and opportunity costs for living species.53 A **purely digital** memorial reduces some harms but introduces others: **moral hazard** if audiences treat extinction as reversible; **epistemic overreach** if AI hallucination masquerades as paleontology; **extractive storytelling** if Indigenous knowledge and sovereignty (e.g. around thylacine country and colonial extinction) are not centered where relevant.
+
+The updated concept explicitly ends immersive passages with **calm ethical decision-making interfaces**: resource allocation, acceptable risk, rights of descendant communities, and limits of technological fixism—mirroring public biolegal debate on de-extinction trade-offs (e.g. Greely54) without reducing ethics to a single “correct” choice. The archive should:
+
+- foreground **last individuals** and **extinction drivers**, not spectacle alone;  
+- label **Cited / Interpolated / Speculative** content throughout;  
+- document **AI and prompt workflows** for educational reuse;  
+- invite **reflection and dialogue** rather than closure.
+
+Digital heritage ethics—consent, provenance, and long-term stewardship of synthetic media55—apply equally to **species memorials**.
 
 ## **Conclusion**
 
-The silencing of a single species is the loss of a unique temporal masterpiece. By integrating molecular clocks, seasonal treks, and social pulses, the Extinction Archive restores the rhythms of the past as a guide for the future.1
+The silencing of a species removes a **temporal and sensory masterpiece** from the living world and from cultural memory often flattened to icons. The **Extinction Archive / Umwelt Archive** research program asks how chronobiology, isotopes, morphology, and careful AI synthesis can **re-thicken** that absence into narratable, evidence-graded experience—through **maps, sound, optional scent, and physical anchors**—while steering visitors toward **collective responsibility** and informed positions on **conservation and de-extinction**. By integrating molecular clocks, seasonal treks, social synchrony, and honest uncertainty, the work aims to restore the **rhythms of the past** as a compass for the future, not a substitute for protecting the present.1
 
 #### **Works cited**
 
-1. BDC\_2026\_Ideation\_Guide\_AI\_Assisted.docx  
+1. BDC\_2026\_Ideation\_Guide\_AI\_Assisted.docx; team ideation: *Preliminary Concept: Extinction Archive and The Reshaping of Human Biological Memory (“Umwelt Archive” — A Sensory Time Capsule)* — `Bio-design-resources/AI Project 2-Cursor/3-ideation_Preliminary Concept_ Extinction Archive and The Reshaping of Human Biological Memory (“Umwelt Archive” — A Sensory Time Capsule).md` (April 2026)  
 2. A chronology of chronobiology \- The Physiological Society, accessed April 1, 2026, [https://www.physoc.org/magazine-articles/a-chronology-of-chronobiology/](https://www.physoc.org/magazine-articles/a-chronology-of-chronobiology/)  
 3. Introduction to Chronobiology \- PMC \- NIH, accessed April 1, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC6120700/](https://pmc.ncbi.nlm.nih.gov/articles/PMC6120700/)  
 4. The Inner Workings of an Ancient Biological Clock \- PMC, accessed April 1, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC10939747/](https://pmc.ncbi.nlm.nih.gov/articles/PMC10939747/)  
@@ -162,9 +205,3 @@ The silencing of a single species is the loss of a unique temporal masterpiece. 
 54. Stanford's Hank Greely presents the ethics of resurrecting extinct species, accessed April 1, 2026, [https://law.stanford.edu/press/stanfords-hank-greely-presents-the-ethics-of-resurrecting-extinct-species-2/](https://law.stanford.edu/press/stanfords-hank-greely-presents-the-ethics-of-resurrecting-extinct-species-2/)  
 55. ETHICAL CHALLENGES OF USING ADVANCED DIGITAL TECHNOLOGIES FOR THE PRESERVATION OF CULTURAL HERITAGE Dragica Krstić Denis Voki, accessed April 1, 2026, [https://chnt.at/wp-content/uploads/2024/08/Perkovic-\_364.pdf](https://chnt.at/wp-content/uploads/2024/08/Perkovic-_364.pdf)  
 56. The ethics of species extinctions \- PMC \- NIH, accessed April 1, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC11895738/](https://pmc.ncbi.nlm.nih.gov/articles/PMC11895738/)
-
-[image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAYAAABWMrcvAAAAi0lEQVR4XmNgGAUDDDSBWBZdEBdQAOL/QPwPiL9B2WnICpAAJ4wBUowO9gPxbyCWQRP/DmN4IosiAWEg/ssAsRmGbVBUEAAs6AIg0MmAMG01mhxWcAKIm5H4MxkgmoOQxGCgHMboQRZFApcZIJpLgNgfiK8A8Q2YJBuMgQXwAfF8IL4GxClocsMGAACGPRrB9xR0NgAAAABJRU5ErkJggg==>
-
-[image2]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAYCAYAAACGLcGvAAADfUlEQVR4Xu2YWchNURiGP/OQCykuzFOGKCTcKENJ5rGUpJQUIhRlyn8hlCGhiEyZEiJjSimKTKXkggy/WaYIyRDe11rrP9/5zj7n3/+2Dzfnqbez1rvW2evba6+99re3SInU6QS9gL5CPZV/D7oA7YZ2QNuh0ar9fzMXegW9hmqZttnQd+iU8YsOJyvwXJV/Qdegi+ImlZP9v6nhfwdA7ZXPWAPHoUHKH6/aikoz6JKqb4Vq+vIG5beB+qt6IeZAS6BWyuulykk5AlX35W3QKNWmJ1OXG6pyIepBa6GpUH3v6YsVGw7+A2on7qpGcdMaEWyGfopbNY2h/dAtcccPF+hvsJPE+m1oBjTU+7O8fxR6Ck3zfiEeQeVQB6gz9BJaKtnjxYark3+kNpo2wv2ytjUNK8TtUZbzkjAoQ0dxq12zQDJxh5W/y9cDb6Guqm55J9H7Ko/x2ZqV0RQ65MtjxR1kcKb5D3EmQ5+Qpg/0yZoJKDf1VVAPXz4gmRhXqjI5Ab1RdU1byX9uZ6BF1qyMO6bOfeKcqodVWwhmAOzTxTaIWxXzrZkA+/CzMe2F+kIDTdsxyb/CONH2OIHDkmBr4ol2V/Xe0BhVXy35Bwxw9YXbLWze+WCAPPEWvt4N2gM1qOiRywTJjol8MPXTqqzjfQJNVHUNVx/73rcNEfCuXazqXLXzVL2CK+KCuSzZT3CyDPpovCjCZAbx1mqe1cMRTpS/TLmmQK2VH0XUXkz40NwJPZPsTIPbDWPmXrhP+ZYmkhv3Vaia7iTujlsObZJMv7rQOol3IaoMD/5QcoNrpPr0E7fKCNvWq3KhyeTLQ7HgXflNcuPWhD3/oLg23l0Uy0wliwrfRnh7cbDwcCMj/e9k3xYHZgmJ8r0E6KxG7//hQURf792FtqZEzLSGgoNHraq7En8y4/arKmus4WGuzTEn2QZxfpk106TQybJtoTXF+eetGQHfSph8F4P31vBwv2R8HFvDFJJ+HeOnSr7JLJTD0edbUmWclOIEP0Lyx7ZTolOpLZL/P6kwXNwAN4zPvYQ+8z7LOIkfVNx+VeW6uGPblGmI98PHFA39L9ZME6YRLaHp4gaj+GTk+znTjij4/m5zxCj4nlxmzZQIF+msL/Ohwt/HFT1yYfs/+/qUNg+sUSI59vWxREKGSfa3yhJ/QRpfmUp4mCWUKFEiFX4DppjbtB8XV1MAAAAASUVORK5CYII=>
-
-[image3]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAYCAYAAAB5j+RNAAABxUlEQVR4Xu2WPyhFcRTHDxYLKSnJ8IrBoBiUAUXJaFAmlBKjLGzKKBsZlE3JptiUrCZhYFEUJcnfCYM4X+f3y7nnHS/dbga9T31zf9/veb97vM793Uf0j6hjvVuTWWRds05s8FcssMZZH8afY5Wp9Yu6zpxRkgb2WP3JiHpCpjljNai1zQsxwFplTdrAY5DkA+CO8m/kNdcdvG3WGiUb9ShhPbGOWLngTZDsgfH4kWVWlzUVXnNgk8SHakymGSOpabIBU06STdkg0kj+zSNec/usynB9QPl5ZIgka7GB4o1+/vwXCA+tGfCas+sLVqnxAOrOrWnYpfz9EmyRFPTagH7X3KNZg1uSugobGI5J6lpt0BkCfO34a2+KI+KB5EHBQMfmcYygdoX1TN9DrvH284h1VdrMBTMSv70sGCHZa8cGDu4/AWNerTuCV6u8tJyS7IUntRB9JHWJsWgOpqbe8dISh7zdBoZXkrrEUbQUTM2M46UlvvKGbaBoI6nBQZ5gOgSaK9aG8dISH5hLGwRw7CDHDwcXhDihQXVYZ8ksyZ4YIU0u+OvGT4Dub0gK702WFZg57I/ZwlsF13i/egd2kSJFimTFJ9I1d0jFT7kgAAAAAElFTkSuQmCC>

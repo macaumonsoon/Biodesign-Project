@@ -1,0 +1,2254 @@
+{
+  "meta": {
+    "project": "Extinction Archive / Umwelt Archive",
+    "schema_version": 1,
+    "animal_count": 51,
+    "notes": "image_url left blank — attach Commons/Wikimedia URLs after manual QC. PostgreSQL table references renamed to literature_references."
+  },
+  "animals": [
+    {
+      "id": 1,
+      "scientific_name": "Mammuthus primigenius",
+      "common_name": "Woolly Mammoth",
+      "common_name_zh": "猛犸象",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -4000,
+      "extinction_period_raw": "~4,000年前",
+      "extinction_location": "欧亚、北美",
+      "description": "[Pleistocene Megafauna] Woolly Mammoth (Mammuthus primigenius). Historic range: 欧亚、北美. 冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No historic pharmaceutical use. De-extinction and aDNA research may yield insights into cold-adaptation proteins and comparative immunogenomics; any medical application remains speculative and ethically contested.",
+      "human_intervention_summary": "人类狩猎+气候变化. (狩猎→hunting; 人类→human activity; 气候→climate change)",
+      "main_causes": "人类狩猎+气候变化",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mammuthus_primigenius",
+      "sensory_reconstruction_score": 10,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Woolly Mammoth\"",
+      "internal_notes": "冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Mammuthus_primigenius",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Mammuthus+primigenius",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Mammuthus primigenius",
+          "url": "https://en.wikipedia.org/wiki/Mammuthus_primigenius"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "scientific_name": "Mammuthus columbi",
+      "common_name": "Columbian Mammoth",
+      "common_name_zh": "哥伦比亚猛犸象",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "北美",
+      "description": "[Pleistocene Megafauna] Columbian Mammoth (Mammuthus columbi). Historic range: 北美. 骨骼/迁徙路径数据",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No historic pharmaceutical use. De-extinction and aDNA research may yield insights into cold-adaptation proteins and comparative immunogenomics; any medical application remains speculative and ethically contested.",
+      "human_intervention_summary": "人类+气候. (人类→human activity; 气候→climate change)",
+      "main_causes": "人类+气候",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mammuthus_columbi",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Columbian Mammoth\"",
+      "internal_notes": "骨骼/迁徙路径数据",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Mammuthus_columbi",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Mammuthus+columbi",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Mammuthus columbi",
+          "url": "https://en.wikipedia.org/wiki/Mammuthus_columbi"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "scientific_name": "Mammut americanum",
+      "common_name": "American Mastodon",
+      "common_name_zh": "美洲乳齿象",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "北美",
+      "description": "[Pleistocene Megafauna] American Mastodon (Mammut americanum). Historic range: 北美. 牙齿化石推断饮食/声音",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "森林丧失+狩猎. (狩猎→hunting)",
+      "main_causes": "森林丧失+狩猎",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mammut_americanum",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Mastodon\"",
+      "internal_notes": "牙齿化石推断饮食/声音",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Mammut_americanum",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Mammut+americanum",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Mammut americanum",
+          "url": "https://en.wikipedia.org/wiki/Mammut_americanum"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "scientific_name": "Smilodon fatalis",
+      "common_name": "Saber-toothed Cat",
+      "common_name_zh": "剑齿虎",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "美洲",
+      "description": "[Pleistocene Megafauna] Saber-toothed Cat (Smilodon fatalis). Historic range: 美洲. 咬合力强，吼声模拟潜力极高",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "猎物减少+人类竞争. (人类→human activity)",
+      "main_causes": "猎物减少+人类竞争",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Smilodon_fatalis",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Smilodon\"",
+      "internal_notes": "咬合力强，吼声模拟潜力极高",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Smilodon_fatalis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Smilodon+fatalis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Smilodon fatalis",
+          "url": "https://en.wikipedia.org/wiki/Smilodon_fatalis"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "scientific_name": "Megatherium americanum",
+      "common_name": "Giant Ground Sloth",
+      "common_name_zh": "巨型地懒",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "南美",
+      "description": "[Pleistocene Megafauna] Giant Ground Sloth (Megatherium americanum). Historic range: 南美. 步态节奏适合低频音乐层",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "人类狩猎+气候. (狩猎→hunting; 人类→human activity; 气候→climate change)",
+      "main_causes": "人类狩猎+气候",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Megatherium_americanum",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 7,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Megatherium\"",
+      "internal_notes": "步态节奏适合低频音乐层",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Megatherium_americanum",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Megatherium+americanum",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Megatherium americanum",
+          "url": "https://en.wikipedia.org/wiki/Megatherium_americanum"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "scientific_name": "Coelodonta antiquitatis",
+      "common_name": "Woolly Rhinoceros",
+      "common_name_zh": "羊毛犀",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -14000,
+      "extinction_period_raw": "~14,000年前",
+      "extinction_location": "欧亚",
+      "description": "[Pleistocene Megafauna] Woolly Rhinoceros (Coelodonta antiquitatis). Historic range: 欧亚. 毛发/皮肤化石，气味重建",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "气候变暖+人类. (人类→human activity; 气候→climate change)",
+      "main_causes": "气候变暖+人类",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Coelodonta_antiquitatis",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Woolly Rhino\"",
+      "internal_notes": "毛发/皮肤化石，气味重建",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Coelodonta_antiquitatis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Coelodonta+antiquitatis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Coelodonta antiquitatis",
+          "url": "https://en.wikipedia.org/wiki/Coelodonta_antiquitatis"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "scientific_name": "Aenocyon dirus",
+      "common_name": "Dire Wolf",
+      "common_name_zh": "恐狼",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "北美",
+      "description": "[Pleistocene Megafauna] Dire Wolf (Aenocyon dirus). Historic range: 北美. 群体狩猎声音层叠潜力高",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "猎物减少+竞争",
+      "main_causes": "猎物减少+竞争",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Aenocyon_dirus",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Dire Wolf\"",
+      "internal_notes": "群体狩猎声音层叠潜力高",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Aenocyon_dirus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Aenocyon+dirus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Aenocyon dirus",
+          "url": "https://en.wikipedia.org/wiki/Aenocyon_dirus"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "scientific_name": "Megaloceros giganteus",
+      "common_name": "Irish Elk",
+      "common_name_zh": "爱尔兰麋鹿",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -7700,
+      "extinction_period_raw": "~7,700年前",
+      "extinction_location": "欧亚",
+      "description": "[Pleistocene Megafauna] Irish Elk (Megaloceros giganteus). Historic range: 欧亚. 巨大鹿角，视觉/声音重建",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "气候+营养压力. (气候→climate change)",
+      "main_causes": "气候+营养压力",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Megaloceros_giganteus",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 7,
+      "data_availability": "high",
+      "model_3d_reference": "Natural History Museum Dublin",
+      "internal_notes": "巨大鹿角，视觉/声音重建",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Megaloceros_giganteus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Megaloceros+giganteus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Megaloceros giganteus",
+          "url": "https://en.wikipedia.org/wiki/Megaloceros_giganteus"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "scientific_name": "Ursus spelaeus",
+      "common_name": "Cave Bear",
+      "common_name_zh": "洞熊",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -24000,
+      "extinction_period_raw": "~24,000年前",
+      "extinction_location": "欧洲",
+      "description": "[Pleistocene Megafauna] Cave Bear (Ursus spelaeus). Historic range: 欧洲. 洞穴化石，冬眠节奏音乐",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "人类竞争+气候. (人类→human activity; 气候→climate change)",
+      "main_causes": "人类竞争+气候",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ursus_spelaeus",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Cave Bear\"",
+      "internal_notes": "洞穴化石，冬眠节奏音乐",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Ursus_spelaeus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Ursus+spelaeus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Ursus spelaeus",
+          "url": "https://en.wikipedia.org/wiki/Ursus_spelaeus"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "scientific_name": "Glyptodon spp.",
+      "common_name": "Glyptodon",
+      "common_name_zh": "巨型犰狳",
+      "category": "Pleistocene Megafauna",
+      "extinction_year": -10000,
+      "extinction_period_raw": "~10,000年前",
+      "extinction_location": "南美",
+      "description": "[Pleistocene Megafauna] Glyptodon (Glyptodon spp.). Historic range: 南美. 装甲壳，触觉/视觉强",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "人类狩猎+气候. (狩猎→hunting; 人类→human activity; 气候→climate change)",
+      "main_causes": "人类狩猎+气候",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Glyptodon",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Glyptodon\"",
+      "internal_notes": "装甲壳，触觉/视觉强",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Glyptodon",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Glyptodon+spp.",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Glyptodon spp.",
+          "url": "https://en.wikipedia.org/wiki/Glyptodon"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "scientific_name": "Thylacinus cynocephalus",
+      "common_name": "Thylacine",
+      "common_name_zh": "袋狼",
+      "category": "Mammals",
+      "extinction_year": 1936,
+      "extinction_period_raw": "1936",
+      "extinction_location": "澳大利亚/塔斯马尼亚",
+      "description": "[Mammals] Thylacine (Thylacinus cynocephalus). Historic range: 澳大利亚/塔斯马尼亚. 项目提及，最后一只录音存在",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use. Loss of genetic diversity limits future biobank and comparative physiology research; de-extinction debate touches biotech governance rather than proven drug leads.",
+      "human_intervention_summary": "狩猎+栖息地+疾病. (狩猎→hunting; 栖息地→habitat loss)",
+      "main_causes": "狩猎+栖息地+疾病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Thylacinus_cynocephalus",
+      "sensory_reconstruction_score": 10,
+      "music_layering_score": 10,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Thylacine\"",
+      "internal_notes": "项目提及，最后一只录音存在",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Thylacinus_cynocephalus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Thylacinus+cynocephalus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Thylacinus cynocephalus",
+          "url": "https://en.wikipedia.org/wiki/Thylacinus_cynocephalus"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "scientific_name": "Hydrodamalis gigas",
+      "common_name": "Steller's Sea Cow",
+      "common_name_zh": "斯特勒海牛",
+      "category": "Mammals",
+      "extinction_year": 1768,
+      "extinction_period_raw": "1768",
+      "extinction_location": "白令海",
+      "description": "[Mammals] Steller's Sea Cow (Hydrodamalis gigas). Historic range: 白令海. 海洋低频声音",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "过度狩猎. (狩猎→hunting; 过度→overexploitation)",
+      "main_causes": "过度狩猎",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Hydrodamalis_gigas",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Steller's Sea Cow\"",
+      "internal_notes": "海洋低频声音",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Hydrodamalis_gigas",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Hydrodamalis+gigas",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Hydrodamalis gigas",
+          "url": "https://en.wikipedia.org/wiki/Hydrodamalis_gigas"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "scientific_name": "Melomys rubicola",
+      "common_name": "Bramble Cay Melomys",
+      "common_name_zh": "布兰布尔凯鼠",
+      "category": "Mammals",
+      "extinction_year": 2016,
+      "extinction_period_raw": "2016",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Bramble Cay Melomys (Melomys rubicola). Historic range: 澳大利亚. 首个气候变化哺乳动物记录",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "气候+海平面. (气候→climate change)",
+      "main_causes": "气候+海平面",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Melomys_rubicola",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Melomys\"",
+      "internal_notes": "首个气候变化哺乳动物记录",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Melomys_rubicola",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Melomys+rubicola",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Melomys rubicola",
+          "url": "https://en.wikipedia.org/wiki/Melomys_rubicola"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "scientific_name": "Crocidura trichura",
+      "common_name": "Christmas Island Shrew",
+      "common_name_zh": "圣诞岛鼩",
+      "category": "Mammals",
+      "extinction_year": 1985,
+      "extinction_period_raw": "1985（2025确认）",
+      "extinction_location": "圣诞岛",
+      "description": "[Mammals] Christmas Island Shrew (Crocidura trichura). Historic range: 圣诞岛. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵+疾病（2025新增）. (入侵→invasive species)",
+      "main_causes": "入侵+疾病（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Crocidura_trichura",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Shrew\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Crocidura_trichura",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Crocidura+trichura",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Crocidura trichura",
+          "url": "https://en.wikipedia.org/wiki/Crocidura_trichura"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "scientific_name": "Potorous platyops",
+      "common_name": "Broad-faced Potoroo",
+      "common_name_zh": "宽脸袋鼠",
+      "category": "Mammals",
+      "extinction_year": 1875,
+      "extinction_period_raw": "1875",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Broad-faced Potoroo (Potorous platyops). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狐狸+栖息地破坏. (栖息地→habitat loss)",
+      "main_causes": "狐狸+栖息地破坏",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Potorous_platyops",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Potoroo\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Potorous_platyops",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Potorous+platyops",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Potorous platyops",
+          "url": "https://en.wikipedia.org/wiki/Potorous_platyops"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "scientific_name": "Perameles papillon",
+      "common_name": "Nullarbor Barred Bandicoot",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 1920,
+      "extinction_period_raw": "~1920s（2025确认）",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Nullarbor Barred Bandicoot (Perameles papillon). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地+捕食（2025新增）. (栖息地→habitat loss)",
+      "main_causes": "栖息地+捕食（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Perameles_papillon",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Bandicoot\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Perameles_papillon",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Perameles+papillon",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Perameles papillon",
+          "url": "https://en.wikipedia.org/wiki/Perameles_papillon"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "scientific_name": "Perameles myosuros",
+      "common_name": "Southern Long-nosed Bandicoot",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 2025,
+      "extinction_period_raw": "19世纪晚期（2025确认）",
+      "extinction_location": "澳大利亚东南",
+      "description": "[Mammals] Southern Long-nosed Bandicoot (Perameles myosuros). Historic range: 澳大利亚东南. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "捕食+栖息地（2025新增）. (栖息地→habitat loss)",
+      "main_causes": "捕食+栖息地（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Perameles_myosuros",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Bandicoot\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Perameles_myosuros",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Perameles+myosuros",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Perameles myosuros",
+          "url": "https://en.wikipedia.org/wiki/Perameles_myosuros"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "scientific_name": "Perameles notina",
+      "common_name": "Southeastern Striped Bandicoot",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 2025,
+      "extinction_period_raw": "19-20世纪（2025确认）",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Southeastern Striped Bandicoot (Perameles notina). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵捕食者（2025新增）. (入侵→invasive species)",
+      "main_causes": "入侵捕食者（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Perameles_notina",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Bandicoot\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Perameles_notina",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Perameles+notina",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Perameles notina",
+          "url": "https://en.wikipedia.org/wiki/Perameles_notina"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "scientific_name": "Chaeropus ecaudatus",
+      "common_name": "Southern Pig-footed Bandicoot",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 1950,
+      "extinction_period_raw": "~1950s（2025确认）",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Southern Pig-footed Bandicoot (Chaeropus ecaudatus). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵+火 regime变化（2025新增）. (入侵→invasive species)",
+      "main_causes": "入侵+火 regime变化（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chaeropus_ecaudatus",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Bandicoot\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Chaeropus_ecaudatus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Chaeropus+ecaudatus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Chaeropus ecaudatus",
+          "url": "https://en.wikipedia.org/wiki/Chaeropus_ecaudatus"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "scientific_name": "Chaeropus yirratji",
+      "common_name": "Northern Pig-footed Bandicoot",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 1930,
+      "extinction_period_raw": "~1930s（2025确认）",
+      "extinction_location": "澳大利亚",
+      "description": "[Mammals] Northern Pig-footed Bandicoot (Chaeropus yirratji). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵+栖息地（2025新增）. (栖息地→habitat loss; 入侵→invasive species)",
+      "main_causes": "入侵+栖息地（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chaeropus_yirratji",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Bandicoot\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Chaeropus_yirratji",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Chaeropus+yirratji",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Chaeropus yirratji",
+          "url": "https://en.wikipedia.org/wiki/Chaeropus_yirratji"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "scientific_name": "Zalophus japonicus",
+      "common_name": "Japanese Sea Lion",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 1950,
+      "extinction_period_raw": "1950s",
+      "extinction_location": "日本海",
+      "description": "[Mammals] Japanese Sea Lion (Zalophus japonicus). Historic range: 日本海. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+渔业冲突. (狩猎→hunting)",
+      "main_causes": "狩猎+渔业冲突",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Zalophus_japonicus",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Sea Lion\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Zalophus_japonicus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Zalophus+japonicus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Zalophus japonicus",
+          "url": "https://en.wikipedia.org/wiki/Zalophus_japonicus"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "scientific_name": "Diceros bicornis longipes",
+      "common_name": "Western Black Rhinoceros",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 2011,
+      "extinction_period_raw": "2011",
+      "extinction_location": "西非",
+      "description": "[Mammals] Western Black Rhinoceros (Diceros bicornis longipes). Historic range: 西非. 角贸易导致",
+      "image_url": "",
+      "pharm_related": true,
+      "pharm_notes": "Illegal horn trade driven partly by traditional-medicine demand; extinction illustrates regulatory and enforcement gaps for species exploited for unverified medicinal claims. Conservation pharmacology angle: protect remaining rhino taxa and support evidence-based substitutes.",
+      "human_intervention_summary": "偷猎. (偷猎→poaching)",
+      "main_causes": "偷猎",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Diceros_bicornis",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 6,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Black Rhino\"",
+      "internal_notes": "角贸易导致",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Diceros_bicornis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Diceros+bicornis+longipes",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Diceros bicornis longipes",
+          "url": "https://en.wikipedia.org/wiki/Diceros_bicornis"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "scientific_name": "Dusicyon australis",
+      "common_name": "Falkland Islands Wolf",
+      "common_name_zh": "",
+      "category": "Mammals",
+      "extinction_year": 1876,
+      "extinction_period_raw": "1876",
+      "extinction_location": "福克兰群岛",
+      "description": "[Mammals] Falkland Islands Wolf (Dusicyon australis). Historic range: 福克兰群岛. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "人类+犬类疾病. (人类→human activity)",
+      "main_causes": "人类+犬类疾病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Dusicyon_australis",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Falkland Wolf\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Dusicyon_australis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Dusicyon+australis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Dusicyon australis",
+          "url": "https://en.wikipedia.org/wiki/Dusicyon_australis"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "scientific_name": "Raphus cucullatus",
+      "common_name": "Dodo",
+      "common_name_zh": "渡渡鸟",
+      "category": "Birds",
+      "extinction_year": 1681,
+      "extinction_period_raw": "17世纪晚期",
+      "extinction_location": "毛里求斯",
+      "description": "[Birds] Dodo (Raphus cucullatus). Historic range: 毛里求斯. AR经典案例",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+入侵. (狩猎→hunting; 入侵→invasive species)",
+      "main_causes": "狩猎+入侵",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Raphus_cucullatus",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Dodo\"",
+      "internal_notes": "AR经典案例",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Raphus_cucullatus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Raphus+cucullatus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Raphus cucullatus",
+          "url": "https://en.wikipedia.org/wiki/Raphus_cucullatus"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "scientific_name": "Ectopistes migratorius",
+      "common_name": "Passenger Pigeon",
+      "common_name_zh": "旅鸽",
+      "category": "Birds",
+      "extinction_year": 1914,
+      "extinction_period_raw": "1914",
+      "extinction_location": "北美",
+      "description": "[Birds] Passenger Pigeon (Ectopistes migratorius). Historic range: 北美. 群体迁徙声音层叠极高",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "过度狩猎+栖息地. (狩猎→hunting; 栖息地→habitat loss; 过度→overexploitation)",
+      "main_causes": "过度狩猎+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ectopistes_migratorius",
+      "sensory_reconstruction_score": 10,
+      "music_layering_score": 10,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Passenger Pigeon\"",
+      "internal_notes": "群体迁徙声音层叠极高",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Ectopistes_migratorius",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Ectopistes+migratorius",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Ectopistes migratorius",
+          "url": "https://en.wikipedia.org/wiki/Ectopistes_migratorius"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "scientific_name": "Numenius tenuirostris",
+      "common_name": "Slender-billed Curlew",
+      "common_name_zh": "细嘴杓鹬",
+      "category": "Birds",
+      "extinction_year": 1995,
+      "extinction_period_raw": "1995（2025确认）",
+      "extinction_location": "西伯利亚/欧洲/非洲",
+      "description": "[Birds] Slender-billed Curlew (Numenius tenuirostris). Historic range: 西伯利亚/欧洲/非洲. 迁徙叫声录音",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地+狩猎（2025新增）. (狩猎→hunting; 栖息地→habitat loss)",
+      "main_causes": "栖息地+狩猎（2025新增）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Numenius_tenuirostris",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Curlew\"",
+      "internal_notes": "迁徙叫声录音",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Numenius_tenuirostris",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Numenius+tenuirostris",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Numenius tenuirostris",
+          "url": "https://en.wikipedia.org/wiki/Numenius_tenuirostris"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "scientific_name": "Psittirostra psittacea",
+      "common_name": "Ou",
+      "common_name_zh": "ʻŌʻū",
+      "category": "Birds",
+      "extinction_year": 2024,
+      "extinction_period_raw": "2024",
+      "extinction_location": "夏威夷",
+      "description": "[Birds] Ou (Psittirostra psittacea). Historic range: 夏威夷. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "疾病+栖息地（2024确认）. (栖息地→habitat loss)",
+      "main_causes": "疾病+栖息地（2024确认）",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Psittirostra_psittacea",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 8,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Honeycreeper\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Psittirostra_psittacea",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Psittirostra+psittacea",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Psittirostra psittacea",
+          "url": "https://en.wikipedia.org/wiki/Psittirostra_psittacea"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "scientific_name": "Pinguinus impennis",
+      "common_name": "Great Auk",
+      "common_name_zh": "大海雀",
+      "category": "Birds",
+      "extinction_year": 1852,
+      "extinction_period_raw": "1852",
+      "extinction_location": "北大西洋",
+      "description": "[Birds] Great Auk (Pinguinus impennis). Historic range: 北大西洋. 海洋声音",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎. (狩猎→hunting)",
+      "main_causes": "狩猎",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pinguinus_impennis",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Great Auk\"",
+      "internal_notes": "海洋声音",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Pinguinus_impennis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Pinguinus+impennis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Pinguinus impennis",
+          "url": "https://en.wikipedia.org/wiki/Pinguinus_impennis"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "scientific_name": "Camptorhynchus labradorius",
+      "common_name": "Labrador Duck",
+      "common_name_zh": "拉布拉多鸭",
+      "category": "Birds",
+      "extinction_year": 1878,
+      "extinction_period_raw": "~1878",
+      "extinction_location": "北美东北",
+      "description": "[Birds] Labrador Duck (Camptorhynchus labradorius). Historic range: 北美东北. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎. (狩猎→hunting)",
+      "main_causes": "狩猎",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Camptorhynchus_labradorius",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Labrador Duck\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Camptorhynchus_labradorius",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Camptorhynchus+labradorius",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Camptorhynchus labradorius",
+          "url": "https://en.wikipedia.org/wiki/Camptorhynchus_labradorius"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "scientific_name": "Tachybaptus rufolavatus",
+      "common_name": "Alaotra Grebe",
+      "common_name_zh": "阿拉奥特鸊鷉",
+      "category": "Birds",
+      "extinction_year": 1985,
+      "extinction_period_raw": "1985",
+      "extinction_location": "马达加斯加",
+      "description": "[Birds] Alaotra Grebe (Tachybaptus rufolavatus). Historic range: 马达加斯加. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地+入侵. (栖息地→habitat loss; 入侵→invasive species)",
+      "main_causes": "栖息地+入侵",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tachybaptus_rufolavatus",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 6,
+      "data_availability": "low",
+      "model_3d_reference": "Sketchfab \"Grebe\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Tachybaptus_rufolavatus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Tachybaptus+rufolavatus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Tachybaptus rufolavatus",
+          "url": "https://en.wikipedia.org/wiki/Tachybaptus_rufolavatus"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "scientific_name": "Corvus hawaiiensis",
+      "common_name": "Hawaiian Crow",
+      "common_name_zh": "夏威夷乌鸦",
+      "category": "Birds",
+      "extinction_year": 2002,
+      "extinction_period_raw": "2002（野外）",
+      "extinction_location": "夏威夷",
+      "description": "[Birds] Hawaiian Crow (Corvus hawaiiensis). Historic range: 夏威夷. 录音丰富",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵+疾病. (入侵→invasive species)",
+      "main_causes": "入侵+疾病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Corvus_hawaiiensis",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 8,
+      "data_availability": "high",
+      "model_3d_reference": "San Diego Zoo recordings",
+      "internal_notes": "录音丰富",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Corvus_hawaiiensis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Corvus+hawaiiensis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Corvus hawaiiensis",
+          "url": "https://en.wikipedia.org/wiki/Corvus_hawaiiensis"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "scientific_name": "Conuropsis carolinensis",
+      "common_name": "Carolina Parakeet",
+      "common_name_zh": "卡罗来纳长尾鹦鹉",
+      "category": "Birds",
+      "extinction_year": 1930,
+      "extinction_period_raw": "~1930",
+      "extinction_location": "北美东南",
+      "description": "[Birds] Carolina Parakeet (Conuropsis carolinensis). Historic range: 北美东南. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+疾病. (狩猎→hunting)",
+      "main_causes": "狩猎+疾病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Conuropsis_carolinensis",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 8,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Parakeet\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Conuropsis_carolinensis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Conuropsis+carolinensis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Conuropsis carolinensis",
+          "url": "https://en.wikipedia.org/wiki/Conuropsis_carolinensis"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "scientific_name": "Campephilus imperialis",
+      "common_name": "Imperial Woodpecker",
+      "common_name_zh": "帝王啄木鸟",
+      "category": "Birds",
+      "extinction_year": 1990,
+      "extinction_period_raw": "20世纪晚期",
+      "extinction_location": "墨西哥",
+      "description": "[Birds] Imperial Woodpecker (Campephilus imperialis). Historic range: 墨西哥. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "森林砍伐",
+      "main_causes": "森林砍伐",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Campephilus_imperialis",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Woodpecker\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Campephilus_imperialis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Campephilus+imperialis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Campephilus imperialis",
+          "url": "https://en.wikipedia.org/wiki/Campephilus_imperialis"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "scientific_name": "Vermivora bachmanii",
+      "common_name": "Bachman’s Warbler",
+      "common_name_zh": "",
+      "category": "Birds",
+      "extinction_year": 2023,
+      "extinction_period_raw": "~2023确认",
+      "extinction_location": "美国东南",
+      "description": "[Birds] Bachman’s Warbler (Vermivora bachmanii). Historic range: 美国东南. 录音存在",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地丧失. (栖息地→habitat loss)",
+      "main_causes": "栖息地丧失",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Vermivora_bachmanii",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Warbler\"",
+      "internal_notes": "录音存在",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Vermivora_bachmanii",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Vermivora+bachmanii",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Vermivora bachmanii",
+          "url": "https://en.wikipedia.org/wiki/Vermivora_bachmanii"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "scientific_name": "Psephotellus pulcherrimus",
+      "common_name": "Paradise Parrot",
+      "common_name_zh": "",
+      "category": "Birds",
+      "extinction_year": 1928,
+      "extinction_period_raw": "1928",
+      "extinction_location": "澳大利亚东部",
+      "description": "[Birds] Paradise Parrot (Psephotellus pulcherrimus). Historic range: 澳大利亚东部. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "干旱+放牧",
+      "main_causes": "干旱+放牧",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Psephotellus_pulcherrimus",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Australian Museum",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Psephotellus_pulcherrimus",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Psephotellus+pulcherrimus",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Psephotellus pulcherrimus",
+          "url": "https://en.wikipedia.org/wiki/Psephotellus_pulcherrimus"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "scientific_name": "Ninox albifacies",
+      "common_name": "Laughing Owl",
+      "common_name_zh": "",
+      "category": "Birds",
+      "extinction_year": 1914,
+      "extinction_period_raw": "~1914",
+      "extinction_location": "新西兰",
+      "description": "[Birds] Laughing Owl (Ninox albifacies). Historic range: 新西兰. 独特笑声录音",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "入侵+栖息地. (栖息地→habitat loss; 入侵→invasive species)",
+      "main_causes": "入侵+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ninox_albifacies",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 9,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Laughing Owl\"",
+      "internal_notes": "独特笑声录音",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Ninox_albifacies",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Ninox+albifacies",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Ninox albifacies",
+          "url": "https://en.wikipedia.org/wiki/Ninox_albifacies"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "scientific_name": "Tympanuchus cupido cupido",
+      "common_name": "Heath Hen",
+      "common_name_zh": "",
+      "category": "Birds",
+      "extinction_year": 1932,
+      "extinction_period_raw": "1932",
+      "extinction_location": "北美",
+      "description": "[Birds] Heath Hen (Tympanuchus cupido cupido). Historic range: 北美. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+栖息地. (狩猎→hunting; 栖息地→habitat loss)",
+      "main_causes": "狩猎+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tympanuchus_cupido",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 7,
+      "data_availability": "medium",
+      "model_3d_reference": "Smithsonian models",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Tympanuchus_cupido",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Tympanuchus+cupido+cupido",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Tympanuchus cupido cupido",
+          "url": "https://en.wikipedia.org/wiki/Tympanuchus_cupido"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "scientific_name": "Chelonoidis abingdonii",
+      "common_name": "Pinta Giant Tortoise",
+      "common_name_zh": "平塔巨龟",
+      "category": "Reptiles",
+      "extinction_year": 2015,
+      "extinction_period_raw": "2015",
+      "extinction_location": "加拉帕戈斯",
+      "description": "[Reptiles] Pinta Giant Tortoise (Chelonoidis abingdonii). Historic range: 加拉帕戈斯. “Lonesome George”最后一只",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+引入动物. (狩猎→hunting)",
+      "main_causes": "狩猎+引入动物",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chelonoidis_abingdonii",
+      "sensory_reconstruction_score": 9,
+      "music_layering_score": 6,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Giant Tortoise\"",
+      "internal_notes": "“Lonesome George”最后一只",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Chelonoidis_abingdonii",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Chelonoidis+abingdonii",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Chelonoidis abingdonii",
+          "url": "https://en.wikipedia.org/wiki/Chelonoidis_abingdonii"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "scientific_name": "Cylindraspis indica",
+      "common_name": "Réunion Giant Tortoise",
+      "common_name_zh": "留尼汪巨龟",
+      "category": "Reptiles",
+      "extinction_year": 1750,
+      "extinction_period_raw": "18世纪",
+      "extinction_location": "留尼汪岛",
+      "description": "[Reptiles] Réunion Giant Tortoise (Cylindraspis indica). Historic range: 留尼汪岛. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+引入. (狩猎→hunting)",
+      "main_causes": "狩猎+引入",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cylindraspis_indica",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Mauritius museum",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_indica",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Cylindraspis+indica",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Cylindraspis indica",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_indica"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "scientific_name": "Cylindraspis triserrata",
+      "common_name": "Domed Mauritius Giant Tortoise",
+      "common_name_zh": "毛里求斯穹顶巨龟",
+      "category": "Reptiles",
+      "extinction_year": 1750,
+      "extinction_period_raw": "18世纪",
+      "extinction_location": "毛里求斯",
+      "description": "[Reptiles] Domed Mauritius Giant Tortoise (Cylindraspis triserrata). Historic range: 毛里求斯. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "殖民影响",
+      "main_causes": "殖民影响",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cylindraspis_triserrata",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Tortoise\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_triserrata",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Cylindraspis+triserrata",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Cylindraspis triserrata",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_triserrata"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "scientific_name": "Cylindraspis peltastes",
+      "common_name": "Rodrigues Giant Tortoise",
+      "common_name_zh": "",
+      "category": "Reptiles",
+      "extinction_year": 1800,
+      "extinction_period_raw": "1800s",
+      "extinction_location": "罗德里格斯岛",
+      "description": "[Reptiles] Rodrigues Giant Tortoise (Cylindraspis peltastes). Historic range: 罗德里格斯岛. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+栖息地. (狩猎→hunting; 栖息地→habitat loss)",
+      "main_causes": "狩猎+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cylindraspis_peltastes",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Rodrigues models",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_peltastes",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Cylindraspis+peltastes",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Cylindraspis peltastes",
+          "url": "https://en.wikipedia.org/wiki/Cylindraspis_peltastes"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "scientific_name": "Bolyeria multocarinata",
+      "common_name": "Round Island Burrowing Boa",
+      "common_name_zh": "圆岛掘穴蟒",
+      "category": "Reptiles",
+      "extinction_year": 1975,
+      "extinction_period_raw": "1975",
+      "extinction_location": "毛里求斯",
+      "description": "[Reptiles] Round Island Burrowing Boa (Bolyeria multocarinata). Historic range: 毛里求斯. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地退化. (栖息地→habitat loss)",
+      "main_causes": "栖息地退化",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Bolyeria_multocarinata",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Boa\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Bolyeria_multocarinata",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Bolyeria+multocarinata",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Bolyeria multocarinata",
+          "url": "https://en.wikipedia.org/wiki/Bolyeria_multocarinata"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "scientific_name": "Hoplodactylus delcourti",
+      "common_name": "Delcourt's Giant Gecko",
+      "common_name_zh": "",
+      "category": "Reptiles",
+      "extinction_year": 1870,
+      "extinction_period_raw": "~1870",
+      "extinction_location": "新西兰",
+      "description": "[Reptiles] Delcourt's Giant Gecko (Hoplodactylus delcourti). Historic range: 新西兰. 最大壁虎",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "人类捕杀. (人类→human activity)",
+      "main_causes": "人类捕杀",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Hoplodactylus_delcourti",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "medium",
+      "model_3d_reference": "Museum casts",
+      "internal_notes": "最大壁虎",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Hoplodactylus_delcourti",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Hoplodactylus+delcourti",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Hoplodactylus delcourti",
+          "url": "https://en.wikipedia.org/wiki/Hoplodactylus_delcourti"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "scientific_name": "Incilius periglenes",
+      "common_name": "Golden Toad",
+      "common_name_zh": "金蟾",
+      "category": "Amphibians",
+      "extinction_year": 1989,
+      "extinction_period_raw": "1989（2019确认）",
+      "extinction_location": "哥斯达黎加",
+      "description": "[Amphibians] Golden Toad (Incilius periglenes). Historic range: 哥斯达黎加. 真菌+气候经典案例",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "Amphibian pathogens are central to One Health and emerging infectious disease research; extinction underscores links between ecosystem health and biomedical surveillance (not direct drug sourcing from this species).",
+      "human_intervention_summary": "壶菌病+气候. (气候→climate change)",
+      "main_causes": "壶菌病+气候",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Incilius_periglenes",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "high",
+      "model_3d_reference": "Sketchfab \"Golden Toad\"",
+      "internal_notes": "真菌+气候经典案例",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Incilius_periglenes",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Incilius+periglenes",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Incilius periglenes",
+          "url": "https://en.wikipedia.org/wiki/Incilius_periglenes"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "scientific_name": "Cynops wolterstorffi",
+      "common_name": "Yunnan Lake Newt",
+      "common_name_zh": "云南湖蝾螈",
+      "category": "Amphibians",
+      "extinction_year": 1979,
+      "extinction_period_raw": "1979",
+      "extinction_location": "中国云南",
+      "description": "[Amphibians] Yunnan Lake Newt (Cynops wolterstorffi). Historic range: 中国云南. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "污染+栖息地. (栖息地→habitat loss; 污染→pollution)",
+      "main_causes": "污染+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cynops_wolterstorffi",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "low",
+      "model_3d_reference": "Chinese museum",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Cynops_wolterstorffi",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Cynops+wolterstorffi",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Cynops wolterstorffi",
+          "url": "https://en.wikipedia.org/wiki/Cynops_wolterstorffi"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "scientific_name": "Litoria nyakalensis",
+      "common_name": "Mountain Mist Frog",
+      "common_name_zh": "山雾蛙",
+      "category": "Amphibians",
+      "extinction_year": 2021,
+      "extinction_period_raw": "2021",
+      "extinction_location": "澳大利亚",
+      "description": "[Amphibians] Mountain Mist Frog (Litoria nyakalensis). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "Amphibian pathogens are central to One Health and emerging infectious disease research; extinction underscores links between ecosystem health and biomedical surveillance (not direct drug sourcing from this species).",
+      "human_intervention_summary": "壶菌病",
+      "main_causes": "壶菌病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Litoria_nyakalensis",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "low",
+      "model_3d_reference": "Sketchfab \"Mist Frog\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Litoria_nyakalensis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Litoria+nyakalensis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Litoria nyakalensis",
+          "url": "https://en.wikipedia.org/wiki/Litoria_nyakalensis"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "scientific_name": "Psephurus gladius",
+      "common_name": "Chinese Paddlefish",
+      "common_name_zh": "中国匙吻鲟",
+      "category": "Fishes",
+      "extinction_year": 2010,
+      "extinction_period_raw": "~2010（2019确认）",
+      "extinction_location": "长江",
+      "description": "[Fishes] Chinese Paddlefish (Psephurus gladius). Historic range: 长江. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "筑坝+捕捞. (筑坝→damming; 捕捞→overfishing)",
+      "main_causes": "筑坝+捕捞",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Psephurus_gladius",
+      "sensory_reconstruction_score": 6,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Paddlefish\"",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Psephurus_gladius",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Psephurus+gladius",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Psephurus gladius",
+          "url": "https://en.wikipedia.org/wiki/Psephurus_gladius"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "scientific_name": "Sympterichthys unipennis",
+      "common_name": "Smooth Handfish",
+      "common_name_zh": "",
+      "category": "Fishes",
+      "extinction_year": 2020,
+      "extinction_period_raw": "2020",
+      "extinction_location": "澳大利亚",
+      "description": "[Fishes] Smooth Handfish (Sympterichthys unipennis). Historic range: 澳大利亚. -",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "栖息地破坏. (栖息地→habitat loss)",
+      "main_causes": "栖息地破坏",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sympterichthys_unipennis",
+      "sensory_reconstruction_score": 5,
+      "music_layering_score": 4,
+      "data_availability": "low",
+      "model_3d_reference": "Australian museum scans",
+      "internal_notes": "-",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Sympterichthys_unipennis",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Sympterichthys+unipennis",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Sympterichthys unipennis",
+          "url": "https://en.wikipedia.org/wiki/Sympterichthys_unipennis"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "scientific_name": "Glaucopsyche xerces",
+      "common_name": "Xerces Blue Butterfly",
+      "common_name_zh": "",
+      "category": "Invertebrates",
+      "extinction_year": 1940,
+      "extinction_period_raw": "1940s",
+      "extinction_location": "美国",
+      "description": "[Invertebrates] Xerces Blue Butterfly (Glaucopsyche xerces). Historic range: 美国. 首例美国灭绝蝴蝶",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "城市化+栖息地. (栖息地→habitat loss)",
+      "main_causes": "城市化+栖息地",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Glaucopsyche_xerces",
+      "sensory_reconstruction_score": 5,
+      "music_layering_score": 5,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab \"Xerces Blue\"",
+      "internal_notes": "首例美国灭绝蝴蝶",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Glaucopsyche_xerces",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Glaucopsyche+xerces",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Glaucopsyche xerces",
+          "url": "https://en.wikipedia.org/wiki/Glaucopsyche_xerces"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "scientific_name": "Equus quagga quagga",
+      "common_name": "Quagga",
+      "common_name_zh": "斑驴",
+      "category": "Mammals",
+      "extinction_year": 1883,
+      "extinction_period_raw": "1883",
+      "extinction_location": "South Africa",
+      "description": "[Mammals] Quagga (Equus quagga quagga). Historic range: South Africa. 商业毛皮狩猎案例",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎取皮+牧场竞争. (狩猎→hunting)",
+      "main_causes": "狩猎取皮+牧场竞争",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Equus_quagga",
+      "sensory_reconstruction_score": 7,
+      "music_layering_score": 6,
+      "data_availability": "medium",
+      "model_3d_reference": "Sketchfab Quagga",
+      "internal_notes": "商业毛皮狩猎案例",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Equus_quagga",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Equus+quagga+quagga",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Equus quagga quagga",
+          "url": "https://en.wikipedia.org/wiki/Equus_quagga"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "scientific_name": "Capra pyrenaica pyrenaica",
+      "common_name": "Pyrenean Ibex",
+      "common_name_zh": "比利牛斯山羊",
+      "category": "Mammals",
+      "extinction_year": 2000,
+      "extinction_period_raw": "2000",
+      "extinction_location": "Pyrenees, Spain",
+      "description": "[Mammals] Pyrenean Ibex (Capra pyrenaica pyrenaica). Historic range: Pyrenees, Spain. 克隆尝试案例，现代灭绝",
+      "image_url": "",
+      "pharm_related": false,
+      "pharm_notes": "No direct pharmaceutical use documented. Included to show how anthropogenic drivers (hunting, habitat loss, climate, invasive species) erase potential future natural-product and comparative biology options.",
+      "human_intervention_summary": "狩猎+栖息地丧失+疾病. (狩猎→hunting; 栖息地→habitat loss)",
+      "main_causes": "狩猎+栖息地丧失+疾病",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Capra_pyrenaica",
+      "sensory_reconstruction_score": 8,
+      "music_layering_score": 7,
+      "data_availability": "high",
+      "model_3d_reference": "Museum specimens",
+      "internal_notes": "克隆尝试案例，现代灭绝",
+      "archival_media": [
+        {
+          "media_type": "article",
+          "title": "Wikipedia overview",
+          "url": "https://en.wikipedia.org/wiki/Capra_pyrenaica",
+          "caption": "Species article",
+          "source": "Wikipedia"
+        },
+        {
+          "media_type": "document",
+          "title": "3D model search (Sketchfab)",
+          "url": "https://sketchfab.com/search?q=Capra+pyrenaica+pyrenaica",
+          "caption": "Discovery link; verify license before production embed",
+          "source": "Sketchfab search"
+        }
+      ],
+      "references": [
+        {
+          "citation_text": "Wikipedia — Capra pyrenaica pyrenaica",
+          "url": "https://en.wikipedia.org/wiki/Capra_pyrenaica"
+        }
+      ]
+    }
+  ]
+}
