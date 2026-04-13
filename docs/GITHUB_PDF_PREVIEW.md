@@ -36,7 +36,7 @@ https://github.com/macaumonsoon/Biodesign-Project/raw/main/slides/export/%5BFINA
 `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py --full-only`.
 
 - File: `slides/export/Extinction_Archive_Umwelt_BDC_Judge_Full_Deck_EN_2026.pdf`  
-- [Open on GitHub (blob)](https://github.com/macaumonsoon/Biodesign-Project/blob/main/slides/export/Extinction_Archive_Umwelt_BDC_Judge_Full_Deck_EN_2026.pdf) *(after push)*
+- [Open on GitHub (blob)](https://github.com/macaumonsoon/Biodesign-Project/blob/main/slides/export/Extinction_Archive_Umwelt_BDC_Judge_Full_Deck_EN_2026.pdf)
 
 ## Older / alternate exports
 
