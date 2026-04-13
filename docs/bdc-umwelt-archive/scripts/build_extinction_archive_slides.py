@@ -7,6 +7,7 @@ Font: Arial Unicode (macOS) for Latin + CJK.
 """
 from __future__ import annotations
 
+import shutil
 import sys
 from pathlib import Path
 
@@ -145,8 +146,19 @@ def build_en(font: Path) -> None:
         [
             "Biodesign Challenge 2026 · Convergent Life",
             "AI memorial for lost species — literature-grounded, not resurrection",
-            "WebXR build · heavy content, light hardware",
+            "WebXR + in-repo data layer · heavy evidence, light hardware",
         ],
+    )
+    d.body_slide(
+        "Repository & research layer (2026 update)",
+        [
+            "Shipped course build: browser / WebXR — no live biosensor demo; one QR + optional citation sheet.",
+            "51 taxa → data/extinction_archive/animals_full.csv; bundle archive.json + archive_import.sql (PostgreSQL).",
+            "archival_media_research.csv — ~349 curated rows (IUCN, GBIF, BHL, NFSA, SI, BOW, PMC…).",
+            "Planning + tiers: BDC_2026_Extinction_Archive_Planning_Document.md · docs/research/bdc_showcase_species_shortlist.md",
+            "Literature spine: 02_research/biology/biodigital_chronobiology_research.md — regenerate via scripts/extinction_archive_db/",
+        ],
+        small=True,
     )
     d.body_slide(
         "The fracture (Umwelt + time)",
@@ -199,8 +211,8 @@ def build_en(font: Path) -> None:
             ),
             (
                 "P1 dossier",
-                "Raphus · Pinguinus",
-                "14+ curated URLs each — islands, BHL, Smithsonian exhibits",
+                "Dodo · Great auk\n(Raphus · Pinguinus)",
+                "14+ curated URLs each — islands, BHL, SI; Context lane, not WebXR v1",
             ),
         ],
         small=True,
@@ -228,7 +240,7 @@ def build_en(font: Path) -> None:
         [
             ("animals_full.csv (51 taxa)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
             ("archive.json + archive_import.sql", "Frontend bundle + PostgreSQL animals / media / refs"),
-            ("archival_media_research.csv", "~350 rows: IUCN, GBIF, BHL, NFSA, BOW, PMC…"),
+            ("archival_media_research.csv", "~349 rows: IUCN, GBIF, BHL, NFSA, BOW, PMC…"),
             ("extinction_archive_schema.*", "Future map sites + reconstruction_layer + scenes"),
         ],
         small=True,
@@ -271,16 +283,22 @@ def build_en(font: Path) -> None:
     d.body_slide(
         "Deliverables & 4-week spine",
         [
-            "Live WebXR demo · scene-to-citation grid · one ethical choice + reflection.",
-            "Slides + methods PDF; 1–5 min trailer; single QR physical anchor.",
-            "W1 literature + archival URLs · W2 mammoth + epistemic UI · W3 thylacine + ethics · W4 polish + Q&A.",
-            "Primary prize target: Biodigital Excellence. Thank you — Q&A.",
+            "Live WebXR · citation grid · one ethical choice + reflection · trailer · QR anchor.",
+            "EN PDF: slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf",
+            "GitHub alias (same file): [FINAL-SMALL] Extinction Archive … Dossiers_BDC2026.pdf in slides/export/",
+            "Sprint: W1 literature/URLs → W2 mammoth + UI → W3 thylacine + ethics → W4 polish + Q&A.",
+            "Rebuild: python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py · Target: Biodigital Excellence.",
         ],
         small=True,
     )
     out = EXPORT / "Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf"
     d.output(out)
     print(f"Wrote {out}")
+    small_alias = (
+        EXPORT / "[FINAL-SMALL] Extinction Archive Umwelt Hypothesis Dossiers_BDC2026.pdf"
+    )
+    shutil.copy2(out, small_alias)
+    print(f"Wrote {small_alias}")
 
 
 def build_zh(font: Path) -> None:

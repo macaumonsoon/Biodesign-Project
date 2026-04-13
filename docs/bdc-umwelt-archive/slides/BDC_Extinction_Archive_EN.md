@@ -14,7 +14,17 @@ footer: Extinction Archive · Umwelt Hypothesis Dossiers · BDC 2026
 *A Sensory Time Capsule · AI memorial — not resurrection*
 
 Biodesign Challenge 2026 · **Convergent Life**  
-WebXR · literature-grounded biodigital experience
+WebXR + **in-repo data layer** · literature-grounded biodigital experience
+
+---
+
+# Repository & research layer (2026)
+
+- **Web-only shipped build:** browser / WebXR — no live biosensor demo; QR + optional citation sheet  
+- **51 taxa** → `animals_full.csv` · `archive.json` · `archive_import.sql` (PostgreSQL)  
+- **`archival_media_research.csv`** — ~349 rows (IUCN, GBIF, BHL, NFSA, SI, BOW, PMC…)  
+- **Planning + tiers:** `BDC_2026_Extinction_Archive_Planning_Document.md` · `docs/research/bdc_showcase_species_shortlist.md`  
+- **Deep research:** `02_research/biology/biodigital_chronobiology_research.md` · regenerate: `scripts/extinction_archive_db/`
 
 ---
 
@@ -64,7 +74,7 @@ This project makes **absence** and **evidence** discussable — with **structure
 |------|------|------|
 | **P0 WebXR** | *Mammuthus primigenius* · *Thylacinus cynocephalus* | Full interactive depth + epistemic UI |
 | **P0 dossier** | *Ectopistes migratorius* | Slides / appendix: Martha, synchrony, **acoustic absence** |
-| **P1 dossier** | *Raphus* · *Pinguinus* | 14+ curated archival URLs (BHL, SI, museums) |
+| **P1 dossier** | Dodo · Great auk (*Raphus* · *Pinguinus*) | 14+ URLs each — Context lane; not WebXR v1 |
 
 **51 taxa** in `data/extinction_archive/animals_full.csv` — systematic research, not 49 extra WebXR scenes.
 
@@ -94,7 +104,7 @@ This project makes **absence** and **evidence** discussable — with **structure
 
 - `animals_full.csv` — pharm flags, Umwelt scores, 3D refs  
 - `archive.json` · `archive_import.sql` — bundle + PostgreSQL  
-- `archival_media_research.csv` — IUCN, GBIF, BHL, NFSA, …  
+- `archival_media_research.csv` — ~349 rows: IUCN, GBIF, BHL, NFSA, …  
 - `docs/database/extinction_archive_schema.*` — future map + `reconstruction_layer`  
 
 ---
@@ -136,11 +146,11 @@ This project makes **absence** and **evidence** discussable — with **structure
 
 # Deliverables · 4 weeks
 
-- Live WebXR · citation grid · **one** ethical choice + reflection  
-- This deck (PDF): `slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf`  
-- Trailer · QR anchor · Q&A prep  
+- Live WebXR · citation grid · **one** ethical choice + reflection · trailer · QR  
+- **EN PDF:** `slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf`  
+- **GitHub alias (same file):** `slides/export/[FINAL-SMALL] Extinction Archive Umwelt Hypothesis Dossiers_BDC2026.pdf`  
 
-**Build PDF:** `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py`
+**Build:** `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py` (requires `fpdf2`, macOS Arial Unicode)
 
 ---
 

@@ -3,6 +3,9 @@
 **Generated PDF (English, archival theme, 16:9):**  
 `slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf`  
 
+**GitHub-facing copy (same bytes as EN PDF above):**  
+`slides/export/[FINAL-SMALL] Extinction Archive Umwelt Hypothesis Dossiers_BDC2026.pdf`  
+
 Rebuild: `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py` (requires `fpdf2`, macOS Arial Unicode).  
 **Marp source (outline):** `docs/bdc-umwelt-archive/slides/BDC_Extinction_Archive_EN.md`
 
