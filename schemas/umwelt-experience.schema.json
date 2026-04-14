@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umwelt-archive.local/schemas/experience.json",
+  "title": "Umwelt Archive — Interactive Experience (Scene / Capsule)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "slug", "kind"],
+  "properties": {
+    "id": { "type": "string" },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["species_capsule", "compare", "ethical_fork", "living_entrainment", "gallery_walk"]
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      }
+    },
+    "species_slugs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Primary species entry points for this experience"
+    },
+    "sensory_focus": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "vision",
+          "hearing",
+          "olfaction",
+          "touch",
+          "chronobiology",
+          "infrasound_proxy",
+          "other"
+        ]
+      }
+    },
+    "visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gaussian_splat_url": { "type": "string", "format": "uri" },
+        "environment_mesh_url": { "type": "string", "format": "uri" },
+        "thumbnail_url": { "type": "string", "format": "uri" },
+        "lighting_preset": { "type": "string" }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preset_id": { "type": "string" },
+        "web_audio_graph_ref": { "type": "string" },
+        "infrasound_display_min_hz": {
+          "type": "number",
+          "description": "Human-audible stand-in for infrasound band"
+        },
+        "spatialization": { "type": "boolean" }
+      }
+    },
+    "biosensor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "channel_id": { "type": "string" },
+        "maps_to_param": {
+          "type": "string",
+          "description": "e.g. ghost_rhythm_gain, plant_stress_filter"
+        }
+      }
+    },
+    "ethical_module_id": {
+      "type": "string",
+      "description": "Optional link to de-extinction / resource tradeoff UI state machine"
+    },
+    "inference_disclosure": {
+      "type": "string",
+      "description": "Copy shown in UI: established / moderate / speculative"
+    }
+  }
+}

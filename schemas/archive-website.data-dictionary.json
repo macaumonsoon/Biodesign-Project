@@ -1,0 +1,86 @@
+{
+  "$comment": "Human-readable map: what data the archive/website stores → which JSON Schema defines it. Use with registry.json.",
+  "project": "Extinction Archive / Umwelt Archive",
+  "entities": [
+    {
+      "name": "Species",
+      "schema_file": "umwelt-species.schema.json",
+      "website_use": "Species detail page, archive cards, filters, citations, epistemic tier copy",
+      "core_data_kinds": [
+        "Identity: id, slug, scientific_name, common_names (zh/en)",
+        "Taxonomy / grouping: archive_category, taxon_rank",
+        "Extinction: extinction_summary, extinction_event, extinction_drivers, drivers_tags",
+        "Geography: primary_range, geo",
+        "Curation scores: scores (sensory + music potential), data_availability",
+        "Media pointers: model_3d (links + labels)",
+        "Theme: pharm_human_entanglement, pharm_human_hook (short)",
+        "Umwelt design: merkwelt_cues, chronobiology_notes, inference_confidence, proxy_species",
+        "Experience bindings: experience.default_scene_id, audio_preset_id",
+        "Ethics: sovereignty_and_ethics",
+        "Provenance: list_source, source_row_id, verification_note, provenance, citations",
+        "Archival research: archival_portals.portal_urls (IUCN/GBIF/MorphoSource/PBDB/BHL/EOL/Smithsonian/sketchfab/wikipedia; optional xeno_canto, macaulay), notable_archives_curated[], research_protocol[], last_synchronized_at"
+      ]
+    },
+    {
+      "name": "Site",
+      "schema_file": "archive-site.schema.json",
+      "website_use": "Global nav, locales, SEO, featured slugs, policy links",
+      "core_data_kinds": [
+        "project slug + bilingual name/tagline",
+        "default_locale, locales[]",
+        "routes (paths for home, species index, collections, about, ethics)",
+        "navigation items (href + labels)",
+        "featured species / collection / experience slugs",
+        "seo defaults, content_policy (AI disclosure, IUCN disclaimer text)"
+      ]
+    },
+    {
+      "name": "Collection",
+      "schema_file": "archive-collection.schema.json",
+      "website_use": "Curated lists: e.g. pharm-related, high-data, Pleistocene megafauna",
+      "core_data_kinds": [
+        "id, slug, bilingual title/description",
+        "theme_tags[]",
+        "filter (categories, scores, data_availability, list_sources) OR ordered_species_slugs",
+        "optional cover_experience_slug"
+      ]
+    },
+    {
+      "name": "Experience",
+      "schema_file": "umwelt-experience.schema.json",
+      "website_use": "WebXR chapter, ethical fork capsule, living entrainment (future)",
+      "core_data_kinds": [
+        "id, slug, kind (species_capsule | ethical_fork | …)",
+        "bilingual title/summary",
+        "species_slugs[], sensory_focus[]",
+        "visual (splat_url, mesh, thumbnail)",
+        "audio (preset_id, spatialization)",
+        "biosensor (optional)",
+        "ethical_module_id, inference_disclosure"
+      ]
+    },
+    {
+      "name": "ArchiveBundle",
+      "schema_file": "archive-bundle.schema.json",
+      "website_use": "Single JSON export or CDN payload: meta + site + species[] + collections[] + experiences[]",
+      "core_data_kinds": [
+        "meta.schema_version, generated_at, disclaimer",
+        "nested: site, arrays for species, collections, experiences"
+      ]
+    }
+  ],
+  "supplementary_assets_not_in_species_schema": [
+    {
+      "file": "data/archival_media_research.json",
+      "purpose": "Per-taxon portal URLs (GBIF, IUCN search, MorphoSource, BHL, etc.) — merge into species record or load sidecar by slug"
+    },
+    {
+      "file": "data/preliminary_concept_species_database_list.csv",
+      "purpose": "Flat catalog export for spreadsheets / import pipelines"
+    },
+    {
+      "file": "schemas/csv-to-species.fieldmap.json",
+      "purpose": "CSV column → species JSON path when importing from spreadsheets"
+    }
+  ]
+}

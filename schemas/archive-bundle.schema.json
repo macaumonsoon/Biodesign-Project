@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umwelt-archive.local/schemas/archive-bundle.json",
+  "title": "Umwelt Archive — Full Data Bundle (static export or API)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "site", "species"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "generated_at"],
+      "properties": {
+        "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "species_count": { "type": "integer", "minimum": 0 },
+        "disclaimer": { "type": "string" }
+      }
+    },
+    "site": {
+      "$ref": "archive-site.schema.json"
+    },
+    "species": {
+      "type": "array",
+      "items": { "$ref": "umwelt-species.schema.json" }
+    },
+    "collections": {
+      "type": "array",
+      "items": { "$ref": "archive-collection.schema.json" }
+    },
+    "experiences": {
+      "type": "array",
+      "items": { "$ref": "umwelt-experience.schema.json" }
+    }
+  }
+}

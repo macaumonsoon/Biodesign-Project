@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hero Dossiers - Umwelt Archive</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="hero">
+  <header class="top">
+    <h1>Hero Dossiers (Depth Layer)</h1>
+    <p>Immersive narrative prototypes for Mammoth and Thylacine</p>
+    <nav class="main-nav">
+      <a href="./index.html">Home</a>
+      <a href="./archive.html">Archive Cards</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel hero">
+      <div class="hero-tabs">
+        <button class="tab active" data-hero="mammoth">Woolly Mammoth</button>
+        <button class="tab" data-hero="thylacine">Thylacine</button>
+      </div>
+      <div id="hero-content"></div>
+      <div class="tier-legend">
+        <span class="tag cited">Cited</span>
+        <span class="tag interp">Interpolated</span>
+        <span class="tag spec">Speculative</span>
+      </div>
+    </section>
+
+    <section class="panel ethics">
+      <h2>Ethics Fork</h2>
+      <label>De-extinction budget priority: <span id="budget-value">50</span></label>
+      <input type="range" id="budget" min="0" max="100" value="50" />
+      <label>Risk tolerance for ecological uncertainty: <span id="risk-value">30</span></label>
+      <input type="range" id="risk" min="0" max="100" value="30" />
+      <p id="ethics-output"></p>
+    </section>
+
+    <section class="panel reflection">
+      <h2>Reflection Log</h2>
+      <textarea id="reflection-input" rows="4" placeholder="What does irreversible loss of biological memory mean to you?"></textarea>
+      <div class="buttons">
+        <button id="save-reflection">Save reflection</button>
+        <button id="load-reflection">Load last reflection</button>
+      </div>
+      <p id="reflection-status"></p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

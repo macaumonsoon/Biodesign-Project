@@ -1,0 +1,94 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440001",
+  "slug": "mammuthus-primigenius",
+  "scientific_name": "Mammuthus primigenius",
+  "common_names": {
+    "zh": "\u731b\u739b\u8c61",
+    "en": "Woolly Mammoth",
+    "raw_bilingual": "\u731b\u739b\u8c61 / Woolly Mammoth"
+  },
+  "archive_category": "Pleistocene Megafauna",
+  "taxon_rank": "species",
+  "extinction_summary": "~4,000年前",
+  "primary_range": "欧亚、北美",
+  "list_source": "unified_priority_csv",
+  "source_row_id": 2,
+  "scores": {
+    "sensory_reconstruction_potential": 10,
+    "music_layering_potential": 9
+  },
+  "data_availability": "high",
+  "model_3d": {
+    "reference_labels": ["Sketchfab \"Woolly Mammoth\""],
+    "reference_links": []
+  },
+  "extinction_drivers": "人类狩猎+气候变化",
+  "drivers_tags": ["hunting", "climate_change"],
+  "notes": "冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层",
+  "verification_note": "Cross-check extinction date/category on IUCN Red List where applicable.",
+  "pharm_human_hook": "",
+  "pharm_human_entanglement": {
+    "theme_alignment": "other",
+    "tags": ["fill_after_research"],
+    "narrative_hook_en": "",
+    "narrative_hook_zh": "",
+    "claims_to_verify": []
+  },
+  "umwelt": {
+    "merkwelt_cues": ["hearing", "olfaction", "touch"],
+    "chronobiology_notes": "Arctic photoperiod / clock genes — verify against primary literature before exhibit copy.",
+    "inference_confidence": "moderate",
+    "proxy_species": ["Elephas maximus", "Loxodonta africana"]
+  },
+  "archival_portals": {
+    "portal_urls": {
+      "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Mammuthus%20primigenius",
+      "gbif_species_search": "https://www.gbif.org/species/search?q=Mammuthus%20primigenius",
+      "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Mammuthus%20primigenius",
+      "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Mammuthus%20primigenius",
+      "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mammuthus%20primigenius&limit=10",
+      "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Mammuthus%20primigenius",
+      "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Mammuthus%20primigenius",
+      "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Mammuthus%20primigenius",
+      "smithsonian_3d_search": "https://3d.si.edu/search?q=Mammuthus%20primigenius",
+      "sketchfab_search": "https://sketchfab.com/search?q=Mammuthus%20primigenius",
+      "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Mammuthus%20primigenius"
+    },
+    "notable_archives_curated": [
+      {
+        "type": "3d_portal",
+        "label": "Smithsonian 3D — search mammoth / proboscidean entries",
+        "url": "https://3d.si.edu/search?q=mammuthus"
+      },
+      {
+        "type": "aggregator",
+        "label": "MorphoSource — CT/mesh for comparative mammoth material",
+        "url": "https://www.morphosource.org/catalog?q=mammuthus"
+      }
+    ],
+    "research_protocol": [
+      "Confirm IUCN category and dates on species page before citing.",
+      "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+      "For film/audio, verify rights before web embed."
+    ],
+    "project_notes_existing_media": "Sketchfab \"Woolly Mammoth\"",
+    "last_synchronized_at": "2026-04-14T12:00:00Z",
+    "source_sidecar": "data/archival_media_research.json"
+  },
+  "experience": {
+    "default_scene_id": null,
+    "audio_preset_id": null,
+    "sonification_params_ref": null
+  },
+  "sovereignty_and_ethics": {
+    "indigenous_context_required": true,
+    "attribution": "If featuring Sakha / permafrost narratives, partner or cite appropriately.",
+    "consultation_status": "pending"
+  },
+  "citations": [],
+  "provenance": {
+    "source": "extinct_animals_database统一高优先级数据库（87种）.csv",
+    "source_row": 2,
+    "imported_at": "2026-04-14T00:00:00Z"
+  }
+}

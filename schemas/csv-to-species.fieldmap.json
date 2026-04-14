@@ -1,0 +1,44 @@
+{
+  "$comment": "Maps CSV headers (extinct_animals_database) → Umwelt Archive JSON paths. Use in import script.",
+  "csv_encoding": "UTF-8",
+  "csv_columns": [
+    "类别",
+    "中文/英文俗名",
+    "学名",
+    "灭绝时期/年份",
+    "主要分布",
+    "感官重建潜力评分",
+    "音乐层叠潜力评分",
+    "数据可用性",
+    "3D模型参考链接",
+    "灭绝原因分析",
+    "备注（paleo-data / 项目相关性）"
+  ],
+  "field_map": {
+    "类别": "archive_category",
+    "中文/英文俗名": "common_names.raw_bilingual",
+    "学名": "scientific_name",
+    "灭绝时期/年份": "extinction_summary",
+    "主要分布": "primary_range",
+    "感官重建潜力评分": "scores.sensory_reconstruction_potential",
+    "音乐层叠潜力评分": "scores.music_layering_potential",
+    "数据可用性": "data_availability",
+    "3D模型参考链接": "model_3d.reference_labels",
+    "灭绝原因分析": "extinction_drivers",
+    "备注（paleo-data / 项目相关性）": "notes"
+  },
+  "transforms": {
+    "data_availability": {
+      "High": "high",
+      "Medium": "medium",
+      "Low": "low"
+    },
+    "slug": {
+      "from": "scientific_name",
+      "rule": "lowercase; replace spaces with -; strip non-latin except hyphen; collapse multiple hyphens"
+    },
+    "id": {
+      "rule": "uuid v4 or deterministic hash of slug + source_row"
+    }
+  }
+}

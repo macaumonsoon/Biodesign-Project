@@ -1,0 +1,1586 @@
+{
+  "meta": {
+    "title": "Archival & open-media research pointers per species",
+    "generated_for": "Umwelt Archive / Extinction Archive",
+    "disclaimer": "URLs are search entry points and curated hints, not guaranteed specimen-level links. Verify with holding institution.",
+    "global_portals": [
+      {
+        "name": "MorphoSource",
+        "url": "https://www.morphosource.org/",
+        "use": "CT/microCT + mesh; cite DOI"
+      },
+      {
+        "name": "GBIF",
+        "url": "https://www.gbif.org/",
+        "use": "Occurrences, museum records"
+      },
+      {
+        "name": "Paleobiology Database",
+        "url": "https://paleobiodb.org/",
+        "use": "Fossil occurrences + refs"
+      },
+      {
+        "name": "Biodiversity Heritage Library",
+        "url": "https://www.biodiversitylibrary.org/",
+        "use": "Historic literature"
+      },
+      {
+        "name": "Smithsonian 3D",
+        "url": "https://3d.si.edu/",
+        "use": "CC0 models (subset)"
+      },
+      {
+        "name": "Digimorph",
+        "url": "https://digimorph.org/",
+        "use": "CT archive (subset)"
+      },
+      {
+        "name": "UMORF",
+        "url": "https://umorf.ummp.lsa.umich.edu/",
+        "use": "Fossil 3D (Michigan)"
+      }
+    ],
+    "species_count": 54
+  },
+  "species": [
+    {
+      "scientific_name": "Mammuthus primigenius",
+      "common_name_en": "Woolly Mammoth",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Woolly Mammoth\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Mammuthus%20primigenius",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Mammuthus%20primigenius",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Mammuthus%20primigenius",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Mammuthus%20primigenius",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mammuthus%20primigenius&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Mammuthus%20primigenius",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Mammuthus%20primigenius",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Mammuthus%20primigenius",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Mammuthus%20primigenius",
+        "sketchfab_search": "https://sketchfab.com/search?q=Mammuthus%20primigenius",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Mammuthus%20primigenius"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "3d_portal",
+          "label": "Smithsonian 3D — search mammoth / proboscidean entries",
+          "url": "https://3d.si.edu/search?q=mammuthus"
+        },
+        {
+          "type": "aggregator",
+          "label": "MorphoSource — CT/mesh for comparative mammoth material",
+          "url": "https://www.morphosource.org/catalog?q=mammuthus"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Mammuthus columbi",
+      "common_name_en": "Columbian Mammoth",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Columbian Mammoth\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Mammuthus%20columbi",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Mammuthus%20columbi",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Mammuthus%20columbi",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Mammuthus%20columbi",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mammuthus%20columbi&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Mammuthus%20columbi",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Mammuthus%20columbi",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Mammuthus%20columbi",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Mammuthus%20columbi",
+        "sketchfab_search": "https://sketchfab.com/search?q=Mammuthus%20columbi",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Mammuthus%20columbi"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Mammut americanum",
+      "common_name_en": "American Mastodon",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Mastodon\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Mammut%20americanum",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Mammut%20americanum",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Mammut%20americanum",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Mammut%20americanum",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Mammut%20americanum&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Mammut%20americanum",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Mammut%20americanum",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Mammut%20americanum",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Mammut%20americanum",
+        "sketchfab_search": "https://sketchfab.com/search?q=Mammut%20americanum",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Mammut%20americanum"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Smilodon fatalis",
+      "common_name_en": "Saber-toothed Cat",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Smilodon\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Smilodon%20fatalis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Smilodon%20fatalis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Smilodon%20fatalis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Smilodon%20fatalis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Smilodon%20fatalis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Smilodon%20fatalis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Smilodon%20fatalis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Smilodon%20fatalis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Smilodon%20fatalis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Smilodon%20fatalis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Smilodon%20fatalis"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "museum",
+          "label": "La Brea Tar Pits / NHMLAC (public + research programs)",
+          "url": "https://tarpits.org/"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Megatherium americanum",
+      "common_name_en": "Giant Ground Sloth",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Megatherium\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Megatherium%20americanum",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Megatherium%20americanum",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Megatherium%20americanum",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Megatherium%20americanum",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Megatherium%20americanum&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Megatherium%20americanum",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Megatherium%20americanum",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Megatherium%20americanum",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Megatherium%20americanum",
+        "sketchfab_search": "https://sketchfab.com/search?q=Megatherium%20americanum",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Megatherium%20americanum"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Coelodonta antiquitatis",
+      "common_name_en": "Woolly Rhinoceros",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Woolly Rhino\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Coelodonta%20antiquitatis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Coelodonta%20antiquitatis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Coelodonta%20antiquitatis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Coelodonta%20antiquitatis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Coelodonta%20antiquitatis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Coelodonta%20antiquitatis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Coelodonta%20antiquitatis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Coelodonta%20antiquitatis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Coelodonta%20antiquitatis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Coelodonta%20antiquitatis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Coelodonta%20antiquitatis"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "3d_portal",
+          "label": "MorphoSource / museums — woolly rhino CTs and meshes",
+          "url": "https://www.morphosource.org/catalog?q=Coelodonta"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Aenocyon dirus",
+      "common_name_en": "Dire Wolf",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Dire Wolf\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Aenocyon%20dirus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Aenocyon%20dirus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Aenocyon%20dirus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Aenocyon%20dirus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Aenocyon%20dirus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Aenocyon%20dirus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Aenocyon%20dirus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Aenocyon%20dirus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Aenocyon%20dirus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Aenocyon%20dirus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Aenocyon%20dirus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Megaloceros giganteus",
+      "common_name_en": "Irish Elk",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Natural History Museum Dublin",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Megaloceros%20giganteus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Megaloceros%20giganteus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Megaloceros%20giganteus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Megaloceros%20giganteus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Megaloceros%20giganteus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Megaloceros%20giganteus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Megaloceros%20giganteus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Megaloceros%20giganteus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Megaloceros%20giganteus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Megaloceros%20giganteus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Megaloceros%20giganteus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Ursus spelaeus",
+      "common_name_en": "Cave Bear",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Cave Bear\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Ursus%20spelaeus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Ursus%20spelaeus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Ursus%20spelaeus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Ursus%20spelaeus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Ursus%20spelaeus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Ursus%20spelaeus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Ursus%20spelaeus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Ursus%20spelaeus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Ursus%20spelaeus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Ursus%20spelaeus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Ursus%20spelaeus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Glyptodon spp.",
+      "common_name_en": "Glyptodon",
+      "category": "Pleistocene Megafauna",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Glyptodon\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Glyptodon%20spp.",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Glyptodon%20spp.",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Glyptodon%20spp.",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Glyptodon%20spp.",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Glyptodon%20spp.&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Glyptodon%20spp.",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Glyptodon%20spp.",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Glyptodon%20spp.",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Glyptodon%20spp.",
+        "sketchfab_search": "https://sketchfab.com/search?q=Glyptodon%20spp.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Glyptodon%20spp."
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Thylacinus cynocephalus",
+      "common_name_en": "Thylacine",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Thylacine\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Thylacinus%20cynocephalus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Thylacinus%20cynocephalus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Thylacinus%20cynocephalus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Thylacinus%20cynocephalus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Thylacinus%20cynocephalus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Thylacinus%20cynocephalus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Thylacinus%20cynocephalus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Thylacinus%20cynocephalus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Thylacinus%20cynocephalus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Thylacinus%20cynocephalus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Thylacinus%20cynocephalus"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "moving_image",
+          "label": "National Film and Sound Archive of Australia — search thylacine (rights vary)",
+          "url": "https://www.nfsa.gov.au/search?query=thylacine"
+        },
+        {
+          "type": "museum",
+          "label": "Tasmanian Museum and Art Gallery",
+          "url": "https://www.tmag.tas.gov.au/"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Hydrodamalis gigas",
+      "common_name_en": "Steller's Sea Cow",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Steller's Sea Cow\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Hydrodamalis%20gigas",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Hydrodamalis%20gigas",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Hydrodamalis%20gigas",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Hydrodamalis%20gigas",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Hydrodamalis%20gigas&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Hydrodamalis%20gigas",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Hydrodamalis%20gigas",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Hydrodamalis%20gigas",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Hydrodamalis%20gigas",
+        "sketchfab_search": "https://sketchfab.com/search?q=Hydrodamalis%20gigas",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Hydrodamalis%20gigas"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "historical_record",
+          "label": "BHL — Steller and expedition-era descriptions",
+          "url": "https://www.biodiversitylibrary.org/search?searchTerm=Hydrodamalis+gigas"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Melomys rubicola",
+      "common_name_en": "Bramble Cay Melomys",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Melomys\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Melomys%20rubicola",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Melomys%20rubicola",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Melomys%20rubicola",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Melomys%20rubicola",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Melomys%20rubicola&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Melomys%20rubicola",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Melomys%20rubicola",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Melomys%20rubicola",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Melomys%20rubicola",
+        "sketchfab_search": "https://sketchfab.com/search?q=Melomys%20rubicola",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Melomys%20rubicola"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Crocidura trichura",
+      "common_name_en": "Christmas Island Shrew",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Shrew\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Crocidura%20trichura",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Crocidura%20trichura",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Crocidura%20trichura",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Crocidura%20trichura",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Crocidura%20trichura&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Crocidura%20trichura",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Crocidura%20trichura",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Crocidura%20trichura",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Crocidura%20trichura",
+        "sketchfab_search": "https://sketchfab.com/search?q=Crocidura%20trichura",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Crocidura%20trichura"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Potorous platyops",
+      "common_name_en": "Broad-faced Potoroo",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Potoroo\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Potorous%20platyops",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Potorous%20platyops",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Potorous%20platyops",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Potorous%20platyops",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Potorous%20platyops&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Potorous%20platyops",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Potorous%20platyops",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Potorous%20platyops",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Potorous%20platyops",
+        "sketchfab_search": "https://sketchfab.com/search?q=Potorous%20platyops",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Potorous%20platyops"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Perameles papillon",
+      "common_name_en": "Nullarbor Barred Bandicoot",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Bandicoot\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Perameles%20papillon",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Perameles%20papillon",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Perameles%20papillon",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Perameles%20papillon",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Perameles%20papillon&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Perameles%20papillon",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Perameles%20papillon",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Perameles%20papillon",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Perameles%20papillon",
+        "sketchfab_search": "https://sketchfab.com/search?q=Perameles%20papillon",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Perameles%20papillon"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Perameles myosuros",
+      "common_name_en": "Southern Long-nosed Bandicoot",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Bandicoot\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Perameles%20myosuros",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Perameles%20myosuros",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Perameles%20myosuros",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Perameles%20myosuros",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Perameles%20myosuros&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Perameles%20myosuros",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Perameles%20myosuros",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Perameles%20myosuros",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Perameles%20myosuros",
+        "sketchfab_search": "https://sketchfab.com/search?q=Perameles%20myosuros",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Perameles%20myosuros"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Perameles notina",
+      "common_name_en": "Southeastern Striped Bandicoot",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Bandicoot\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Perameles%20notina",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Perameles%20notina",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Perameles%20notina",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Perameles%20notina",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Perameles%20notina&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Perameles%20notina",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Perameles%20notina",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Perameles%20notina",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Perameles%20notina",
+        "sketchfab_search": "https://sketchfab.com/search?q=Perameles%20notina",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Perameles%20notina"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Chaeropus ecaudatus",
+      "common_name_en": "Southern Pig-footed Bandicoot",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Bandicoot\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Chaeropus%20ecaudatus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Chaeropus%20ecaudatus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Chaeropus%20ecaudatus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Chaeropus%20ecaudatus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Chaeropus%20ecaudatus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Chaeropus%20ecaudatus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Chaeropus%20ecaudatus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Chaeropus%20ecaudatus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Chaeropus%20ecaudatus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Chaeropus%20ecaudatus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Chaeropus%20ecaudatus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Chaeropus yirratji",
+      "common_name_en": "Northern Pig-footed Bandicoot",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Bandicoot\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Chaeropus%20yirratji",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Chaeropus%20yirratji",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Chaeropus%20yirratji",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Chaeropus%20yirratji",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Chaeropus%20yirratji&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Chaeropus%20yirratji",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Chaeropus%20yirratji",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Chaeropus%20yirratji",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Chaeropus%20yirratji",
+        "sketchfab_search": "https://sketchfab.com/search?q=Chaeropus%20yirratji",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Chaeropus%20yirratji"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Zalophus japonicus",
+      "common_name_en": "Japanese Sea Lion",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Sea Lion\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Zalophus%20japonicus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Zalophus%20japonicus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Zalophus%20japonicus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Zalophus%20japonicus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Zalophus%20japonicus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Zalophus%20japonicus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Zalophus%20japonicus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Zalophus%20japonicus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Zalophus%20japonicus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Zalophus%20japonicus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Zalophus%20japonicus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Diceros bicornis longipes",
+      "common_name_en": "Western Black Rhinoceros",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Black Rhino\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Diceros%20bicornis%20longipes",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Diceros%20bicornis%20longipes",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Diceros%20bicornis%20longipes",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Diceros%20bicornis%20longipes",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Diceros%20bicornis%20longipes&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Diceros%20bicornis%20longipes",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Diceros%20bicornis%20longipes",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Diceros%20bicornis%20longipes",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Diceros%20bicornis%20longipes",
+        "sketchfab_search": "https://sketchfab.com/search?q=Diceros%20bicornis%20longipes",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Diceros%20bicornis%20longipes"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Dusicyon australis",
+      "common_name_en": "Falkland Islands Wolf",
+      "category": "Mammals",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Falkland Wolf\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Dusicyon%20australis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Dusicyon%20australis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Dusicyon%20australis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Dusicyon%20australis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Dusicyon%20australis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Dusicyon%20australis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Dusicyon%20australis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Dusicyon%20australis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Dusicyon%20australis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Dusicyon%20australis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Dusicyon%20australis"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Raphus cucullatus",
+      "common_name_en": "Dodo",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Dodo\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Raphus%20cucullatus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Raphus%20cucullatus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Raphus%20cucullatus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Raphus%20cucullatus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Raphus%20cucullatus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Raphus%20cucullatus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Raphus%20cucullatus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Raphus%20cucullatus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Raphus%20cucullatus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Raphus%20cucullatus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Raphus%20cucullatus",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Raphus%20cucullatus",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Raphus%20cucullatus"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "specimen",
+          "label": "Subfossil bone — query GBIF + NHM London collections portal",
+          "url": "https://www.gbif.org/species/search?q=Raphus+cucullatus"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Ectopistes migratorius",
+      "common_name_en": "Passenger Pigeon",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Passenger Pigeon\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Ectopistes%20migratorius",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Ectopistes%20migratorius",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Ectopistes%20migratorius",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Ectopistes%20migratorius",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Ectopistes%20migratorius&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Ectopistes%20migratorius",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Ectopistes%20migratorius",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Ectopistes%20migratorius",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Ectopistes%20migratorius",
+        "sketchfab_search": "https://sketchfab.com/search?q=Ectopistes%20migratorius",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Ectopistes%20migratorius",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Ectopistes%20migratorius",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Ectopistes%20migratorius"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "audio",
+          "label": "Xeno-canto — check for recordings / related columbids",
+          "url": "https://xeno-canto.org/explore?query=Ectopistes+migratorius"
+        },
+        {
+          "type": "specimen",
+          "label": "Study skins via GBIF-linked institutions",
+          "url": "https://www.gbif.org/species/search?q=Ectopistes+migratorius"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Numenius tenuirostris",
+      "common_name_en": "Slender-billed Curlew",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Curlew\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Numenius%20tenuirostris",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Numenius%20tenuirostris",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Numenius%20tenuirostris",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Numenius%20tenuirostris",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Numenius%20tenuirostris&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Numenius%20tenuirostris",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Numenius%20tenuirostris",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Numenius%20tenuirostris",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Numenius%20tenuirostris",
+        "sketchfab_search": "https://sketchfab.com/search?q=Numenius%20tenuirostris",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Numenius%20tenuirostris",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Numenius%20tenuirostris",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Numenius%20tenuirostris"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Psittirostra psittacea",
+      "common_name_en": "Ou",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Honeycreeper\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Psittirostra%20psittacea",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Psittirostra%20psittacea",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Psittirostra%20psittacea",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Psittirostra%20psittacea",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Psittirostra%20psittacea&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Psittirostra%20psittacea",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Psittirostra%20psittacea",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Psittirostra%20psittacea",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Psittirostra%20psittacea",
+        "sketchfab_search": "https://sketchfab.com/search?q=Psittirostra%20psittacea",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Psittirostra%20psittacea",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Psittirostra%20psittacea",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Psittirostra%20psittacea"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Pinguinus impennis",
+      "common_name_en": "Great Auk",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Great Auk\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Pinguinus%20impennis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Pinguinus%20impennis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Pinguinus%20impennis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Pinguinus%20impennis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Pinguinus%20impennis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Pinguinus%20impennis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Pinguinus%20impennis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Pinguinus%20impennis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Pinguinus%20impennis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Pinguinus%20impennis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Pinguinus%20impennis",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Pinguinus%20impennis",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Pinguinus%20impennis"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "specimen",
+          "label": "Skins & eggs — European natural history collections (GBIF)",
+          "url": "https://www.gbif.org/species/search?q=Pinguinus+impennis"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Camptorhynchus labradorius",
+      "common_name_en": "Labrador Duck",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Labrador Duck\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Camptorhynchus%20labradorius",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Camptorhynchus%20labradorius",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Camptorhynchus%20labradorius",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Camptorhynchus%20labradorius",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Camptorhynchus%20labradorius&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Camptorhynchus%20labradorius",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Camptorhynchus%20labradorius",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Camptorhynchus%20labradorius",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Camptorhynchus%20labradorius",
+        "sketchfab_search": "https://sketchfab.com/search?q=Camptorhynchus%20labradorius",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Camptorhynchus%20labradorius",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Camptorhynchus%20labradorius",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Camptorhynchus%20labradorius"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Tachybaptus rufolavatus",
+      "common_name_en": "Alaotra Grebe",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Grebe\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Tachybaptus%20rufolavatus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Tachybaptus%20rufolavatus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Tachybaptus%20rufolavatus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Tachybaptus%20rufolavatus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Tachybaptus%20rufolavatus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Tachybaptus%20rufolavatus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Tachybaptus%20rufolavatus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Tachybaptus%20rufolavatus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Tachybaptus%20rufolavatus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Tachybaptus%20rufolavatus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Tachybaptus%20rufolavatus",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Tachybaptus%20rufolavatus",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Tachybaptus%20rufolavatus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Corvus hawaiiensis",
+      "common_name_en": "Hawaiian Crow",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "San Diego Zoo recordings",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Corvus%20hawaiiensis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Corvus%20hawaiiensis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Corvus%20hawaiiensis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Corvus%20hawaiiensis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Corvus%20hawaiiensis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Corvus%20hawaiiensis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Corvus%20hawaiiensis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Corvus%20hawaiiensis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Corvus%20hawaiiensis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Corvus%20hawaiiensis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Corvus%20hawaiiensis",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Corvus%20hawaiiensis",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Corvus%20hawaiiensis"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "audio",
+          "label": "Macaulay Library / institutional recordings (verify license)",
+          "url": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Corvus+hawaiiensis"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Conuropsis carolinensis",
+      "common_name_en": "Carolina Parakeet",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Parakeet\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Conuropsis%20carolinensis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Conuropsis%20carolinensis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Conuropsis%20carolinensis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Conuropsis%20carolinensis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Conuropsis%20carolinensis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Conuropsis%20carolinensis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Conuropsis%20carolinensis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Conuropsis%20carolinensis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Conuropsis%20carolinensis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Conuropsis%20carolinensis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Conuropsis%20carolinensis",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Conuropsis%20carolinensis",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Conuropsis%20carolinensis"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Campephilus imperialis",
+      "common_name_en": "Imperial Woodpecker",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Woodpecker\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Campephilus%20imperialis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Campephilus%20imperialis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Campephilus%20imperialis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Campephilus%20imperialis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Campephilus%20imperialis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Campephilus%20imperialis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Campephilus%20imperialis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Campephilus%20imperialis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Campephilus%20imperialis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Campephilus%20imperialis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Campephilus%20imperialis",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Campephilus%20imperialis",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Campephilus%20imperialis"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Vermivora bachmanii",
+      "common_name_en": "Bachman’s Warbler",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Warbler\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Vermivora%20bachmanii",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Vermivora%20bachmanii",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Vermivora%20bachmanii",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Vermivora%20bachmanii",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Vermivora%20bachmanii&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Vermivora%20bachmanii",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Vermivora%20bachmanii",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Vermivora%20bachmanii",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Vermivora%20bachmanii",
+        "sketchfab_search": "https://sketchfab.com/search?q=Vermivora%20bachmanii",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Vermivora%20bachmanii",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Vermivora%20bachmanii",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Vermivora%20bachmanii"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Psephotellus pulcherrimus",
+      "common_name_en": "Paradise Parrot",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Australian Museum",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Psephotellus%20pulcherrimus",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Psephotellus%20pulcherrimus",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Psephotellus%20pulcherrimus",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Psephotellus%20pulcherrimus",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Psephotellus%20pulcherrimus&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Psephotellus%20pulcherrimus",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Psephotellus%20pulcherrimus",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Psephotellus%20pulcherrimus",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Psephotellus%20pulcherrimus",
+        "sketchfab_search": "https://sketchfab.com/search?q=Psephotellus%20pulcherrimus",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Psephotellus%20pulcherrimus",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Psephotellus%20pulcherrimus",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Psephotellus%20pulcherrimus"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Ninox albifacies",
+      "common_name_en": "Laughing Owl",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Laughing Owl\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Ninox%20albifacies",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Ninox%20albifacies",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Ninox%20albifacies",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Ninox%20albifacies",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Ninox%20albifacies&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Ninox%20albifacies",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Ninox%20albifacies",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Ninox%20albifacies",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Ninox%20albifacies",
+        "sketchfab_search": "https://sketchfab.com/search?q=Ninox%20albifacies",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Ninox%20albifacies",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Ninox%20albifacies",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Ninox%20albifacies"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "audio",
+          "label": "Historic laughing owl accounts + any archived recordings (verify)",
+          "url": "https://xeno-canto.org/explore?query=Ninox+albifacies"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Tympanuchus cupido cupido",
+      "common_name_en": "Heath Hen",
+      "category": "Birds",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Smithsonian models",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Tympanuchus%20cupido%20cupido",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Tympanuchus%20cupido%20cupido",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Tympanuchus%20cupido%20cupido",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Tympanuchus%20cupido%20cupido",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Tympanuchus%20cupido%20cupido&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Tympanuchus%20cupido%20cupido",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Tympanuchus%20cupido%20cupido",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Tympanuchus%20cupido%20cupido",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Tympanuchus%20cupido%20cupido",
+        "sketchfab_search": "https://sketchfab.com/search?q=Tympanuchus%20cupido%20cupido",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Tympanuchus%20cupido%20cupido",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Tympanuchus%20cupido%20cupido",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Tympanuchus%20cupido%20cupido"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Chelonoidis abingdonii",
+      "common_name_en": "Pinta Giant Tortoise",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Giant Tortoise\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Chelonoidis%20abingdonii",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Chelonoidis%20abingdonii",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Chelonoidis%20abingdonii",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Chelonoidis%20abingdonii",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Chelonoidis%20abingdonii&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Chelonoidis%20abingdonii",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Chelonoidis%20abingdonii",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Chelonoidis%20abingdonii",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Chelonoidis%20abingdonii",
+        "sketchfab_search": "https://sketchfab.com/search?q=Chelonoidis%20abingdonii",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Chelonoidis%20abingdonii"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "museum",
+          "label": "Galápagos institutions + global NH collections (Lonesome George)",
+          "url": "https://www.gbif.org/species/search?q=Chelonoidis+abingdonii"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Cylindraspis indica",
+      "common_name_en": "Réunion Giant Tortoise",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Mauritius museum",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Cylindraspis%20indica",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Cylindraspis%20indica",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Cylindraspis%20indica",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Cylindraspis%20indica",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Cylindraspis%20indica&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Cylindraspis%20indica",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Cylindraspis%20indica",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Cylindraspis%20indica",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Cylindraspis%20indica",
+        "sketchfab_search": "https://sketchfab.com/search?q=Cylindraspis%20indica",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Cylindraspis%20indica"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Cylindraspis triserrata",
+      "common_name_en": "Domed Mauritius Giant Tortoise",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Tortoise\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Cylindraspis%20triserrata",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Cylindraspis%20triserrata",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Cylindraspis%20triserrata",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Cylindraspis%20triserrata",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Cylindraspis%20triserrata&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Cylindraspis%20triserrata",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Cylindraspis%20triserrata",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Cylindraspis%20triserrata",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Cylindraspis%20triserrata",
+        "sketchfab_search": "https://sketchfab.com/search?q=Cylindraspis%20triserrata",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Cylindraspis%20triserrata"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Cylindraspis peltastes",
+      "common_name_en": "Rodrigues Giant Tortoise",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Rodrigues models",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Cylindraspis%20peltastes",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Cylindraspis%20peltastes",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Cylindraspis%20peltastes",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Cylindraspis%20peltastes",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Cylindraspis%20peltastes&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Cylindraspis%20peltastes",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Cylindraspis%20peltastes",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Cylindraspis%20peltastes",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Cylindraspis%20peltastes",
+        "sketchfab_search": "https://sketchfab.com/search?q=Cylindraspis%20peltastes",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Cylindraspis%20peltastes"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Bolyeria multocarinata",
+      "common_name_en": "Round Island Burrowing Boa",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Boa\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Bolyeria%20multocarinata",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Bolyeria%20multocarinata",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Bolyeria%20multocarinata",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Bolyeria%20multocarinata",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Bolyeria%20multocarinata&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Bolyeria%20multocarinata",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Bolyeria%20multocarinata",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Bolyeria%20multocarinata",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Bolyeria%20multocarinata",
+        "sketchfab_search": "https://sketchfab.com/search?q=Bolyeria%20multocarinata",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Bolyeria%20multocarinata"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Hoplodactylus delcourti",
+      "common_name_en": "Delcourt's Giant Gecko",
+      "category": "Reptiles",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Museum casts",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Hoplodactylus%20delcourti",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Hoplodactylus%20delcourti",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Hoplodactylus%20delcourti",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Hoplodactylus%20delcourti",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Hoplodactylus%20delcourti&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Hoplodactylus%20delcourti",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Hoplodactylus%20delcourti",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Hoplodactylus%20delcourti",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Hoplodactylus%20delcourti",
+        "sketchfab_search": "https://sketchfab.com/search?q=Hoplodactylus%20delcourti",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Hoplodactylus%20delcourti"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Incilius periglenes",
+      "common_name_en": "Golden Toad",
+      "category": "Amphibians",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Golden Toad\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Incilius%20periglenes",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Incilius%20periglenes",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Incilius%20periglenes",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Incilius%20periglenes",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Incilius%20periglenes&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Incilius%20periglenes",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Incilius%20periglenes",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Incilius%20periglenes",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Incilius%20periglenes",
+        "sketchfab_search": "https://sketchfab.com/search?q=Incilius%20periglenes",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Incilius%20periglenes"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "specimen_literature",
+          "label": "Monteverde herpetology literature + museum vouchers (GBIF)",
+          "url": "https://www.gbif.org/species/search?q=Incilius+periglenes"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Cynops wolterstorffi",
+      "common_name_en": "Yunnan Lake Newt",
+      "category": "Amphibians",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Chinese museum",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Cynops%20wolterstorffi",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Cynops%20wolterstorffi",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Cynops%20wolterstorffi",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Cynops%20wolterstorffi",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Cynops%20wolterstorffi&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Cynops%20wolterstorffi",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Cynops%20wolterstorffi",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Cynops%20wolterstorffi",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Cynops%20wolterstorffi",
+        "sketchfab_search": "https://sketchfab.com/search?q=Cynops%20wolterstorffi",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Cynops%20wolterstorffi"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Litoria nyakalensis",
+      "common_name_en": "Mountain Mist Frog",
+      "category": "Amphibians",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Mist Frog\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Litoria%20nyakalensis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Litoria%20nyakalensis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Litoria%20nyakalensis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Litoria%20nyakalensis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Litoria%20nyakalensis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Litoria%20nyakalensis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Litoria%20nyakalensis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Litoria%20nyakalensis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Litoria%20nyakalensis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Litoria%20nyakalensis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Litoria%20nyakalensis"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Psephurus gladius",
+      "common_name_en": "Chinese Paddlefish",
+      "category": "Fishes",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Paddlefish\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Psephurus%20gladius",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Psephurus%20gladius",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Psephurus%20gladius",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Psephurus%20gladius",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Psephurus%20gladius&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Psephurus%20gladius",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Psephurus%20gladius",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Psephurus%20gladius",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Psephurus%20gladius",
+        "sketchfab_search": "https://sketchfab.com/search?q=Psephurus%20gladius",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Psephurus%20gladius"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "specimen",
+          "label": "Ichthyology collections — GBIF + institutional catalogs",
+          "url": "https://www.gbif.org/species/search?q=Psephurus+gladius"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Sympterichthys unipennis",
+      "common_name_en": "Smooth Handfish",
+      "category": "Fishes",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Australian museum scans",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Sympterichthys%20unipennis",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Sympterichthys%20unipennis",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Sympterichthys%20unipennis",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Sympterichthys%20unipennis",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Sympterichthys%20unipennis&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Sympterichthys%20unipennis",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Sympterichthys%20unipennis",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Sympterichthys%20unipennis",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Sympterichthys%20unipennis",
+        "sketchfab_search": "https://sketchfab.com/search?q=Sympterichthys%20unipennis",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Sympterichthys%20unipennis"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Glaucopsyche xerces",
+      "common_name_en": "Xerces Blue Butterfly",
+      "category": "Invertebrates",
+      "list_source": "unified_priority_csv",
+      "project_notes_existing_media": "Sketchfab \"Xerces Blue\"",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Glaucopsyche%20xerces",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Glaucopsyche%20xerces",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Glaucopsyche%20xerces",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Glaucopsyche%20xerces",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Glaucopsyche%20xerces&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Glaucopsyche%20xerces",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Glaucopsyche%20xerces",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Glaucopsyche%20xerces",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Glaucopsyche%20xerces",
+        "sketchfab_search": "https://sketchfab.com/search?q=Glaucopsyche%20xerces",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Glaucopsyche%20xerces"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "type_specimen",
+          "label": "Lepidoptera collections — California Academy / AMNH (search catalogs)",
+          "url": "https://www.gbif.org/species/search?q=Glaucopsyche+xerces"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Conus lugubris",
+      "common_name_en": "Lugubrious cone snail",
+      "category": "Invertebrates",
+      "list_source": "research_supplement",
+      "project_notes_existing_media": "Marine invertebrate; different 3D/audio workflow than vertebrates.",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Conus%20lugubris",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Conus%20lugubris",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Conus%20lugubris",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Conus%20lugubris",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Conus%20lugubris&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Conus%20lugubris",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Conus%20lugubris",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Conus%20lugubris",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Conus%20lugubris",
+        "sketchfab_search": "https://sketchfab.com/search?q=Conus%20lugubris",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Conus%20lugubris"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Pieris wollastoni",
+      "common_name_en": "Madeira large white",
+      "category": "Insects",
+      "list_source": "research_supplement",
+      "project_notes_existing_media": "Low museum-audio potential; strong for Context (island endemism).",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Pieris%20wollastoni",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Pieris%20wollastoni",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Pieris%20wollastoni",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Pieris%20wollastoni",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Pieris%20wollastoni&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Pieris%20wollastoni",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Pieris%20wollastoni",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Pieris%20wollastoni",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Pieris%20wollastoni",
+        "sketchfab_search": "https://sketchfab.com/search?q=Pieris%20wollastoni",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Pieris%20wollastoni"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Lipotes vexillifer",
+      "common_name_en": "Baiji",
+      "category": "Mammals",
+      "list_source": "research_supplement",
+      "project_notes_existing_media": "Often cited as a cetacean possibly extinct due to human activity; wording must match IUCN category.",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Lipotes%20vexillifer",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Lipotes%20vexillifer",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Lipotes%20vexillifer",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Lipotes%20vexillifer",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Lipotes%20vexillifer&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Lipotes%20vexillifer",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Lipotes%20vexillifer",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Lipotes%20vexillifer",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Lipotes%20vexillifer",
+        "sketchfab_search": "https://sketchfab.com/search?q=Lipotes%20vexillifer",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Lipotes%20vexillifer"
+      },
+      "notable_archives_curated": [
+        {
+          "type": "literature_media",
+          "label": "IUCN account + references for survey imagery (open species page from search)",
+          "url": "https://www.iucnredlist.org/search?query=Lipotes%20vexillifer"
+        }
+      ],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Oophaga speciosa",
+      "common_name_en": "Splendid poison frog",
+      "category": "Amphibians",
+      "list_source": "research_supplement",
+      "project_notes_existing_media": "Strong pharm/toxin framing; pairs with golden toad narrative.",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Oophaga%20speciosa",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Oophaga%20speciosa",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Oophaga%20speciosa",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Oophaga%20speciosa",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Oophaga%20speciosa&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Oophaga%20speciosa",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Oophaga%20speciosa",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Oophaga%20speciosa",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Oophaga%20speciosa",
+        "sketchfab_search": "https://sketchfab.com/search?q=Oophaga%20speciosa",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Oophaga%20speciosa"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    },
+    {
+      "scientific_name": "Melamprosops phaeosoma",
+      "common_name_en": "Hawaiian honeycreeper (Poʻouli)",
+      "category": "Birds",
+      "list_source": "research_supplement",
+      "project_notes_existing_media": "Complements other Hawaiian forest birds in core list.",
+      "portal_urls": {
+        "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Melamprosops%20phaeosoma",
+        "gbif_species_search": "https://www.gbif.org/species/search?q=Melamprosops%20phaeosoma",
+        "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Melamprosops%20phaeosoma",
+        "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Melamprosops%20phaeosoma",
+        "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Melamprosops%20phaeosoma&limit=10",
+        "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Melamprosops%20phaeosoma",
+        "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Melamprosops%20phaeosoma",
+        "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Melamprosops%20phaeosoma",
+        "smithsonian_3d_search": "https://3d.si.edu/search?q=Melamprosops%20phaeosoma",
+        "sketchfab_search": "https://sketchfab.com/search?q=Melamprosops%20phaeosoma",
+        "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Melamprosops%20phaeosoma",
+        "xeno_canto_search": "https://xeno-canto.org/explore?query=Melamprosops%20phaeosoma",
+        "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Melamprosops%20phaeosoma"
+      },
+      "notable_archives_curated": [],
+      "research_protocol": [
+        "Confirm IUCN category and dates on species page before citing.",
+        "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+        "For film/audio, verify rights before web embed."
+      ]
+    }
+  ]
+}

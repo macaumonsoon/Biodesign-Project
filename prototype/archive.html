@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Archive Cards - Umwelt Archive</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="archive">
+  <header class="top">
+    <h1>Archive Browse (80+ Species Card Layer)</h1>
+    <p>Current data source is local JSON; this page is structured for MVP 80+ scaling.</p>
+    <nav class="main-nav">
+      <a href="./index.html">Home</a>
+      <a href="./hero.html">Hero Dossiers</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel archive full-span">
+      <div class="filters">
+        <input id="search" placeholder="Search by common/scientific name..." />
+        <select id="category-filter">
+          <option value="">All Categories</option>
+        </select>
+        <select id="availability-filter">
+          <option value="">All Availability</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <p id="archive-stats"></p>
+      <div id="archive-list" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

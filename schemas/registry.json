@@ -1,0 +1,35 @@
+{
+  "description": "Umwelt Archive JSON Schema registry for validators and codegen",
+  "schemas": [
+    {
+      "$id": "https://umwelt-archive.local/schemas/species.json",
+      "file": "umwelt-species.schema.json",
+      "title": "Species"
+    },
+    {
+      "$id": "https://umwelt-archive.local/schemas/site.json",
+      "file": "archive-site.schema.json",
+      "title": "Site manifest"
+    },
+    {
+      "$id": "https://umwelt-archive.local/schemas/collection.json",
+      "file": "archive-collection.schema.json",
+      "title": "Curated collection"
+    },
+    {
+      "$id": "https://umwelt-archive.local/schemas/experience.json",
+      "file": "umwelt-experience.schema.json",
+      "title": "Interactive experience / scene"
+    },
+    {
+      "$id": "https://umwelt-archive.local/schemas/archive-bundle.json",
+      "file": "archive-bundle.schema.json",
+      "title": "Full bundle"
+    },
+    {
+      "$id": "https://umwelt-archive.local/schemas/data-dictionary.json",
+      "file": "archive-website.data-dictionary.json",
+      "title": "Field glossary: database → website (non-validator doc)"
+    }
+  ]
+}

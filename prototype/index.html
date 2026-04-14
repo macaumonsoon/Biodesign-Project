@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Umwelt Globe Prototype</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="home">
+  <main class="immersive-home">
+    <canvas id="globe-canvas" aria-label="Extinction globe"></canvas>
+
+    <section class="overlay top-left">
+      <h1>Extinction Archive</h1>
+      <p class="subtitle">AI Memorial for Lost Species · Umwelt Archive</p>
+      <p class="subtitle">Sensory Time Capsule - Prototype</p>
+      <p class="tiny">Drag to rotate · Scroll to zoom · Click a glowing point to open species</p>
+    </section>
+
+    <section class="overlay top-center stat-chip">
+      <div id="species-count-chip">Loading species...</div>
+      <div class="tiny">Mapped by extinction-region dataset</div>
+    </section>
+
+    <section class="overlay bottom-center controls-row">
+      <button id="toggle-autorotate">Pause Rotate</button>
+      <a class="ghost-btn" href="./archive.html">Open Card Archive</a>
+      <a class="ghost-btn" href="./hero.html">Open Hero Dossiers</a>
+    </section>
+
+    <section id="point-popup" class="overlay popup hidden" aria-live="polite"></section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

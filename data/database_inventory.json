@@ -1,0 +1,13 @@
+{
+  "project": "Umwelt Archive / Extinction Archive — Preliminary Concept",
+  "relation_to_concept": "Species tied to pharm-related + human-entanglement curation and/or Umwelt memorial framing; heroes (mammoth, thylacine) for depth, remainder for archive browse.",
+  "source_file": "data/research_extinct_animals_list.json",
+  "exported_catalog": "data/preliminary_concept_species_database_list.csv",
+  "counts": {
+    "total_taxa": 54,
+    "from_unified_priority_csv": 49,
+    "research_supplement": 5
+  },
+  "note_on_target_scale": "Roadmap calls for 80+ species in MVP UI; merge additional rows into source CSV then regenerate this list.",
+  "json_schema_bundle": "schemas/registry.json"
+}
