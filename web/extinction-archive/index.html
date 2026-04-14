@@ -35,22 +35,50 @@
       </p>
       <button type="button" class="btn primary" id="btn-enter">Enter archive</button>
       <p class="run-hint">
-        <strong>Run locally:</strong> from the repository root, <code>python3 -m http.server 8080</code>
-        then open <code>http://localhost:8080/web/extinction-archive/index.html</code>
-        (required so <code>archive.json</code> loads; <code>file://</code> will fail).
-        <strong>GitHub Pages:</strong> set Pages to publish the whole repo (root) so
-        <code>/data/extinction_archive/archive.json</code> resolves, or set
-        <code>&lt;meta name="ea-asset-base" content="https://…your-site…/"&gt;</code>.
+        <strong>Cursor / local preview:</strong> see <code>web/extinction-archive/CURSOR_PREVIEW.md</code>.
+        <strong>Quick:</strong> repo root → <code>python3 -m http.server 8080</code> →
+        <a href="http://localhost:8080/web/extinction-archive/index.html" target="_blank" rel="noopener">localhost:8080/web/extinction-archive/index.html</a>
+        <strong>GitHub Pages:</strong> publish repo root or set <code>ea-asset-base</code> meta.
       </p>
     </section>
 
     <section id="view-hub" class="view">
       <h2 style="margin-top:0;font-size:1.1rem">Species hub</h2>
-      <p class="lead">P0 taxa from project plan. Dataset: <span id="archive-count">—</span> taxa in <code>archive.json</code>.</p>
-      <div id="hub-grid" class="card-grid"></div>
+      <p class="lead">Dataset: <strong id="archive-count">—</strong> taxa in <code>data/extinction_archive/archive.json</code> (same row set as DB export). Filter below; P0 heroes open WebXR-depth scenes.</p>
+
+      <h3 class="hub-section-title">P0 · quick entry</h3>
+      <div id="hub-featured" class="card-grid"></div>
+
+      <h3 class="hub-section-title">All taxa</h3>
+      <div class="hub-toolbar">
+        <label class="hub-field">Search
+          <input type="search" id="hub-search" placeholder="Common / scientific / category" autocomplete="off" />
+        </label>
+        <label class="hub-field">Category
+          <select id="hub-category"><option value="">All</option></select>
+        </label>
+        <label class="hub-field">Sort
+          <select id="hub-sort">
+            <option value="id">Archive id</option>
+            <option value="name">Common name A–Z</option>
+            <option value="year">Extinction year</option>
+          </select>
+        </label>
+      </div>
+      <p id="hub-filter-meta" class="lead" style="font-size:0.8rem;margin:0.35rem 0 0.5rem">—</p>
+      <div id="hub-catalog" class="species-catalog" role="list"></div>
+
       <p style="margin-top:1.5rem">
         <button type="button" class="btn primary" id="btn-ethics">Ethics fork →</button>
       </p>
+    </section>
+
+    <section id="view-dossier" class="view">
+      <p><button type="button" class="btn" id="btn-back-dossier">← Species hub</button></p>
+      <h2 id="dossier-title" style="margin:0.25rem 0 0">—</h2>
+      <p id="dossier-sci" class="lead" style="margin:0;font-style:italic">—</p>
+      <p id="dossier-tier" class="lead" style="font-size:0.8rem">—</p>
+      <div id="dossier-body" class="dossier-body"></div>
     </section>
 
     <section id="view-species" class="view">
@@ -84,10 +112,12 @@
           <input type="range" id="mammoth-hour" min="0" max="100" value="55" />
         </div>
         <label class="sonify-toggle"><input type="checkbox" id="mammoth-sonify" checked /> Environment sonification (headphones)</label>
+        <p class="model-attribution" id="mammoth-gltf-cite">—</p>
         <div class="xr-wrap">
           <a-scene embedded id="mammoth-scene" fog="type: exponential; color: #4a6a82; density: 0.04" vr-mode-ui="enabled: true">
-            <a-assets timeout="8000">
+            <a-assets timeout="20000">
               <img id="ea-tex-mammoth-ground" alt="" crossorigin="anonymous" />
+              <a-asset-item id="ea-gltf-mammoth-scene" src="" crossorigin="anonymous"></a-asset-item>
             </a-assets>
             <a-sky id="mammoth-sky" color="#4a6a82"></a-sky>
             <a-plane
@@ -97,6 +127,13 @@
               height="24"
               material="src: #ea-tex-mammoth-ground; repeat: 14 14; roughness: 1; metalness: 0"
             ></a-plane>
+            <a-gltf-model
+              id="mammoth-gltf"
+              src="#ea-gltf-mammoth-scene"
+              position="0.35 0 -2.4"
+              rotation="0 35 0"
+              scale="0.017 0.017 0.017"
+            ></a-gltf-model>
             <a-text id="mammoth-lbl-bio" value="" position="-3.2 2.2 -2.5" width="9" align="left" color="#c4e8d4"></a-text>
             <a-text id="mammoth-lbl-land" value="" position="-3.2 1.55 -2.5" width="9" align="left" color="#a8d4c0"></a-text>
             <a-text id="mammoth-lbl-env" value="" position="-3.2 0.9 -2.5" width="9" align="left" color="#8ec9a8"></a-text>
@@ -112,10 +149,12 @@
           <input type="range" id="thylacine-twilight" min="0" max="100" value="40" />
         </div>
         <label class="sonify-toggle"><input type="checkbox" id="thyla-sonify" checked /> Environment sonification</label>
+        <p class="model-attribution" id="thyla-gltf-cite">—</p>
         <div class="xr-wrap">
           <a-scene embedded vr-mode-ui="enabled: true">
-            <a-assets timeout="8000">
+            <a-assets timeout="20000">
               <img id="ea-tex-thyla-ground" alt="" crossorigin="anonymous" />
+              <a-asset-item id="ea-gltf-thyla-scene" src="" crossorigin="anonymous"></a-asset-item>
             </a-assets>
             <a-sky id="thylacine-sky" color="#3a2848"></a-sky>
             <a-plane
@@ -125,6 +164,13 @@
               height="24"
               material="src: #ea-tex-thyla-ground; repeat: 14 14; roughness: 1; metalness: 0"
             ></a-plane>
+            <a-gltf-model
+              id="thyla-gltf"
+              src="#ea-gltf-thyla-scene"
+              position="-0.2 0 -2.2"
+              rotation="0 -25 0"
+              scale="0.015 0.015 0.015"
+            ></a-gltf-model>
             <a-text id="thyla-lbl-bio" value="" position="-3.2 2.2 -2.5" width="9" align="left" color="#ccb8e0"></a-text>
             <a-text id="thyla-lbl-pov" value="" position="-3.2 1.55 -2.5" width="9" align="left" color="#b0a0c8"></a-text>
             <a-text id="thyla-lbl-ui" value="" position="-3.2 0.9 -2.5" width="9" align="left" color="#9a88b0"></a-text>
@@ -132,16 +178,37 @@
         </div>
       </div>
 
-      <!-- Pigeon polyphony -->
+      <!-- Pigeon polyphony + optional CC0 mesh garnish -->
       <div class="xr-species" data-species="pigeon" style="display:none">
         <p class="lead" style="font-size:0.8rem">Polyphony metaphor (Web Audio) — lower slider models loss of synchrony.</p>
         <div class="slider-block">
           <label for="pigeon-n" id="pigeon-n-label">—</label>
           <input type="range" id="pigeon-n" min="0" max="100" value="70" />
         </div>
-        <div class="xr-wrap" style="min-height:120px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.85rem">
-          No 3D scene — listen with headphones; silence at 0% is intentional (acoustic absence).
+        <p class="model-attribution" id="pigeon-gltf-cite">—</p>
+        <div class="xr-wrap">
+          <a-scene embedded id="pigeon-scene-mini" vr-mode-ui="enabled: true">
+            <a-assets timeout="20000">
+              <a-asset-item id="ea-gltf-pigeon-scene" src="" crossorigin="anonymous"></a-asset-item>
+            </a-assets>
+            <a-sky color="#121820"></a-sky>
+            <a-plane position="0 0 -3" rotation="-90 0 0" width="16" height="16" color="#0d1520" roughness="1"></a-plane>
+            <a-gltf-model
+              src="#ea-gltf-pigeon-scene"
+              position="0 0.15 -2"
+              rotation="0 20 0"
+              scale="0.35 0.35 0.35"
+            ></a-gltf-model>
+            <a-text
+              value="Acoustic dossier: listen first · CC0 fish mesh = non-literal garnish only"
+              position="-2.2 1.8 -2"
+              width="7"
+              align="left"
+              color="#8899aa"
+            ></a-text>
+          </a-scene>
         </div>
+        <p class="lead" style="font-size:0.75rem;color:var(--muted)">Silence at 0% slider = intentional (acoustic absence).</p>
       </div>
 
       <p style="margin-top:1.25rem">
@@ -180,6 +247,7 @@
   </main>
 
   <script src="js/config.js"></script>
+  <script src="js/models.js"></script>
   <script src="js/scenes.js"></script>
   <script>
     document.getElementById("thylacine-indigenous-text").textContent =

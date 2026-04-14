@@ -16,8 +16,8 @@ Rebuild: `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slide
 Omit full deck: `--no-full` · Full PDF only: `--full-only`.  
 **Marp outlines:** `docs/bdc-umwelt-archive/slides/BDC_Extinction_Archive_EN.md` · `…/BDC_Extinction_Archive_Full_Judge_EN.md`
 
-**Use:** Copy blocks below into **Keynote**, **Google Slides**, or **PowerPoint** (recommended ~14 slides for a 10-minute live pitch + buffer).  
-**Team:** GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293)  
+**Use:** Copy blocks below into **Keynote**, **Google Slides**, or **PowerPoint** (recommended ~14 slides for a 10-minute live pitch + buffer). The **generated EN PDF** (`Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf`) is the canonical deck for submission; it now includes **program / Macau U + mentor**, **87-species database arc**, **four-step research journey**, **Umwelt dossier definition**, **chrono highlights**, **ten-species table**, **user journey**, **bio/digital/AR**, **BDC Ideas 3+6**, and **thank you**.  
+**Team:** GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293) · Mentor Atticus SIMS · Macau University  
 **Titles:** English on-slide; speaker notes may mix EN/中文 as needed.
 
 **Visual direction (keep consistent):** archival chrome + planetary heat base + **small naturalistic window only inside “prior fence”** + glitch/redaction for uncertainty.

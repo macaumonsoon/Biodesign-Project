@@ -124,6 +124,12 @@
     const PM_PARENT = 'extinction-archive-parent';
     const PM_CHILD = 'extinction-archive-reflection';
 
+    function parentTargetOrigin() {
+      const o = window.location.origin;
+      if (o && o !== 'null') return o;
+      return '*';
+    }
+
     function escapeHtml(s) {
       const m = document.createElement('span');
       m.textContent = s == null ? '' : String(s);
@@ -133,6 +139,8 @@
     window.addEventListener('message', (ev) => {
       const d = ev.data;
       if (!d || d.source !== PM_PARENT || d.type !== 'ea-ethics-choice') return;
+      const allow = parentTargetOrigin();
+      if (allow !== '*' && ev.origin !== allow) return;
       const el = document.getElementById('ethics-from-parent');
       if (!el) return;
       if (d.choiceId && d.label) {
@@ -159,7 +167,7 @@
               text: text || '',
               length: (text || '').length
             },
-            '*'
+            parentTargetOrigin()
           );
         } catch (_) {}
       }, 320);

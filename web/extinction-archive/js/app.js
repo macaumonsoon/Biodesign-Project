@@ -9,6 +9,8 @@
     ethicsChoice: null,
     procTexturesInit: false,
     reflectionReady: false,
+    hubFiltersWired: false,
+    categoryOptionsBuilt: false,
   };
 
   var pigeonAudio = null;
@@ -19,6 +21,52 @@
 
   function $(sel) {
     return document.querySelector(sel);
+  }
+
+  function esc(s) {
+    if (s == null || s === undefined) return "";
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function speciesKeyFromScientific(name) {
+    if (name === "Mammuthus primigenius") return "mammoth";
+    if (name === "Thylacinus cynocephalus") return "thylacine";
+    if (name === "Ectopistes migratorius") return "pigeon";
+    return null;
+  }
+
+  function postMessageTarget() {
+    return typeof window.EA_postMessageTarget === "function"
+      ? window.EA_postMessageTarget()
+      : window.location.origin || "*";
+  }
+
+  function reflectionIframeLoaded() {
+    var f = $("#reflection-frame");
+    if (!f || !f.src) return false;
+    if (/^about:blank/i.test(f.src)) return false;
+    return true;
+  }
+
+  function initGltfAssetItems() {
+    var G = window.EA_GLTF;
+    if (!G) return;
+    var m = document.getElementById("ea-gltf-mammoth-scene");
+    var t = document.getElementById("ea-gltf-thyla-scene");
+    var p = document.getElementById("ea-gltf-pigeon-scene");
+    if (m) m.setAttribute("src", G.foxGlb);
+    if (t) t.setAttribute("src", G.foxGlb);
+    if (p) p.setAttribute("src", G.barramundiGlb);
+    var c1 = $("#mammoth-gltf-cite");
+    var c2 = $("#thyla-gltf-cite");
+    var c3 = $("#pigeon-gltf-cite");
+    if (c1) c1.textContent = G.attribution.fox;
+    if (c2) c2.textContent = G.attribution.fox;
+    if (c3) c3.textContent = G.attribution.fish;
   }
 
   function archiveUrl() {
@@ -408,26 +456,112 @@
     setHeaderMode("flow");
   }
 
+  function buildCategoryOptions() {
+    var sel = $("#hub-category");
+    if (!sel || !state.archive || state.categoryOptionsBuilt) return;
+    var cats = state.archive.animals
+      .map(function (a) {
+        return a.category || "";
+      })
+      .filter(Boolean);
+    var uniq = {};
+    cats.forEach(function (c) {
+      uniq[c] = true;
+    });
+    var sorted = Object.keys(uniq).sort();
+    sorted.forEach(function (c) {
+      var opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      sel.appendChild(opt);
+    });
+    state.categoryOptionsBuilt = true;
+  }
+
+  function wireHubFilters() {
+    if (state.hubFiltersWired) return;
+    state.hubFiltersWired = true;
+    var s = $("#hub-search");
+    var c = $("#hub-category");
+    var o = $("#hub-sort");
+    var deb;
+    if (s)
+      s.addEventListener("input", function () {
+        clearTimeout(deb);
+        deb = setTimeout(function () {
+          if (state.archive) renderHub();
+        }, 220);
+      });
+    if (c)
+      c.addEventListener("change", function () {
+        if (state.archive) renderHub();
+      });
+    if (o)
+      o.addEventListener("change", function () {
+        if (state.archive) renderHub();
+      });
+  }
+
+  function filterAnimals(list) {
+    var q = (($("#hub-search") && $("#hub-search").value) || "").trim().toLowerCase();
+    var cat = ($("#hub-category") && $("#hub-category").value) || "";
+    return list.filter(function (a) {
+      if (cat && (a.category || "") !== cat) return false;
+      if (!q) return true;
+      var blob = [
+        a.common_name,
+        a.common_name_zh,
+        a.scientific_name,
+        a.category,
+        a.description,
+        a.extinction_location,
+      ]
+        .join(" ")
+        .toLowerCase();
+      return blob.indexOf(q) !== -1;
+    });
+  }
+
+  function sortAnimals(list) {
+    var mode = ($("#hub-sort") && $("#hub-sort").value) || "id";
+    var out = list.slice();
+    if (mode === "name") {
+      out.sort(function (a, b) {
+        return (a.common_name || "").localeCompare(b.common_name || "");
+      });
+    } else if (mode === "year") {
+      out.sort(function (a, b) {
+        return (a.extinction_year | 0) - (b.extinction_year | 0);
+      });
+    } else {
+      out.sort(function (a, b) {
+        return (a.id | 0) - (b.id | 0);
+      });
+    }
+    return out;
+  }
+
   function renderHub() {
-    var grid = $("#hub-grid");
-    if (!grid || !state.archive) return;
+    var featuredEl = $("#hub-featured");
+    var catalogEl = $("#hub-catalog");
+    var metaEl = $("#hub-filter-meta");
+    if (!featuredEl || !catalogEl || !state.archive) return;
+
+    wireHubFilters();
+    buildCategoryOptions();
+
     var featured = [
       "Mammuthus primigenius",
       "Thylacinus cynocephalus",
       "Ectopistes migratorius",
     ];
-    grid.innerHTML = featured
+    featuredEl.innerHTML = featured
       .map(function (sci) {
         var a = state.archive.animals.find(function (x) {
           return x.scientific_name === sci;
         });
         if (!a) return "";
-        var key =
-          sci.indexOf("Mammuthus primigenius") === 0
-            ? "mammoth"
-            : sci.indexOf("Thylacinus") === 0
-              ? "thylacine"
-              : "pigeon";
+        var key = speciesKeyFromScientific(sci);
         var tier =
           key === "pigeon" ? "P0 · dossier / acoustic" : "P0 · WebXR depth";
         return (
@@ -435,10 +569,10 @@
           key +
           '">' +
           "<h2>" +
-          a.common_name +
+          esc(a.common_name) +
           "</h2>" +
           '<div class="sci">' +
-          a.scientific_name +
+          esc(a.scientific_name) +
           "</div>" +
           '<div class="badge-row"><span class="badge">' +
           tier +
@@ -448,18 +582,168 @@
       })
       .join("");
 
+    featuredEl.querySelectorAll(".species-card").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        renderSpeciesView(btn.dataset.species);
+      });
+    });
+
+    var filtered = sortAnimals(filterAnimals(state.archive.animals));
+    if (metaEl) {
+      metaEl.textContent =
+        "Showing " +
+        filtered.length +
+        " of " +
+        state.archive.animals.length +
+        " taxa (filters apply to full list).";
+    }
+
+    catalogEl.innerHTML = filtered
+      .map(function (a) {
+        var key = speciesKeyFromScientific(a.scientific_name);
+        var tier = key
+          ? key === "pigeon"
+            ? "P0 dossier"
+            : "P0 WebXR"
+          : "Archive row";
+        return (
+          '<button type="button" class="species-row" role="listitem" data-animal-id="' +
+          a.id +
+          '">' +
+          '<span class="species-row-id">#' +
+          esc(a.id) +
+          "</span>" +
+          '<span class="species-row-main"><strong>' +
+          esc(a.common_name) +
+          "</strong> · " +
+          esc(a.scientific_name) +
+          "</span>" +
+          '<span class="species-row-meta">' +
+          esc(a.category || "—") +
+          " · extinct " +
+          esc(a.extinction_year) +
+          "</span>" +
+          '<span class="species-row-tier">' +
+          esc(tier) +
+          "</span>" +
+          "</button>"
+        );
+      })
+      .join("");
+
+    catalogEl.querySelectorAll(".species-row").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        renderGenericDossier(parseInt(btn.getAttribute("data-animal-id"), 10));
+      });
+    });
+
     var count = $("#archive-count");
     if (count)
       count.textContent =
         state.archive.meta && state.archive.meta.animal_count
           ? String(state.archive.meta.animal_count)
           : String(state.archive.animals.length);
+  }
 
-    grid.querySelectorAll(".species-card").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        renderSpeciesView(btn.dataset.species);
-      });
+  function renderGenericDossier(animalId) {
+    if (!state.archive || !state.archive.animals) return;
+    var a = state.archive.animals.find(function (x) {
+      return x.id === animalId;
     });
+    if (!a) return;
+
+    stopAllAudio();
+    var key = speciesKeyFromScientific(a.scientific_name);
+    $("#dossier-title").textContent = a.common_name || "—";
+    $("#dossier-sci").textContent = a.scientific_name || "";
+    var tierEl = $("#dossier-tier");
+    if (tierEl) {
+      if (key) {
+        tierEl.innerHTML =
+          'P0 — has interactive scene. <button type="button" class="btn primary" id="btn-dossier-open-xr">Open WebXR / audio scene</button>';
+        var bx = $("#btn-dossier-open-xr");
+        if (bx)
+          bx.addEventListener(
+            "click",
+            function () {
+              renderSpeciesView(key);
+            },
+            { once: true }
+          );
+      } else {
+        tierEl.textContent =
+          "P2 catalogue row — dossier data from archive.json (no full Scene_* shell for this taxon in MVP).";
+      }
+    }
+
+    var refs = (a.references || [])
+      .map(function (r) {
+        var u = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.citation_text || r.url) + "</a>" : esc(r.citation_text);
+        return "<li>" + u + "</li>";
+      })
+      .join("");
+
+    var media = (a.archival_media || [])
+      .map(function (m) {
+        var link = m.url
+          ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title || m.url) + "</a>"
+          : esc(m.title);
+        return (
+          "<li>" +
+          link +
+          (m.caption ? " — " + esc(m.caption) : "") +
+          (m.source ? " (" + esc(m.source) + ")" : "") +
+          "</li>"
+        );
+      })
+      .join("");
+
+    var body = $("#dossier-body");
+    if (body) {
+      body.innerHTML =
+        '<div class="dossier-block"><h3>Summary</h3><p>' +
+        esc(a.description || "—") +
+        "</p></div>" +
+        '<div class="dossier-block"><h3>Extinction</h3><p>Year: ' +
+        esc(a.extinction_year) +
+        " · Location: " +
+        esc(a.extinction_location || "—") +
+        "</p><p>Main causes: " +
+        esc(a.main_causes || "—") +
+        "</p><p>Human intervention: " +
+        esc(a.human_intervention_summary || "—") +
+        "</p></div>" +
+        '<div class="dossier-block"><h3>Pharm / trade (dataset)</h3><p>pharm_related: ' +
+        esc(a.pharm_related) +
+        "</p><p>" +
+        esc(a.pharm_notes || "—") +
+        "</p></div>" +
+        '<div class="dossier-block"><h3>Scores &amp; data</h3><p>Sensory reconstruction: ' +
+        esc(a.sensory_reconstruction_score) +
+        " · Music layering: " +
+        esc(a.music_layering_score) +
+        " · Availability: " +
+        esc(a.data_availability) +
+        "</p><p>3D ref: " +
+        esc(a.model_3d_reference || "—") +
+        "</p></div>" +
+        (a.wikipedia_url
+          ? '<div class="dossier-block"><h3>Wikipedia</h3><p><a href="' +
+            esc(a.wikipedia_url) +
+            '" target="_blank" rel="noopener">' +
+            esc(a.wikipedia_url) +
+            "</a></p></div>"
+          : "") +
+        '<div class="dossier-block"><h3>References</h3><ul class="dossier-list">' +
+        (refs || "<li>—</li>") +
+        "</ul></div>" +
+        '<div class="dossier-block"><h3>Archival media (subset)</h3><ul class="dossier-list">' +
+        (media || "<li>—</li>") +
+        "</ul></div>";
+    }
+
+    showView("view-dossier");
+    setHeaderMode("flow");
   }
 
   function ethicsPayload() {
@@ -481,11 +765,13 @@
     var frame = $("#reflection-frame");
     if (!frame || !frame.contentWindow) return;
     try {
-      frame.contentWindow.postMessage(ethicsPayload(), "*");
+      frame.contentWindow.postMessage(ethicsPayload(), postMessageTarget());
     } catch (_) {}
   }
 
   function onReflectionMessage(ev) {
+    var allowed = postMessageTarget();
+    if (allowed !== "*" && ev.origin !== allowed) return;
     var d = ev.data;
     if (!d || d.source !== (window.EA_POSTMESSAGE_SOURCE_CHILD || "extinction-archive-reflection"))
       return;
@@ -536,9 +822,7 @@
         try {
           sessionStorage.setItem("ea_ethics_v1", inp.value);
         } catch (_) {}
-        if ($("#view-reflection") && $("#view-reflection").classList.contains("active")) {
-          postEthicsToReflectionIframe();
-        }
+        if (reflectionIframeLoaded()) postEthicsToReflectionIframe();
       });
     });
   }
@@ -566,6 +850,15 @@
   }
 
   function init() {
+    initGltfAssetItems();
+
+    $("#btn-back-dossier") &&
+      $("#btn-back-dossier").addEventListener("click", function () {
+        stopAllAudio();
+        showView("view-hub");
+        if (state.archive) renderHub();
+      });
+
     $("#btn-enter") &&
       $("#btn-enter").addEventListener("click", function () {
         showView("view-hub");

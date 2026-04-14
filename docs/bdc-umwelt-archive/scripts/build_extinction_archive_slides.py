@@ -148,19 +148,39 @@ def build_en(font: Path) -> None:
         "Extinction Archive",
         "Umwelt Hypothesis Dossiers — A Sensory Time Capsule",
         [
-            "Biodesign Challenge 2026 · Convergent Life",
-            "AI memorial for lost species — literature-grounded, not resurrection",
-            "WebXR + in-repo data layer · heavy evidence, light hardware",
+            "AI Memorial for Lost Species · Biodesign Challenge 2026 · Convergent Life",
+            "Macau University · Mentor: Atticus SIMS",
+            "GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293)",
         ],
     )
     d.body_slide(
-        "Repository & research layer (2026 update)",
+        "Creative concept — two dossiers → living database",
         [
-            "Shipped course build: browser / WebXR — no live biosensor demo; one QR + optional citation sheet.",
-            "51 taxa → data/extinction_archive/animals_full.csv; bundle archive.json + archive_import.sql (PostgreSQL).",
-            "archival_media_research.csv — ~349 curated rows (IUCN, GBIF, BHL, NFSA, SI, BOW, PMC…).",
-            "Planning + tiers: BDC_2026_Extinction_Archive_Planning_Document.md · docs/research/bdc_showcase_species_shortlist.md",
-            "Literature spine: 02_research/biology/biodigital_chronobiology_research.md — regenerate via scripts/extinction_archive_db/",
+            "Proof-of-concept: woolly mammoth + thylacine — full WebXR depth, citations, ethics.",
+            "Expanded: unified high-priority database of 87 species (sensory 1–10, music 1–10, data H/M/L).",
+            "Curated from 900+ documented extinctions (Holocene, IUCN Red List, 2025 confirmations).",
+            "Criteria: human intervention link, palaeo-data availability, sensory / chronobiology potential.",
+            "Repo slice: 51 taxa in animals_full.csv now — merge full 87-row master for production exports.",
+        ],
+        small=True,
+    )
+    d.body_slide(
+        "Research process — four steps",
+        [
+            "1 Preliminary concept: pharm-related extinctions → collective biological memory reconstruction.",
+            "2 Unified 87-species CSV — sensory & music layering scores + extinction context.",
+            "3 Biodigital chronobiology — genes, orbits, temporal niches (see chronobiology slide).",
+            "4 Bio + digital layering + ethical decision interface + reflection log.",
+        ],
+    )
+    d.body_slide(
+        "Repository & research layer (2026)",
+        [
+            "Shipped build: browser / WebXR — no live biosensor demo; QR + optional citation sheet.",
+            "87 master list · 51 taxa in data/extinction_archive/animals_full.csv + archive.json + archive_import.sql.",
+            "archival_media_research.csv — ~349 rows (IUCN, GBIF, BHL, NFSA, SI, BOW, PMC…).",
+            "Planning: BDC_2026_Extinction_Archive_Planning_Document.md · bdc_showcase_species_shortlist.md",
+            "Spine: 02_research/biology/biodigital_chronobiology_research.md · scripts/extinction_archive_db/",
         ],
         small=True,
     )
@@ -182,13 +202,36 @@ def build_en(font: Path) -> None:
         ],
     )
     d.body_slide(
-        "Experience spine",
+        "Umwelt hypothesis dossiers — core definition",
         [
-            "Planetary map to coordinate to species dossier (vision; WebXR MVP = two deep species).",
-            "Bio layer: genomics, morphology, isotopes, museum & GBIF records.",
-            "Digital layer: constrained generative scenes + Web Audio sonification / stem metaphor.",
-            "Exit: ethics fork + reflection — stewardship of extant life.",
+            "Each species = folder of testable claims — not fantasy safari.",
+            "Genes & circadian · orbit & RGC models · palaeo-climate & seasonality · sight / sound / smell.",
+            "AI memorial: generative media constrained by peer-reviewed + licenced archives.",
+            "Sensory time capsule: reconstruct when they lived (temporal niche), not only what they looked like.",
         ],
+    )
+    d.body_slide(
+        "Biodigital chronobiology — highlights",
+        [
+            "Mammoth: Lynch 2015 — circadian-related genes incl. PER2/BMAL1, TRPV3; Kim preprint — label in UI.",
+            "Polar analogy: Lu 2010 reindeer — flexible clock under extreme photoperiod (Interpolated for mammoth).",
+            "Nocturnal bottleneck — early mammals under dinosaur pressure → modern diel patterns.",
+            "Pozniak 2018: bony orbit predicts nocturnal/crepuscular/diurnal behaviour (>80% in study set).",
+            "Sonification: migration, heart rate, vocalizations → layered music (Web Audio API).",
+            "Key insight: extinction removes a unique temporal rhythm from the planet’s biological symphony.",
+        ],
+        small=True,
+    )
+    d.body_slide(
+        "Experience spine & user journey",
+        [
+            "1 Discover rhythm — planetary biological map.",
+            "2 Epistemic layers — deep scientific dossier (Cited / Interpolated / Speculative).",
+            "3 Immersive sensory — 360° + layered chrono-music. WebXR MVP = mammoth + thylacine depth.",
+            "4 Ethics sliders — trade-offs (resources, risk, Indigenous perspectives, tech limits).",
+            "5 Reflection log — stewardship of extant biodiversity.",
+        ],
+        small=True,
     )
     d.table_slide(
         "Three load-bearing modules",
@@ -221,13 +264,33 @@ def build_en(font: Path) -> None:
         ],
         small=True,
     )
-    d.body_slide(
-        "Bio + Digital (web-only shipped build)",
+    d.table_slide(
+        "Ten representative species (87-species database)",
+        ("Species", "Sens/Mus", "Human link & strength"),
         [
-            "Biology: palaeo-chronobiology, isotope trails (e.g. tusk mobility), orbit to diel activity — papers first.",
-            "Digital: A-Frame / Three.js WebXR; generative env with prompt + constraint doc; epistemic UI always on-screen.",
-            "No live biosensor demo in course build — optional public daylight API vs paleo-latitude if time.",
+            ("Mammuthus primigenius — Woolly mammoth", "10 / 9", "Arctic circadian genomics; steppe soundscape"),
+            ("Thylacinus cynocephalus — Thylacine", "10 / 10", "Last recordings; skull → diel activity"),
+            ("Ectopistes migratorius — Passenger pigeon", "10 / 10", "Megaflock sonification; overhunting"),
+            ("Raphus cucullatus — Dodo", "9 / 8", "Classic overhunting; AR-ready 3D"),
+            ("Pinguinus impennis — Great auk", "9 / 9", "Marine low-freq context; oil hunting"),
+            ("Smilodon fatalis — Saber-toothed cat", "9 / 9", "Roar / bite sim; megafauna collapse"),
+            ("Hydrodamalis gigas — Steller’s sea cow", "8 / 7", "Rapid extinction; underwater low-freq"),
+            ("Chelonoidis abingdonii — Pinta tortoise", "9 / 6", "Lonesome George; recent loss"),
+            ("Ninox albifacies — Laughing owl", "8 / 9", "Distinctive calls; NZ invasion"),
+            ("Incilius periglenes — Golden toad", "7 / 6", "Climate-linked amphibian case"),
         ],
+        small=True,
+    )
+    d.body_slide(
+        "Bio + digital layering · physical + AR",
+        [
+            "Biology: palaeo-chronobiology, isotopes (e.g. tusk mobility), orbit → diel activity — papers first.",
+            "Digital: A-Frame / Three.js WebXR; diffusion + prompt discipline; Web Audio chrono-music.",
+            "Full ideation: living plants + bacterial sensors (not in shipped MVP).",
+            "Physical: 3D-printed fossils / skulls + mobile AR — evidence stack first; short Umwelt loop second.",
+            "Course build: web-first + one QR anchor — no live biosensor demo.",
+        ],
+        small=True,
     )
     d.body_slide(
         "Honesty UI: Cited · Interpolated · Speculative",
@@ -242,7 +305,7 @@ def build_en(font: Path) -> None:
         "Data layer in repository",
         ("Asset", "Purpose"),
         [
-            ("animals_full.csv (51 taxa)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
+            ("animals_full.csv (51 taxa; 87 target)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
             ("archive.json + archive_import.sql", "Frontend bundle + PostgreSQL animals / media / refs"),
             ("archival_media_research.csv", "~349 rows: IUCN, GBIF, BHL, NFSA, BOW, PMC…"),
             ("extinction_archive_schema.*", "Future map sites + reconstruction_layer + scenes"),
@@ -274,26 +337,35 @@ def build_en(font: Path) -> None:
         ],
     )
     d.table_slide(
-        "BDC judging map",
-        ("Dimension", "We show"),
+        "BDC 2026 alignment",
+        ("Lane", "Fit"),
         [
-            ("Narrative", "Rhythm of immersion then uncertainty then ethical fork"),
-            ("Concept", "Umwelt + temporal phenotype + biodigital coupling"),
-            ("Context", "De-extinction trade-offs, pharm/trade where relevant, colonial archive politics"),
-            ("Reflection", "AI limits, what archives omit, user reflection stub"),
+            ("Ideas", "BDC Idea 3 (Extinction Archive) + Idea 6 (Biorhythm Composer)"),
+            ("Theme", "Convergent Life — deep biology + digital convergence"),
+            ("Prizes", "Biodigital Excellence · Outstanding Digital Submission"),
+            ("Rubric", "Narrative → Concept → Context → Reflection (epistemic + ethics + data layer)"),
         ],
         small=True,
     )
     d.body_slide(
-        "Deliverables & 4-week spine",
+        "Deliverables · next steps · 4-week spine",
         [
-            "Live WebXR · citation grid · one ethical choice + reflection · trailer · QR anchor.",
+            "Ship: live WebXR · citation grid · ethics + reflection · trailer · QR / physical anchor.",
+            "Next: merge 87-species exports · full WebXR polish · AR models · 1–5 min video.",
             "EN PDF: slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf",
-            "GitHub alias (same file): [FINAL-SMALL] Extinction Archive … Dossiers_BDC2026.pdf in slides/export/",
+            "GitHub alias: [FINAL-SMALL] Extinction Archive … Dossiers_BDC2026.pdf",
             "Sprint: W1 literature/URLs → W2 mammoth + UI → W3 thylacine + ethics → W4 polish + Q&A.",
-            "Rebuild: python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py · Target: Biodigital Excellence.",
+            "Rebuild: python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py",
         ],
         small=True,
+    )
+    d.body_slide(
+        "Thank you · Q&A",
+        [
+            "Extinction Archive: Umwelt Hypothesis Dossiers",
+            "Macau University · Biodesign Challenge 2026",
+            "We welcome questions on evidence, sovereignty, temporal niches, and scope.",
+        ],
     )
     out = EXPORT / "Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf"
     d.output(out)
@@ -312,17 +384,17 @@ def build_en_full_judge(font: Path) -> None:
         "Extinction Archive: Umwelt Hypothesis Dossiers",
         "Extinction Archive: AI Memorial for Lost Species — “Umwelt Archive” · A Sensory Time Capsule",
         [
-            "Biodesign Challenge 2026 · Exhibition: Convergent Life",
-            "Literature-grounded biodigital memorial — not resurrection · WebXR + repository-backed evidence",
-            "Full judge deck (EN) — does not replace compact PDFs on GitHub",
+            "Macau University · Mentor: Atticus SIMS",
+            "GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293)",
+            "BDC 2026 · Convergent Life · Ideas 3 + 6 · full judge deck (EN)",
         ],
     )
     d.table_slide(
-        "Team · build constraint",
+        "Team · institution · build constraint",
         ("Role", "Focus"),
         [
-            ("Experience lead", "Narrative, chronobiology→Umwelt translation, ethics, dossier curation"),
-            ("Tech / AI lead", "WebXR (A-Frame / Three.js), generative env, epistemic + ethics UI"),
+            ("GUO XIAO YUE (MC569254)", "Experience: narrative, chronobiology→Umwelt, ethics, dossier curation"),
+            ("LIU JIA QUN (MC569293)", "Tech: WebXR (A-Frame / Three.js), generative env, epistemic + ethics UI"),
             ("Shipped scope", "Web-only MVP — no live biosensor demo; QR + optional citation sheet"),
         ],
         small=True,
@@ -395,7 +467,7 @@ def build_en_full_judge(font: Path) -> None:
             ("P0 WebXR", "Mammuthus primigenius · Thylacinus cynocephalus", "Full interactives; citation strip; Indigenous context UI"),
             ("P0 dossier", "Ectopistes migratorius", "Martha, BOW, acoustic absence; may sit outside WebXR v1"),
             ("P1 dossier", "Raphus · Pinguinus", "14+ URLs each — Context lane; museum/archive literacy"),
-            ("P2 catalogue", "51 taxa CSV + schema", "Systematic research; future map — not 49 extra scenes"),
+            ("P2 catalogue", "87 master list · 51 taxa in-repo CSV + schema", "Systematic research; future map — not 85 extra WebXR scenes"),
         ],
         small=True,
     )
@@ -448,7 +520,7 @@ def build_en_full_judge(font: Path) -> None:
         "Repository · data layer",
         ("Asset", "Purpose"),
         [
-            ("animals_full.csv (51 taxa)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
+            ("animals_full.csv (51 taxa; 87 target)", "Names, extinction, pharm flags, Umwelt scores, 3D refs"),
             ("archive.json · archive_import.sql", "Static bundle + PostgreSQL animals / media / literature_references"),
             ("archival_media_research.csv", "~349 curated portal rows — regenerate via generate_archival_media_research.py"),
             ("extinction_archive_schema.*", "Future map sites, reconstruction_layer, scenes — PostGIS deferred"),

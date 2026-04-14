@@ -24,6 +24,17 @@
     assetRoot: root,
   };
 
+  /**
+   * Target origin for postMessage (production: same origin only).
+   * file:// and some embedded previews yield "null" — falls back to '*' for local file dev only.
+   */
+  w.EA_postMessageTarget = function () {
+    var o = w.location.origin;
+    if (!o || o === "null" || o === "undefined") return "*";
+    return o;
+  };
+
   w.EA_POSTMESSAGE_SOURCE_PARENT = "extinction-archive-parent";
   w.EA_POSTMESSAGE_SOURCE_CHILD = "extinction-archive-reflection";
 })(window);
+

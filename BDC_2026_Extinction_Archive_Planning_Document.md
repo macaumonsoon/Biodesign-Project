@@ -2,12 +2,86 @@
 ### *(Extinction Archive: AI Memorial for Lost Species — “Umwelt Archive”: A Sensory Time Capsule)*
 
 **BDC 2026 · Exhibition theme:** Convergent Life  
-**Team:** 2 members | **Build scope:** Web-only (no living biosensor demo)  
+**Institution:** Macau University  
+**Mentor:** Atticus SIMS  
+**Team:** GUO XIAO YUE (ID MC569254) · LIU JIA QUN (ID MC569293) — 2 members  
+**Build scope:** Web-only shipped course build (no live biosensor demo); full ideation includes optional bio + physical layers as **documented vision**  
 **Core angle:** Palaeo-chronobiology + **Umwelt** (species-specific world-as-sensed) + temporal niche reconstruction via WebXR, generative environments, and **epistemic UI**  
-**Target prizes:** Biodigital Excellence; strong **Narrative · Context · Reflection**
+**Target prizes:** **Biodigital Excellence Prize** · **Outstanding Digital Submission Prize**; strong **Narrative · Context · Reflection**  
+**BDC idea alignment:** **Idea 3** (Extinction Archive) + **Idea 6** (Biorhythm Composer)
 
 **Canonical short names:** **Extinction Archive** / **Umwelt Archive**  
 **Planning doc role:** Single **hypothesis dossier** for judges and collaborators—links science claims, UX beats, ethics, and the **data + archival layer** now in-repo.
+
+---
+
+## Creative concept — from two dossiers to a living database (ideation update)
+
+- **Proof-of-concept:** Two deep-dossier species — **woolly mammoth** (*Mammuthus primigenius*) and **thylacine** (*Thylacinus cynocephalus*) — anchor WebXR, citations, and ethics UI.  
+- **Expanded scope:** A **unified high-priority species database** of **87 taxa**, each scored for **sensory reconstruction potential (1–10)**, **music-layering potential (1–10)**, and **data availability (High / Medium / Low)**.  
+- **Curation pool:** Taxa drawn from **900+** documented extinct / extirpated species and recent confirmations (**Holocene extinctions, IUCN Red List, 2025 status updates** where applicable).  
+- **Selection criteria:** Strong link to **human intervention**; high **palaeo- and archival data** availability; exceptional potential for **sensory** and **chronobiological** reconstruction (orbit, genomics, behaviour, sound archives).  
+- **Repository note:** [`data/extinction_archive/animals_full.csv`](data/extinction_archive/animals_full.csv) currently holds **51 taxa** for JSON/SQL/Web bundle; **production step** = merge the full **87-row** master sheet (team CSV: `extinct_animals_database统一高优先级数据库（87种）.csv`) into exports and schema without expanding WebXR MVP beyond the two-species depth rule unless schedule allows.
+
+---
+
+## Research process — four-step iterative journey
+
+1. **Step 1 — Preliminary concept:** Pharm- and trade-linked extinct animals → **collective biological memory** reconstruction (“Umwelt Archive — A Sensory Time Capsule”).  
+2. **Step 2 — Unified database:** **87-species** CSV with sensory + music scores and extinction-context fields; supports planetary-map narrative and judging **Biodigital** depth.  
+3. **Step 3 — Biodigital chronobiology:** Genes, orbits, **temporal niches** (day / season / social rhythm); literature spine in [`02_research/biology/biodigital_chronobiology_research.md`](02_research/biology/biodigital_chronobiology_research.md).  
+4. **Step 4 — Bio + digital layering + ethics:** WebXR + generative AI (constrained) + Web Audio; **ethical decision interface** (resources, ecological risk, Indigenous perspectives, tech boundaries) + reflection log.
+
+---
+
+## Umwelt hypothesis dossiers — core definition (for judges)
+
+Each extinct species is a **folder of testable scientific claims**, not a fantasy safari:
+
+- **Genes & circadian** pathways (where aDNA / comparative genomics allows).  
+- **Eye-orbit morphology** & retinal-ganglion-cell **models** (label **Interpolated** when not measured on that taxon).  
+- **Palaeo-climate & seasonal rhythms**; isotope mobility where published.  
+- **Sensory worlds** — sight, sound, smell — only inside a **prior fence** from peer-reviewed or archival sources.
+
+**AI memorial:** Generative media **strictly constrained** by literature and licence-cleared archives.  
+**Sensory time capsule:** Reconstruct **when** they lived (temporal niche), not only **what** they looked like.
+
+---
+
+### Ten representative species (high-priority database)
+
+| Species | Common name | Sensory | Music | Human link & reconstruction strength |
+|---------|-------------|---------|-------|----------------------------------------|
+| *Mammuthus primigenius* | Woolly mammoth | 10 | 9 | Arctic circadian genomics; steppe soundscape |
+| *Thylacinus cynocephalus* | Thylacine | 10 | 10 | Last-individual recordings; skull → diel activity |
+| *Ectopistes migratorius* | Passenger pigeon | 10 | 10 | Massive-flock sonification; commercial overhunting |
+| *Raphus cucullatus* | Dodo | 9 | 8 | Classic overhunting; AR-ready 3D refs |
+| *Pinguinus impennis* | Great auk | 9 | 9 | Marine low-frequency context; feather/oil hunting |
+| *Smilodon fatalis* | Saber-toothed cat | 9 | 9 | Bite-force / vocal simulation potential; megafauna collapse |
+| *Hydrodamalis gigas* | Steller’s sea cow | 8 | 7 | Rapid ~27-year extinction arc; underwater low-frequency |
+| *Chelonoidis abingdonii* | Pinta giant tortoise | 9 | 6 | “Lonesome George”; recent extinction (2012) |
+| *Ninox albifacies* | Laughing owl | 8 | 9 | Distinctive vocal recordings; NZ invasion ecology |
+| *Incilius periglenes* | Golden toad | 7 | 6 | Early climate-linked amphibian extinction case |
+
+---
+
+### User journey (experience spine)
+
+1. **Discover rhythm** — Interactive planetary biological map.  
+2. **Epistemic layers** — Deep scientific dossier per species.  
+3. **Immersive sensory experience** — 360° environment + layered chronobiological music (Web Audio).  
+4. **Ethics sliders** — Trade-off decision interface (de-extinction vs conservation, risk, sovereignty).  
+5. **Reflection log** — Personal reflection ([`templates/reflection-log-webxr.html`](templates/reflection-log-webxr.html)) / export-friendly HTML.
+
+### Physical model & AR (full vision)
+
+3D-printed fossil replicas, miniature habitats, skeletal elements; **mobile AR scan** bridges tangible artefact and dossier (evidence stack first, short Umwelt loop second). **Course MVP:** one anchor + QR; full print farm = stretch.
+
+### Bio + digital layering (ideation-complete / build-prioritized)
+
+- **Biological layer:** Living plants + bacterial sensors (vision); real-time response — represents **extant** thriving ecosystems **co-present** with “stopped clocks” of extinct lineages (non-equivalent framing).  
+- **Digital layer:** WebXR (A-Frame / Three.js); diffusion + prompt discipline; Web Audio **sonification of temporal niches**.  
+**Shipped build:** digital + citations + ethics; **no** live biosensor demo in v1.
 
 ---
 
@@ -49,7 +123,7 @@
 
 | Asset | Path | Purpose |
 |--------|------|---------|
-| **Species table (51 taxa)** | [`data/extinction_archive/animals_full.csv`](data/extinction_archive/animals_full.csv) | Wide CSV: names, extinction, **pharm_related / pharm_notes**, Umwelt scores, 3D refs—Excel + import source. |
+| **Species table (51 taxa in repo; 87 target master list)** | [`data/extinction_archive/animals_full.csv`](data/extinction_archive/animals_full.csv) | Wide CSV: names, extinction, **pharm_related / pharm_notes**, Umwelt scores, 3D refs. **Merge** full **87-row** unified high-priority sheet when expanding production exports. |
 | **PostgreSQL bundle** | [`data/extinction_archive/archive_import.sql`](data/extinction_archive/archive_import.sql) | `animals`, `archival_media`, `literature_references` (+ extended schema doc below). |
 | **Static API shape** | [`data/extinction_archive/archive.json`](data/extinction_archive/archive.json) | Single-file frontend bundle with nested media/refs. |
 | **Full relational schema (map, layers, scenes)** | [`docs/database/extinction_archive_schema.md`](docs/database/extinction_archive_schema.md) · [`extinction_archive_schema.sql`](docs/database/extinction_archive_schema.sql) | **PostGIS deferred**; geographic sites + `reconstruction_layer` for when you add coordinates. |
@@ -116,7 +190,7 @@
 | **P0 — WebXR MVP (locked depth)** | *Mammuthus primigenius*, *Thylacinus cynocephalus* | Full scene graph, citation strip, ethics + Indigenous UI—**this is the hypothesis test**. |
 | **P0 — Narrative / acoustic flagship (dataset + deck)** | *Ectopistes migratorius* | **Social synchrony + “silence”** (e.g. empty xeno-canto as *evidence of acoustic loss*); Martha/Smithsonian dossier links in slides or static appendix—not required inside WebXR v1. |
 | **P1 — Dossier depth (optional film / appendix / future map)** | *Raphus cucullatus*, *Pinguinus impennis* | **14+ curated URLs** each in CSV; use for **Context** and **museum/archive literacy**—do not scope into WebXR unless Week 4 surplus. |
-| **P2 — Back catalogue** | Remaining rows in `animals_full.csv` | Map/GIS **future**; judges see **systematic research**, not 49 extra scenes. |
+| **P2 — Back catalogue** | Remaining rows in `animals_full.csv` + full **87** master list when merged | Map/GIS **future**; judges see **systematic research**, not 85 extra WebXR scenes. |
 
 **Decision (unchanged for shipped interactive):** **Depth on mammoth + thylacine** for WebXR v1. **Passenger pigeon + others** enrich **narrative, dossier, and database story** without breaking the two-species build rule.
 
@@ -264,7 +338,7 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 **[Insight 洞见]** 古生物钟学、同位素轨迹与档案（标本、影像、声库）让我们能把 **节律与感官代理** 转译成可讨论、可标注不确定度的体验材料。
 
-**[Solution 方案]** 《灭绝档案 / Umwelt 档案》是以 WebXR 为核心的 **假说卷宗**：在文献与馆际数据约束下，用生成式环境与音化呈现 **猛犸的极地时间结构** 与 **袋狼的晨昏视觉隐喻**；并以 **认识论 UI** 区分证据、推演与想象。更广的 **51 物种数据层** 支撑“行星纪念地图”的叙事野心而不绑架 MVP 范围。
+**[Solution 方案]** 《灭绝档案 / Umwelt 档案》是以 WebXR 为核心的 **假说卷宗**：在文献与馆际数据约束下，用生成式环境与音化呈现 **猛犸的极地时间结构** 与 **袋狼的晨昏视觉隐喻**；并以 **认识论 UI** 区分证据、推演与想象。**87 种高优先级统一数据库**（仓库内先行 **51 类** 导入）支撑“行星纪念地图”的叙事与 BDC **Biodigital** 深度，而不绑架双物种 WebXR MVP 范围。
 
 **[Impact 影响]** 在“去灭绝”话语前，它把观众带回 **生命时间与档案政治** 的不可逆性；伦理权衡与反思界面促使人们从奇观转向对 **现生生物多样性** 与 **文化主权** 的负责讨论。
 
@@ -309,7 +383,7 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 - **Is this biodesign without living matter?** *Biology is the **constraint system**: literature + specimens + occurrence archives drive the experience; the living stake is **extant biodiversity** and honest inference limits.*  
 - **How do you prevent AI hallucination?** *Cited → interpolated → speculative; archival assets **licence-checked**; nothing speculative without UI flag.*  
-- **Why 51 species in CSV but two in WebXR?** ***Hypothesis dossiers*** scale research and **map narrative**; **interactive depth** stays falsifiable on two taxa for the build window.*  
+- **Why 87 species in the master list but 51 rows in-repo and two in WebXR?** ***Hypothesis dossiers*** scale research and **map narrative**; the repo bundle is an **import slice** expanding toward the full **87**; **interactive depth** stays falsifiable on two taxa for the build window.*  
 - **Indigenous / local knowledge?** *Name sources; state limits; no partnership claims without real consultation.*
 
 ---
@@ -326,4 +400,17 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 ---
 
-*Document title updated April 2026: **Umwelt Hypothesis Dossiers** — integrates ideation, `animals_full` / SQL / JSON / archival matrix, and BDC showcase tiers. Align summit dates with [biodesignchallenge.org](https://biodesignchallenge.org).*
+*Document title updated April 2026: **Umwelt Hypothesis Dossiers** — integrates ideation (sensory time capsule, 87-species database narrative, four-step research arc), `animals_full` / SQL / JSON / archival matrix, and BDC showcase tiers (Idea 3 + 6). Align summit dates with [biodesignchallenge.org](https://biodesignchallenge.org).*
+
+---
+
+## Next steps (submission-facing)
+
+- Expand database exports to full **87** species in production pipeline.  
+- Prototype full **WebXR** experience (maintain epistemic + ethics spine).  
+- Complete **physical AR** models where schedule allows (else QR + one anchor).  
+- Prepare **1–5 min** project video (licence-cleared archival clips).  
+
+## References & works cited
+
+Consolidate citations from: (1) this planning document (mammoth / thylacine / pigeon / ethics slots); (2) [`02_research/biology/biodigital_chronobiology_research.md`](02_research/biology/biodigital_chronobiology_research.md) **Works cited**; (3) BDC context docs as required by course. Slide PDFs and deck rebuild: `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py`.
