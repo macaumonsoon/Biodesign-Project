@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Species dossier — WebXR Prototype</title>
+  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="xr-page">
+  <header class="xr-page-header">
+    <h1>物种数字档案</h1>
+    <p>展示单条 destination 的全部结构化字段，并叠加档案入口与研究协议，契合「Umwelt Archive / 感官时间胶囊」叙事。</p>
+    <nav class="xr-nav">
+      <a href="./index.html">Planet 首页</a>
+      <a href="./destinations.html">全表</a>
+      <a href="./ethics.html">伦理界面</a>
+    </nav>
+  </header>
+
+  <main class="xr-species-main" id="xr-species-mount">
+    <p class="xr-muted">Loading…</p>
+  </main>
+
+  <script type="module">
+    import { initSpeciesPage } from "./js/xr-species-page.js";
+    initSpeciesPage().catch(console.error);
+  </script>
+</body>
+</html>

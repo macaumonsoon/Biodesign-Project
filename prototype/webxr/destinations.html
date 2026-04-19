@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Destinations · 灭绝物种全表 — WebXR Prototype</title>
+  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="xr-page">
+  <header class="xr-page-header">
+    <h1>Destinations · 数据集目的地清单</h1>
+    <p>
+      与规划文档中的「行星地图 → 坐标 → 物种档案」链路一致：下列字段直接映射
+      <code>research_extinct_animals_list.json</code>，便于评委与协作者核对全表与不确定度备注。
+    </p>
+    <p id="xr-dest-meta" class="xr-muted" style="margin-top:6px;"></p>
+    <nav class="xr-nav">
+      <a href="./index.html">Planet 首页</a>
+      <a href="./ethics.html">伦理界面</a>
+      <a href="../index.html">经典原型</a>
+    </nav>
+  </header>
+
+  <main class="xr-panel">
+    <div class="xr-filters">
+      <input id="xr-d-search" type="search" placeholder="按学名 / 英文名 / 中文名筛选…" />
+      <select id="xr-d-cat">
+        <option value="">全部分类</option>
+      </select>
+      <select id="xr-d-avail">
+        <option value="">全部数据可用性</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+    <p id="xr-d-count" style="margin:0 0 10px;font-size:13px;color:#a8b8cc;"></p>
+    <div class="xr-table-wrap">
+      <table class="xr-table" id="xr-dest-table">
+        <thead><tr></tr></thead>
+        <tbody id="xr-dest-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="xr-bottom-dock-static">
+    <div class="xr-dock">
+      <div class="xr-row">
+        <a class="xr-pill" href="./index.html" style="text-decoration:none;">↩ Planet</a>
+        <span class="xr-muted" style="font-size:11px;">参考视频原型：底部工具条式导航</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initDestinations } from "./js/xr-destinations.js";
+    initDestinations().catch(console.error);
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ethics · 反思 — WebXR Prototype</title>
+  <link rel="stylesheet" href="./css/xr-ui.css" />
+</head>
+<body class="xr-page">
+  <header class="xr-page-header">
+    <h1>伦理决策与反思日志</h1>
+    <p>与 ideation 中「从情感沉浸过渡到理性权衡」一致：轻量交互提示资源、风险与不确定度沟通，反思仅存于本地浏览器。</p>
+    <nav class="xr-nav">
+      <a href="./index.html">Planet 首页</a>
+      <a href="./destinations.html">Destinations</a>
+      <a href="../hero.html">经典 Hero 层</a>
+    </nav>
+  </header>
+
+  <main class="xr-panel" style="max-width:720px;margin:20px auto;">
+    <section class="xr-block">
+      <h3>伦理分叉 · De-extinction trade-offs</h3>
+      <label style="display:block;margin-top:10px;color:#b4c4d8;">去灭绝相关预算优先级：<span id="budget-value">50</span></label>
+      <input type="range" id="budget" min="0" max="100" value="50" style="width:100%;" />
+      <label style="display:block;margin-top:14px;color:#b4c4d8;">生态不确定性风险容忍：<span id="risk-value">30</span></label>
+      <input type="range" id="risk" min="0" max="100" value="30" style="width:100%;" />
+      <p id="ethics-output" style="margin-top:14px;font-size:14px;line-height:1.55;color:#dce6f2;"></p>
+    </section>
+
+    <section class="xr-block">
+      <h3>Reflection log</h3>
+      <textarea id="reflection-input" rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(100,120,150,0.45);background:rgba(4,8,14,0.9);color:#e8edf3;" placeholder="当一种生物时间节律从地球上消失，对你而言「集体记忆的缺席」意味着什么？"></textarea>
+      <div style="display:flex;gap:10px;margin-top:10px;">
+        <button type="button" id="save-reflection" class="xr-pill">保存</button>
+        <button type="button" id="load-reflection" class="xr-pill">载入</button>
+      </div>
+      <p id="reflection-status" class="xr-muted" style="margin-top:8px;"></p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initEthicsPage } from "./js/xr-ethics.js";
+    initEthicsPage();
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>灭绝拾遗 · Umwelt Archive — WebXR</title>
+  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="xr-root">
+    <canvas id="xr-canvas" aria-label="行星尺度灭绝物种地图 WebXR"></canvas>
+
+    <div id="xr-webxr-slot"></div>
+
+    <header class="xr-hud xr-chip">
+      <h1>灭绝拾遗</h1>
+      <p class="sub" id="xr-species-count">Loading…</p>
+      <p class="en">Extinction Archive · Planetary sensory time capsule (WebXR)</p>
+    </header>
+
+    <aside class="xr-hud xr-corner">
+      <h2>Umwelt 档案馆</h2>
+      <p>以地理坐标锚定「集体记忆的缺席」：拖拽旋转星球，点选光点打开物种数字档案。支持 WebXR 进入沉浸场域（需 HTTPS 或 localhost）。</p>
+      <nav class="xr-links">
+        <a href="./destinations.html">Destinations 全表</a>
+        <a href="./ethics.html">伦理决策界面</a>
+        <a href="../index.html">经典 2D 原型</a>
+      </nav>
+    </aside>
+
+    <footer class="xr-hud xr-dock" aria-label="地图控制">
+      <div class="xr-row" role="toolbar" aria-label="地理区域">
+        <button type="button" class="xr-pill" data-region="global">Global</button>
+        <button type="button" class="xr-pill" data-region="asia">Asia</button>
+        <button type="button" class="xr-pill" data-region="europe">Europe</button>
+        <button type="button" class="xr-pill" data-region="africa">Africa</button>
+        <button type="button" class="xr-pill" data-region="nam">N.Am</button>
+        <button type="button" class="xr-pill" data-region="sam">S.Am</button>
+        <button type="button" class="xr-pill" data-region="arctic">Arctic</button>
+        <button type="button" class="xr-pill" data-region="antarctic">Antarctic</button>
+      </div>
+      <div class="xr-row" role="toolbar" aria-label="图层与动作">
+        <label class="xr-toggle"><input type="checkbox" id="xr-toggle-grid" checked /> Grid</label>
+        <label class="xr-toggle"><input type="checkbox" id="xr-toggle-story" checked /> Story</label>
+        <label class="xr-toggle"><input type="checkbox" id="xr-toggle-routes" checked /> Routes</label>
+        <label class="xr-toggle"><input type="checkbox" id="xr-toggle-scatter" /> Scatter</label>
+        <button type="button" class="xr-pill xr-actions" id="xr-btn-migrate">Migrate</button>
+        <button type="button" class="xr-pill xr-actions" id="xr-btn-mute">Mute</button>
+        <label class="xr-toggle"><input type="checkbox" id="xr-toggle-rotate" checked /> Rotate</label>
+      </div>
+    </footer>
+
+    <div id="xr-tooltip" class="xr-tooltip"></div>
+
+    <article id="xr-species-card" class="xr-card" aria-live="polite">
+      <button type="button" id="xr-card-close" class="close" aria-label="Close">×</button>
+      <div id="xr-card-body"></div>
+    </article>
+  </div>
+
+  <script type="module">
+    import { initGlobe } from "./js/xr-globe.js";
+    initGlobe().catch(err => {
+      console.error(err);
+      document.getElementById("xr-species-count").textContent = "数据加载失败 — 请从仓库根目录启动本地服务";
+    });
+
+    document.getElementById("xr-btn-mute")?.addEventListener("click", (e) => {
+      const on = e.currentTarget.dataset.on === "1";
+      e.currentTarget.dataset.on = on ? "" : "1";
+      e.currentTarget.textContent = on ? "Mute" : "Muted";
+    });
+  </script>
+</body>
+</html>
