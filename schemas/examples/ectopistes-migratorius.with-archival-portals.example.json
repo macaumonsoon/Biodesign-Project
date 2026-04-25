@@ -1,0 +1,96 @@
+{
+  "id": "660e8400-e29b-41d4-a716-446655440002",
+  "slug": "ectopistes-migratorius",
+  "scientific_name": "Ectopistes migratorius",
+  "common_names": {
+    "zh": "\u65c5\u9e3d",
+    "en": "Passenger Pigeon",
+    "raw_bilingual": "\u65c5\u9e3d / Passenger Pigeon"
+  },
+  "archive_category": "Birds",
+  "taxon_rank": "species",
+  "extinction_summary": "1914",
+  "primary_range": "\u5317\u7f8e",
+  "list_source": "unified_priority_csv",
+  "source_row_id": 26,
+  "scores": {
+    "sensory_reconstruction_potential": 10,
+    "music_layering_potential": 10
+  },
+  "data_availability": "high",
+  "model_3d": {
+    "reference_labels": ["Sketchfab \"Passenger Pigeon\""],
+    "reference_links": []
+  },
+  "extinction_drivers": "\u8fc7\u5ea6\u72e9\u730e+\u6816\u606f\u5730",
+  "drivers_tags": ["hunting", "habitat_loss"],
+  "notes": "\u7fa4\u4f53\u8fc1\u5f99\u58f0\u97f3\u5c42\u53e0\u6781\u9ad8",
+  "verification_note": "Cross-check extinction date/category on IUCN Red List where applicable.",
+  "pharm_human_hook": "",
+  "pharm_human_entanglement": {
+    "theme_alignment": "other",
+    "tags": [],
+    "narrative_hook_en": "",
+    "narrative_hook_zh": "",
+    "claims_to_verify": []
+  },
+  "umwelt": {
+    "merkwelt_cues": ["vision", "hearing"],
+    "chronobiology_notes": "Colonial-era mass roosting and migration pulses; bioacoustic reconstruction often uses related columbids as Interpolated tier\u2014label in UI.",
+    "inference_confidence": "moderate",
+    "proxy_species": ["Patagioenas fasciata", "Columba livia"]
+  },
+  "archival_portals": {
+    "portal_urls": {
+      "iucn_red_list_search": "https://www.iucnredlist.org/search?query=Ectopistes%20migratorius",
+      "gbif_species_search": "https://www.gbif.org/species/search?q=Ectopistes%20migratorius",
+      "gbif_occurrence_search": "https://www.gbif.org/occurrence/search?advanced=1&occurrence_status=present%2Cabsent&q=Ectopistes%20migratorius",
+      "morphosource_search": "https://www.morphosource.org/catalog?utf8=%E2%9C%93&q=Ectopistes%20migratorius",
+      "pbdb_taxon_api": "https://paleobiodb.org/data1.2/taxa/list.json?name=Ectopistes%20migratorius&limit=10",
+      "pbdb_classic_ui": "https://paleobiodb.org/#/taxon/list?taxon_name=Ectopistes%20migratorius",
+      "bhl_literature_search": "https://www.biodiversitylibrary.org/search?searchTerm=Ectopistes%20migratorius",
+      "eol_search": "https://eol.org/search?utf8=%E2%9C%93&q=Ectopistes%20migratorius",
+      "smithsonian_3d_search": "https://3d.si.edu/search?q=Ectopistes%20migratorius",
+      "sketchfab_search": "https://sketchfab.com/search?q=Ectopistes%20migratorius",
+      "wikipedia": "https://en.wikipedia.org/wiki/Special:Search?search=Ectopistes%20migratorius",
+      "xeno_canto_search": "https://xeno-canto.org/explore?query=Ectopistes%20migratorius",
+      "macaulay_library_search": "https://search.macaulaylibrary.org/catalog?searchField=species&q=Ectopistes%20migratorius"
+    },
+    "notable_archives_curated": [
+      {
+        "type": "audio",
+        "label": "Xeno-canto \u2014 check for recordings / related columbids (verify license before embed)",
+        "url": "https://xeno-canto.org/explore?query=Ectopistes+migratorius"
+      },
+      {
+        "type": "specimen",
+        "label": "Study skins via GBIF-linked institutions",
+        "url": "https://www.gbif.org/species/search?q=Ectopistes+migratorius"
+      }
+    ],
+    "research_protocol": [
+      "Confirm IUCN category and dates on species page before citing.",
+      "Prefer institution catalog numbers + DOIs (MorphoSource) over unlicensed uploads.",
+      "For film/audio, verify rights before web embed."
+    ],
+    "project_notes_existing_media": "Sketchfab \"Passenger Pigeon\"",
+    "last_synchronized_at": "2026-04-14T12:00:00Z",
+    "source_sidecar": "data/archival_media_research.json"
+  },
+  "experience": {
+    "default_scene_id": null,
+    "audio_preset_id": null,
+    "sonification_params_ref": null
+  },
+  "sovereignty_and_ethics": {
+    "indigenous_context_required": false,
+    "attribution": "North American colonial hunting and land-use history; cite regional Indigenous nations where narrative touches specific territories.",
+    "consultation_status": "not_applicable"
+  },
+  "citations": [],
+  "provenance": {
+    "source": "research_extinct_animals_list.json / archival_media_research.json",
+    "source_row": 26,
+    "imported_at": "2026-04-14T00:00:00Z"
+  }
+}

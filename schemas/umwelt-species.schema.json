@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umwelt-archive.local/schemas/species.json",
+  "title": "Umwelt Archive — Species Record",
+  "type": "object",
+  "$defs": {
+    "archival_portal_urls": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Pre-computed search URLs (entry points, not specimen permalinks). Prefer https URIs; verify before production.",
+      "properties": {
+        "iucn_red_list_search": { "type": "string", "format": "uri" },
+        "gbif_species_search": { "type": "string", "format": "uri" },
+        "gbif_occurrence_search": { "type": "string", "format": "uri" },
+        "morphosource_search": { "type": "string", "format": "uri" },
+        "pbdb_taxon_api": { "type": "string", "format": "uri" },
+        "pbdb_classic_ui": { "type": "string" },
+        "bhl_literature_search": { "type": "string", "format": "uri" },
+        "eol_search": { "type": "string", "format": "uri" },
+        "smithsonian_3d_search": { "type": "string", "format": "uri" },
+        "sketchfab_search": { "type": "string", "format": "uri" },
+        "wikipedia": { "type": "string", "format": "uri" },
+        "xeno_canto_search": {
+          "type": "string",
+          "format": "uri",
+          "description": "Birds / bioacoustics; omit for non-vocal taxa if unused"
+        },
+        "macaulay_library_search": {
+          "type": "string",
+          "format": "uri",
+          "description": "Birds; Macaulay Library catalog search"
+        }
+      }
+    },
+    "notable_archive_hint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "label", "url"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "e.g. 3d_portal, aggregator, museum, moving_image, audio, specimen, historical_record, literature_media"
+        },
+        "label": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "slug",
+    "scientific_name",
+    "archive_category",
+    "extinction_summary",
+    "primary_range",
+    "scores",
+    "data_availability",
+    "extinction_drivers",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable internal ID, e.g. uuid or Mammuthus_primigenius_v1"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "URL-safe key derived from scientific_name"
+    },
+    "scientific_name": {
+      "type": "string",
+      "description": "Binomial or trinomial as in source list"
+    },
+    "scientific_name_authorship": {
+      "type": "string",
+      "description": "Optional authority + year, if you standardize taxonomy"
+    },
+    "common_names": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zh": { "type": "string" },
+        "en": { "type": "string" },
+        "raw_bilingual": {
+          "type": "string",
+          "description": "Original CSV field 中文/英文俗名 if not split yet"
+        }
+      }
+    },
+    "archive_category": {
+      "type": "string",
+      "description": "High-level group from CSV 类别, e.g. Pleistocene Megafauna, Mammals, Birds"
+    },
+    "taxon_rank": {
+      "type": "string",
+      "enum": ["species", "subspecies", "population", "unknown"]
+    },
+    "extinction_summary": {
+      "type": "string",
+      "description": "CSV 灭绝时期/年份 — keep verbatim + later normalize to structured"
+    },
+    "extinction_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year_approx": { "type": ["integer", "null"] },
+        "year_upper": { "type": ["integer", "null"] },
+        "year_lower": { "type": ["integer", "null"] },
+        "status_note": {
+          "type": "string",
+          "description": "e.g. 2025确认, 野外灭绝 vs 全球灭绝"
+        }
+      }
+    },
+    "primary_range": {
+      "type": "string",
+      "description": "CSV 主要分布"
+    },
+    "geo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "regions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "iso_country_codes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sensory_reconstruction_potential", "music_layering_potential"],
+      "properties": {
+        "sensory_reconstruction_potential": {
+          "description": "Import may coerce CSV strings to integers",
+          "oneOf": [
+            { "type": "integer", "minimum": 1, "maximum": 10 },
+            { "type": "string", "pattern": "^([1-9]|10)$" }
+          ]
+        },
+        "music_layering_potential": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1, "maximum": 10 },
+            { "type": "string", "pattern": "^([1-9]|10)$" }
+          ]
+        }
+      }
+    },
+    "list_source": {
+      "type": "string",
+      "enum": [
+        "unified_priority_csv",
+        "research_supplement",
+        "manual",
+        "import"
+      ],
+      "description": "Provenance of list membership (matches research_extinct_animals_list)"
+    },
+    "source_row_id": {
+      "type": "integer",
+      "description": "Original spreadsheet row id when imported"
+    },
+    "pharm_human_hook": {
+      "type": "string",
+      "description": "Short curator note: pharma / human entanglement (may duplicate pharm_human_entanglement.narrative_hook)"
+    },
+    "verification_note": {
+      "type": "string",
+      "description": "Reminder to verify IUCN status / dates before public copy"
+    },
+    "data_availability": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "model_3d": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reference_links": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "reference_labels": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Free text from CSV when not a valid URI"
+        },
+        "license_note": { "type": "string" }
+      }
+    },
+    "extinction_drivers": {
+      "type": "string",
+      "description": "CSV 灭绝原因分析"
+    },
+    "drivers_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hunting",
+          "habitat_loss",
+          "climate_change",
+          "invasive_species",
+          "disease",
+          "pollution",
+          "bycatch",
+          "trade",
+          "other"
+        ]
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "CSV 备注（paleo-data / 项目相关性）"
+    },
+    "pharm_human_entanglement": {
+      "type": "object",
+      "description": "制药相关 / 人与物种纠缠 — extend beyond base CSV",
+      "additionalProperties": false,
+      "properties": {
+        "theme_alignment": {
+          "type": "string",
+          "enum": [
+            "model_organism_history",
+            "natural_product_tradition",
+            "toxins_venoms",
+            "bioprospecting",
+            "biomedical_supply_chain",
+            "conservation_pharmacology_metaphor",
+            "other"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "narrative_hook_zh": { "type": "string" },
+        "narrative_hook_en": { "type": "string" },
+        "claims_to_verify": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Each item should be checked against primary literature before public copy"
+        }
+      }
+    },
+    "umwelt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "merkwelt_cues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["vision", "hearing", "olfaction", "touch", "magnetoreception", "electroreception", "other"]
+          }
+        },
+        "chronobiology_notes": { "type": "string" },
+        "inference_confidence": {
+          "type": "string",
+          "enum": ["established", "moderate", "speculative"]
+        },
+        "proxy_species": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Living relatives used for vocal / sensory priors"
+        }
+      }
+    },
+    "experience": {
+      "type": "object",
+      "description": "Bindings for the interactive archive UI",
+      "additionalProperties": false,
+      "properties": {
+        "default_scene_id": { "type": ["string", "null"] },
+        "audio_preset_id": { "type": ["string", "null"] },
+        "sonification_params_ref": { "type": ["string", "null"] }
+      }
+    },
+    "archival_portals": {
+      "type": "object",
+      "description": "Open-data / museum search entry points and curated hints (from archival_media_research merge). URLs are starting points—verify with holding institutions.",
+      "additionalProperties": false,
+      "properties": {
+        "portal_urls": {
+          "$ref": "#/$defs/archival_portal_urls"
+        },
+        "notable_archives_curated": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/notable_archive_hint"
+          }
+        },
+        "research_protocol": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Reminders for curators (IUCN verify, licensing, prefer DOIs)"
+        },
+        "project_notes_existing_media": {
+          "type": "string",
+          "description": "Optional legacy one-liner from import; canonical3D refs live in model_3d"
+        },
+        "last_synchronized_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When archival_portals was last merged from sidecar generator"
+        },
+        "source_sidecar": {
+          "type": "string",
+          "description": "e.g. data/archival_media_research.json"
+        }
+      }
+    },
+    "sovereignty_and_ethics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "indigenous_context_required": { "type": "boolean" },
+        "attribution": { "type": "string" },
+        "consultation_status": {
+          "type": "string",
+          "enum": ["not_applicable", "pending", "documented", "partnered"]
+        }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "doi": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "imported_at"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "e.g. extinct_animals_database统一高优先级数据库（87种）.csv"
+        },
+        "source_row": { "type": "integer" },
+        "imported_at": { "type": "string", "format": "date-time" },
+        "last_reviewed_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

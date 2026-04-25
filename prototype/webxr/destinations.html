@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>灭绝物种全表 · 地球之殇</title>
+  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="xr-page">
+  <header class="xr-page-header">
+    <section class="xr-lang-switch xr-page-lang" aria-label="Language">
+      <button type="button" data-d-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-d-lang="en" aria-pressed="false">EN</button>
+    </section>
+    <h1 data-d-i18n="title">灭绝物种全表</h1>
+    <p data-d-i18n="lead">
+      这里列出地球图中使用的全部物种记录，包括类别、地区、灭绝状态、主要压力因素和核对说明，便于继续查证。
+    </p>
+    <p id="xr-dest-meta" class="xr-muted" style="margin-top:6px;"></p>
+    <nav class="xr-nav">
+      <a href="./index.html" data-d-i18n="planet">星球首页</a>
+      <a href="./ethics.html" data-d-i18n="ethics">伦理思考</a>
+      <a href="../index.html" data-d-i18n="classic">2D 首页</a>
+    </nav>
+  </header>
+
+  <main class="xr-panel">
+    <div class="xr-filters">
+      <input id="xr-d-search" type="search" placeholder="按学名 / 英文名 / 中文名筛选…" />
+      <select id="xr-d-cat">
+        <option value="" data-d-i18n="allCat">全部分类</option>
+      </select>
+      <select id="xr-d-avail">
+        <option value="" data-d-i18n="allData">全部资料完整度</option>
+        <option value="High" data-d-i18n="high">高</option>
+        <option value="Medium" data-d-i18n="medium">中</option>
+        <option value="Low" data-d-i18n="low">低</option>
+      </select>
+    </div>
+    <p id="xr-d-count" style="margin:0 0 10px;font-size:13px;color:#a8b8cc;"></p>
+    <div class="xr-table-wrap">
+      <table class="xr-table" id="xr-dest-table">
+        <thead><tr></tr></thead>
+        <tbody id="xr-dest-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="xr-bottom-dock-static">
+    <div class="xr-dock">
+      <div class="xr-row">
+        <a class="xr-pill" href="./index.html" style="text-decoration:none;" data-d-i18n="back">↩ 星球</a>
+        <span class="xr-muted" style="font-size:11px;" data-d-i18n="dockHint">参考视频原型：底部工具条式导航</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initDestinations } from "./js/xr-destinations.js";
+    window.DEST_COPY = {
+      zh: {
+        pageTitle: "灭绝物种全表 · 地球之殇",
+        title: "灭绝物种全表",
+        lead: "这里列出地球图中使用的全部物种记录，包括类别、地区、灭绝状态、主要压力因素和核对说明，便于继续查证。",
+        planet: "星球首页",
+        ethics: "伦理思考",
+        classic: "2D 首页",
+        allCat: "全部分类",
+        allData: "全部资料完整度",
+        high: "高",
+        medium: "中",
+        low: "低",
+        back: "↩ 星球",
+        dockHint: "从这里返回星球，继续查看地理分布",
+        search: "按学名 / 英文名 / 中文名筛选..."
+      },
+      en: {
+        pageTitle: "Destinations · Extinct Species Table",
+        title: "Destinations · Dataset Table",
+        lead: "This table maps the planetary view to coordinates and species dossiers, making the dataset and uncertainty notes easy to inspect.",
+        planet: "Planet Home",
+        ethics: "Ethics Interface",
+        classic: "Classic Prototype",
+        allCat: "All Categories",
+        allData: "All Availability",
+        high: "High",
+        medium: "Medium",
+        low: "Low",
+        back: "↩ Planet",
+        dockHint: "Reference prototype: bottom toolbar navigation",
+        search: "Search by scientific / English / Chinese name..."
+      }
+    };
+    window.setDestLanguage = function setDestLanguage(lang) {
+      const selected = lang === "en" ? "en" : "zh";
+      localStorage.setItem("ea-lang", selected);
+      localStorage.setItem("xr-lang", selected);
+      localStorage.setItem("prototype-lang", selected);
+      localStorage.setItem("ethics-lang", selected);
+      const copy = window.DEST_COPY[selected];
+      document.documentElement.lang = selected === "zh" ? "zh-Hans" : "en";
+      document.title = copy.pageTitle;
+      document.querySelectorAll("[data-d-i18n]").forEach(node => {
+        const key = node.dataset.dI18n;
+        if (copy[key]) node.textContent = copy[key];
+      });
+      const search = document.getElementById("xr-d-search");
+      if (search) search.placeholder = copy.search;
+      document.querySelectorAll("[data-d-lang]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.dLang === selected));
+      });
+      window.dispatchEvent(new CustomEvent("dest:languagechange", { detail: { lang: selected } }));
+    };
+    document.querySelectorAll("[data-d-lang]").forEach(button => {
+      button.addEventListener("click", () => window.setDestLanguage(button.dataset.dLang));
+    });
+    window.setDestLanguage(localStorage.getItem("ea-lang") || "zh");
+    initDestinations().catch(console.error);
+  </script>
+</body>
+</html>

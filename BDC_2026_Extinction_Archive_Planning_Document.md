@@ -1,17 +1,64 @@
-# BDC 2026 — Extinction Archive (Chronobiology / Temporal Niche)
+# Extinction Archive: Umwelt Hypothesis Dossiers  
+### *(Extinction Archive: AI Memorial for Lost Species — “Umwelt Archive”: A Sensory Time Capsule)*
 
+**BDC 2026 · Exhibition theme:** Convergent Life  
 **Team:** 2 members | **Build scope:** Web-only (no living biosensor demo)  
-**Core angle:** Palaeo-chronobiology + temporal niche reconstruction via WebXR + generative environments + epistemic UI  
-**Target prizes:** Biodigital Excellence; Narrative / Context / Reflection strengths
+**Core angle:** Palaeo-chronobiology + **Umwelt** (species-specific world-as-sensed) + temporal niche reconstruction via WebXR, generative environments, and **epistemic UI**  
+**Target prizes:** Biodigital Excellence; strong **Narrative · Context · Reflection**
+
+**Canonical short names:** **Extinction Archive** / **Umwelt Archive**  
+**Planning doc role:** Single **hypothesis dossier** for judges and collaborators—links science claims, UX beats, ethics, and the **data + archival layer** now in-repo.
+
+---
 
 ## Execution strategy — 重内容、轻装置 (agreed)
 
-**Principle:** Redirect all limited bandwidth away from hardware you cannot ship, and into **deep scientific storytelling** + **honest technical reflection**. Installation stays **minimal**—only what supports comprehension and judging (e.g. one printed/affordable tactile anchor + QR), not a second build track.
+**Principle:** Redirect limited bandwidth away from hardware you cannot ship, into **evidence-linked narrative**, **epistemic transparency**, and **ethics**; **dossier-grade** background data (species list, archival URLs, schema) supports depth without expanding the WebXR MVP past two species unless time allows.
 
-**English:** *Heavy on evidence-linked narrative, epistemic transparency, and ethics; light on physical apparatus.*  
-**中文：** *把精力集中在「有据的节律叙事」「不确定度与 AI 边界的诚实交代」「语境与伦理」；装置只做能帮他们理解 WebXR 入口的最低配套，不做第二条生产线。*
+**English:** *Heavy on evidence-linked narrative, archival provenance, and honest AI limits; light on physical apparatus.*  
+**中文：** *把精力集中在「有据的节律与感官叙事」「档案与不确定度」「语境与伦理」；装置只做 WebXR 入口的最低配套。*
 
-**Non-goals (explicit):** Custom sensors, live bioelectric demos, projection-mapped dioramas, multi-piece AR hardware setups—unless time collapses to zero for narrative/reflection, do not reopen these.
+**Non-goals (explicit):** Custom sensors, live bioelectric demos, projection-mapped dioramas, multi-piece AR hardware—unless narrative/reflection time goes to zero, do not reopen.
+
+---
+
+## Umwelt hypothesis & ideation spine (2026 synthesis)
+
+**Problem (extended):** Extinction removes genomes and **temporal niches**—how a species partitioned **day, season, and social synchrony**. Public memory often **flattens** loss into a still image, not **time-in-the-world** or **multi-sensory Umwelt**. That gap is a form of **collective amnesia** about biodiversity integrity.
+
+**Hypothesis (design-research):** If we reconstruct **temporal phenotypes** and **sensory proxies** under strict **Cited / Interpolated / Speculative** labelling—using chronobiology, morphology, isotopes, and **curated archival media** (museums, GBIF, film/sound archives)—we can make **absence narratable** without false certainty, and steer reflection toward **stewardship of extant life** and informed **de-extinction** debate.
+
+**Three guiding questions (ideation → exhibit copy):**
+
+1. How can **extinction–absence** become a **perceptible, narratable absence** (structured uncertainty, not fake precision)?  
+2. How can **AI + biological data** **transparently** evoke lost biodiversity—without replacing conservation practice or **Indigenous knowledge systems**?  
+3. How can **touch, sight, smell, hearing, taste** act as **gentle memory cues**—optional layers, intensity caps, clear tiers—avoiding sensory overload?
+
+**Experience hooks (full vision; WebXR MVP = subset):**
+
+- **Planetary map → coordinate → species dossier** (last-known or culturally salient place).  
+- **Bio layer:** papers, specimens, isotopes, clock genes, orbit→diel proxies.  
+- **Digital layer:** constrained generative visuals/audio; **stem-layering** / sonification for ecological synchrony metaphor.  
+- **Post-immersion:** calm **ethical decision interfaces** (resource trade-offs, sovereignty, technological fixism)—then **reflection capture**.
+
+**Deep research narrative (literature review):** [`02_research/biology/biodigital_chronobiology_research.md`](02_research/biology/biodigital_chronobiology_research.md)
+
+---
+
+## Repository: data layer, schema & archival dossiers
+
+| Asset | Path | Purpose |
+|--------|------|---------|
+| **Species table (51 taxa)** | [`data/extinction_archive/animals_full.csv`](data/extinction_archive/animals_full.csv) | Wide CSV: names, extinction, **pharm_related / pharm_notes**, Umwelt scores, 3D refs—Excel + import source. |
+| **PostgreSQL bundle** | [`data/extinction_archive/archive_import.sql`](data/extinction_archive/archive_import.sql) | `animals`, `archival_media`, `literature_references` (+ extended schema doc below). |
+| **Static API shape** | [`data/extinction_archive/archive.json`](data/extinction_archive/archive.json) | Single-file frontend bundle with nested media/refs. |
+| **Full relational schema (map, layers, scenes)** | [`docs/database/extinction_archive_schema.md`](docs/database/extinction_archive_schema.md) · [`extinction_archive_schema.sql`](docs/database/extinction_archive_schema.sql) | **PostGIS deferred**; geographic sites + `reconstruction_layer` for when you add coordinates. |
+| **Archival URL matrix** | [`data/extinction_archive/archival_media_research.csv`](data/extinction_archive/archival_media_research.csv) | Per-species **IUCN, GBIF, BHL, NFSA, SI, BOW, PMC…** (~350 rows). Regenerate: `python3 scripts/extinction_archive_db/generate_archival_media_research.py` |
+| **BDC showcase shortlist** | [`docs/research/bdc_showcase_species_shortlist.md`](docs/research/bdc_showcase_species_shortlist.md) | **P0 / P1 / P2** species tiers + rationale. |
+| **Archival research methodology** | [`docs/research/archival_media_by_species.md`](docs/research/archival_media_by_species.md) | How to use portals, licences, flagship links. |
+| **Export generators** | [`scripts/extinction_archive_db/`](scripts/extinction_archive_db/) | Python: CSV/SQL/JSON + archival CSV. |
+
+**Pharmaceutical / conservation pharmacology (dataset column):** `pharm_related` flags cases such as **horn trade / traditional-medicine demand** (e.g. western black rhino subspecies on the list). Use for **Context** judging lane and ethics copy—**not** as therapeutic claims.
 
 ---
 
@@ -19,34 +66,33 @@
 
 | Track | What “done” looks like |
 |--------|-------------------------|
-| **Scientific narrative depth** | Per species: **parameter card** (photoperiod, cited clock/morph claims, confidence); **scene-to-citation map** (each VR beat → 1+ source); **plain-language** “why time matters” thread in talk + UI |
-| **Honest technical reflection** | **3 epistemic layers** always visible: *Cited / Model-interpolated / Speculative*; **tooling disclosure** (which models, prompts constrained how, known failure modes); **“what we still don’t know”** panel per species; optional **user reflection** capture for process documentation (Reflection rubric) |
-| **Context upgrade** | De-extinction: **funding vs. conservation**, **ecological novelty risk**, **Indigenous sovereignty / TEK**—each with **named sources**; state **limits of your claims** |
+| **Scientific narrative depth** | Per **shipped species**: parameter card (photoperiod, cited clock/morph claims, confidence); **scene→citation** map; plain-language “why time matters” thread. **Dossier species**: 1-slide or appendix with **top 3 archival URLs** from `archival_media_research.csv`. |
+| **Honest technical reflection** | **3 epistemic layers** always visible: *Cited / Interpolated / Speculative*; tooling disclosure; **archival licence** note where NFSA / museum / xeno-canto applies. |
+| **Context upgrade** | De-extinction trade-offs, ecological risk, **Indigenous sovereignty / TEK**—named sources; **pharm/trade** angle where `pharm_related` is true. |
+| **Data provenance** | Judges can trace claims to **paper + institution URL**; regenerate exports after list edits. |
 
 ### Physical presence — minimum viable / 实体最低配
 
-**Purpose:** Meet BDC’s “physical model encouraged” without competing with the WebXR build.
-
-- **One** tactile anchor (print, cast, small footprint card, or cheap surrogate) + **QR / short URL** to the experience.  
-- Optional: **one** tall postcard or A3 **“scene → citation”** cheat sheet for judges during Q&A—not a second art installation.
+- **One** tactile anchor + **QR / short URL** → WebXR.  
+- Optional: A3 **scene→citation** cheat sheet; optional **“dossier QR”** linking to a static page listing P0 archival sources (no extra build if timeboxed).
 
 ---
 
 ## Step 1 — Map Interests and Skills / 兴趣与技能地图
 
 | Role | Focus |
-|------|--------|
-| **Member A — Experience Lead** | Narrative & sensory direction; translating palaeo-chronobiology for a public experience; critical narrative; ethics oversight |
-| **Member B — Tech/AI Lead** | Digital spatial design; WebXR (A-Frame / Three.js); generative landscapes; uncertainty / epistemic UI |
+|------|-------|
+| **Member A — Experience Lead** | Narrative & sensory direction; palaeo-chronobiology + **Umwelt** translation; ethics; **dossier / archival** curation for deck |
+| **Member B — Tech/AI Lead** | WebXR (A-Frame / Three.js); generative environments; epistemic + ethics UI; data pipeline from `archive.json` if needed |
 
-**Project thesis / 项目核心视角:** Merge **chronobiology** with **temporal niche** to reconstruct how extinct species lived inside **cycles of day, season, and environment**—not only their static anatomy.
+**Project thesis / 项目核心视角:** Merge **chronobiology** with **temporal niche** and **sensory ecology** to reconstruct how extinct species lived inside **cycles of day, season, environment, and (where evidenced) social synchrony**—not only static anatomy.
 
 ---
 
 ## Step 2 — Find Overlaps / 交集句
 
 **Core proposition / 核心命题:**  
-*If we use **generative AI + WebXR** to **reconstruct and visualize** the **temporal phenotype** of extinct species, can we address **the human gap in sensing extinction**—the loss of another species’ **time** in the world, not only its image?*
+*If we use **generative AI + WebXR** to **reconstruct and visualize** the **temporal phenotype** and **graded sensory proxies** of extinct species—anchored in **literature and archival media**—can we address **the human gap in sensing extinction**: the loss of another species’ **time** and **Umwelt**, not only its image?*
 
 ---
 
@@ -54,21 +100,27 @@
 
 | Dimension | Score | Notes |
 |-----------|-------|--------|
-| **Narrative** | **3** | Strengthen beat: **discover rhythm → feel loss → ethical fork**. Rehearse Q&A so chronobiology reads as **emotion**, not lecture. |
-| **Concept** | **3** | **Time** as the design spine (not “fancy 3D clone”). Judges: tie every scene to **one cited proxy** (gene, orbit, photoperiod). |
-| **Context** | **2** | **Upgrade plan:** de-extinction **resource trade-offs**, **ecological risk** (invasive / novel ecosystem effects), **Indigenous sovereignty & TEK**—cite sources; avoid token one-liners; name what you **did not** claim after community consultation (if any). |
-| **Reflection** | **2.5 → 3** | **Epistemic UI** must be **interactive** (toggle evidence / inference), not footnotes; log **user reflection** optional but good for documentation. |
+| **Narrative** | **3** | Beat: **discover rhythm / Umwelt → feel absence → ethical fork**. **Dossier** list supports “archive as planetary memorial” without bloating MVP. |
+| **Concept** | **3** | **Time + sensory honesty** as spine; every scene tied to **cited proxy** or flagged inference. |
+| **Context** | **2 → 3** | Upgrade with **archival coloniality** (skins, bounty, trade) + **pharm_notes** where relevant + **Palawa-first** framing for thylacine. |
+| **Reflection** | **2.5 → 3** | Interactive epistemic UI + **what archives omit** + user reflection. |
 
 ---
 
-## Step 4 — Research Sprint / 生物学冲刺 (locked species)
+## Step 4 — Research Sprint: species tiers & WebXR lock
 
-| Species | Biology focus | Digital translation (examples) |
-|---------|----------------|--------------------------------|
-| **Woolly mammoth** | **Mammoth-specific changes in circadian-related genes** (Lynch et al., 2015) + Arctic photoperiod analogy (Lu et al., 2010) | Season slider: polar day/night; UI avoids naming *PER2* until sentence-level confirmation in primary PDF |
-| **Thylacine** | Bony orbit → diel activity / low-light **Umwelt** (cite orbit–DAP methods; verify) | Visual filter / resolution model tied to **published morphological proxies**, not generic “night vision” |
+### Tier policy (new — aligns with `bdc_showcase_species_shortlist.md`)
 
-**Decision / 决策:** Depth on **these two only**—no third species for v1.
+| Tier | Species (examples) | Role in submission |
+|------|---------------------|---------------------|
+| **P0 — WebXR MVP (locked depth)** | *Mammuthus primigenius*, *Thylacinus cynocephalus* | Full scene graph, citation strip, ethics + Indigenous UI—**this is the hypothesis test**. |
+| **P0 — Narrative / acoustic flagship (dataset + deck)** | *Ectopistes migratorius* | **Social synchrony + “silence”** (e.g. empty xeno-canto as *evidence of acoustic loss*); Martha/Smithsonian dossier links in slides or static appendix—not required inside WebXR v1. |
+| **P1 — Dossier depth (optional film / appendix / future map)** | *Raphus cucullatus*, *Pinguinus impennis* | **14+ curated URLs** each in CSV; use for **Context** and **museum/archive literacy**—do not scope into WebXR unless Week 4 surplus. |
+| **P2 — Back catalogue** | Remaining rows in `animals_full.csv` | Map/GIS **future**; judges see **systematic research**, not 49 extra scenes. |
+
+**Decision (unchanged for shipped interactive):** **Depth on mammoth + thylacine** for WebXR v1. **Passenger pigeon + others** enrich **narrative, dossier, and database story** without breaking the two-species build rule.
+
+**Archival deep links (P0 trio + P1 pair):** pre-compiled in `generate_archival_media_research.py` → `archival_media_research.csv` (**10–17 curated rows per flagship taxon**).
 
 ### Required citations — slots filled (DOI / ISBN) / 必引文献槽位（已填标识符）
 
@@ -97,6 +149,8 @@
 
 \*M4: disclose preprint status; anchor core *TRPV3* phenotype to **Lynch et al., 2015** when possible.
 
+**Plus — dossier / isotope narrative (for talk + citation strip optional beat):** Wooller et al., 2021 — tusk isotope mobility (*Science* [10.1126/science.abg1134](https://doi.org/10.1126/science.abg1134)); popular explainer in Smithsonian Magazine (URL in `archival_media_research.csv`). Label **Cited** for migration **science**; **Interpolated** if mapped 1:1 to generative music without raw data.
+
 #### Species B — Thylacine (*Thylacinus cynocephalus*) — crepuscular vision & colonial context
 
 | # | 建议主题 | 选定文献（短引文） | DOI / ID | 对应分镜 / 界面 ID | Tier |
@@ -106,6 +160,8 @@
 | T3 | 灭绝史与行为记录 | Paddle, 2000 | ISBN `9780521782196` (Cambridge Univ. Press) | `Scene_Context_01` | Cited |
 | T4 | 人为干扰 / 赏金与栖息地 | Sleightholme & Campbell, 2016 | [10.1080/00222933.2016.1217037](https://doi.org/10.1080/00222933.2016.1217037) | `Scene_Context_01` · `UI_Ethics_Fork` | Cited |
 | T5 | 文化主权 / 殖民与复活叙事 | Clements, 2025 | [10.1177/13534858251272203](https://doi.org/10.1177/13534858251272203) | `UI_Indigenous_Context` | Context |
+
+**Plus — dossier / moving image:** NFSA catalogue items (licence required for exhibit); TMAG Shaping Tasmania object; NMA resources—URLs in `archival_media_research.csv`. **Never** present NFSA footage as **public domain** without clearance.
 
 **Checklist — 文献审核状态 (toggle after PDF pass)**  
 M1 [x] · M2 [ ] · M3 [ ] · M4 [ ] · M5 [ ] · T1 [ ] · T2 [x] · T3 [ ] · T4 [ ] · T5 [ ]  
@@ -186,31 +242,31 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 | `UI_Ethics_Fork` | Resource & legal / ecological trade-offs |
 | `UI_Reflection_Log` | Limits + user reflection |
 
-**Completion rule / 完成规则:** All **10** checklist boxes `[x]` after PDF read; every **Storyboard** row shows the **same** tag in the shipped WebXR epistemic strip; **M2** and **Scene_POV_01** always display **Interpolated**.
+**Completion rule / 完成规则:** All **10** checklist boxes `[x]` after PDF read; every **Storyboard** row shows the **same** tag in the shipped WebXR epistemic strip; **M2** and `Scene_POV_01` always display **Interpolated**.
 
 ---
 
 ## Step 5 — Bio + Digital Split / 生物与数字层自检 (web-only)
 
-**Biology layer (non-negotiable):** Daylight regimes, chronobiology proxies, sensory ecology **anchored in papers**. Narrative climax: **stewardship of extant biodiversity** (de-extinction as a **decision space**, not a sales pitch).
+**Biology layer (non-negotiable):** Daylight regimes, chronobiology proxies, sensory ecology **anchored in papers** + **where used**, **museum / occurrence** metadata from the dossier CSV. Narrative climax: **stewardship of extant biodiversity**.
 
-**Digital layer (non-negotiable):** WebXR scene graph; generative 360°/6DoF-adapted environments **constrained** by paleo-environment proxies; **sonification** of phase (day/night, season); **epistemic UI** separating measured vs. inferred vs. imagined.
+**Digital layer (non-negotiable):** WebXR scene graph; generative environments **constrained** by paleo-environment proxies; **sonification** of phase (day/night, season, optional **stem metaphor** for synchrony); **epistemic UI** separating measured vs. inferred vs. imagined; **prompt / model disclosure** for AI assets.
 
-**Red lines / 红线:** No purely ornamental AI vistas—every shot maps to **a data column** (even if that column is “unknown → band of uncertainty”).
+**Red lines / 红线:** No purely ornamental AI vistas—every shot maps to **a data column** or **explicit unknown band**.
 
-**Living-sensor note:** You are **not** doing wet-lab or live bioelectric demo; **replace** that strand with: (1) **comparison to extant relatives / ecosystems** in copy + UI, (2) optional **ambient data** from **public APIs** (e.g. daylight API for user’s locale vs. species paleo-lat) if time permits—clearly labeled, not “biosensor.”
+**Living-sensor note:** Replace wet-lab with (1) comparison to extant relatives in copy, (2) optional **public daylight API** vs. paleo-latitude (labelled), (3) **archival stills/video** only with **institution licence**.
 
 ---
 
 ## Step 6 — Concept Narrative / 概念叙事 (~200 字电梯演讲)
 
-**[Problem 问题]** 物种灭绝不仅是 DNA 的丢失，更是生态系统中独特“节律”的永久断裂；人类对消失物种往往只有扁平图像，缺乏对其“怎样活在时间里”的感知，形成一种结构性遗忘。
+**[Problem 问题]** 物种灭绝不仅是 DNA 的丢失，更是 **时间位** 与 **Umwelt** 的断裂；公众记忆常被压成静态图像，难以感知“它如何活在昼夜与季节里”，形成一种对生物多样性的 **结构性遗忘**。
 
-**[Insight 洞见]** 古生物钟学让我们能把极地光照季节、钟基因与骨骼视觉代理转译成可讨论的 **时间生态位**——灭绝也是 **共生时间的抹去**。
+**[Insight 洞见]** 古生物钟学、同位素轨迹与档案（标本、影像、声库）让我们能把 **节律与感官代理** 转译成可讨论、可标注不确定度的体验材料。
 
-**[Solution 方案]** 《灭绝档案》是基于 WebXR 的沉浸式纪念馆：以文献为约束，用生成式环境与音化呈现猛犸象的极地节律与袋狼的晨昏世界；并通过 **不确定度 UI** 标出证据、推演与想象的边界。
+**[Solution 方案]** 《灭绝档案 / Umwelt 档案》是以 WebXR 为核心的 **假说卷宗**：在文献与馆际数据约束下，用生成式环境与音化呈现 **猛犸的极地时间结构** 与 **袋狼的晨昏视觉隐喻**；并以 **认识论 UI** 区分证据、推演与想象。更广的 **51 物种数据层** 支撑“行星纪念地图”的叙事野心而不绑架 MVP 范围。
 
-**[Impact 影响]** 在“去灭绝”技术话语面前，它把观众带回 **生命时间的不可逆**；伦理权衡界面引导人们从“复活奇观”转向对 **现生生物多样性** 的清醒守护。
+**[Impact 影响]** 在“去灭绝”话语前，它把观众带回 **生命时间与档案政治** 的不可逆性；伦理权衡与反思界面促使人们从奇观转向对 **现生生物多样性** 与 **文化主权** 的负责讨论。
 
 *(Rewrite in your own voice for submission; 终稿须为你们本人的语气。)*
 
@@ -218,31 +274,32 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 ## Step 7 — Prototype & Deliverables / 原型与交付物
 
-**Strategy:** **Content-first.** Physical piece is **single-anchor + QR** only; do not scope dioramas/projections unless narrative + epistemic UI + ethics are already solid.
+**Strategy:** **Content-first** + **dossier-first** (CSV/JSON/SQL + archival matrix as proof of systematic research).
 
 | Deliverable | MVP (must ship) | Target | Stretch (if time) |
 |-------------|-----------------|--------|-------------------|
-| **Live demo (Summit)** | One species **“day arc”** in WebXR + **interactive** epistemic UI + ethics fork | **Both species** + **contrast** (polar vs. crepuscular **time shape**) | Extra mammoth season/latitude slice |
-| **Narrative / science pack** | **Scene→citation** table + talking points for judges | 1-page **methods & limits** PDF (web + print) | Glossary slide of clock/orbit terms |
-| **Visual system** | **3-layer** epistemic legend + data panel synced to scenes | Full type / color / motion | **One** judge-facing “evidence board” print |
-| **Physical (minimal)** | **One** object or card + **QR → WebXR** | Same; nicer print finish | — *(no projection / no multi-part exhibit)* |
-| **Video (1–5 min)** | Trailer: rhythm → **uncertainty** → ethics (not a talk recording) | Sonification + tighter edit; state AI role in credits | — |
-| **Slides** | Each section maps to **Narrative · Concept · Context · Reflection** | Strong **Reflection** slide: biases, cuts, unknowns | — |
+| **Live demo (Summit)** | One species **“day arc”** in WebXR + **interactive** epistemic UI + ethics fork | **Both species** (mammoth + thylacine) + **contrast** (polar vs. crepuscular **time shape**) | Extra mammoth season slice; optional **passenger pigeon** audio slide in deck only |
+| **Narrative / science pack** | **Scene→citation** table + talking points | **Methods & limits** PDF; **1-page dossier appendix** (P0–P1 species + top archival URLs) | Link to `archival_media_research.csv` on GitHub Pages |
+| **Data proof (Biodigital)** | Point judges to **`animals_full.csv` + `archive.json`** + generator scripts | **`archive_import.sql`** loaded in demo DB or screenshot | PostGIS geo sites when coordinates curated |
+| **Visual system** | **3-layer** epistemic legend + data panel synced to scenes | Full type / color / motion | One **evidence board** print |
+| **Physical (minimal)** | **One** object or card + **QR → WebXR** | Same; optional second QR → **dossier list** | — |
+| **Video (1–5 min)** | Trailer: rhythm → **uncertainty** → ethics | Sonification + archival stills (licensed) | — |
+| **Slides** | Map to **Narrative · Concept · Context · Reflection** | **Reflection**: biases, cuts, unknowns; **Context**: pharm/trade + sovereignty | — |
 
-**MVP done when:** User completes **immersive interval → manipulates uncertainty layers → completes one ethical choice + short reflection** (text or optional localStorage stub).
+**MVP done when:** User completes **immersive interval → manipulates uncertainty layers → one ethical choice + short reflection**.
 
 ---
 
 ## Step 8 — Build Sprint Plan / 4 周节奏 (2-person)
 
-**Priority order if time crunches:** (1) epistemic UI + scene→citation, (2) ethics fork + Context copy, (3) second species, (4) sonification polish, (5) print collateral, (6) physical anchor procurement.
+**Priority order if time crunches:** (1) epistemic UI + scene→citation, (2) ethics fork + Context copy, (3) second species scenes, (4) sonification polish, (5) dossier slide + CSV pointer for judges, (6) print collateral, (7) physical anchor.
 
 | Week | Phase | Member A | Member B |
 |------|--------|----------|----------|
-| **1** | Discovery | **Literature pack + scene→citation grid**; narrative beats; ethics draft | WebXR shell; routing; **epistemic UI wireframe** (3 toggles) |
-| **2** | Prototyping | **Parameter tables** (mammoth clock claims; thylacine orbit→visual); plain-language tooltips | Time scrubber; generative pipeline **with constraint doc**; bind first citations to scenes |
-| **3** | Integration | Sonification + ethics script; **Reflection** slide deck; **Q&A risk list** | Full epistemic layers + ethics UI; **methods/limitations** panel; perf pass |
-| **4** | Polish | **10-min + 5-min Q&A** drills; **honest-AI / bias** talking points | Deploy; video capture; **order/print** single QR anchor + optional one-sheet |
+| **1** | Discovery | Literature + **archival deep links** for P0; scene→citation grid; ethics draft | WebXR shell; epistemic UI wireframe; **pipeline sketch** (`archive.json` optional read) |
+| **2** | Prototyping | Parameter tables; **NFSA / SI licence** checklist for any embed | Time scrubber; generative **constraint doc**; bind citations |
+| **3** | Integration | Sonification + ethics; **dossier appendix** for deck; Q&A risk list | Full epistemic layers + ethics UI; methods panel; perf pass |
+| **4** | Polish | **10-min + Q&A**; honest-AI talking points | Deploy; video; print **QR** + optional dossier one-sheet |
 
 **Buffer:** If Week 3 slips, **cut** stretch—not epistemic UI, ethics, or citation mapping.
 
@@ -250,9 +307,10 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 ## BDC Q&A — Likely prompts (prep bullets)
 
-- **Is this biodesign without living matter?** *We design *with* biology as the constraint system: chronotype proxies from literature drive the experience; the “living” stake is **extant biodiversity** and honest limits of inference.*  
-- **How do you prevent AI hallucination?** *Layers: cited → model-interpolated → speculative; nothing speculative without UI flag.*  
-- **Indigenous / local knowledge?** *Name sources; state limits; do not claim community partnership unless real.*
+- **Is this biodesign without living matter?** *Biology is the **constraint system**: literature + specimens + occurrence archives drive the experience; the living stake is **extant biodiversity** and honest inference limits.*  
+- **How do you prevent AI hallucination?** *Cited → interpolated → speculative; archival assets **licence-checked**; nothing speculative without UI flag.*  
+- **Why 51 species in CSV but two in WebXR?** ***Hypothesis dossiers*** scale research and **map narrative**; **interactive depth** stays falsifiable on two taxa for the build window.*  
+- **Indigenous / local knowledge?** *Name sources; state limits; no partnership claims without real consultation.*
 
 ---
 
@@ -260,12 +318,12 @@ Use these strings **in Figma / doc / WebXR comments** and mirror the **short tag
 
 | Risk | Mitigation |
 |------|------------|
-| “Just a VR art piece” | **Scene→citation** grid + synced **data panel**; judges can **pause** and verify proxies |
-| Ethics feels bolted-on | **Structural** fork after immersion; **named** trade-offs (funding, ecosystem novelty, justice) |
-| Reflection reads shallow | Ship **interactive** epistemic layers + **explicit** AI/tool limits + “what we cut / got wrong” in talk |
-| Scope creep into hardware | **Non-goals** locked; physical = **one** QR anchor + optional one-sheet |
-| 4-week crush | Priority order above; feature freeze end of Week 3 |
+| “Just a VR art piece” | **Scene→citation** + **`archival_media_research.csv`** + synced data panel |
+| Ethics feels bolted-on | **Structural** fork; **T5** + **pharm_notes** where relevant |
+| Archival copyright surprise | **NFSA / SI / BOW** licence pass before Summit video; prefer **link-out** over rip |
+| Reflection reads shallow | Interactive epistemic layers + **what archives omit** |
+| Scope creep | **Non-goals** locked; physical = **one** QR; WebXR = **two species** unless explicit Week 4 surplus |
 
 ---
 
-*Strategy locked: 重内容、轻装置 — align dates with biodesignchallenge.org.*
+*Document title updated April 2026: **Umwelt Hypothesis Dossiers** — integrates ideation, `animals_full` / SQL / JSON / archival matrix, and BDC showcase tiers. Align summit dates with [biodesignchallenge.org](https://biodesignchallenge.org).*

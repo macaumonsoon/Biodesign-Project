@@ -1,0 +1,55 @@
+row_id,scientific_name,common_name_en,common_name_zh,category,list_source,extinction_summary,region,data_availability
+46,Cynops wolterstorffi,Yunnan Lake Newt,云南湖蝾螈,Amphibians,unified_priority_csv,1979,中国云南,Low
+45,Incilius periglenes,Golden Toad,金蟾,Amphibians,unified_priority_csv,1989（2019确认）,哥斯达黎加,High
+47,Litoria nyakalensis,Mountain Mist Frog,山雾蛙,Amphibians,unified_priority_csv,2021,澳大利亚,Low
+54,Oophaga speciosa,Splendid poison frog,华丽箭毒蛙,Amphibians,research_supplement,Extinct (IUCN; last seen ~1992 per common summaries—verify),Western Colombia,
+34,Campephilus imperialis,Imperial Woodpecker,帝王啄木鸟,Birds,unified_priority_csv,20世纪晚期,墨西哥,Medium
+30,Camptorhynchus labradorius,Labrador Duck,拉布拉多鸭,Birds,unified_priority_csv,~1878,北美东北,Medium
+33,Conuropsis carolinensis,Carolina Parakeet,卡罗来纳长尾鹦鹉,Birds,unified_priority_csv,~1930,北美东南,Medium
+32,Corvus hawaiiensis,Hawaiian Crow,夏威夷乌鸦,Birds,unified_priority_csv,2002（野外）,夏威夷,High
+26,Ectopistes migratorius,Passenger Pigeon,旅鸽,Birds,unified_priority_csv,1914,北美,High
+55,Melamprosops phaeosoma,Hawaiian honeycreeper (Poʻouli),Poʻouli,Birds,research_supplement,Extinct (IUCN; confirm last observation dates),Hawaii,
+37,Ninox albifacies,Laughing Owl,,Birds,unified_priority_csv,~1914,新西兰,High
+27,Numenius tenuirostris,Slender-billed Curlew,细嘴杓鹬,Birds,unified_priority_csv,1995（2025确认）,西伯利亚/欧洲/非洲,High
+29,Pinguinus impennis,Great Auk,大海雀,Birds,unified_priority_csv,1852,北大西洋,High
+36,Psephotellus pulcherrimus,Paradise Parrot,,Birds,unified_priority_csv,1928,澳大利亚东部,Medium
+28,Psittirostra psittacea,Ou,ʻŌʻū,Birds,unified_priority_csv,2024,夏威夷,Medium
+25,Raphus cucullatus,Dodo,渡渡鸟,Birds,unified_priority_csv,17世纪晚期,毛里求斯,High
+31,Tachybaptus rufolavatus,Alaotra Grebe,阿拉奥特鸊鷉,Birds,unified_priority_csv,1985,马达加斯加,Low
+38,Tympanuchus cupido cupido,Heath Hen,,Birds,unified_priority_csv,1932,北美,Medium
+35,Vermivora bachmanii,Bachman’s Warbler,,Birds,unified_priority_csv,~2023确认,美国东南,Medium
+48,Psephurus gladius,Chinese Paddlefish,中国匙吻鲟,Fishes,unified_priority_csv,~2010（2019确认）,长江,Medium
+49,Sympterichthys unipennis,Smooth Handfish,,Fishes,unified_priority_csv,2020,澳大利亚,Low
+52,Pieris wollastoni,Madeira large white,马德拉大白蝶,Insects,research_supplement,Declared Extinct (reported in IUCN 2025 update coverage),Madeira,
+51,Conus lugubris,Lugubrious cone snail,忧郁芈螺,Invertebrates,research_supplement,Declared Extinct (IUCN Red List; widely reported in 2025 update press),Cape Verde (marine),
+50,Glaucopsyche xerces,Xerces Blue Butterfly,,Invertebrates,unified_priority_csv,1940s,美国,Medium
+20,Chaeropus ecaudatus,Southern Pig-footed Bandicoot,,Mammals,unified_priority_csv,~1950s（2025确认）,澳大利亚,Medium
+21,Chaeropus yirratji,Northern Pig-footed Bandicoot,,Mammals,unified_priority_csv,~1930s（2025确认）,澳大利亚,Medium
+15,Crocidura trichura,Christmas Island Shrew,圣诞岛鼩,Mammals,unified_priority_csv,1985（2025确认）,圣诞岛,Medium
+23,Diceros bicornis longipes,Western Black Rhinoceros,,Mammals,unified_priority_csv,2011,西非,High
+24,Dusicyon australis,Falkland Islands Wolf,,Mammals,unified_priority_csv,1876,福克兰群岛,Medium
+13,Hydrodamalis gigas,Steller's Sea Cow,斯特勒海牛,Mammals,unified_priority_csv,1768,白令海,Medium
+53,Lipotes vexillifer,Baiji,白鲜豚,Mammals,research_supplement,Critically Endangered (Possibly Extinct); last robust survey ~2006–2007 (verify),"Yangtze River, China",
+14,Melomys rubicola,Bramble Cay Melomys,布兰布尔凯鼠,Mammals,unified_priority_csv,2016,澳大利亚,Medium
+18,Perameles myosuros,Southern Long-nosed Bandicoot,,Mammals,unified_priority_csv,19世纪晚期（2025确认）,澳大利亚东南,Medium
+19,Perameles notina,Southeastern Striped Bandicoot,,Mammals,unified_priority_csv,19-20世纪（2025确认）,澳大利亚,Medium
+17,Perameles papillon,Nullarbor Barred Bandicoot,,Mammals,unified_priority_csv,~1920s（2025确认）,澳大利亚,Medium
+16,Potorous platyops,Broad-faced Potoroo,宽脸袋鼠,Mammals,unified_priority_csv,1875,澳大利亚,Medium
+12,Thylacinus cynocephalus,Thylacine,袋狼,Mammals,unified_priority_csv,1936,澳大利亚/塔斯马尼亚,High
+22,Zalophus japonicus,Japanese Sea Lion,,Mammals,unified_priority_csv,1950s,日本海,Medium
+8,Aenocyon dirus,Dire Wolf,恐狼,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",北美,High
+7,Coelodonta antiquitatis,Woolly Rhinoceros,羊毛犀,Pleistocene Megafauna,unified_priority_csv,"~14,000年前",欧亚,High
+11,Glyptodon spp.,Glyptodon,巨型犰狳,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",南美,High
+4,Mammut americanum,American Mastodon,美洲乳齿象,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",北美,High
+3,Mammuthus columbi,Columbian Mammoth,哥伦比亚猛犸象,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",北美,High
+2,Mammuthus primigenius,Woolly Mammoth,猛犸象,Pleistocene Megafauna,unified_priority_csv,"~4,000年前",欧亚、北美,High
+9,Megaloceros giganteus,Irish Elk,爱尔兰麋鹿,Pleistocene Megafauna,unified_priority_csv,"~7,700年前",欧亚,High
+6,Megatherium americanum,Giant Ground Sloth,巨型地懒,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",南美,High
+5,Smilodon fatalis,Saber-toothed Cat,剑齿虎,Pleistocene Megafauna,unified_priority_csv,"~10,000年前",美洲,High
+10,Ursus spelaeus,Cave Bear,洞熊,Pleistocene Megafauna,unified_priority_csv,"~24,000年前",欧洲,High
+43,Bolyeria multocarinata,Round Island Burrowing Boa,圆岛掘穴蟒,Reptiles,unified_priority_csv,1975,毛里求斯,Medium
+39,Chelonoidis abingdonii,Pinta Giant Tortoise,平塔巨龟,Reptiles,unified_priority_csv,2015,加拉帕戈斯,High
+40,Cylindraspis indica,Réunion Giant Tortoise,留尼汪巨龟,Reptiles,unified_priority_csv,18世纪,留尼汪岛,Medium
+42,Cylindraspis peltastes,Rodrigues Giant Tortoise,,Reptiles,unified_priority_csv,1800s,罗德里格斯岛,Medium
+41,Cylindraspis triserrata,Domed Mauritius Giant Tortoise,毛里求斯穹顶巨龟,Reptiles,unified_priority_csv,18世纪,毛里求斯,Medium
+44,Hoplodactylus delcourti,Delcourt's Giant Gecko,,Reptiles,unified_priority_csv,~1870,新西兰,Medium

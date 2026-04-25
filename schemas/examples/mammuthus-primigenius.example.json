@@ -1,0 +1,55 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440001",
+  "slug": "mammuthus-primigenius",
+  "scientific_name": "Mammuthus primigenius",
+  "common_names": {
+    "zh": "\u731b\u739b\u8c61",
+    "en": "Woolly Mammoth",
+    "raw_bilingual": "\u731b\u739b\u8c61 / Woolly Mammoth"
+  },
+  "archive_category": "Pleistocene Megafauna",
+  "taxon_rank": "species",
+  "extinction_summary": "~4,000年前",
+  "primary_range": "欧亚、北美",
+  "scores": {
+    "sensory_reconstruction_potential": 10,
+    "music_layering_potential": 9
+  },
+  "data_availability": "high",
+  "model_3d": {
+    "reference_labels": ["Sketchfab \"Woolly Mammoth\""],
+    "reference_links": []
+  },
+  "extinction_drivers": "人类狩猎+气候变化",
+  "drivers_tags": ["hunting", "climate_change"],
+  "notes": "冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层",
+  "pharm_human_entanglement": {
+    "theme_alignment": "other",
+    "tags": ["fill_after_research"],
+    "narrative_hook_en": "",
+    "narrative_hook_zh": "",
+    "claims_to_verify": []
+  },
+  "umwelt": {
+    "merkwelt_cues": ["hearing", "olfaction", "touch"],
+    "chronobiology_notes": "Arctic photoperiod / clock genes — verify against primary literature before exhibit copy.",
+    "inference_confidence": "moderate",
+    "proxy_species": ["Elephas maximus", "Loxodonta africana"]
+  },
+  "experience": {
+    "default_scene_id": null,
+    "audio_preset_id": null,
+    "sonification_params_ref": null
+  },
+  "sovereignty_and_ethics": {
+    "indigenous_context_required": true,
+    "attribution": "If featuring Sakha / permafrost narratives, partner or cite appropriately.",
+    "consultation_status": "pending"
+  },
+  "citations": [],
+  "provenance": {
+    "source": "extinct_animals_database统一高优先级数据库（87种）.csv",
+    "source_row": 2,
+    "imported_at": "2026-04-14T00:00:00Z"
+  }
+}

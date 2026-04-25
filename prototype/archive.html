@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>物种档案浏览 - 地球之殇</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="archive">
+  <header class="top">
+    <h1>物种档案浏览</h1>
+    <p>这里汇总本项目收录的灭绝物种。你可以按名称、类别和资料完整度筛选，并进入单个档案查看来源与说明。</p>
+    <nav class="main-nav">
+      <a href="./index.html">首页</a>
+      <a href="./hero.html">重点案例</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel archive full-span">
+      <div class="filters">
+        <input id="search" placeholder="按中文名、英文名或学名搜索..." />
+        <select id="category-filter">
+          <option value="">全部类别</option>
+        </select>
+        <select id="availability-filter">
+          <option value="">全部资料完整度</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <p id="archive-stats"></p>
+      <div id="archive-list" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

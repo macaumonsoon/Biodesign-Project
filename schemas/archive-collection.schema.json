@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umwelt-archive.local/schemas/collection.json",
+  "title": "Umwelt Archive — Curated Collection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "slug", "title"],
+  "properties": {
+    "id": { "type": "string" },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      }
+    },
+    "description": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      }
+    },
+    "theme_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "e.g. pharm_related, high_data_availability, pleistocene, island_endemics"
+    },
+    "filter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "archive_categories": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "min_sensory_score": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "min_music_score": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "data_availability": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["high", "medium", "low"] }
+        },
+        "list_sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "unified_priority_csv",
+              "research_supplement",
+              "manual",
+              "import"
+            ]
+          }
+        }
+      }
+    },
+    "ordered_species_slugs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Explicit order for browse UI; overrides filter when present"
+    },
+    "cover_experience_slug": {
+      "type": "string",
+      "description": "Optional featured capsule when entering collection"
+    }
+  }
+}

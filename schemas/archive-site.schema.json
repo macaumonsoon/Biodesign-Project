@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umwelt-archive.local/schemas/site.json",
+  "title": "Umwelt Archive — Site Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project", "locales", "routes"],
+  "properties": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug"],
+      "properties": {
+        "slug": { "type": "string" },
+        "name": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string" },
+            "zh": { "type": "string" }
+          }
+        },
+        "tagline": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string" },
+            "zh": { "type": "string" }
+          }
+        }
+      }
+    },
+    "default_locale": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    },
+    "locales": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "home": { "type": "string" },
+        "species_index": { "type": "string" },
+        "collection_index": { "type": "string" },
+        "about": { "type": "string" },
+        "ethics": { "type": "string" }
+      }
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["href", "label"],
+        "properties": {
+          "href": { "type": "string" },
+          "label": {
+            "type": "object",
+            "properties": {
+              "en": { "type": "string" },
+              "zh": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "featured": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "collection_slugs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "species_slugs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "experience_slugs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "default_title": { "type": "string" },
+        "default_description": { "type": "string" },
+        "og_image": { "type": "string", "format": "uri" }
+      }
+    },
+    "content_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ai_disclosure_url": { "type": "string", "format": "uri" },
+        "iucn_disclaimer": { "type": "string" }
+      }
+    }
+  }
+}

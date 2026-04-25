@@ -1,6 +1,22 @@
 # Umwelt Archive — Slide Deck (BDC 2026)
 
-**Use:** Copy blocks into **Keynote**, **Google Slides**, or **PowerPoint** (recommended ~14 slides for a 10-minute live pitch + buffer).  
+**Generated PDF (English, archival theme, 16:9):**  
+`slides/export/Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026_EN.pdf`  
+
+**GitHub-facing copy (same bytes as EN PDF above):**  
+`slides/export/[FINAL-SMALL] Extinction Archive Umwelt Hypothesis Dossiers_BDC2026.pdf`  
+
+**Full judge walkthrough (new file — does not overwrite `BDC_Deck_EN.pdf` or `FINAL-SMALL`):**  
+`slides/export/Extinction_Archive_Umwelt_BDC_Judge_Full_Deck_EN_2026.pdf`  
+
+**Written BDC brief (Narrative · Concept · Context · Reflection):**  
+`docs/bdc-umwelt-archive/reports/Extinction_Archive_BDC_Submission_Brief_EN.md`  
+
+Rebuild: `python3 docs/bdc-umwelt-archive/scripts/build_extinction_archive_slides.py` (requires `fpdf2`, macOS Arial Unicode).  
+Omit full deck: `--no-full` · Full PDF only: `--full-only`.  
+**Marp outlines:** `docs/bdc-umwelt-archive/slides/BDC_Extinction_Archive_EN.md` · `…/BDC_Extinction_Archive_Full_Judge_EN.md`
+
+**Use:** Copy blocks below into **Keynote**, **Google Slides**, or **PowerPoint** (recommended ~14 slides for a 10-minute live pitch + buffer).  
 **Team:** GUO XIAO YUE (MC569254) · LIU JIA QUN (MC569293)  
 **Titles:** English on-slide; speaker notes may mix EN/中文 as needed.
 
