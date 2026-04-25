@@ -48,6 +48,11 @@ html, body {
   width: 100%;
   margin: 0;
 }
+.xr-home-left .xr-chip h1 {
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  line-height: 1.22;
+  max-width: 100%;
+}
 .xr-home-left .xr-corner {
   position: static;
   max-width: none;

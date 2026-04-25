@@ -389,8 +389,8 @@ export async function initSpeciesPage() {
 
   document.title =
     currentLang() === "zh"
-      ? `${localizedSpeciesName(hit)} · 地球之殇 | 数字档案`
-      : `${localizedSpeciesName(hit)} | Earth's Sorrow dossier`;
+      ? `${localizedSpeciesName(hit)} · 灭绝档案 | 数字档案`
+      : `${localizedSpeciesName(hit)} | Extinction Archive dossier`;
 
   const arch = archivalMap.get(hit.scientific_name);
   const curated = arch?.notable_archives_curated || [];
@@ -422,7 +422,7 @@ export async function initSpeciesPage() {
   mount.innerHTML = `
     <article class="xr-dossier xr-dossier--archive">
       <header class="xr-dossier-hero">
-        <p class="xr-dossier-eyebrow">${esc(currentLang() === "zh" ? "地球之殇 · 数字档案" : "Earth's Sorrow · digital dossier")}</p>
+        <p class="xr-dossier-eyebrow">${esc(currentLang() === "zh" ? "灭绝档案 · 数字档案" : "Extinction Archive · digital dossier")}</p>
         <h1 class="xr-dossier-title">${esc(localizedSpeciesName(hit))} <span class="xr-sci">${esc(hit.scientific_name)}</span></h1>
         <p class="xr-dossier-meta">${esc(localizedExtinction(hit.extinction_summary))} · ${esc(localizedRegion(hit.region))}</p>
       </header>
