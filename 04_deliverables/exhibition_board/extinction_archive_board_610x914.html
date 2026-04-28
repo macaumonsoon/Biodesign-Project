@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>滅絕檔案展板 610mm × 914mm · 中英對照</title>
+  <style>
+    @page {
+      size: 610mm 914mm;
+      margin: 0;
+    }
+
+    :root {
+      --ink: #142026;
+      --paper: #f4f1e8;
+      --muted: #5e6d69;
+      --deep: #071214;
+      --deep2: #102425;
+      --moss: #667c58;
+      --gold: #a9833a;
+      --line: rgba(20, 32, 38, 0.18);
+      --white: #f9fbf4;
+      --font-zh: "PingFang TC", "PingFang SC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+      --font-en: "Avenir Next", "Inter", "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #d8d4ca;
+      color: var(--ink);
+      font-family: var(--font-zh);
+    }
+
+    body {
+      display: grid;
+      place-items: start center;
+      padding: 18px;
+    }
+
+    .board {
+      position: relative;
+      width: 610mm;
+      height: 914mm;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 22% 12%, rgba(122, 153, 121, 0.28), transparent 32%),
+        linear-gradient(180deg, #f7f3ea 0%, #efe8da 48%, #e6dfcf 100%);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero {
+      position: relative;
+      height: 268mm;
+      padding: 30mm 26mm 16mm;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(5, 14, 16, 0.95) 0%, rgba(8, 24, 25, 0.82) 46%, rgba(8, 26, 26, 0.22) 100%),
+        radial-gradient(circle at 78% 45%, rgba(111, 155, 131, 0.45), rgba(14, 45, 42, 0.35) 35%, rgba(7, 18, 20, 0.9) 73%),
+        linear-gradient(135deg, #102627, #283b2e 58%, #111b18);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 9mm 9mm;
+      opacity: 0.26;
+      mix-blend-mode: screen;
+    }
+
+    .globe {
+      position: absolute;
+      right: 23mm;
+      top: 26mm;
+      width: 210mm;
+      height: 210mm;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 40% 34%, rgba(209, 228, 208, 0.25), transparent 18%),
+        radial-gradient(circle at 52% 54%, rgba(126, 195, 171, 0.22), transparent 36%),
+        radial-gradient(circle at 50% 50%, rgba(15, 45, 48, 0.98), rgba(4, 12, 13, 0.98) 69%, rgba(4, 12, 13, 0) 72%);
+      box-shadow:
+        inset -18mm -10mm 34mm rgba(0, 0, 0, 0.55),
+        0 0 34mm rgba(121, 190, 161, 0.18);
+      opacity: 0.92;
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 20mm;
+      border: 0.45mm solid rgba(231, 236, 218, 0.16);
+      border-radius: 50%;
+      transform: rotate(-17deg) scaleX(1.16);
+    }
+
+    .dot {
+      position: absolute;
+      width: 3.4mm;
+      height: 3.4mm;
+      border-radius: 50%;
+      background: #d7e9bf;
+      box-shadow: 0 0 5mm rgba(215, 233, 191, 0.85);
+    }
+
+    .dot:nth-child(2) { left: 61%; top: 21%; }
+    .dot:nth-child(3) { left: 38%; top: 47%; width: 2.5mm; height: 2.5mm; }
+    .dot:nth-child(4) { left: 66%; top: 58%; width: 2.7mm; height: 2.7mm; }
+    .dot:nth-child(5) { left: 49%; top: 73%; width: 2.2mm; height: 2.2mm; }
+    .dot:nth-child(6) { left: 28%; top: 31%; width: 2.2mm; height: 2.2mm; }
+    .dot:nth-child(7) { left: 76%; top: 39%; width: 2.1mm; height: 2.1mm; }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 360mm;
+    }
+
+    .kicker {
+      margin: 0 0 6mm;
+      color: #bfd5c4;
+      font: 700 11pt/1 var(--font-en);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34pt;
+      font-weight: 760;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      text-shadow: 0 2mm 10mm rgba(0, 0, 0, 0.45);
+    }
+
+    .en-title {
+      margin: 5mm 0 0;
+      font: 600 16pt/1.25 var(--font-en);
+      letter-spacing: 0.04em;
+      color: #eef4e7;
+    }
+
+    .hero-note {
+      margin: 12mm 0 0;
+    }
+
+    .bipair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4.5mm;
+      align-items: start;
+    }
+
+    .bipair .col-zh,
+    .bipair .col-en {
+      margin: 0;
+    }
+
+    .bipair .col-zh {
+      padding-right: 4mm;
+      border-right: 0.28mm solid var(--line);
+    }
+
+    .bipair .col-en {
+      font-family: var(--font-en);
+      color: #2c3a36;
+    }
+
+    .hero .bipair .col-zh {
+      border-color: rgba(255, 255, 255, 0.22);
+      color: rgba(249, 251, 244, 0.9);
+      font-size: 10.5pt;
+      line-height: 1.6;
+    }
+
+    .hero .bipair .col-en {
+      color: rgba(249, 251, 244, 0.78);
+      font-size: 9.2pt;
+      line-height: 1.52;
+    }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 2mm 4mm;
+      margin: 0 0 3mm;
+    }
+
+    .section-title-zh {
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .team {
+      position: absolute;
+      right: 24mm;
+      bottom: 10mm;
+      z-index: 2;
+      max-width: 212mm;
+      text-align: right;
+    }
+
+    .team .team-bipair {
+      text-align: start;
+    }
+
+    .team .team-bipair .col-zh {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(249, 251, 244, 0.88);
+      font-size: 6.6pt;
+      line-height: 1.4;
+    }
+
+    .team .team-bipair .col-en {
+      color: rgba(249, 251, 244, 0.78);
+      font-size: 6.3pt;
+      line-height: 1.38;
+    }
+
+    .team .team-label {
+      display: block;
+      margin: 0 0 0.6mm;
+      font-size: 6.1pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(201, 214, 202, 0.85);
+    }
+
+    .team .team-bipair .col-zh,
+    .team .team-bipair p.col-zh {
+      margin: 0;
+    }
+
+    .team .team-bipair .col-en,
+    .team .team-bipair p.col-en {
+      margin: 0;
+    }
+
+    .content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 248mm 1fr;
+      gap: 16mm;
+      padding: 16mm 24mm 20mm;
+    }
+
+    .section-title {
+      display: inline-block;
+      margin: 0;
+      padding: 1.3mm 3.5mm;
+      background: linear-gradient(90deg, var(--gold), rgba(169, 131, 58, 0.72));
+      color: white;
+      font: 800 10pt/1 var(--font-en);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .panel {
+      margin: 0 0 9mm;
+    }
+
+    .panel .bipair .col-zh {
+      font-size: 9.1pt;
+      line-height: 1.5;
+    }
+
+    .panel .bipair .col-en {
+      font-size: 8.2pt;
+      line-height: 1.45;
+    }
+
+    .panel .lead .col-zh {
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+
+    .panel .lead .col-en {
+      font-size: 8.6pt;
+      line-height: 1.5;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .dataset-note {
+      margin-top: 3mm;
+    }
+
+    .dataset-note .col-zh {
+      font-size: 8.2pt;
+      line-height: 1.4;
+    }
+
+    .dataset-note .col-en {
+      font-size: 7.4pt;
+      line-height: 1.36;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
+      margin: 5mm 0 6mm;
+    }
+
+    .species-card {
+      min-height: 56mm;
+      overflow: hidden;
+      border: 0.35mm solid rgba(20, 32, 38, 0.16);
+      background: #fffaf0;
+    }
+
+    .species-card img {
+      display: block;
+      width: 100%;
+      height: 35mm;
+      object-fit: cover;
+      filter: saturate(0.82) contrast(0.98);
+    }
+
+    .species-card .cap {
+      padding: 2mm 2.2mm 2.3mm;
+    }
+
+    .species-card .cap-zh {
+      font-size: 7.2pt;
+      line-height: 1.2;
+    }
+
+    .species-card .cap-zh strong {
+      display: block;
+      font-size: 7.5pt;
+      margin-bottom: 0.4mm;
+    }
+
+    .species-card .cap-en {
+      margin-top: 0.8mm;
+      font-family: var(--font-en);
+      font-size: 6.5pt;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5mm;
+      margin-top: 3mm;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 2.5mm;
+      align-items: start;
+      padding: 3mm;
+      border-left: 1.2mm solid var(--moss);
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .step .bipair .col-zh {
+      font-size: 8.2pt;
+      line-height: 1.4;
+    }
+
+    .step .bipair .col-en {
+      font-size: 7.3pt;
+      line-height: 1.35;
+    }
+
+    .num {
+      display: grid;
+      place-items: center;
+      width: 16mm;
+      height: 16mm;
+      border-radius: 50%;
+      background: var(--deep2);
+      color: #e8efd9;
+      font: 800 9pt/1 var(--font-en);
+    }
+
+    .right-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      margin-bottom: 8mm;
+    }
+
+    .visual-box {
+      position: relative;
+      min-height: 96mm;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(147, 196, 163, 0.54), transparent 24%),
+        linear-gradient(135deg, #122928, #0b1416);
+      color: white;
+      border: 0.35mm solid rgba(20, 32, 38, 0.15);
+    }
+
+    .visual-box .mini-globe {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      width: 66mm;
+      height: 66mm;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(227, 238, 205, 0.32), transparent 18%),
+        radial-gradient(circle, #285b54 0%, #102d31 55%, #050b0d 77%);
+      box-shadow: 0 0 18mm rgba(135, 204, 163, 0.18);
+    }
+
+    .visual-box .label {
+      position: absolute;
+      left: 5mm;
+      bottom: 5mm;
+      right: 5mm;
+    }
+
+    .visual-box .bipair .col-zh {
+      border-color: rgba(255, 255, 255, 0.18);
+      color: rgba(249, 251, 244, 0.86);
+      font-size: 7.5pt;
+      line-height: 1.4;
+    }
+
+    .visual-box .bipair .col-en {
+      color: rgba(249, 251, 244, 0.7);
+      font-size: 7.2pt;
+      line-height: 1.4;
+    }
+
+    .thin-card {
+      padding: 6mm;
+      min-height: 96mm;
+      border-top: 1.2mm solid var(--gold);
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    .thin-card h3 {
+      margin: 0 0 2mm;
+      font: 800 10.5pt/1.2 var(--font-en);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin-top: 4mm;
+    }
+
+    .tag {
+      padding: 1.1mm 2.4mm;
+      border: 0.3mm solid rgba(20, 32, 38, 0.22);
+      border-radius: 999px;
+      color: var(--muted);
+      font: 6.8pt/1 var(--font-en);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .diagram {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
+      margin-top: 5mm;
+    }
+
+    .diag-cell {
+      min-height: 40mm;
+      padding: 3.5mm;
+      background: #fffaf0;
+      border: 0.35mm solid var(--line);
+    }
+
+    .diag-cell strong {
+      display: block;
+      margin-bottom: 2mm;
+      color: var(--gold);
+      font: 800 7.5pt/1.2 var(--font-en);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .diag-cell .dz {
+      margin: 0;
+      font-size: 7.6pt;
+      line-height: 1.35;
+    }
+
+    .diag-cell .de {
+      margin: 1.2mm 0 0;
+      font-family: var(--font-en);
+      font-size: 6.8pt;
+      line-height: 1.3;
+      color: var(--muted);
+    }
+
+    .ethics {
+      margin-top: 8mm;
+      padding: 7mm;
+      background: linear-gradient(135deg, rgba(16, 36, 37, 0.98), rgba(64, 78, 61, 0.94));
+      color: var(--white);
+    }
+
+    .ethics h3 {
+      margin: 0 0 3mm;
+      font: 800 10.5pt/1.2 var(--font-en);
+    }
+
+    .ethics .bipair .col-zh {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(249, 251, 244, 0.88);
+      font-size: 8.4pt;
+      line-height: 1.5;
+    }
+
+    .ethics .bipair .col-en {
+      color: rgba(249, 251, 244, 0.75);
+      font-size: 7.5pt;
+      line-height: 1.45;
+    }
+
+    .ethics .tag {
+      color: rgba(249, 251, 244, 0.84);
+      border-color: rgba(249, 251, 244, 0.28);
+    }
+
+    .quote {
+      margin-top: 8mm;
+      padding: 6mm 0 0;
+      border-top: 0.35mm solid rgba(20, 32, 38, 0.22);
+      font-weight: 650;
+      color: #24332f;
+    }
+
+    .quote .bipair .col-zh {
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+
+    .quote .bipair .col-en {
+      font-size: 10.2pt;
+      line-height: 1.45;
+    }
+
+    .footer-strip {
+      position: absolute;
+      left: 24mm;
+      right: 24mm;
+      bottom: 10mm;
+      color: rgba(20, 32, 38, 0.58);
+      font: 7.2pt/1.3 var(--font-en);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 4mm;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: white;
+      }
+
+      .board {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="board" aria-label="滅絕檔案展板 中英對照">
+    <header class="hero">
+      <div class="globe" aria-hidden="true">
+        <div class="orbit"></div>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="hero-copy">
+        <p class="kicker">Biodesign Challenge 2026 · Extinction Archive · Umwelt Archive</p>
+        <h1>滅絕檔案：失落物種的人工智慧紀念館</h1>
+        <p class="en-title">Extinction Archive: AI Memorial for Lost Species</p>
+        <div class="hero-note bipair" role="text">
+          <p class="col-zh" lang="zh-Hant">
+            當一個物種已經離開世界，展覽還能留下什麼？本計畫以可互動的地球為入口，把公開檔案、分布線索、滅絕原因與倫理議題放在同一張地圖上，引導觀眾從「知道它已不在」走向「理解它如何離去」。
+          </p>
+          <p class="col-en" lang="en">
+            When a species is already gone, what can an exhibition still offer? This project uses an interactive globe as a public entry, placing open archives, distributional evidence, causes of extinction, and ethical questions on one map—moving visitors from <em>knowing it is absent</em> to <em>understanding how it disappeared</em>.
+          </p>
+        </div>
+      </div>
+      <div class="team">
+        <div class="bipair team-bipair" role="text">
+          <p class="col-zh" lang="zh-Hant">
+            <span class="team-label">團隊成員</span>
+            郭曉悅（GUO XIAO YUE），MC569254：體驗與敘事、倫理、檔案策展。<br />
+            劉家群（LIU JIA QUN），MC569293：技術、WebXR、生成環境與認識論介面。<br />
+            指導教師：Atticus SIMS<br />
+            澳門大學
+          </p>
+          <p class="col-en" lang="en">
+            <span class="team-label">Team members</span>
+            GUO XIAO YUE (MC569254) — experience &amp; narrative, ethics, dossier curation.<br />
+            LIU JIA QUN (MC569293) — technology, WebXR, generative environments, epistemic UI.<br />
+            Mentor · Atticus SIMS<br />
+            Macau University
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section>
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-title-zh" lang="zh-Hant">設計概念</span>
+            <span class="section-title" lang="en">Design Concept</span>
+          </div>
+          <div class="bipair lead" role="text">
+            <p class="col-zh" lang="zh-Hant">
+              《滅絕檔案》不是要「復活過去」，也不把滅絕做成奇觀。它是一座面向公眾的數位紀念館：透過地球光點、物種檔案與可核對來源，重新看見那些因獵捕、貿易、棲地改變、入侵物種、污染或誤捕等因素，被推向終點的生命。敘事把每一次離開從一句結論，拉回到它曾生活在何處、留下了哪些記錄、又如何被推向終點。
+            </p>
+            <p class="col-en" lang="en">
+              <em>Extinction Archive</em> is not about “resurrecting the past,” nor does it turn extinction into spectacle. It is a public digital memorial: through a globe of light points, species dossiers, and checkable sources, it brings into view lives pushed toward disappearance by hunting, trade, habitat change, invasive species, pollution, or by-catch. Each story returns from a headline to a place—where it lived, what was recorded, and how the end was reached.
+            </p>
+          </div>
+          <div class="bipair muted dataset-note" role="note">
+            <p class="col-zh" lang="zh-Hant">
+              <strong>54</strong>：現行 Web 地球儀可點選物種檔案（<code>animal-*-manifest.json</code>）。<br />
+              <strong>51</strong>：研究匯入表 <code>data/extinction_archive/animals_full.csv</code> 目前之分類元筆數（隨匯入合併而變）。<br />
+              <strong>87</strong>：<code>PROJECT_PLAN.md</code> 所規劃「高優先整合名單」之<strong>目標</strong>筆數（策展／感官敘事層級，與 54、51 不同層）。<br />
+              三組數字代表不同資料層，專案版本更新時可能微調；若評審追問，請以倉庫內實際檔案筆數為準。
+            </p>
+            <p class="col-en" lang="en">
+              <strong>54</strong> — selectable species dossiers wired into the web globe (<code>animal-*-manifest.json</code>).<br />
+              <strong>51</strong> — taxa rows currently in the research import <code>data/extinction_archive/animals_full.csv</code> (changes with merges).<br />
+              <strong>87</strong> — <em>target</em> size for a planned high-priority unified list in <code>PROJECT_PLAN.md</code> (curation layer; not the same as 54/51).<br />
+              These are different layers; use the on-disk row counts as ground truth for reviewers.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-title-zh" lang="zh-Hant">為什麼選這些物種</span>
+            <span class="section-title" lang="en">Why These Species</span>
+          </div>
+          <div class="bipair" role="text">
+            <p class="col-zh" lang="zh-Hant">
+              選種不以獵奇為目標，而以<strong>代表性與可核對的證據鏈</strong>為原則。名單在地理上盡量涵蓋陸域、島嶼與近岸，在成因上讓不同滅絕機制同時可見。少數重點敘事線用來說清楚時間尺度、檔案倫理與聲景缺席；其餘光點作為廣譜樣本，共同說明：終點往往來自<strong>多重壓力的長期疊加</strong>，而非單一原因。
+            </p>
+            <p class="col-en" lang="en">
+              Species are not selected for curiosity, but for <strong>representativeness and a verifiable chain of evidence</strong>. The list spans landmasses, islands, and nearshore regions, and surfaces multiple drivers of loss. A few “flagship threads” make time, archival ethics, and absent soundscapes legible; the remaining points are broader samples, together showing that end points often follow <strong>long-term, compounding pressures</strong>—not a single cause.
+            </p>
+          </div>
+          <div class="image-grid" aria-label="代表物種圖示">
+            <figure class="species-card">
+              <img src="../../prototype/webxr/assets/animal-sources/mammuthus-primigenius-Siegsdorfer-Mammut.jpg" alt="猛犸象化石圖" />
+              <figcaption class="cap">
+                <div class="cap-zh" lang="zh-Hant"><strong>猛獁象線索</strong>氣候、遷徙與深時間</div>
+                <div class="cap-en" lang="en">Mammoth thread — climate, migration, deep time</div>
+              </figcaption>
+            </figure>
+            <figure class="species-card">
+              <img src="../../prototype/webxr/assets/animal-sources/thylacine-Thylacine-at-Beaumaris-Zoo-1936-NS4371-1-1063-.jpg" alt="袋狼歷史影像" />
+              <figcaption class="cap">
+                <div class="cap-zh" lang="zh-Hant"><strong>袋狼線索</strong>歷史影像、殖民語境與詮釋權</div>
+                <div class="cap-en" lang="en">Thylacine thread — images, colonial context, rights of interpretation</div>
+              </figcaption>
+            </figure>
+            <figure class="species-card">
+              <img src="../../prototype/webxr/assets/animal-sources/passenger-pigeon-Martha-the-last-Passenger-Pigeon.-Natural-History-Museum-June-2015.-Digital-photo-cropped-and-brightened.jpg" alt="旅鴿標本" />
+              <figcaption class="cap">
+                <div class="cap-zh" lang="zh-Hant"><strong>旅鴿線索</strong>群體同步、聲景與缺席</div>
+                <div class="cap-en" lang="en">Passenger pigeon thread — synchrony, soundscapes, absence</div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="bipair muted" role="text">
+            <p class="col-zh" lang="zh-Hant">其餘光點不是陪襯，而是廣譜樣本：它們共同說明滅絕往往來自多重壓力的長期疊加。</p>
+            <p class="col-en" lang="en">The remaining points are not decoration—they are broader samples, together showing that extinction is often a long, layered process.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-title-zh" lang="zh-Hant">體驗動線</span>
+            <span class="section-title" lang="en">Experience Flow</span>
+          </div>
+          <div class="flow">
+            <div class="step">
+              <span class="num">01</span>
+              <div class="bipair" role="text">
+                <p class="col-zh" lang="zh-Hant"><strong>進入地球</strong> — 先感受世界尺度，再靠近單一物種。</p>
+                <p class="col-en" lang="en"><strong>Enter the globe</strong> — read the world first, then approach one species.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="num">02</span>
+              <div class="bipair" role="text">
+                <p class="col-zh" lang="zh-Hant"><strong>點選光點</strong> — 每個座標連結一份檔案：地區、年代、滅絕原因與證據來源。</p>
+                <p class="col-en" lang="en"><strong>Select a point</strong> — each location opens a dossier: region, era, cause, and cited sources.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="num">03</span>
+              <div class="bipair" role="text">
+                <p class="col-zh" lang="zh-Hant"><strong>理解離去</strong> — 圖像、聲音、路徑與問題並置，呈現「如何消失」，而不只給結論。</p>
+                <p class="col-en" lang="en"><strong>Understand the leaving</strong> — image, sound, paths, and questions show <em>how</em> disappearance unfolds, not only <em>that</em> it did.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="num">04</span>
+              <div class="bipair" role="text">
+                <p class="col-zh" lang="zh-Hant"><strong>留下反思</strong> — 思考責任、資料不確定性與未來的生態選擇。</p>
+                <p class="col-en" lang="en"><strong>Leave a reflection</strong> — responsibility, uncertainty, and future ecological choice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="right-top">
+          <div class="visual-box" aria-label="互動地球示意">
+            <div class="mini-globe"></div>
+            <div class="label bipair" role="text">
+              <p class="col-zh" lang="zh-Hant">光點不是裝飾，而是通向證據與記憶的入口。</p>
+              <p class="col-en" lang="en">Points of light are not decoration—they are entries into evidence and memory.</p>
+            </div>
+          </div>
+          <div class="thin-card">
+            <div class="section-head" style="margin-bottom:2mm">
+              <span class="section-title-zh" lang="zh-Hant">設計想法</span>
+              <h3 lang="en" style="margin:0">Design Ideas</h3>
+            </div>
+            <div class="bipair" role="text">
+              <p class="col-zh" lang="zh-Hant">
+                視覺上以深色地球、低飽和自然色與檔案紙色為主，降低科技炫耀的語氣。資訊層級從「世界」到「個體」，讓人先感受失去的尺度，再進入可核對的細節。
+              </p>
+              <p class="col-en" lang="en">
+                A dark globe, low-saturation natural tones, and archive paper hues avoid tech triumphalism. The hierarchy moves from the world to the individual: scale of loss first, checkable detail second.
+              </p>
+            </div>
+            <div class="tag-row" lang="en" aria-label="關鍵詞">
+              <span class="tag">Globe</span>
+              <span class="tag">Archive</span>
+              <span class="tag">Memory</span>
+              <span class="tag">Responsibility</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-head">
+            <span class="section-title-zh" lang="zh-Hant">方法與角色</span>
+            <span class="section-title" lang="en">Principle</span>
+          </div>
+          <div class="bipair" role="text">
+            <p class="col-zh" lang="zh-Hant">
+              人工智慧在此不是造物主，也不取代證據；它更像謹慎的編目員：整理材料、連結圖像與聲音、提示不同來源之間的關係。所有生成內容都應標明來源、保留不確定性，並避免把想像誤述為事實。
+            </p>
+            <p class="col-en" lang="en">
+              AI is neither creator nor substitute for evidence. It acts as a careful cataloger—organizing materials, connecting image and sound, and surfacing relationships between sources. Generated outputs must name sources, preserve uncertainty, and never present imagination as fact.
+            </p>
+          </div>
+          <div class="diagram" role="list" aria-label="三層架構">
+            <div class="diag-cell" lang="zh-Hant">
+              <strong lang="en">Data</strong>
+              <p class="dz">紅色名錄、館藏編號、舊文獻、分布紀錄、開放檔案。</p>
+              <p class="de" lang="en">Red Lists, accession numbers, older literature, distributional records, open archives.</p>
+            </div>
+            <div class="diag-cell" lang="zh-Hant">
+              <strong lang="en">Interface</strong>
+              <p class="dz">地球光點、物種卡片、時間與原因標籤、重點案例。</p>
+              <p class="de" lang="en">Globe points, species cards, time and cause tags, focal cases.</p>
+            </div>
+            <div class="diag-cell" lang="zh-Hant">
+              <strong lang="en">Reflection</strong>
+              <p class="dz">來源、責任、不確定性、殖民語境與詮釋權。</p>
+              <p class="de" lang="en">Sources, responsibility, uncertainty, colonial context, rights of interpretation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ethics">
+          <div class="section-head" style="margin-bottom:2mm">
+            <span class="section-title-zh" style="color: rgba(249, 251, 244, 0.6)" lang="zh-Hant">倫理與邊界</span>
+            <h3 lang="en" style="margin:0; color: var(--white)">Ethics &amp; Limits</h3>
+          </div>
+          <div class="bipair" role="text">
+            <p class="col-zh" lang="zh-Hant">
+              失落物種不應被當作技術表演的素材。涉及殖民歷史、原住民知識、標本採集與「去滅絕」討論時，敘述需要說明誰在記錄、誰被影響、誰有權參與詮釋。紀念不是占有，而是讓責任與證據同時被看見。
+            </p>
+            <p class="col-en" lang="en">
+              Lost species must not be reduced to a tech spectacle. When colonial history, Indigenous knowledge, specimen collection, and de-extinction enter the frame, the narrative should state who records, who is affected, and who may interpret. Memorial practice is not possession—it is making responsibility and evidence visible together.
+            </p>
+          </div>
+          <div class="tag-row" lang="en" aria-label="倫理關鍵詞">
+            <span class="tag">Sources</span>
+            <span class="tag">Uncertainty</span>
+            <span class="tag">Indigenous context</span>
+            <span class="tag">De-extinction debate</span>
+          </div>
+        </div>
+
+        <div class="quote bipair" role="text">
+          <p class="col-zh" lang="zh-Hant">為失落物種，保留一種被理解的方式。</p>
+          <p class="col-en" lang="en">For lost species, a way of being understood.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-strip">
+      <div class="footer-inner bipair">
+        <p class="col-zh" lang="zh-Hant" style="margin:0; font-family: var(--font-zh)">610mm × 914mm，列印請使用 100% 比例</p>
+        <p class="col-en" lang="en" style="margin:0; text-align:right; text-transform: uppercase">Project · macaumonsoon.github.io/Biodesign-Project/</p>
+      </div>
+    </footer>
+  </article>
+</body>
+</html>
