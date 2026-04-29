@@ -30,13 +30,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 不要用 path: "." 上传整仓：earths-sorrow/（Next 演示）体积很大，且包含 .git，
+      # 易逼近 Pages 官方建议的 ~1GB 部署包上限并导致 upload/deploy 失败。
+      # Do not upload the entire workspace: earths-sorrow/ is dev-only and huge; exclude .git.
+      - name: Prepare Pages bundle (exclude heavy / non-site folders)
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'earths-sorrow/' \
+            ./ _site/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload static artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment
