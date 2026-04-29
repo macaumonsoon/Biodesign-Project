@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Extinction Archive · 项目进展 · Progress | BDC 2026</title>
-  <meta name="description" content="ZH: Biodesign Challenge 2026 — 《灭绝档案》进度与链接。 EN: Extinction Archive progress overview &amp; quick links." />
+  <meta name="description" content="ZH: 《灭绝档案》进展、与介绍 PPT 一致的全文介绍、素材与链接。 EN: Progress, bilingual deck-aligned intro, assets &amp; links." />
   <style>
     :root {
       --bg: #0c0f12;
@@ -129,6 +129,10 @@
     footer p { margin: 0 0 0.85rem; }
     footer p:last-child { margin-bottom: 0; }
     .btn small { display: block; font-size: 0.76rem; font-weight: 400; opacity: 0.92; margin-top: 0.15rem; line-height: 1.25; }
+    .deck-lead { font-weight: 600; margin: 0 0 0.35rem; color: var(--text); }
+    .deck-block + .deck-block { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
+    ol.deck-steps { margin: 0.4rem 0 0; padding-left: 1.35rem; }
+    ol.deck-steps li { margin: 0.25rem 0; }
   </style>
 </head>
 <body>
@@ -145,6 +149,91 @@
       <p class="dual-p"><strong>提示：</strong>本页 GitHub 按钮默认未绑定远程仓库。请在本文件底部的 <code>GITHUB_REPO</code> 中填写你的 <code>用户名/仓库名</code>（例如 <code>username/repo-name</code>），保存并推送到<strong>你自己的仓库</strong>后再刷新。</p>
       <p class="dual-p"><strong>Note:</strong> GitHub buttons need <code>GITHUB_REPO</code> at the bottom of this file (<code>username/repo-name</code>). Save, push to your fork, then reload.</p>
     </div>
+
+    <section id="deck-intro">
+      <h2>项目介绍（与介绍 PPT 一致）</h2>
+      <span class="line-en">Introduction aligned with the intro deck (<code>assets/media/intro-presentation.pdf</code>)</span>
+      <div class="card">
+        <div class="deck-block">
+          <p class="deck-lead">团队与院校 · Team &amp; institution</p>
+          <p class="dual-p"><strong>Zh：</strong>澳门大学 · 导师 <strong>Atticus SIMS</strong> · 成员 <strong>GUO XIAO YUE</strong>（MC569254）、<strong>LIU JIA QUN</strong>（MC569293）。具体分工见本仓库 <code>README.md</code> / <code>PROJECT_PLAN.md</code>。</p>
+          <p class="dual-p"><strong>En:</strong> University of Macau · Mentor <strong>Atticus SIMS</strong> · Team <strong>GUO XIAO YUE</strong> (MC569254), <strong>LIU JIA QUN</strong> (MC569293). Roles are summarized in <code>README.md</code> / <code>PROJECT_PLAN.md</code>.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">背景与核心追问 · Background &amp; core questions</p>
+          <p class="dual-p"><strong>Zh：</strong>当一个物种消逝，与之相连的生态系统形态也随之瓦解——不仅是生物学意义上的丧失，也是集体记忆中很少被真正看见的共同记忆。我们追问：如何让灭绝物种的「缺席」，成为一种可被感知、可被叙述的「集体记忆中的缺席」？如何借助 AI 与生物数据，温和且有创造力地复苏与重塑对生物多样性、生态完整性的褪色记忆？触觉、视觉、嗅觉、听觉、味觉能否作为轻柔的「记忆线索」，在不过度刺激的前提下，重塑集体记忆并加深共情、责任与共同行动？</p>
+          <p class="dual-p"><strong>En:</strong> When a species slips away, an ecosystem pattern goes with it — not only biology, but shared memory that rarely gets witnessed. <strong>Q1</strong> How can the “absence” of extinct species become a felt and narratable absence in collective memory? <strong>Q2</strong> How can AI and biological data gently revive faded memory of biodiversity and ecological integrity? <strong>Q3</strong> How can multisensory cues reshape collective memory and deepen empathy without overstimulation?</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">我们在做什么 · What are we making?</p>
+          <p class="dual-p"><strong>Zh：</strong>我们在搭建行星尺度的<strong>数字生物地图档案</strong>：当前原型以<strong>约 54 个可点击物种纪念点</strong>为起点，汇聚末次栖息地、历史分布、灭绝压力、参考文献，以及图像、声音、迁徙与生物节律等感官线索；并可延展至 AR、实体模型、多感官空间与未来活体传感装置。</p>
+          <p class="dual-p"><strong>En:</strong> A <strong>planetary digital bio-map archive</strong>: the prototype begins with <strong>54 clickable memorial points</strong>, linking last habitat, historical range, extinction pressure, references, and sensory clues (image, sound, migration, biological rhythm) — expandable toward AR, physical models, multisensory spaces, and living installations.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">参观者路径 · How visitors experience it</p>
+          <p class="dual-p"><strong>Zh：</strong></p>
+          <ol class="deck-steps">
+            <li>进入地球仪 → 从行星尺度进入物种纪念点</li>
+            <li>打开档案 → 看见物种、地点、时代、压力与文献来源</li>
+            <li>感知缺席 → AI 编织声景、旁白、空间与音乐层级</li>
+            <li>面对权衡 → 资源、风险、原住民视角与技术边界</li>
+            <li>反思与抉择 → 沉浸之后回到判断</li>
+          </ol>
+          <p class="dual-p"><strong>En:</strong> Enter the globe → open a dossier → sense the absence (soundscape, narration, spatial &amp; music layers) → face resources, risk, Indigenous perspectives, tech limits → reflect and decide.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">何以构成「生物设计」· How it becomes biodesign</p>
+          <p class="dual-p"><strong>Zh：</strong><strong>生物证据</strong>（古生态、节律、迁徙、鸣叫、灭绝驱动）→ <strong>数字化转译</strong>（AI 视觉、声景、Web Audio、WebXR、交互档案）→ <strong>反思规则</strong>（证据优先，情绪跟随证据；从沉浸回到伦理判断）。</p>
+          <p class="dual-p"><strong>En:</strong> <strong>Bio evidence</strong> (paleo-ecology, rhythm, migration, calls, drivers) → <strong>Digital translation</strong> (AI visuals, soundscape, Web Audio, WebXR, dossiers) → <strong>Reflection rule</strong> (evidence first; emotion follows evidence).</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">核心假设 · Core hypothesis</p>
+          <p class="dual-p"><strong>Zh：</strong>若生成式 AI 与 WebXR 能够重构<strong>时间表现型（temporal phenotype）</strong>，我们能否修补人类在感知灭绝时的鸿沟？超越外形：节律、迁徙、声音、脉动与 Umwelt。<strong>证据阶梯：</strong>古生物数据 + 形态学 + 公开的不确定性分层。</p>
+          <p class="dual-p"><strong>En:</strong> If generative AI + WebXR reconstruct a temporal phenotype, can we repair the human gap in sensing extinction? Beyond shape: rhythm, migration, sound, pulse, Umwelt. <strong>Evidence ladder:</strong> paleo data + morphology + disclosed uncertainty.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">为何是「约 54」个物种 · Why this first set is ~54?</p>
+          <p class="dual-p"><strong>Zh：</strong>54 不是口号，而是我们能为之道歉、解释并维护的纪念层：<strong>49 + 5</strong> —— 49 个高优先级物种加 5 个研究补充；四层对齐（档案、图像、声音、迁徙线索）；可问责——并非包揽全部灭绝叙事，而是<strong>第一套可以展示、讲解并持续维护</strong>的集合。</p>
+          <p class="dual-p"><strong>En:</strong> 54 is not a slogan — it is the memorial layer we can stand behind: <strong>49 + 5</strong> priority &amp; supplement species; four aligned layers (dossier, image, sound, migration); accountable — not all extinctions at once, but the first set we can show, explain, and maintain.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">AI 的角色 · What AI does</p>
+          <p class="dual-p"><strong>Zh：</strong>连接图像、声音、迁徙、节律与文献来源；标注不确定性而非掩盖；生成声景、旁白与分层音乐；保持提示过程与证据层级可检视。AI 是<strong>编目者、作曲者、向导</strong>——不是真理的创造者。</p>
+          <p class="dual-p"><strong>En:</strong> Connects image, sound, migration, rhythm, and sources; marks uncertainty; generates soundscapes, narration, layered music; keeps prompts &amp; evidence transparent. <strong>Cataloger, composer, guide — not creator of truth.</strong></p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">沉浸之后的伦理 · Ethics after immersion</p>
+          <p class="dual-p"><strong>Zh：</strong>体验不以情绪收尾，而回到选择与责任。关键权衡包括：资源配置、生态风险、原住民智慧与技术介入边界、以及作为全球性伦理辩论的去灭绝议题。</p>
+          <p class="dual-p"><strong>En:</strong> The arc returns to choice and responsibility: resource allocation, ecological risk, Indigenous perspectives, limits of tech intervention, de-extinction as global ethical debate.</p>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">与 BDC 评审维度对齐 · Why it fits BDC</p>
+          <ul style="margin-top:0.35rem;">
+            <li><strong>Zh：</strong><strong>Narrative</strong> — 灭绝成为集体记忆中可感知的缺席 · <strong>Concept</strong> — 生物数据 + AI + WebXR 成为可体验档案 · <strong>Context</strong> — 保护生物学与生物多样性丧失打底 · <strong>Reflection</strong> — 伦理选择、提示透明度与去灭绝辩论 · <strong>Convergence</strong> — 生物、数字、音乐与未来实体层次交汇。</li>
+            <li><strong>En:</strong> Narrative / Concept / Context / Reflection / Convergence — as in the deck mapping row.</li>
+          </ul>
+        </div>
+
+        <div class="deck-block">
+          <p class="deck-lead">演示入口 · Demo（本站路径）</p>
+          <div class="actions">
+            <a class="btn primary" href="../prototype/index.html">沉浸地球仪 · Globe</a>
+            <a class="btn" href="../prototype/webxr/index.html">WebXR 行星 · Planet</a>
+            <a class="btn" href="../web/extinction-archive/index.html">A-Frame 档案 · Archive</a>
+          </div>
+          <p class="dual-p" style="margin-top:0.75rem;"><strong>En:</strong> Same paths work on GitHub Pages when the whole repo is published — URLs mirror <code>/prototype/</code>, <code>/prototype/webxr/</code>, <code>/web/extinction-archive/</code>.</p>
+        </div>
+      </div>
+    </section>
 
     <section>
       <h2>核心概念（30 秒版）</h2>

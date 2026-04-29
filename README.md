@@ -107,6 +107,7 @@ Key prototypes (see `PROJECT_PLAN.md` §5):
 |------|--------|----------|
 | [`index.html`](index.html) | Landing hub → docs & prototypes | 站点首页 → 进展页与原型 |
 | [`docs/index.html`](docs/index.html) | Progress overview (set `GITHUB_REPO` at bottom for GitHub buttons) | 项目进展一览（页底填写 `GITHUB_REPO` 以修正 GitHub 按钮） |
+| [`docs/index.html#deck-intro`](docs/index.html#deck-intro) | Full bilingual introduction matching `intro-presentation.pdf` | 与介绍 PPT 正文一致的项目介绍（中英对照） |
 
 Deploy with **[`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml)** — Settings → Pages → **Source: GitHub Actions** (whole-repo publish includes `prototype/`). Typical URL: `https://<user>.github.io/<repo>/`.
 
