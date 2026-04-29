@@ -89,7 +89,7 @@ def main():
             f"Mentor: {MENTOR}",
             f"Team: {TEAM[0][0]} — ID {TEAM[0][1]}",
             f"Team: {TEAM[1][0]} — ID {TEAM[1][1]}",
-            "Program: MDes — Digital Art & AI Technology (roles: experience / narrative + WebXR & epistemic UI).",
+            "Program: MDes — Digital Art & AI Technology (GUO: WebXR & epistemic UI · LIU: narrative / ethics / curation).",
         ],
         size_pt=20,
     )

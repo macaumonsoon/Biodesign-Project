@@ -20,10 +20,10 @@ Good morning or afternoon. We are the University of Macau Biodesign Challenge 20
 ## 第 2 页 / Program Details · 团队与单位
 
 **中文口播**  
-我们是**澳门大学**代表队；导师 **Atticus SIMS**。成员：**郭晓悦**，学号 MC569254；**劉佳群**，学号 MC569293。分工上，一人侧重体验叙事、伦理与档案策展，另一人侧重 Web 与 WebXR；后面 Demo 页会给出链接。
+我们是**澳门大学**代表队；导师 **Atticus SIMS**。成员：**郭晓玥**，学号 MC569254（技术、WebXR、生成式与认识论界面）；**刘佳群**，学号 MC569293（体验叙事、伦理与档案策展）。后面 Demo 页会给出链接。
 
 **English**  
-We represent the **University of Macau**, mentored by **Atticus SIMS**. Team: **GUO XIAO YUE**, ID MC569254; **LIU JIA QUN**, ID MC569293—split between narrative, ethics, curatorial framing, and Web/WebXR; live links appear on the Demo slide.
+We represent the **University of Macau**, mentored by **Atticus SIMS**. Team: **GUO XIAO YUE**, ID MC569254 — tech, WebXR, generative & epistemic UI; **LIU JIA QUN**, ID MC569293 — narrative, ethics, dossier curation; live links appear on the Demo slide.
 
 ---
 

@@ -24,8 +24,8 @@ Extinction Archive: AI Memorial for Lost Species
 Biodesign Challenge 2026 · Web 原型 · 檔案研究 · 倫理介面
 
 **團隊成員（依 PROJECT_PLAN.md）**  
-- 郭曉悅（GUO XIAO YUE），MC569254：體驗與敘事、倫理、檔案策展  
-- 劉佳群（LIU JIA QUN），MC569293：技術、WebXR、生成環境與認識論介面  
+- 郭曉悅（GUO XIAO YUE），MC569254：技術、WebXR、生成環境與認識論介面
+- 刘佳群（LIU JIA QUN），MC569293：體驗與敘事、倫理、檔案策展
 - 指導教師：Atticus SIMS  
 - 澳門大學
 

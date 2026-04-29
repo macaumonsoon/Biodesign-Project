@@ -15,8 +15,8 @@
 |--------|--------|
 | **Institution** | Macau University |
 | **Mentor** | Atticus SIMS |
-| **GUO XIAO YUE** | ID MC569254 — experience / narrative / ethics / dossier curation |
-| **LIU JIA QUN** | ID MC569293 — tech / WebXR / generative + epistemic UI |
+| **GUO XIAO YUE** | ID MC569254 — tech / WebXR / generative + epistemic UI |
+| **LIU JIA QUN** | ID MC569293 — experience / narrative / ethics / dossier curation |
 
 **Team size:** 2  
 **BDC alignment:** Idea 3 (Extinction Archive) + Idea 6 (Biorhythm Composer) · theme **Convergent Life** · targets **Biodigital Excellence** + **Outstanding Digital Submission**.  

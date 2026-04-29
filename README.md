@@ -27,7 +27,7 @@ This README follows an **introduction-style arc**: competition & team → proble
 |------|--------|----------|
 | **Institution** | Macau University | 澳门大学 |
 | **Mentor** | Atticus SIMS | Atticus SIMS |
-| **Members** | **GUO Xiao Yue** (MC569254) — experience / narrative / ethics / dossier · **LIU Jia Qun** (MC569293) — tech / WebXR / generative & epistemic UI | **郭晓玥**（MC569254）体验 / 叙事 / 伦理 / 档案策展 · **劉佳群**（MC569293）技术 / WebXR / 生成式与认识论界面 |
+| **Members** | **GUO Xiao Yue** (MC569254) — tech / WebXR / generative & epistemic UI · **LIU Jia Qun** (MC569293) — experience / narrative / ethics / dossier | **郭晓玥**（MC569254）技术 / WebXR / 生成式与认识论界面 · **刘佳群**（MC569293）体验 / 叙事 / 伦理 / 档案策展 |
 
 ---
 
