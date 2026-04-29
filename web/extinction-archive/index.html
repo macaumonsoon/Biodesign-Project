@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Optional: absolute site root for GitHub Pages or CDN, e.g. https://user.github.io/Biodesign-Project/ -->
   <meta name="ea-asset-base" content="" />
-  <title>Extinction Archive — Umwelt prototype</title>
+  <meta name="description" content="ZH: 《灭绝档案》Web / WebXR 原型。 EN: Extinction Archive Umwelt prototype (Web + WebXR shell)." />
+  <title>灭绝档案 · Umwelt 原型 — Extinction Archive prototype</title>
+  <style>
+    .biline-zh { display: block; font-weight: 600; }
+    .biline-en { display: block; font-size: 0.82rem; color: var(--muted); font-style: italic; margin-top: 0.2rem; line-height: 1.35; max-width: 42rem; }
+    .biline-p { margin: 0 0 0.65rem; }
+    .biline-p:last-child { margin-bottom: 0; }
+    h2 .biline-en { margin-top: 0.15rem; font-weight: 400; }
+  </style>
   <link rel="stylesheet" href="css/proto.css" />
   <script src="https://unpkg.com/aframe@1.5.0/dist/aframe-master.min.js"></script>
 </head>
 <body>
   <header class="app-header">
     <div>
-      <h1>Extinction Archive · Umwelt Hypothesis Dossiers</h1>
-      <div class="sub">AI memorial for lost species — sensory time capsule · BDC 2026 prototype (Web + WebXR shell)</div>
+      <h1><span class="biline-zh">灭绝档案 · Umwelt 假设档案</span><span class="biline-en">Extinction Archive · Umwelt Hypothesis Dossiers</span></h1>
+      <div class="sub"><span class="biline-zh">逝去物种的 AI 纪念馆 · 感官时间胶囊 · BDC 2026 原型（Web / WebXR 外壳）</span><span class="biline-en">AI memorial for lost species — sensory time capsule · BDC 2026 prototype (Web + WebXR shell)</span></div>
     </div>
     <div class="nav-actions">
-      <button type="button" class="btn" id="btn-landing" style="display:none">Home</button>
-      <button type="button" class="btn" id="btn-hub" style="display:none">Species hub</button>
+      <button type="button" class="btn" id="btn-landing" style="display:none">首页 · Home</button>
+      <button type="button" class="btn" id="btn-hub" style="display:none">物种中枢 · Species hub</button>
     </div>
   </header>
 
@@ -25,28 +33,32 @@
     <div id="load-error" class="error-banner" style="display:none" role="alert"></div>
 
     <section id="view-landing" class="view active">
-      <p class="lead">
-        A literature-grounded prototype: explore <strong>temporal phenotype</strong> proxies for two WebXR-depth species
-        (woolly mammoth, thylacine) plus a <strong>passenger pigeon</strong> polyphony metaphor. Every layer is tagged
+      <p class="lead biline-p">
+        <span class="biline-zh">文献对齐原型：为两类深度 WebXR 物种（猛犸、袋狼）探索<strong>时间表现型</strong>代理，并以<strong>旅鸽</strong>复音隐喻；每层标注</span>
         <span class="badge cited">Cited</span>
         <span class="badge interp">Interpolated</span>
         <span class="badge spec">Speculative</span>
-        — then complete one <strong>ethics fork</strong> and the reflection panel (MVP journey per PROJECT_PLAN.md).
+        <span class="biline-zh"> —— 完成一次<strong>伦理分叉</strong>与反思面板（与 PROJECT_PLAN.md 中 MVP 路径一致）。</span>
       </p>
-      <button type="button" class="btn primary" id="btn-enter">Enter archive</button>
-      <p class="run-hint">
-        <strong>Run locally:</strong> from the repository root, <code>python3 -m http.server 8080</code>
-        then open <code>http://localhost:8080/web/extinction-archive/index.html</code>
-        (required so <code>archive.json</code> loads; <code>file://</code> will fail).
-        <strong>GitHub Pages:</strong> set Pages to publish the whole repo (root) so
-        <code>/data/extinction_archive/archive.json</code> resolves, or set
-        <code>&lt;meta name="ea-asset-base" content="https://…your-site…/"&gt;</code>.
+      <p class="lead biline-p">
+        <span class="biline-en">A literature-grounded prototype: explore <strong>temporal phenotype</strong> proxies for mammoth &amp; thylacine plus a <strong>passenger pigeon</strong> polyphony metaphor; layers tagged Cited / Interpolated / Speculative — then complete one <strong>ethics fork</strong> and reflection (MVP journey).</span>
+      </p>
+      <button type="button" class="btn primary" id="btn-enter">进入档案 · Enter archive</button>
+      <p class="run-hint biline-p">
+        <strong>本地运行 · Run locally：</strong> 在仓库根目录执行 <code>python3 -m http.server 8080</code>，再打开 <code>http://localhost:8080/web/extinction-archive/index.html</code>
+        （需 HTTP 才能加载 <code>archive.json</code>；<code>file://</code> 会失败）。
+        <span class="biline-en"><strong>En:</strong> Serve from repo root so <code>archive.json</code> loads; <code>file://</code> fails.</span>
+      </p>
+      <p class="run-hint biline-p">
+        <strong>GitHub Pages：</strong> 发布<strong>整仓根目录</strong>以便解析 <code>/data/extinction_archive/archive.json</code>；或在页面头部设置
+        <code>&lt;meta name="ea-asset-base" content="https://…your-site…/"&gt;</code>。
+        <span class="biline-en"><strong>Pages:</strong> publish whole repo root so JSON resolves, or set <code>ea-asset-base</code>.</span>
       </p>
     </section>
 
     <section id="view-hub" class="view">
-      <h2 style="margin-top:0;font-size:1.1rem">Species hub</h2>
-      <p class="lead">P0 taxa from project plan. Dataset: <span id="archive-count">—</span> taxa in <code>archive.json</code>.</p>
+      <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">物种中枢</span><span class="biline-en">Species hub</span></h2>
+      <p class="lead">计划书 P0 物种 · Dataset：<span id="archive-count">—</span> taxa in <code>archive.json</code>. <span class="biline-en">P0 taxa per plan.</span></p>
       <div id="hub-grid" class="card-grid"></div>
       <p style="margin-top:1.5rem">
         <button type="button" class="btn primary" id="btn-ethics">Ethics fork →</button>
@@ -54,7 +66,7 @@
     </section>
 
     <section id="view-species" class="view">
-      <p><button type="button" class="btn" id="btn-back-species">← Species hub</button></p>
+      <p><button type="button" class="btn" id="btn-back-species">← 物种中枢 · Species hub</button></p>
       <h2 id="species-title" style="margin:0.25rem 0 0">—</h2>
       <p id="species-sci" class="lead" style="margin:0 0 0.5rem;font-style:italic">—</p>
       <p id="species-archive-meta" class="lead" style="font-size:0.85rem">—</p>
@@ -64,7 +76,7 @@
         <div id="species-scene-ids" class="badge-row"></div>
       </div>
 
-      <div class="epistemic-tabs" role="tablist" aria-label="Epistemic tier">
+      <div class="epistemic-tabs" role="tablist" aria-label="认识论分层 Epistemic tier">
         <button type="button" data-tier="cited" class="active cited">Cited</button>
         <button type="button" data-tier="interpolated" class="interp">Interpolated</button>
         <button type="button" data-tier="speculative" class="spec">Speculative</button>
@@ -145,37 +157,38 @@
       </div>
 
       <p style="margin-top:1.25rem">
-        <button type="button" class="btn primary" id="btn-ethics-2">Continue to ethics fork</button>
+        <button type="button" class="btn primary" id="btn-ethics-2">继续伦理分叉 · Continue to ethics fork</button>
       </p>
     </section>
 
     <section id="view-ethics" class="view">
-      <h2 style="margin-top:0;font-size:1.1rem">UI_Ethics_Fork — one choice</h2>
-      <p class="lead">Sherkow &amp; Greely–style tension (paraphrase). Your selection is stored only in <code>sessionStorage</code> for demo.</p>
+      <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">UI_Ethics_Fork — 单次选择</span><span class="biline-en">UI_Ethics_Fork — one choice</span></h2>
+      <p class="lead">Sherkow &amp; Greely 式张力（转述）。演示阶段选项仅存于 <code>sessionStorage</code>。<span class="biline-en">Sherkow &amp; Greely–style tension (paraphrase). Stored in <code>sessionStorage</code> for demo only.</span></p>
       <div id="ethics-options" class="ethics-options"></div>
       <p>
-        <button type="button" class="btn primary" id="btn-reflection">Open reflection log</button>
-        <button type="button" class="btn" id="btn-back-hub-2">Species hub</button>
+        <button type="button" class="btn primary" id="btn-reflection">打开反思日志 · Open reflection log</button>
+        <button type="button" class="btn" id="btn-back-hub-2">物种中枢 · Species hub</button>
       </p>
     </section>
 
     <section id="view-reflection" class="view">
-      <h2 style="margin-top:0;font-size:1.1rem">UI_Reflection_Log</h2>
-      <p class="lead">Embedded template: heuristic keyword match · <code>postMessage</code> bridge (parent ↔ iframe).</p>
+      <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">UI_Reflection_Log · 反思日志</span><span class="biline-en">UI_Reflection_Log</span></h2>
+      <p class="lead">内嵌模板：启发式关键词匹配 · <code>postMessage</code> 桥接（父页 ↔ iframe）。<span class="biline-en">Embedded template: keyword heuristic · <code>postMessage</code> bridge.</span></p>
       <div id="reflection-bridge" class="reflection-bridge" aria-live="polite">
-        <div class="scene-id">Parent panel · live echo from iframe</div>
-        <p id="reflection-echo" class="reflection-echo">（打开日志后在下方输入，摘要会显示于此）</p>
+        <div class="scene-id">父层面板 · 来自 iframe 的实时摘要 · Parent panel · live echo</div>
+        <p id="reflection-echo" class="reflection-echo">（打开日志后在下方输入，摘要会显示于此） / Type below — summary echoes here.</p>
       </div>
-      <iframe id="reflection-frame" class="reflection-frame" title="Reflection log" src="about:blank"></iframe>
+      <iframe id="reflection-frame" class="reflection-frame" title="Reflection log · 反思日志" src="about:blank"></iframe>
       <p style="margin-top:0.75rem">
-        <button type="button" class="btn" id="btn-back-ethics">← Ethics fork</button>
-        <button type="button" class="btn" id="btn-back-hub-3">Species hub</button>
+        <button type="button" class="btn" id="btn-back-ethics">← 伦理分叉 · Ethics fork</button>
+        <button type="button" class="btn" id="btn-back-hub-3">物种中枢 · Species hub</button>
       </p>
     </section>
 
     <footer class="meta-foot">
-      Prototype · not production · align copy with <code>BDC_2026_Extinction_Archive_Planning_Document.md</code> before judging.
-      WebXR: use VR button inside A-Frame scenes where supported.
+      <span class="biline-zh">原型 · 非成品 · 评审前请与 <code>BDC_2026_Extinction_Archive_Planning_Document.md</code> 对齐文案。</span>
+      <span class="biline-en">Prototype · not production · align copy with planning doc before judging.</span>
+      WebXR：在支持的浏览器中使用 A-Frame 场景内 VR 按钮。 / WebXR: use the VR button inside A-Frame scenes where supported.
     </footer>
   </main>
 

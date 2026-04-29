@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Extinction Archive · GitHub Pages 主页</title>
-  <meta name="description" content="项目简介、PPT 与视频入口、交互原型导航。" />
+  <title>Extinction Archive · GitHub Pages · 主页</title>
+  <meta name="description" content="ZH: 项目入口、介绍素材与原型导航。 EN: Landing page for intro assets and prototypes." />
   <style>
     :root { --bg:#0c0f12; --panel:#141a20; --border:#243040; --text:#e8eef4; --muted:#8fa3b8; --link:#7ec8ff; --accent:#5eb8a8; }
     * { box-sizing: border-box; }
     body { margin:0; font:15px/1.6 system-ui, "PingFang SC", sans-serif; background:var(--bg); color:var(--text); min-height:100vh; padding:1.5rem; }
     .box { max-width:860px; margin:0 auto; }
-    h1 { font-size:1.35rem; font-weight:650; margin:0 0 0.6rem; }
-    h2 { font-size:1rem; margin:0 0 0.55rem; }
-    p { color:var(--muted); margin:0 0 1rem; }
+    h1 { font-size:1.35rem; font-weight:650; margin:0 0 0.35rem; }
+    .sub-en { font-size:0.92rem; color:var(--muted); font-weight:400; margin:0 0 1rem; font-style:italic; line-height:1.45; }
+    h2 { font-size:1rem; margin:0 0 0.35rem; }
+    .h2-en { font-size:0.82rem; color:var(--muted); font-weight:500; margin:0 0 0.65rem; letter-spacing:0.02em; }
+    p { color:var(--muted); margin:0 0 0.65rem; }
+    p.lead-zh { color:var(--text); }
+    p.lead-en { color:var(--muted); font-size:0.92rem; font-style:italic; margin-bottom:1rem; }
     ul { margin:0; padding-left:1.15rem; }
     li { margin:0.35rem 0; }
+    li .li-en { display:block; font-size:0.82rem; color:var(--muted); margin-top:0.15rem; font-style:italic; }
     a { color:var(--link); text-decoration:none; }
     a:hover { text-decoration:underline; }
     .k { color:var(--accent); font-size:0.8rem; letter-spacing:0.04em; text-transform:uppercase; }
@@ -27,26 +32,48 @@
   <div class="box">
     <p class="k">BDC 2026 · Extinction Archive</p>
     <h1>Extinction Archive · GitHub Pages 主页</h1>
-    <p>统一入口：项目介绍、演示素材与原型导航都从这里进入。建议优先访问 <a href="docs/index.html">项目进展页</a>。</p>
+    <p class="sub-en">Landing hub for project intros, demo assets, and prototype navigation.</p>
+    <p class="lead-zh">统一入口：项目介绍、演示素材与原型导航都从这里进入。建议优先访问 <a href="docs/index.html">项目进展页</a>。</p>
+    <p class="lead-en">Single entry point for intros, media, and prototypes — start with the <a href="docs/index.html">progress overview</a>.</p>
 
     <div class="grid">
       <section class="card">
         <h2>推荐访问路径</h2>
+        <p class="h2-en">Suggested routes</p>
         <ul>
-          <li><a href="docs/index.html">项目进展一览（主页面）</a></li>
-          <li><a href="prototype/index.html">灭绝档案 · 互动地球仪原型</a></li>
-          <li><a href="prototype/webxr/index.html">沉浸星球（WebGL）</a></li>
+          <li>
+            <a href="docs/index.html">项目进展一览（主页面）</a>
+            <span class="li-en">Progress overview (main hub)</span>
+          </li>
+          <li>
+            <a href="prototype/index.html">灭绝档案 · 互动地球仪原型</a>
+            <span class="li-en">Interactive globe prototype</span>
+          </li>
+          <li>
+            <a href="prototype/webxr/index.html">沉浸星球（WebGL）</a>
+            <span class="li-en">Immersive planet (WebGL)</span>
+          </li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>介绍素材（PPT / Video / Rideo）</h2>
+        <h2>介绍素材（PPT / Video）</h2>
+        <p class="h2-en">Intro deck &amp; video</p>
         <ul>
-          <li><a href="assets/media/intro-presentation.pdf">介绍 PPT（PDF）</a></li>
-          <li><a href="assets/media/intro-video.mp4">介绍视频 MP4</a></li>
-          <li><a href="docs/index.html#intro-media">在进展页内查看内嵌播放（rideo）</a></li>
+          <li>
+            <a href="assets/media/intro-presentation.pdf">介绍 PPT（PDF）</a>
+            <span class="li-en">Intro deck (PDF)</span>
+          </li>
+          <li>
+            <a href="assets/media/intro-video.mp4">介绍视频 MP4</a>
+            <span class="li-en">Intro video (MP4)</span>
+          </li>
+          <li>
+            <a href="docs/index.html#intro-media">在进展页内嵌预览与播放</a>
+            <span class="li-en">Embedded preview &amp; player on the progress page</span>
+          </li>
         </ul>
-        <p style="margin-top:0.7rem;">素材路径：<code>assets/media/</code></p>
+        <p style="margin-top:0.7rem;">素材路径 <span class="sub-en" style="display:block;margin-top:0.25rem;font-size:0.85rem;">Asset path</span> <code>assets/media/</code></p>
       </section>
     </div>
   </div>
