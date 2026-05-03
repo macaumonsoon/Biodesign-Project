@@ -246,7 +246,7 @@ body {
 .popup h3 {
   margin: 0 0 6px;
   font-size: 16px;
-  color: #eff8ff;
+  color: #17333c;
 }
 .popup p {
   margin: 2px 0;
@@ -263,21 +263,26 @@ body {
 }
 .hidden { display: none; }
 .top {
-  background: linear-gradient(90deg, #20303d, #2d475b);
-  color: #f8fbff;
-  padding: 20px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(29, 95, 105, 0.12), transparent 22rem),
+    linear-gradient(135deg, #fbf8f1, #eef6f4);
+  color: #17333c;
+  padding: 22px 20px;
   position: relative;
+  border-bottom: 1px solid #d8e6e3;
+  box-shadow: 0 12px 34px rgba(31, 58, 68, 0.08);
 }
 .top h1 { margin: 0; font-size: 1.4rem; }
-.top p { margin: 6px 0 0; opacity: 0.9; }
+.top p { margin: 6px 0 0; color: #5a7076; opacity: 1; }
 .main-nav { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
 .main-nav a {
-  color: #d6e8f6;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #1d5f69;
+  border: 1px solid rgba(29, 95, 105, 0.18);
   border-radius: 999px;
   padding: 5px 10px;
   text-decoration: none;
   font-size: 13px;
+  background: rgba(255, 255, 255, 0.7);
 }
 .page-lang-switch {
   position: absolute;
@@ -287,9 +292,9 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4px;
   padding: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 1px solid rgba(29, 95, 105, 0.16);
   border-radius: 999px;
-  background: rgba(7, 14, 22, 0.42);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: saturate(180%) blur(16px);
 }
 .page-lang-switch button {
@@ -297,7 +302,7 @@ body {
   border-radius: 999px;
   min-width: 50px;
   padding: 6px 10px;
-  color: #d6e8f6;
+  color: #567077;
   background: transparent;
   font: inherit;
   font-size: 12px;
@@ -305,8 +310,8 @@ body {
   cursor: pointer;
 }
 .page-lang-switch button[aria-pressed="true"] {
-  color: #102030;
-  background: rgba(255, 255, 255, 0.92);
+  color: #fffdf8;
+  background: #1d5f69;
 }
 .layout {
   display: grid;
@@ -476,8 +481,9 @@ button {
   color: inherit;
   background: #fff;
   border: 1px solid #dde4ea;
-  border-radius: 10px;
-  padding: 14px;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(31, 58, 68, 0.06);
 }
 .entry-card h2 {
   font-size: 1.05rem;

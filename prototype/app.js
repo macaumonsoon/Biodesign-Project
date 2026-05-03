@@ -961,16 +961,8 @@ async function initHome() {
     state.dragStartX = e.clientX;
     state.dragStartY = e.clientY;
 
-    // Rotation remains the primary horizontal motion cue.
+    // Keep the globe anchored in the designed screen position; drag only rotates it.
     state.rotation += dx * 0.18;
-    // Add globe translation to match "planet moves when dragging".
-    state.offsetX += dx * 0.35;
-    state.offsetY += dy * 0.35;
-    state.offsetX = Math.max(-window.innerWidth * 0.28, Math.min(window.innerWidth * 0.28, state.offsetX));
-    state.offsetY = Math.max(-window.innerHeight * 0.22, Math.min(window.innerHeight * 0.22, state.offsetY));
-    // Drag up/down subtly zooms to create immersive push/pull feel.
-    state.zoom += -dy * 0.0015;
-    state.zoom = Math.max(0.72, Math.min(1.38, state.zoom));
   });
 
   // touch drag support
@@ -989,12 +981,6 @@ async function initHome() {
     state.dragStartX = x;
     state.dragStartY = y;
     state.rotation += dx * 0.2;
-    state.offsetX += dx * 0.35;
-    state.offsetY += dy * 0.35;
-    state.offsetX = Math.max(-window.innerWidth * 0.28, Math.min(window.innerWidth * 0.28, state.offsetX));
-    state.offsetY = Math.max(-window.innerHeight * 0.22, Math.min(window.innerHeight * 0.22, state.offsetY));
-    state.zoom += -dy * 0.0015;
-    state.zoom = Math.max(0.72, Math.min(1.38, state.zoom));
   }, { passive: true });
   canvas.addEventListener("touchend", () => { state.dragging = false; }, { passive: true });
 
