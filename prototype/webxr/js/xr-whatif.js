@@ -2,6 +2,8 @@
  * 「若无人类影响」教育式分叉 + 原始栖息地描述（与档案页 #habitat 联动）
  */
 
+import { englishValue } from "./xr-data.js?v=site-lang-unified-v2-20260503";
+
 function esc(s) {
   return String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -176,7 +178,7 @@ function moodFromSpecies(sp) {
 }
 
 function genericHabitatCopy(sp, zh) {
-  const place = String(sp.region || (zh ? "它活动的那一片" : "its range"));
+  const place = zh ? String(sp.region || "它活动的那一片") : englishValue(sp.region || "its range");
   if (zh) {
     return [
       `档案记录显示，它大致生活在「${place}」一带。这里的“栖息地”指它获取食物、繁殖和躲避风险所依赖的自然环境。`,

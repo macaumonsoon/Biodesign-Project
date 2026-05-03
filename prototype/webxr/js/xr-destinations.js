@@ -1,4 +1,4 @@
-import { loadDataset, slugify, getSpeciesLink } from "./xr-data.js";
+import { loadDataset, slugify, getSpeciesLink, englishValue } from "./xr-data.js?v=site-lang-unified-v2-20260503";
 
 const FIELD_ORDER = [
   "row_id",
@@ -16,6 +16,8 @@ const FIELD_ORDER = [
   "pharm_human_hook",
   "verification_note"
 ];
+
+const FIELD_ORDER_EN = FIELD_ORDER.filter(key => key !== "common_name_zh" && key !== "common_name_raw");
 
 const LABELS = {
   zh: {
@@ -130,7 +132,12 @@ export async function initDestinations() {
       .replace(/,\s*/g, "、");
   };
   const cellValue = (key, value, row) => {
-    if (lang() !== "zh") return value;
+    if (lang() !== "zh") {
+      if (["extinction_summary", "region", "extinction_drivers", "notes", "pharm_human_hook"].includes(key)) {
+        return englishValue(value) || "";
+      }
+      return value;
+    }
     if (key === "list_source") return listSourceLabel(value);
     if (key === "category") return catLabel(value);
     if (key === "common_name_en") return String(value || "").trim() || "暂无";
@@ -166,7 +173,8 @@ export async function initDestinations() {
   function renderHeader() {
     const labels = LABELS[lang()] || LABELS.en;
     const detail = lang() === "zh" ? "详情" : "Detail";
-    thead.innerHTML = `<th>${detail}</th>${FIELD_ORDER.map(
+    const fields = lang() === "zh" ? FIELD_ORDER : FIELD_ORDER_EN;
+    thead.innerHTML = `<th>${detail}</th>${fields.map(
       k => `<th title="${esc(labels[k] || k)}">${esc(labels[k] || k)}</th>`
     ).join("")}`;
   }
@@ -176,7 +184,8 @@ export async function initDestinations() {
     tbody.innerHTML = rows
       .map(r => {
         const slug = slugify(r.scientific_name);
-        const cells = FIELD_ORDER.map(k => {
+        const fields = lang() === "zh" ? FIELD_ORDER : FIELD_ORDER_EN;
+        const cells = fields.map(k => {
           let v = r[k];
           v = cellValue(k, v, r);
           const long = k === "notes" || k === "verification_note" || k === "extinction_drivers";

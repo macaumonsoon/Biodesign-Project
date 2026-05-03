@@ -36,6 +36,7 @@ const PORTAL_LABELS = {
 };
 
 const LANG_KEY = "ea-lang";
+const SPECIES_DETAIL_VERSION = "classic-species-english-values-v4-20260503";
 
 const PAGE_COPY = {
   zh: {
@@ -220,6 +221,126 @@ function localizedSpeciesName(row) {
   return `${localizedCategoryText(row.category)}物种`;
 }
 
+function localizedRegionText(region = "") {
+  if (currentPrototypeLang() === "zh") return region || "-";
+  const replacements = [
+    ["欧亚", "Eurasia"],
+    ["欧洲", "Europe"],
+    ["亚洲", "Asia"],
+    ["北美", "North America"],
+    ["南美", "South America"],
+    ["美洲", "Americas"],
+    ["非洲", "Africa"],
+    ["澳大利亚/塔斯马尼亚", "Australia / Tasmania"],
+    ["澳大利亚", "Australia"],
+    ["塔斯马尼亚", "Tasmania"],
+    ["新西兰", "New Zealand"],
+    ["马达加斯加", "Madagascar"],
+    ["毛里求斯", "Mauritius"],
+    ["留尼汪", "Reunion"],
+    ["加拉帕戈斯", "Galapagos"],
+    ["夏威夷", "Hawaii"],
+    ["加勒比", "Caribbean"],
+    ["印度洋", "Indian Ocean"],
+    ["太平洋", "Pacific"],
+    ["大西洋", "Atlantic"],
+    ["北极", "Arctic"],
+    ["西伯利亚", "Siberia"],
+    ["中国", "China"],
+    ["日本海", "Sea of Japan"],
+    ["日本", "Japan"],
+    ["印度尼西亚", "Indonesia"],
+    ["白令海", "Bering Sea"],
+    ["佛得角海域", "Cape Verde marine region"]
+  ];
+  let text = region || "-";
+  replacements.forEach(([zh, en]) => {
+    text = text.replaceAll(zh, en);
+  });
+  text = text.replaceAll("、", ", ");
+  if (/[\u3400-\u9fff]/.test(text)) return "See source range";
+  return text;
+}
+
+function localizedDataText(value = "") {
+  if (currentPrototypeLang() === "zh") return value || "-";
+  let text = String(value || "").trim();
+  if (!text) return "-";
+  const replacements = [
+    ["暂无", "Not available"],
+    ["人类狩猎", "human hunting"],
+    ["人类竞争", "human competition"],
+    ["人类+气候", "human pressure + climate"],
+    ["气候变暖", "climate warming"],
+    ["气候变化", "climate change"],
+    ["气候", "climate"],
+    ["森林丧失", "forest loss"],
+    ["猎物减少", "prey decline"],
+    ["营养压力", "nutritional pressure"],
+    ["疾病", "disease"],
+    ["项目提及，最后一只录音存在", "mentioned in the project; last-known individual has recorded media"],
+    ["装甲壳，触觉/视觉强", "armored shell, strong tactile and visual reconstruction potential"],
+    ["触觉/视觉强", "strong tactile and visual reconstruction potential"],
+    ["视觉/声音重建", "visual and sound reconstruction"],
+    ["声音层叠潜力高", "high potential for layered sound design"],
+    ["步态节奏适合低频音乐层", "gait rhythm suits a low-frequency music layer"],
+    ["洞穴化石，冬眠节奏音乐", "cave fossils; hibernation rhythm for music design"],
+    ["骨骼/迁徙路径数据", "skeletal and migration-route data"],
+    ["牙齿化石推断饮食/声音", "tooth fossils inform diet and sound inference"],
+    ["咬合力强，吼声模拟潜力极高", "strong bite force; very high potential for roar simulation"],
+    ["毛发/皮肤化石，气味重建", "hair and skin fossils; scent reconstruction"],
+    ["冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层", "rich frozen DNA; ear structure, calls, and heart-rate cues suit the music layer"],
+    ["确认", "confirmed"],
+    ["可能灭绝", "possibly extinct"],
+    ["灭绝", "extinct"],
+    ["濒危", "endangered"],
+    ["极危", "critically endangered"],
+    ["美国东南", "southeastern United States"],
+    ["美国", "United States"],
+    ["北美", "North America"],
+    ["南美", "South America"],
+    ["美洲", "Americas"],
+    ["欧洲", "Europe"],
+    ["欧亚", "Eurasia"],
+    ["亚洲", "Asia"],
+    ["非洲", "Africa"],
+    ["澳大利亚/塔斯马尼亚", "Australia / Tasmania"],
+    ["澳大利亚", "Australia"],
+    ["塔斯马尼亚", "Tasmania"],
+    ["新西兰", "New Zealand"],
+    ["中国长江", "Yangtze River, China"],
+    ["中国", "China"],
+    ["日本海", "Sea of Japan"],
+    ["日本", "Japan"],
+    ["白令海", "Bering Sea"],
+    ["夏威夷", "Hawaii"],
+    ["马达加斯加", "Madagascar"],
+    ["毛里求斯", "Mauritius"],
+    ["留尼汪", "Reunion"],
+    ["加拉帕戈斯", "Galapagos"],
+    ["佛得角海域", "Cape Verde marine region"],
+    ["栖息地丧失", "habitat loss"],
+    ["栖地破坏", "habitat destruction"],
+    ["过度捕猎", "overhunting"],
+    ["狩猎", "hunting"],
+    ["入侵物种", "invasive species"],
+    ["气候变化", "climate change"],
+    ["污染", "pollution"],
+    ["筑坝", "damming"],
+    ["误捕", "bycatch"],
+    ["人类活动", "human activity"],
+    ["录音存在", "recordings exist"],
+    ["无", "none"]
+  ];
+  replacements.forEach(([zh, en]) => {
+    text = text.replaceAll(zh, en);
+  });
+  text = text.replace(/~?([\d,]+)年前/g, "~$1 years ago");
+  text = text.replaceAll("、", ", ").replace(/\s*\+\s*/g, " + ");
+  if (/[\u3400-\u9fff]/.test(text)) return "English translation pending; verify against source records.";
+  return text;
+}
+
 function prototypeCopy(key, ...args) {
   const lang = currentPrototypeLang();
   const bundle = window.PROTOTYPE_COPY?.[lang] || window.PROTOTYPE_COPY?.zh;
@@ -334,7 +455,7 @@ function buildArchivalMap(archivalRows) {
 }
 
 function getSpeciesLink(r) {
-  return `./species.html?slug=${encodeURIComponent(slugify(r.scientific_name))}`;
+  return `./species.html?slug=${encodeURIComponent(slugify(r.scientific_name))}&v=${SPECIES_DETAIL_VERSION}`;
 }
 
 function markerImg(source, alt, className = "species-thumb") {
@@ -501,21 +622,23 @@ function renderSpeciesDetail(species, archivalMap, slug, imageSources = []) {
   const arch = archivalMap.get(hit.scientific_name);
   const curated = arch?.notable_archives_curated || [];
   const source = imageSourceForSpecies(hit, imageSources);
+  const isZh = currentPrototypeLang() === "zh";
   const exhibitBlocks = [
-    { title: currentPrototypeLang() === "zh" ? "灭绝与原因" : "Extinction context", content: hit.extinction_drivers || "-" },
-    { title: currentPrototypeLang() === "zh" ? "背景说明" : "Context notes", content: hit.notes || (currentPrototypeLang() === "zh" ? "暂无" : "—") },
-    { title: currentPrototypeLang() === "zh" ? "核实说明" : "Verification", content: hit.verification_note || (currentPrototypeLang() === "zh" ? "建议对照红色名录与一手文献。" : "Validate via IUCN and primary sources.") }
+    { title: isZh ? "灭绝与原因" : "Extinction context", content: localizedDataText(hit.extinction_drivers || "-") },
+    { title: isZh ? "背景说明" : "Context notes", content: localizedDataText(hit.notes || (isZh ? "暂无" : "—")) },
+    { title: isZh ? "核实说明" : "Verification", content: localizedDataText(hit.verification_note || (isZh ? "建议对照红色名录与一手文献。" : "Validate via IUCN and primary sources.")) }
   ];
+  const maybeChineseName = isZh ? `<p><strong>${t("chineseName")}:</strong> ${hit.common_name_zh || "-"}</p>` : "";
   mount.innerHTML = `
     <div class="species-detail-head">
       ${markerImg(source, hit.common_name_en || hit.scientific_name, "species-detail-photo")}
       <div>
         <h2>${localizedSpeciesName(hit)} <span class="meta">(${hit.scientific_name})</span></h2>
-        <p><strong>${t("chineseName")}:</strong> ${hit.common_name_zh || "-"}</p>
-        <p><strong>${t("category")}:</strong> ${localizedCategoryText(hit.category)} | <strong>${t("extinction")}:</strong> ${hit.extinction_summary} | <strong>${t("region")}:</strong> ${hit.region}</p>
-        <p><strong>${t("drivers")}:</strong> ${hit.extinction_drivers}</p>
-        <p><strong>${t("notes")}:</strong> ${hit.notes || "-"}</p>
-        <p><strong>${t("verification")}:</strong> ${hit.verification_note || "-"}</p>
+        ${maybeChineseName}
+        <p><strong>${t("category")}:</strong> ${localizedCategoryText(hit.category)} | <strong>${t("extinction")}:</strong> ${localizedDataText(hit.extinction_summary)} | <strong>${t("region")}:</strong> ${localizedRegionText(hit.region)}</p>
+        <p><strong>${t("drivers")}:</strong> ${localizedDataText(hit.extinction_drivers)}</p>
+        <p><strong>${t("notes")}:</strong> ${localizedDataText(hit.notes || "-")}</p>
+        <p><strong>${t("verification")}:</strong> ${localizedDataText(hit.verification_note || "-")}</p>
         ${source?.sourceUrl ? `<p><a href="${source.sourceUrl}" target="_blank" rel="noopener noreferrer">${t("imageSource")}</a></p>` : ""}
       </div>
     </div>
@@ -535,12 +658,12 @@ function renderSpeciesDetail(species, archivalMap, slug, imageSources = []) {
 
     <h3>${t("curated")}</h3>
     <ul>
-      ${curated.length ? curated.map(c => `<li><strong>${c.type}</strong>: ${c.label} (<a href="${c.url}" target="_blank" rel="noopener noreferrer">${currentPrototypeLang() === "zh" ? "打开" : "open"}</a>)</li>`).join("") : `<li>${currentPrototypeLang() === "zh" ? "暂无策展线索。" : "No curated hints yet."}</li>`}
+      ${curated.length ? curated.map(c => `<li><strong>${c.type}</strong>: ${localizedDataText(c.label)} (<a href="${c.url}" target="_blank" rel="noopener noreferrer">${isZh ? "打开" : "open"}</a>)</li>`).join("") : `<li>${isZh ? "暂无策展线索。" : "No curated hints yet."}</li>`}
     </ul>
 
     <h3>${t("protocol")}</h3>
     <ul>
-      ${(arch?.research_protocol || [currentPrototypeLang() === "zh" ? "暂无协议备注。" : "No protocol notes"]).map(x => `<li>${x}</li>`).join("")}
+      ${(arch?.research_protocol || [isZh ? "暂无协议备注。" : "No protocol notes"]).map(x => `<li>${localizedDataText(x)}</li>`).join("")}
     </ul>
   `;
 }
@@ -671,11 +794,11 @@ function drawDottedPolygon(ctx, bounds, polygon, color, dotStep = 3.2) {
 
 function drawDottedWorldMap(ctx, bounds) {
   const colors = {
-    america: "rgba(88, 190, 213, 0.72)",
-    europe: "rgba(155, 207, 73, 0.74)",
-    asia: "rgba(242, 176, 52, 0.74)",
-    africa: "rgba(234, 199, 71, 0.72)",
-    oceania: "rgba(228, 155, 174, 0.7)"
+    america: "rgba(108, 182, 191, 0.48)",
+    europe: "rgba(157, 191, 107, 0.46)",
+    asia: "rgba(222, 181, 91, 0.46)",
+    africa: "rgba(216, 195, 106, 0.44)",
+    oceania: "rgba(207, 156, 166, 0.42)"
   };
   const land = [
     {
@@ -737,6 +860,53 @@ function drawDottedWorldMap(ctx, bounds) {
   ];
 
   land.forEach(piece => drawDottedPolygon(ctx, bounds, piece.polygon, piece.color));
+}
+
+function drawMemorialPoint(ctx, point) {
+  const { x, y, r, pulse, isActive, isHover } = point;
+  const activeBoost = isActive ? 1.9 : isHover ? 1.45 : 1;
+  const ring = r + 1.4 * activeBoost;
+
+  ctx.save();
+  ctx.shadowColor = isActive
+    ? `rgba(36, 97, 106, ${0.42 + pulse * 0.26})`
+    : `rgba(28, 154, 177, ${0.26 + pulse * 0.2})`;
+  ctx.shadowBlur = isActive ? 14 + pulse * 10 : 4 + pulse * 8;
+  ctx.strokeStyle = isActive
+    ? "rgba(36, 97, 106, 0.96)"
+    : isHover
+      ? "rgba(28, 130, 150, 0.9)"
+      : `rgba(18, 137, 161, ${0.6 + pulse * 0.18})`;
+  ctx.lineWidth = isActive || isHover ? 2.4 : 1.7;
+  ctx.beginPath();
+  ctx.arc(x, y, ring, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.fillStyle = isActive
+    ? "rgba(36, 97, 106, 0.86)"
+    : `rgba(32, 150, 174, ${0.48 + pulse * 0.16})`;
+  ctx.beginPath();
+  ctx.arc(x, y, r * activeBoost, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "rgba(255,255,255,0.94)";
+  ctx.beginPath();
+  ctx.arc(x, y, Math.max(1.05, r * 0.3), 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function findNearestScreenPoint(points, x, y) {
+  let best = null;
+  let bestDistance = Infinity;
+  for (const point of points) {
+    const dx = x - point.x;
+    const dy = y - point.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance <= point.hitRadius && distance < bestDistance) {
+      best = point;
+      bestDistance = distance;
+    }
+  }
+  return best;
 }
 
 function drawLandBlob(ctx, lat, lon, width, height, rotationDeg, cx, cy, radius, zoom, color) {
@@ -810,9 +980,9 @@ function drawGlobe(ctx, canvas, state) {
 
   ctx.clearRect(0, 0, w, h);
   const bg = ctx.createLinearGradient(0, 0, w, h);
-  bg.addColorStop(0, "#ffffff");
-  bg.addColorStop(0.55, "#fbfdfb");
-  bg.addColorStop(1, "#f1f8f7");
+  bg.addColorStop(0, "#fffdf8");
+  bg.addColorStop(0.58, "#f8faf6");
+  bg.addColorStop(1, "#eef5f2");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
 
@@ -831,64 +1001,59 @@ function drawGlobe(ctx, canvas, state) {
   ctx.save();
   const mapTitle = prototypeCopy("mapTitle") || "EXTINCTION DOT MAP";
   const mapSubtitle = prototypeCopy("mapSubtitle") || "54 MEMORIAL POINTS · EXTINCT SPECIES";
-  ctx.fillStyle = "rgba(243, 159, 18, 0.86)";
-  ctx.font = `700 ${Math.max(24, Math.min(58, w * 0.044))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
-  ctx.letterSpacing = "0.08em";
+  ctx.fillStyle = "rgba(36, 97, 106, 0.94)";
+  ctx.font = `720 ${Math.max(23, Math.min(54, w * 0.04))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
+  ctx.letterSpacing = currentPrototypeLang() === "zh" ? "0.12em" : "0.08em";
   ctx.textAlign = "center";
   ctx.fillText(mapTitle, bounds.left + bounds.width * 0.5, h * 0.105);
-  ctx.fillStyle = "rgba(130, 190, 72, 0.9)";
-  ctx.font = `700 ${Math.max(12, Math.min(24, w * 0.018))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
+  ctx.fillStyle = "rgba(36, 97, 106, 0.78)";
+  ctx.font = `700 ${Math.max(12, Math.min(22, w * 0.016))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
   ctx.fillText(mapSubtitle, bounds.left + bounds.width * 0.5, h * 0.15);
   ctx.restore();
 
   // latitude and longitude guides are intentionally removed for the flat dot-map style.
 
-  // blinking memorial points
+  // Blinking memorial points: all breathe; hovered/selected points are drawn last.
   state.screenPoints = [];
+  const pointDraws = [];
   for (const item of state.points) {
     const p = mapProject(item.lat, item.lon, bounds);
     const pulse = 0.5 + 0.5 * Math.sin(now / 520 + item.lat * 0.37 + item.lon * 0.11);
-    const r = 2.6 + pulse * 1.8;
+    const r = 2.4 + pulse * 1.4;
+    const isActive = item.slug === state.selectedSlug;
+    const isHover = item.slug === state.hoverSlug;
 
-    ctx.save();
-    ctx.shadowColor = `rgba(28, 178, 224, ${0.4 + pulse * 0.28})`;
-    ctx.shadowBlur = 6 + pulse * 10;
-    ctx.strokeStyle = `rgba(15, 145, 184, ${0.72 + pulse * 0.22})`;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, r + 1.5, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.fillStyle = `rgba(19, 148, 190, ${0.62 + pulse * 0.18})`;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = "rgba(255,255,255,0.92)";
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, Math.max(1.1, r * 0.32), 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-
-    if (item.slug === state.hoverSlug) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, r + 8, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(241, 143, 28, 0.95)";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    }
-    state.screenPoints.push({ x: p.x - 12, y: p.y - 12, w: 24, h: 24, item });
+    pointDraws.push({
+      x: p.x,
+      y: p.y,
+      r,
+      pulse,
+      isActive,
+      isHover,
+      item,
+      z: isActive ? 2 : isHover ? 1 : 0
+    });
+    state.screenPoints.push({ x: p.x, y: p.y, r, hitRadius: isActive || isHover ? 16 : 12, item });
   }
+  pointDraws
+    .sort((a, b) => a.z - b.z)
+    .forEach(point => drawMemorialPoint(ctx, point));
 }
 
 function popupHtml(item, archivalMap) {
   const a = archivalMap.get(item.scientific_name);
   const iucn = a?.portal_urls?.iucn_red_list_search || "#";
+  const isZh = currentPrototypeLang() === "zh";
+  const title = isZh ? localizedSpeciesName(item) : (item.common_name_en || item.scientific_name);
+  const secondaryName = isZh && item.common_name_en ? `<p>${item.common_name_en}</p>` : "";
+  const region = localizedRegionText(item.region || "-");
   return `
-    <h3>${item.common_name_zh || item.common_name_en || item.scientific_name}</h3>
-    <p>${item.common_name_en || ""}</p>
+    <h3>${title}</h3>
+    ${secondaryName}
     <p>${item.scientific_name}</p>
     <p>${item.category} · ${item.extinction_summary}</p>
-    <p>${item.region || "-"}</p>
-    <a href="./species.html?slug=${encodeURIComponent(item.slug)}">${prototypeCopy("open") || (currentPrototypeLang() === "zh" ? "打开物种档案" : "Open species dossier")}</a>
+    <p>${region}</p>
+    <a href="./species.html?slug=${encodeURIComponent(item.slug)}&v=${SPECIES_DETAIL_VERSION}">${prototypeCopy("open") || (currentPrototypeLang() === "zh" ? "打开物种档案" : "Open species dossier")}</a>
     <a href="${iucn}" target="_blank" rel="noopener noreferrer">IUCN</a>
   `;
 }
@@ -999,6 +1164,7 @@ async function initHome() {
     points,
     screenPoints: [],
     hoverSlug: null,
+    selectedSlug: null,
     blinkTime: 0,
     autoRotate: true,
     dragging: false,
@@ -1028,18 +1194,32 @@ async function initHome() {
     updateChrome();
   });
 
+  canvas.addEventListener("mousemove", e => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const hit = findNearestScreenPoint(state.screenPoints, x, y);
+    state.hoverSlug = hit?.item.slug || null;
+    canvas.style.cursor = hit ? "pointer" : "default";
+  });
+
+  canvas.addEventListener("mouseleave", () => {
+    state.hoverSlug = null;
+    canvas.style.cursor = "default";
+  });
+
   canvas.addEventListener("click", e => {
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const hit = state.screenPoints.find(p => {
-      return x >= p.x && x <= p.x + p.w && y >= p.y && y <= p.y + p.h;
-    });
+    const hit = findNearestScreenPoint(state.screenPoints, x, y);
     if (!hit) {
       popup.classList.add("hidden");
+      state.selectedSlug = null;
       state.hoverSlug = null;
       return;
     }
+    state.selectedSlug = hit.item.slug;
     state.hoverSlug = hit.item.slug;
     popup.innerHTML = popupHtml(hit.item, archivalMap);
     popup.style.left = `${Math.min(window.innerWidth - 340, x + 18)}px`;

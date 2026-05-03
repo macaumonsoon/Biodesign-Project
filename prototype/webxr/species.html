@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>物种数字档案</title>
-  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <link rel="stylesheet" href="./css/xr-ui.css?v=site-lang-unified-v2-20260503" />
   <script type="importmap">
   {
     "imports": {
@@ -17,25 +17,57 @@
 <body class="xr-page xr-page--archive">
   <header class="xr-archive-top">
     <div class="xr-archive-top-inner">
-      <a class="xr-archive-logo" href="../index.html">灭绝档案</a>
+      <a class="xr-archive-logo" href="../index.html" data-species-i18n="logo">灭绝档案</a>
       <span class="xr-archive-top-divide" aria-hidden="true"></span>
-      <span class="xr-archive-top-tagline">从地球上的光点，看见人类活动留下的物种空缺</span>
+      <span class="xr-archive-top-tagline" data-species-i18n="tagline">从地球上的光点，看见人类活动留下的物种空缺</span>
       <nav class="xr-archive-top-nav" aria-label="全站">
-        <a href="../index.html">首页</a>
-        <a href="../archive.html">档案</a>
-        <a href="./index.html">星球</a>
-        <a href="./ethics.html">反思</a>
-        <a href="../index.html">关于</a>
+        <a href="../index.html" data-species-i18n="home">首页</a>
+        <a href="../archive.html" data-species-i18n="archive">档案</a>
+        <a href="./index.html" data-species-i18n="planet">星球</a>
+        <a href="./ethics.html" data-species-i18n="reflection">反思</a>
+        <a href="../index.html" data-species-i18n="about">关于</a>
       </nav>
     </div>
   </header>
 
   <main class="xr-species-main" id="xr-species-mount">
-    <p class="xr-muted">加载中…</p>
+    <p class="xr-muted" data-species-i18n="loading">加载中…</p>
   </main>
 
   <script type="module">
-    import { initSpeciesPage } from "./js/xr-species-page.js";
+    import { initSpeciesPage } from "./js/xr-species-page.js?v=site-lang-unified-v2-20260503";
+    const SPECIES_COPY = {
+      zh: {
+        pageTitle: "物种数字档案",
+        logo: "灭绝档案",
+        tagline: "从地球上的光点，看见人类活动留下的物种空缺",
+        home: "首页",
+        archive: "档案",
+        planet: "星球",
+        reflection: "反思",
+        about: "关于",
+        loading: "加载中…"
+      },
+      en: {
+        pageTitle: "Species Digital Dossier",
+        logo: "Extinction Archive",
+        tagline: "Points of light reveal the species gaps left by human activity",
+        home: "Home",
+        archive: "Archive",
+        planet: "Planet",
+        reflection: "Reflection",
+        about: "About",
+        loading: "Loading..."
+      }
+    };
+    const selected = (localStorage.getItem("ea-lang") || localStorage.getItem("xr-lang") || "zh") === "en" ? "en" : "zh";
+    const copy = SPECIES_COPY[selected];
+    document.documentElement.lang = selected === "zh" ? "zh-Hans" : "en";
+    document.title = copy.pageTitle;
+    document.querySelectorAll("[data-species-i18n]").forEach(node => {
+      const key = node.dataset.speciesI18n;
+      if (copy[key]) node.textContent = copy[key];
+    });
     initSpeciesPage().catch(console.error);
   </script>
 </body>

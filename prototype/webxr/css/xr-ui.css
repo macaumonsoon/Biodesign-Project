@@ -687,6 +687,127 @@ html, body {
 .xr-bottom-dock-static .xr-dock { position: relative; transform: none; left: auto; bottom: auto; }
 
 .xr-muted { color: #7d8fa3; font-size: 13px; }
+/* Dataset/table pages stay light; only the immersive planet experience uses the dark theme. */
+.xr-page--destinations {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 82% 6%, rgba(137, 194, 191, 0.12), transparent 28rem),
+    linear-gradient(135deg, #fffdf8 0%, #f7f9f5 54%, #eef5f2 100%) !important;
+  color: #1f2b2e;
+  padding-bottom: 112px;
+}
+.xr-page--destinations .xr-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  border-bottom: 1px solid rgba(56, 83, 78, 0.1);
+  background: rgba(255, 253, 248, 0.86);
+  backdrop-filter: saturate(140%) blur(18px);
+  box-shadow: 0 12px 32px rgba(42, 67, 63, 0.08);
+}
+.xr-page--destinations .xr-page-header h1 {
+  color: #243438;
+  letter-spacing: -0.045em;
+}
+.xr-page--destinations .xr-page-header p,
+.xr-page--destinations .xr-muted {
+  color: #6e7f7c !important;
+}
+.xr-page--destinations .xr-nav a {
+  color: #24616a;
+  border-color: rgba(36, 97, 106, 0.12);
+  background: rgba(36, 97, 106, 0.07);
+}
+.xr-page--destinations .xr-nav a:hover {
+  background: rgba(36, 97, 106, 0.12);
+  border-color: rgba(36, 97, 106, 0.2);
+}
+.xr-page--destinations .xr-lang-switch {
+  border: 1px solid rgba(56, 83, 78, 0.1);
+  background: rgba(255, 253, 248, 0.78);
+  backdrop-filter: saturate(140%) blur(16px);
+  box-shadow: 0 10px 28px rgba(42, 67, 63, 0.08);
+}
+.xr-page--destinations .xr-lang-switch button {
+  color: #5f716f;
+}
+.xr-page--destinations .xr-lang-switch button[aria-pressed="true"] {
+  color: #fffdf8;
+  background: #24616a;
+}
+.xr-page--destinations .xr-panel {
+  max-width: min(1180px, calc(100vw - 36px));
+  margin: 24px auto;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(56, 83, 78, 0.1);
+  background: rgba(255, 253, 248, 0.84);
+  backdrop-filter: saturate(140%) blur(18px);
+  box-shadow: 0 18px 44px rgba(42, 67, 63, 0.1);
+}
+.xr-page--destinations .xr-filters input,
+.xr-page--destinations .xr-filters select {
+  border: 1px solid rgba(80, 126, 119, 0.16);
+  background: rgba(255, 255, 255, 0.82);
+  color: #243438;
+  outline: none;
+}
+.xr-page--destinations .xr-filters input:focus,
+.xr-page--destinations .xr-filters select:focus {
+  border-color: rgba(36, 97, 106, 0.42);
+  box-shadow: 0 0 0 3px rgba(36, 97, 106, 0.08);
+}
+.xr-page--destinations .xr-table-wrap {
+  max-height: calc(100vh - 300px);
+  border-radius: 16px;
+  border: 1px solid rgba(80, 126, 119, 0.14);
+  background: rgba(255, 255, 255, 0.62);
+}
+.xr-page--destinations #xr-d-count {
+  color: #6e7f7c !important;
+}
+.xr-page--destinations .xr-table {
+  color: #243438;
+  background: transparent;
+}
+.xr-page--destinations .xr-table th,
+.xr-page--destinations .xr-table td {
+  border: 1px solid rgba(80, 126, 119, 0.12);
+}
+.xr-page--destinations .xr-table th {
+  background: rgba(241, 247, 244, 0.98);
+  color: #425856;
+}
+.xr-page--destinations .xr-table tr:nth-child(even) td {
+  background: rgba(244, 248, 245, 0.58);
+}
+.xr-page--destinations .xr-table tr:hover td {
+  background: rgba(227, 242, 240, 0.72);
+}
+.xr-page--destinations .xr-table a {
+  color: #24616a;
+  font-weight: 650;
+}
+.xr-page--destinations .xr-bottom-dock-static {
+  background: linear-gradient(180deg, transparent, rgba(247, 249, 245, 0.92) 34%);
+}
+.xr-page--destinations .xr-bottom-dock-static .xr-dock {
+  border: 1px solid rgba(56, 83, 78, 0.1);
+  background: rgba(255, 253, 248, 0.78);
+  backdrop-filter: saturate(140%) blur(16px);
+  box-shadow: 0 12px 32px rgba(42, 67, 63, 0.08);
+}
+.xr-page--destinations .xr-pill {
+  color: #365356;
+  border-color: rgba(36, 97, 106, 0.1);
+  background: rgba(36, 97, 106, 0.07);
+}
+.xr-page--destinations .xr-pill:hover,
+.xr-page--destinations .xr-pill.active {
+  color: #fffdf8;
+  border-color: #24616a;
+  background: #24616a;
+}
 .xr-eyebrow {
   font-size: 11px;
   letter-spacing: 0.1em;

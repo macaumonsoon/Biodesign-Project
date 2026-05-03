@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>伦理思考 · 灭绝档案</title>
-  <link rel="stylesheet" href="./css/xr-ui.css" />
+  <link rel="stylesheet" href="./css/xr-ui.css?v=site-lang-unified-v2-20260503" />
 </head>
 <body class="xr-page">
   <header class="xr-page-header">
@@ -16,7 +16,7 @@
     <p data-ethics-i18n="lead">去灭绝技术并不只是“能不能做到”的问题，也涉及资源分配、生态风险、证据不确定性和公众参与。这里的滑块用于帮助你比较不同立场；反思内容只保存在本地浏览器。</p>
     <nav class="xr-nav">
       <a href="./index.html" data-ethics-i18n="navPlanet">星球首页</a>
-      <a href="./destinations.html">物种全表</a>
+      <a href="./destinations.html" data-ethics-i18n="navDestinations">物种全表</a>
       <a href="../hero.html" data-ethics-i18n="navHero">重点案例</a>
     </nav>
   </header>
@@ -32,7 +32,7 @@
     </section>
 
     <section class="xr-block">
-      <h3>反思日志</h3>
+      <h3 data-ethics-i18n="reflectionTitle">反思日志</h3>
       <textarea id="reflection-input" class="xr-textarea" rows="5" placeholder="当一个物种从地球上消失，我们应该如何记住它、解释它，并避免新的消失？"></textarea>
       <div class="xr-button-row">
         <button type="button" id="save-reflection" class="xr-pill" data-ethics-i18n="save">保存</button>
@@ -43,15 +43,17 @@
   </main>
 
   <script type="module">
-    import { initEthicsPage } from "./js/xr-ethics.js";
+    import { initEthicsPage } from "./js/xr-ethics.js?v=site-lang-unified-v2-20260503";
     window.ETHICS_COPY = {
       zh: {
         title: "伦理思考与反思日志",
         pageTitle: "伦理思考 · 灭绝档案",
         lead: "去灭绝技术并不只是“能不能做到”的问题，也涉及资源分配、生态风险、证据不确定性和公众参与。这里的滑块用于帮助你比较不同立场；反思内容只保存在本地浏览器。",
         navPlanet: "星球首页",
+        navDestinations: "物种全表",
         navHero: "重点案例",
         tradeTitle: "去灭绝技术的取舍",
+        reflectionTitle: "反思日志",
         budgetLabel: "去灭绝研究投入优先级：",
         riskLabel: "生态不确定性的接受程度：",
         placeholder: "当一个物种从地球上消失，我们应该如何记住它、解释它，并避免新的消失？",
@@ -63,8 +65,10 @@
         pageTitle: "Ethics & Reflection — WebXR Prototype",
         lead: "A lightweight transition from emotional immersion to reasoned trade-offs: resources, risk, uncertainty communication, and a reflection saved only in this browser.",
         navPlanet: "Planet Home",
+        navDestinations: "Species Table",
         navHero: "Classic Hero Layer",
         tradeTitle: "Ethics Fork · De-extinction Trade-offs",
+        reflectionTitle: "Reflection Log",
         budgetLabel: "De-extinction budget priority: ",
         riskLabel: "Ecological uncertainty tolerance: ",
         placeholder: "When a biological rhythm disappears from Earth, what does collective absence mean to you?",

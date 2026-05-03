@@ -16,6 +16,7 @@ export const PORTAL_LABELS = {
   macaulay_library_search: "Macaulay Library"
 };
 
+export const XR_VERSION = "site-lang-unified-v2-20260503";
 const DATA_BASE = "../../data/";
 
 export async function loadDataset() {
@@ -99,7 +100,86 @@ export function getSpeciesLink(slug, { fragment, view } = {}) {
   const params = new URLSearchParams();
   params.set("slug", String(slug));
   if (view) params.set("view", String(view));
+  params.set("v", XR_VERSION);
   let u = `./species.html?${params.toString()}`;
   if (fragment) u += `#${String(fragment).replace(/^#/, "")}`;
   return u;
+}
+
+export function englishValue(value = "") {
+  let text = String(value || "").trim();
+  if (!text) return "";
+  const replacements = [
+    ["暂无策展线索。", "No curated leads yet."],
+    ["暂无外部档案入口。", "No external archive links yet."],
+    ["暂无", "Not available"],
+    ["人类狩猎", "human hunting"],
+    ["人类竞争", "human competition"],
+    ["人类+气候", "human pressure + climate"],
+    ["气候变暖", "climate warming"],
+    ["气候变化", "climate change"],
+    ["气候", "climate"],
+    ["森林丧失", "forest loss"],
+    ["猎物减少", "prey decline"],
+    ["营养压力", "nutritional pressure"],
+    ["疾病", "disease"],
+    ["装甲壳，触觉/视觉强", "armored shell, strong tactile and visual reconstruction potential"],
+    ["触觉/视觉强", "strong tactile and visual reconstruction potential"],
+    ["视觉/声音重建", "visual and sound reconstruction"],
+    ["声音层叠潜力高", "high potential for layered sound design"],
+    ["步态节奏适合低频音乐层", "gait rhythm suits a low-frequency music layer"],
+    ["洞穴化石，冬眠节奏音乐", "cave fossils; hibernation rhythm for music design"],
+    ["骨骼/迁徙路径数据", "skeletal and migration-route data"],
+    ["牙齿化石推断饮食/声音", "tooth fossils inform diet and sound inference"],
+    ["咬合力强，吼声模拟潜力极高", "strong bite force; very high potential for roar simulation"],
+    ["毛发/皮肤化石，气味重建", "hair and skin fossils; scent reconstruction"],
+    ["冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层", "rich frozen DNA; ear structure, calls, and heart-rate cues suit the music layer"],
+    ["确认", "confirmed"],
+    ["可能灭绝", "possibly extinct"],
+    ["灭绝", "extinct"],
+    ["濒危", "endangered"],
+    ["极危", "critically endangered"],
+    ["美国东南", "southeastern United States"],
+    ["美国", "United States"],
+    ["北美", "North America"],
+    ["南美", "South America"],
+    ["美洲", "Americas"],
+    ["欧洲", "Europe"],
+    ["欧亚", "Eurasia"],
+    ["亚洲", "Asia"],
+    ["非洲", "Africa"],
+    ["澳大利亚/塔斯马尼亚", "Australia / Tasmania"],
+    ["澳大利亚", "Australia"],
+    ["塔斯马尼亚", "Tasmania"],
+    ["新西兰", "New Zealand"],
+    ["中国长江", "Yangtze River, China"],
+    ["中国", "China"],
+    ["日本海", "Sea of Japan"],
+    ["日本", "Japan"],
+    ["白令海", "Bering Sea"],
+    ["夏威夷", "Hawaii"],
+    ["马达加斯加", "Madagascar"],
+    ["毛里求斯", "Mauritius"],
+    ["留尼汪", "Reunion"],
+    ["加拉帕戈斯", "Galapagos"],
+    ["佛得角海域", "Cape Verde marine region"],
+    ["栖息地丧失", "habitat loss"],
+    ["栖地破坏", "habitat destruction"],
+    ["过度捕猎", "overhunting"],
+    ["狩猎", "hunting"],
+    ["入侵物种", "invasive species"],
+    ["污染", "pollution"],
+    ["筑坝", "damming"],
+    ["误捕", "bycatch"],
+    ["人类活动", "human activity"],
+    ["录音存在", "recordings exist"],
+    ["无", "none"]
+  ];
+  replacements.forEach(([zh, en]) => {
+    text = text.replaceAll(zh, en);
+  });
+  text = text.replace(/~?([\d,]+)年前/g, "~$1 years ago");
+  text = text.replaceAll("、", ", ").replace(/\s*\+\s*/g, " + ");
+  if (/[\u3400-\u9fff]/.test(text)) return "English translation pending; verify against source records.";
+  return text;
 }

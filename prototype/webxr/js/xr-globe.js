@@ -9,9 +9,10 @@ import {
   latLonToPosition,
   categoryColorHex,
   getSpeciesLink,
-  PORTAL_LABELS
-} from "./xr-data.js";
-import { buildWhatIfSectionHtml, wireWhatIfSection } from "./xr-whatif.js";
+  PORTAL_LABELS,
+  englishValue
+} from "./xr-data.js?v=site-lang-unified-v2-20260503";
+import { buildWhatIfSectionHtml, wireWhatIfSection } from "./xr-whatif.js?v=site-lang-unified-v2-20260503";
 
 const GLOBE_RADIUS = 1;
 const MARKER_RADIUS = 0.022;
@@ -540,7 +541,7 @@ function localizedCategory(category = "") {
 }
 
 function localizedRegion(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   return String(value || "")
     .replace(/Yangtze River, China/gi, "中国长江")
     .replace(/Western Colombia/gi, "哥伦比亚西部")
@@ -556,7 +557,7 @@ function localizedRegion(value = "") {
 }
 
 function localizedExtinction(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   return String(value || "")
     .replace(/Critically Endangered \(Possibly Extinct\)/gi, "极危（可能灭绝）")
     .replace(/Possibly Extinct/gi, "可能灭绝")
@@ -567,7 +568,7 @@ function localizedExtinction(value = "") {
 }
 
 function localizedDrivers(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   return String(value || "")
     .replace(/Bycatch/gi, "误捕")
     .replace(/vessel traffic/gi, "船舶交通")
@@ -1003,7 +1004,7 @@ export async function initGlobe() {
   function migrationCardHtml(route) {
     if (!route) return "";
     const title = currentLang() === "zh" ? route.titleZh : route.titleEn;
-    const story = currentLang() === "zh" ? route.storyZh : route.storyEn;
+    const story = currentLang() === "zh" ? route.storyZh : englishValue(route.storyEn);
     const climate = `${localizedClimate(route.climateStart)} → ${localizedClimate(route.climateEnd)}`;
     const separator = currentLang() === "zh" ? "：" : ": ";
     return `
@@ -1090,7 +1091,7 @@ export async function initGlobe() {
     const migrationNote = migrationRoute ? migrationCardHtml(migrationRoute) : "";
     cardBody.innerHTML = `
       <h3>${localizedSpeciesName(sp)}</h3>
-      <div class="sci">${currentLang() === "zh" ? `学名：${sp.scientific_name}` : `${sp.common_name_zh || ""} · ${sp.scientific_name}`}</div>
+      <div class="sci">${currentLang() === "zh" ? `学名：${sp.scientific_name}` : sp.scientific_name}</div>
       <p class="meta">${localizedCategory(sp.category)} · ${localizedExtinction(sp.extinction_summary)} · ${localizedRegion(sp.region)}</p>
       <p class="meta">${localizedDrivers(sp.extinction_drivers)}</p>
       ${migrationNote}

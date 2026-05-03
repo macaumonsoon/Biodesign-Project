@@ -3,8 +3,8 @@ import {
   buildArchivalMap,
   slugify,
   PORTAL_LABELS
-} from "./xr-data.js";
-import { getHabitatForSpeciesPage, getWhatIfQuestionForPage } from "./xr-whatif.js";
+} from "./xr-data.js?v=site-lang-unified-v2-20260503";
+import { getHabitatForSpeciesPage, getWhatIfQuestionForPage } from "./xr-whatif.js?v=site-lang-unified-v2-20260503";
 
 function parseQuery() {
   return Object.fromEntries(new URLSearchParams(window.location.search).entries());
@@ -93,7 +93,7 @@ function localizedListSource(value = "") {
 }
 
 function localizedRegion(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   return String(value || "暂无")
     .replace(/Yangtze River, China/gi, "中国长江")
     .replace(/Western Colombia/gi, "哥伦比亚西部")
@@ -109,7 +109,7 @@ function localizedRegion(value = "") {
 }
 
 function localizedExtinction(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   let text = String(value || "暂无");
   text = text
     .replace(/Critically Endangered \(Possibly Extinct\)/gi, "极危（可能灭绝）")
@@ -122,7 +122,7 @@ function localizedExtinction(value = "") {
 }
 
 function localizedDrivers(value = "") {
-  if (currentLang() !== "zh") return value;
+  if (currentLang() !== "zh") return englishValue(value);
   const text = String(value || "");
   if (!text) return "暂无";
   return text
@@ -136,6 +136,85 @@ function localizedDrivers(value = "") {
     .replace(/habitat loss/gi, "栖息地丧失")
     .replace(/invasive species/gi, "入侵物种")
     .replace(/,\s*/g, "、");
+}
+
+function englishValue(value = "") {
+  let text = String(value || "").trim();
+  if (!text) return "";
+  const replacements = [
+    ["暂无策展线索。", "No curated leads yet."],
+    ["暂无外部档案入口。", "No external archive links yet."],
+    ["暂无", "Not available"],
+    ["人类狩猎", "human hunting"],
+    ["人类竞争", "human competition"],
+    ["人类+气候", "human pressure + climate"],
+    ["气候变暖", "climate warming"],
+    ["气候变化", "climate change"],
+    ["气候", "climate"],
+    ["森林丧失", "forest loss"],
+    ["猎物减少", "prey decline"],
+    ["营养压力", "nutritional pressure"],
+    ["疾病", "disease"],
+    ["装甲壳，触觉/视觉强", "armored shell, strong tactile and visual reconstruction potential"],
+    ["触觉/视觉强", "strong tactile and visual reconstruction potential"],
+    ["视觉/声音重建", "visual and sound reconstruction"],
+    ["声音层叠潜力高", "high potential for layered sound design"],
+    ["步态节奏适合低频音乐层", "gait rhythm suits a low-frequency music layer"],
+    ["洞穴化石，冬眠节奏音乐", "cave fossils; hibernation rhythm for music design"],
+    ["骨骼/迁徙路径数据", "skeletal and migration-route data"],
+    ["牙齿化石推断饮食/声音", "tooth fossils inform diet and sound inference"],
+    ["咬合力强，吼声模拟潜力极高", "strong bite force; very high potential for roar simulation"],
+    ["毛发/皮肤化石，气味重建", "hair and skin fossils; scent reconstruction"],
+    ["冻尸DNA丰富、耳结构/吼声/心率完美适合音乐层", "rich frozen DNA; ear structure, calls, and heart-rate cues suit the music layer"],
+    ["确认", "confirmed"],
+    ["可能灭绝", "possibly extinct"],
+    ["灭绝", "extinct"],
+    ["濒危", "endangered"],
+    ["极危", "critically endangered"],
+    ["美国东南", "southeastern United States"],
+    ["美国", "United States"],
+    ["北美", "North America"],
+    ["南美", "South America"],
+    ["美洲", "Americas"],
+    ["欧洲", "Europe"],
+    ["欧亚", "Eurasia"],
+    ["亚洲", "Asia"],
+    ["非洲", "Africa"],
+    ["澳大利亚/塔斯马尼亚", "Australia / Tasmania"],
+    ["澳大利亚", "Australia"],
+    ["塔斯马尼亚", "Tasmania"],
+    ["新西兰", "New Zealand"],
+    ["中国长江", "Yangtze River, China"],
+    ["中国", "China"],
+    ["日本海", "Sea of Japan"],
+    ["日本", "Japan"],
+    ["白令海", "Bering Sea"],
+    ["夏威夷", "Hawaii"],
+    ["马达加斯加", "Madagascar"],
+    ["毛里求斯", "Mauritius"],
+    ["留尼汪", "Reunion"],
+    ["加拉帕戈斯", "Galapagos"],
+    ["佛得角海域", "Cape Verde marine region"],
+    ["栖息地丧失", "habitat loss"],
+    ["栖地破坏", "habitat destruction"],
+    ["过度捕猎", "overhunting"],
+    ["狩猎", "hunting"],
+    ["入侵物种", "invasive species"],
+    ["气候变化", "climate change"],
+    ["污染", "pollution"],
+    ["筑坝", "damming"],
+    ["误捕", "bycatch"],
+    ["人类活动", "human activity"],
+    ["录音存在", "recordings exist"],
+    ["无", "none"]
+  ];
+  replacements.forEach(([zh, en]) => {
+    text = text.replaceAll(zh, en);
+  });
+  text = text.replace(/~?([\d,]+)年前/g, "~$1 years ago");
+  text = text.replaceAll("、", ", ").replace(/\s*\+\s*/g, " + ");
+  if (/[\u3400-\u9fff]/.test(text)) return "English translation pending; verify against source records.";
+  return text;
 }
 
 /** 与 data/archival_media_research.json 中标准英文行一一对应 */
@@ -239,7 +318,12 @@ function fieldLabel(key) {
 }
 
 function fieldValue(key, value, hit) {
-  if (currentLang() !== "zh") return value || "";
+  if (currentLang() !== "zh") {
+    if (key === "region" || key === "extinction_summary" || key === "extinction_drivers" || key === "notes" || key === "pharm_human_hook") {
+      return englishValue(value) || "";
+    }
+    return value || "";
+  }
   if (key === "list_source") return localizedListSource(value);
   if (key === "category") return localizedCategory(value);
   if (key === "common_name_en") return String(value || "").trim() || "暂无";
@@ -348,8 +432,10 @@ function reflectCta() {
 
 function renderPortalLinks(portalUrls = {}) {
   const keys = Object.keys(portalUrls);
-  if (!keys.length) return "<p class=\"xr-muted\">暂无外部档案入口。</p>";
-  const labels = {
+  if (!keys.length) {
+    return `<p class="xr-muted">${currentLang() === "zh" ? "暂无外部档案入口。" : "No external archive links yet."}</p>`;
+  }
+  const labelsZh = {
     iucn_red_list_search: "红色名录",
     gbif_species_search: "物种数据库",
     gbif_occurrence_search: "分布记录",
@@ -366,7 +452,7 @@ function renderPortalLinks(portalUrls = {}) {
   };
   return `<div class="xr-portals">${keys
     .map(k => {
-      const label = labels[k] || PORTAL_LABELS[k] || "外部资料";
+      const label = currentLang() === "zh" ? (labelsZh[k] || PORTAL_LABELS[k] || "外部资料") : (PORTAL_LABELS[k] || "External archive");
       const url = String(portalUrls[k] || "#").replace(/"/g, "%22");
       return `<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
     })
@@ -404,9 +490,9 @@ export async function initSpeciesPage() {
     ["row_id", hit.row_id],
     ["list_source", hit.list_source],
     ["category", hit.category],
-    ["common_name_zh", hit.common_name_zh],
+    ...(currentLang() === "zh" ? [["common_name_zh", hit.common_name_zh]] : []),
     ["common_name_en", hit.common_name_en],
-    ["common_name_raw", hit.common_name_raw],
+    ...(currentLang() === "zh" ? [["common_name_raw", hit.common_name_raw]] : []),
     ["scientific_name", hit.scientific_name],
     ["extinction_summary", hit.extinction_summary],
     ["region", hit.region],
@@ -498,10 +584,10 @@ export async function initSpeciesPage() {
                   const u = String(c.url || "#").replace(/"/g, "%22");
                   return `<li><strong>${esc(localizedCuratedType(c.type))}</strong>：${esc(
                     localizedCuratedLabel(c.label)
-                  )} — <a href="${u}" target="_blank" rel="noopener">打开</a></li>`;
+                  )} — <a href="${u}" target="_blank" rel="noopener">${esc(currentLang() === "zh" ? "打开" : "Open")}</a></li>`;
                 })
                 .join("")}</ul>`
-            : "<p class=\"xr-muted\">暂无策展线索。</p>"
+            : `<p class="xr-muted">${esc(currentLang() === "zh" ? "暂无策展线索。" : "No curated leads yet.")}</p>`
         }
       </section>
 
