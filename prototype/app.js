@@ -607,12 +607,45 @@ function projectPoint(latDeg, lonDeg, rotDeg, cx, cy, radius, zoom = 1) {
   };
 }
 
+function drawLandBlob(ctx, lat, lon, width, height, rotationDeg, cx, cy, radius, zoom, color) {
+  const p = projectPoint(lat, lon, rotationDeg, cx, cy, radius, zoom);
+  if (!p) return;
+  const perspective = 0.55 + p.z * 0.45;
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(((lon + rotationDeg) % 35) * Math.PI / 180);
+  ctx.scale(perspective, perspective * (0.82 + p.z * 0.18));
+  ctx.beginPath();
+  ctx.ellipse(0, 0, width * zoom, height * zoom, 0, 0, Math.PI * 2);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawEarthSurface(ctx, rotation, cx, cy, radius, zoom) {
+  const land = "rgba(71, 139, 82, 0.88)";
+  const dry = "rgba(160, 124, 70, 0.72)";
+  const ice = "rgba(238, 247, 247, 0.8)";
+
+  // Simplified continental masses for a more Earth-like read, not a GIS map.
+  drawLandBlob(ctx, 48, -104, 66, 34, rotation, cx, cy, radius, zoom, land);
+  drawLandBlob(ctx, 18, -86, 30, 18, rotation, cx, cy, radius, zoom, "rgba(72, 126, 74, 0.78)");
+  drawLandBlob(ctx, -19, -60, 32, 62, rotation, cx, cy, radius, zoom, land);
+  drawLandBlob(ctx, 7, 21, 42, 58, rotation, cx, cy, radius, zoom, dry);
+  drawLandBlob(ctx, 51, 18, 32, 20, rotation, cx, cy, radius, zoom, "rgba(94, 142, 88, 0.82)");
+  drawLandBlob(ctx, 47, 82, 86, 42, rotation, cx, cy, radius, zoom, land);
+  drawLandBlob(ctx, 24, 78, 48, 28, rotation, cx, cy, radius, zoom, dry);
+  drawLandBlob(ctx, -25, 134, 36, 22, rotation, cx, cy, radius, zoom, dry);
+  drawLandBlob(ctx, 72, -42, 34, 14, rotation, cx, cy, radius, zoom, ice);
+  drawLandBlob(ctx, -72, 20, 120, 16, rotation, cx, cy, radius, zoom, ice);
+}
+
 function drawGlobe(ctx, canvas, state) {
   const w = canvas.width;
   const h = canvas.height;
-  const cx = w * 0.74 + state.offsetX;
-  const cy = h * 0.58 + state.offsetY;
-  const globeR = Math.min(w, h) * 0.56;
+  const cx = w * 0.68 + state.offsetX;
+  const cy = h * 0.54 + state.offsetY;
+  const globeR = Math.min(w, h) * 0.45;
 
   ctx.clearRect(0, 0, w, h);
   ctx.fillStyle = "#eef5f3";
@@ -629,16 +662,37 @@ function drawGlobe(ctx, canvas, state) {
 
   // globe body
   const g = ctx.createRadialGradient(cx - globeR * 0.2, cy - globeR * 0.25, globeR * 0.2, cx, cy, globeR);
-  g.addColorStop(0, "#a5cbd5");
-  g.addColorStop(0.55, "#477887");
-  g.addColorStop(1, "#17313b");
+  g.addColorStop(0, "#8fd7eb");
+  g.addColorStop(0.36, "#2b9ac6");
+  g.addColorStop(0.72, "#096a9a");
+  g.addColorStop(1, "#05344f");
   ctx.beginPath();
   ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
   ctx.fillStyle = g;
   ctx.fill();
 
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
+  ctx.clip();
+  drawEarthSurface(ctx, state.rotation, cx, cy, globeR, state.zoom);
+
+  const cloud = ctx.createRadialGradient(cx - globeR * 0.22, cy - globeR * 0.28, globeR * 0.12, cx, cy, globeR * state.zoom);
+  cloud.addColorStop(0, "rgba(255,255,255,0.24)");
+  cloud.addColorStop(0.58, "rgba(255,255,255,0.08)");
+  cloud.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.fillStyle = cloud;
+  ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
+  ctx.restore();
+
+  ctx.beginPath();
+  ctx.arc(cx, cy, globeR * state.zoom + 2, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(174, 232, 250, 0.58)";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
   // latitude and longitude lines
-  ctx.strokeStyle = "rgba(236,248,250,0.34)";
+  ctx.strokeStyle = "rgba(235,250,255,0.24)";
   ctx.lineWidth = 1;
   for (let lat = -60; lat <= 60; lat += 15) {
     ctx.beginPath();
