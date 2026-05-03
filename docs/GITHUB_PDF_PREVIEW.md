@@ -24,6 +24,18 @@ https://github.com/macaumonsoon/Biodesign-Project/blob/main/slides/export/%5BFIN
 
 The path uses **URL encoding** because the filename contains `[`, `]`, and spaces.
 
+## Summit intro deck · 0503 final (full PDF, ASCII filename)
+
+The **latest intro deck export** (matches `assets/media/intro-presentation.pdf` on Pages) uses a simple filename for stable links:
+
+- File: `slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf` (~18 MB)
+
+**View on GitHub (blob):**
+
+[Open 0503 FINAL PDF on GitHub](https://github.com/macaumonsoon/Biodesign-Project/blob/main/slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf)
+
+Use **`[FINAL-SMALL]`** above when you want a faster in-browser load; use **`0503_FINAL_…`** when you need the full-quality export.
+
 **Raw file (download only):**
 
 ```

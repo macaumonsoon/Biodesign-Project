@@ -115,9 +115,11 @@ Deploy with **[`.github/workflows/deploy-github-pages.yml`](.github/workflows/de
 
 | File | **En** | **中文** |
 |------|--------|----------|
-| [`assets/media/intro-presentation.pdf`](assets/media/intro-presentation.pdf) | Intro deck (PDF) | 介绍 PPT（导出 PDF） |
+| [`assets/media/intro-presentation.pdf`](assets/media/intro-presentation.pdf) | Intro deck (PDF) — **0503 FINAL export** | 介绍 PPT（PDF）— **0503 最终导出** |
+| [`slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf`](slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf) | Same deck, canonical filename under `slides/export/` | 同上，`slides/export/` 留档副本 |
 | [`assets/media/intro-video.mp4`](assets/media/intro-video.mp4) | Intro video (web-ready) | 介绍视频 |
-| [`assets/media/intro-poster.jpg`](assets/media/intro-poster.jpg) | Poster still | 海报 / 视频封面 |
+| [`assets/media/intro-poster.jpg`](assets/media/intro-poster.jpg) | Poster still (video `<poster>` + promo) | 海报静帧 · 视频封面 |
+| [`04_deliverables/poster/`](04_deliverables/poster/) | Full poster **JPG + PDF** | 展板高清 JPG / 印刷友好 PDF |
 
 **Course context · 课程与赛制资料**
 
@@ -130,7 +132,7 @@ Deploy with **[`.github/workflows/deploy-github-pages.yml`](.github/workflows/de
 | `01_ideation/` | Ideation workbook | 创意工作簿 |
 | `02_research/` | Research notes | 研究笔记 |
 | `03_prototype/` | Prototype notes | 原型笔记 |
-| `04_deliverables/` | Presentation, video, exhibition | 演讲、视频、展板等交付 |
+| `04_deliverables/` | Presentation, video, exhibition (`poster/` for JPG/PDF) | 演讲、视频、展板等交付（`poster/` 含展板文件） |
 | `05_sprint_plan/` | Sprint notes | 冲刺与时间线 |
 | `docs/` | Extended docs & Pages HTML | 扩展文档与 Pages 页面 |
 
