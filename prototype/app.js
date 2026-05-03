@@ -610,9 +610,9 @@ function projectPoint(latDeg, lonDeg, rotDeg, cx, cy, radius, zoom = 1) {
 function drawGlobe(ctx, canvas, state) {
   const w = canvas.width;
   const h = canvas.height;
-  const cx = w / 2 + state.offsetX;
-  const cy = h / 2 + state.offsetY;
-  const globeR = Math.min(w, h) * 0.31;
+  const cx = w * 0.74 + state.offsetX;
+  const cy = h * 0.58 + state.offsetY;
+  const globeR = Math.min(w, h) * 0.56;
 
   ctx.clearRect(0, 0, w, h);
   ctx.fillStyle = "#eef5f3";
