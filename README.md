@@ -117,7 +117,8 @@ Deploy with **[`.github/workflows/deploy-github-pages.yml`](.github/workflows/de
 |------|--------|----------|
 | [`assets/media/intro-presentation.pdf`](assets/media/intro-presentation.pdf) | Intro deck (PDF) — **0503 FINAL export** | 介绍 PPT（PDF）— **0503 最终导出** |
 | [`slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf`](slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf) | Same deck, canonical filename under `slides/export/` | 同上，`slides/export/` 留档副本 |
-| [`assets/media/intro-video.mp4`](assets/media/intro-video.mp4) | Intro video (web-ready) | 介绍视频 |
+| Intro video on **YouTube** | Configure `INTRO_VIDEO_YOUTUBE` at the bottom of [`docs/index.html`](docs/index.html) — embedded player on [`docs/index.html#intro-media`](docs/index.html#intro-media) | 介绍视频托管 **YouTube**：在 [`docs/index.html`](docs/index.html) 页底填写 `INTRO_VIDEO_YOUTUBE`，[`#intro-media`](docs/index.html#intro-media) 内嵌播放 |
+| `assets/media/intro-video.mp4`（本地可选，**gitignore**） | Not in GitHub — keep your export locally if needed | 不进仓库 — 大文件可仅保存在本地 |
 | [`assets/media/intro-poster.jpg`](assets/media/intro-poster.jpg) | Poster still (video `<poster>` + promo) | 海报静帧 · 视频封面 |
 | [`04_deliverables/poster/`](04_deliverables/poster/) | Full poster **JPG + PDF** | 展板高清 JPG / 印刷友好 PDF |
 

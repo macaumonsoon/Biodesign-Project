@@ -38,5 +38,8 @@ npm-debug.log*
 # Local font bundles / design tool exports (keep repo lean)
 slides/export/Geist Font PPT/
 
+# Final intro render often exceeds GitHub’s blob limit — embed via YouTube on docs/index.html (#intro-media).
+assets/media/intro-video.mp4
+
 # Optional: uncomment if you use local build artifacts
 # slides/export/*.tmp

@@ -133,6 +133,25 @@
     .deck-block + .deck-block { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
     ol.deck-steps { margin: 0.4rem 0 0; padding-left: 1.35rem; }
     ol.deck-steps li { margin: 0.25rem 0; }
+    .yt-embed-wrap {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0a0d10;
+    }
+    .yt-embed-inner {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .yt-embed-inner iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -320,16 +339,15 @@
 
     <section>
       <h2 id="intro-media">介绍 PPT、展板与视频 · Intro deck, poster &amp; video</h2>
-      <span class="line-en">Embedded PDF preview &amp; HTML5 video player</span>
+      <span class="line-en">Embedded PDF · poster downloads · intro video via YouTube (see <code>INTRO_VIDEO_YOUTUBE</code> below)</span>
       <div class="card">
-        <p class="dual-p">已接入项目介绍文件：可直接在页面中预览 PPT（PDF）、下载展板，并播放视频。</p>
-        <p class="dual-p"><strong>En:</strong> Intro PDF &amp; poster downloads are wired below — preview the deck inline and play the video.</p>
+        <p class="dual-p">已接入项目介绍文件：可直接在页面中预览 PPT（PDF）、下载展板；介绍视频建议托管在 <strong>YouTube</strong>（见下方嵌入区）。</p>
+        <p class="dual-p"><strong>En:</strong> Preview the PDF inline and download posters; host the intro clip on <strong>YouTube</strong> for an embedded player below.</p>
         <div class="actions">
           <a class="btn primary" href="../assets/media/intro-presentation.pdf" target="_blank" rel="noopener noreferrer">打开介绍 PPT（PDF）<small>Open intro PDF</small></a>
           <a class="btn" href="../slides/export/0503_FINAL_Extinction_Archive_Umwelt_Hypothesis_Dossiers_BDC2026.pdf" target="_blank" rel="noopener noreferrer">幻灯 PDF（slides 副本）<small>Deck copy in slides/export</small></a>
           <a class="btn" href="../04_deliverables/poster/Extinction_Archive_BDC2026_poster_0503.jpg" target="_blank" rel="noopener noreferrer">展板 JPG（高清）<small>Poster JPG</small></a>
           <a class="btn" href="../04_deliverables/poster/Extinction_Archive_BDC2026_poster_0503.pdf" target="_blank" rel="noopener noreferrer">展板 PDF<small>Poster PDF</small></a>
-          <a class="btn" href="../assets/media/intro-video.mp4" target="_blank" rel="noopener noreferrer">打开介绍视频 MP4<small>Open intro MP4</small></a>
         </div>
         <div style="margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#0f141a;">
           <iframe
@@ -344,11 +362,9 @@
             <img src="../04_deliverables/poster/Extinction_Archive_BDC2026_poster_0503.jpg" alt="Extinction Archive BDC 2026 poster" style="width:100%;max-height:520px;object-fit:contain;display:block;background:#111;" />
           </a>
         </div>
-        <div style="margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#0f141a;padding:0.75rem;">
-          <video controls preload="metadata" poster="../assets/media/intro-poster.jpg" style="width:100%;max-height:560px;background:#000;">
-            <source src="../assets/media/intro-video.mp4" type="video/mp4" />
-            你的浏览器不支持视频播放，请使用上方链接打开 MP4 文件。 / Your browser cannot play inline video — use the MP4 link above.
-          </video>
+        <div style="margin-top:1rem;">
+          <p class="dual-p" style="margin:0 0 0.5rem;"><strong>介绍视频 · Intro video（YouTube）</strong></p>
+          <div id="intro-video-youtube-root"></div>
         </div>
       </div>
     </section>
@@ -378,6 +394,39 @@
 (function () {
   /** 改成你的「用户名/仓库名」，推送到自有仓库后按钮与页脚链接才会正确 */
   var GITHUB_REPO = "macaumonsoon/Biodesign-Project";
+
+  /** 介绍视频：上传 YouTube 后，填入完整 watch 链接或 11 位视频 ID（无需引号外的多余空格） */
+  var INTRO_VIDEO_YOUTUBE = "";
+
+  function youtubeIdFromInput(s) {
+    if (!s || typeof s !== "string") return "";
+    s = s.trim();
+    if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
+    var m = s.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
+    return m ? m[1] : "";
+  }
+
+  var ytRoot = document.getElementById("intro-video-youtube-root");
+  if (ytRoot) {
+    var vid = youtubeIdFromInput(INTRO_VIDEO_YOUTUBE);
+    if (vid) {
+      ytRoot.innerHTML =
+        '<div class="yt-embed-wrap"><div class="yt-embed-inner">' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' +
+        vid +
+        '" title="BDC 2026 · Extinction Archive intro video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+        "</div></div>" +
+        '<p class="dual-p" style="margin:0.65rem 0 0;font-size:0.88rem;"><a href="https://www.youtube.com/watch?v=' +
+        vid +
+        '" target="_blank" rel="noopener noreferrer">在 YouTube 打开 · Open on YouTube</a></p>";
+    } else {
+      ytRoot.innerHTML =
+        '<div style="border:1px dashed var(--border);border-radius:8px;padding:0.85rem 1rem;background:#121820;">' +
+        '<p class="dual-p" style="margin:0;color:var(--muted);">正式介绍视频托管在 <strong>YouTube</strong>。上传完成后，将视频的完整链接或 11 位 ID 填入本页脚本中的 <code>INTRO_VIDEO_YOUTUBE</code>，保存并推送后此处会显示播放器。</p>' +
+        '<p class="dual-p" style="margin:0.65rem 0 0;color:var(--muted);"><strong>En:</strong> After uploading, paste the watch URL or the 11-character video ID into <code>INTRO_VIDEO_YOUTUBE</code> in the script at the bottom of this file.</p>' +
+        "</div>";
+    }
+  }
 
   var tip = document.getElementById("repo-config-tip");
   var configured = GITHUB_REPO && GITHUB_REPO.indexOf("YOUR_GITHUB_USER") === -1 && GITHUB_REPO.split("/").length === 2;
