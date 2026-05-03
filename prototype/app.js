@@ -623,9 +623,9 @@ function drawLandBlob(ctx, lat, lon, width, height, rotationDeg, cx, cy, radius,
 }
 
 function drawEarthSurface(ctx, rotation, cx, cy, radius, zoom) {
-  const land = "rgba(71, 139, 82, 0.88)";
-  const dry = "rgba(160, 124, 70, 0.72)";
-  const ice = "rgba(238, 247, 247, 0.8)";
+  const land = "rgba(72, 122, 96, 0.68)";
+  const dry = "rgba(126, 111, 86, 0.58)";
+  const ice = "rgba(190, 225, 232, 0.7)";
 
   // Simplified continental masses for a more Earth-like read, not a GIS map.
   drawLandBlob(ctx, 48, -104, 66, 34, rotation, cx, cy, radius, zoom, land);
@@ -638,6 +638,37 @@ function drawEarthSurface(ctx, rotation, cx, cy, radius, zoom) {
   drawLandBlob(ctx, -25, 134, 36, 22, rotation, cx, cy, radius, zoom, dry);
   drawLandBlob(ctx, 72, -42, 34, 14, rotation, cx, cy, radius, zoom, ice);
   drawLandBlob(ctx, -72, 20, 120, 16, rotation, cx, cy, radius, zoom, ice);
+}
+
+function drawCityLightCluster(ctx, lat, lon, count, spread, rotationDeg, cx, cy, radius, zoom) {
+  for (let i = 0; i < count; i++) {
+    const jitterLat = (seededRand((lat + i) * 8.91) - 0.5) * spread;
+    const jitterLon = (seededRand((lon + i) * 13.37) - 0.5) * spread * 1.55;
+    const p = projectPoint(lat + jitterLat, lon + jitterLon, rotationDeg, cx, cy, radius, zoom);
+    if (!p) continue;
+    const alpha = 0.18 + p.z * 0.72;
+    const size = 0.65 + seededRand(i * 19.3 + lat) * 1.6;
+    ctx.save();
+    ctx.shadowColor = `rgba(255, 207, 120, ${alpha})`;
+    ctx.shadowBlur = 5 + p.z * 8;
+    ctx.fillStyle = `rgba(255, 218, 138, ${alpha})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+function drawCityLights(ctx, rotation, cx, cy, radius, zoom) {
+  // Dense clusters approximate the "night Earth" reference image:
+  // North America, Europe, Middle East / India, East Asia.
+  drawCityLightCluster(ctx, 40, -96, 90, 18, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 43, -74, 46, 10, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 50, 8, 110, 16, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 31, 35, 38, 9, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 22, 78, 82, 18, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 35, 116, 86, 16, rotation, cx, cy, radius, zoom);
+  drawCityLightCluster(ctx, 36, 138, 36, 7, rotation, cx, cy, radius, zoom);
 }
 
 function drawGlobe(ctx, canvas, state) {
@@ -666,22 +697,22 @@ function drawGlobe(ctx, canvas, state) {
   }
 
   ctx.save();
-  ctx.shadowColor = "rgba(92, 205, 255, 0.45)";
-  ctx.shadowBlur = 34;
+  ctx.shadowColor = "rgba(78, 203, 255, 0.55)";
+  ctx.shadowBlur = 40;
   ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom + 3, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(136, 225, 255, 0.5)";
-  ctx.lineWidth = 5;
+  ctx.arc(cx, cy, globeR * state.zoom + 4, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(131, 224, 255, 0.62)";
+  ctx.lineWidth = 6;
   ctx.stroke();
   ctx.restore();
 
   // Globe body: ocean, sunlit left/top edge, darker night side.
   const g = ctx.createRadialGradient(cx - globeR * 0.36, cy - globeR * 0.34, globeR * 0.05, cx, cy, globeR * state.zoom);
-  g.addColorStop(0, "#d8fbff");
-  g.addColorStop(0.16, "#59c9ec");
-  g.addColorStop(0.42, "#117ebd");
-  g.addColorStop(0.7, "#074675");
-  g.addColorStop(1, "#021324");
+  g.addColorStop(0, "#d6fbff");
+  g.addColorStop(0.18, "#4bbce8");
+  g.addColorStop(0.45, "#0a67a5");
+  g.addColorStop(0.72, "#06325b");
+  g.addColorStop(1, "#010716");
   ctx.beginPath();
   ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
   ctx.fillStyle = g;
@@ -692,27 +723,28 @@ function drawGlobe(ctx, canvas, state) {
   ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
   ctx.clip();
   drawEarthSurface(ctx, state.rotation, cx, cy, globeR, state.zoom);
+  drawCityLights(ctx, state.rotation, cx, cy, globeR, state.zoom);
 
-  const night = ctx.createRadialGradient(cx - globeR * 0.18, cy - globeR * 0.18, globeR * 0.18, cx + globeR * 0.28, cy + globeR * 0.2, globeR * 1.05);
+  const night = ctx.createRadialGradient(cx - globeR * 0.3, cy - globeR * 0.34, globeR * 0.18, cx + globeR * 0.32, cy + globeR * 0.14, globeR * 1.08);
   night.addColorStop(0, "rgba(255,255,255,0)");
-  night.addColorStop(0.55, "rgba(2,15,28,0.08)");
-  night.addColorStop(1, "rgba(0,0,0,0.58)");
+  night.addColorStop(0.42, "rgba(2,15,28,0.1)");
+  night.addColorStop(1, "rgba(0,0,0,0.68)");
   ctx.fillStyle = night;
   ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
 
   const cloud = ctx.createRadialGradient(cx - globeR * 0.32, cy - globeR * 0.35, globeR * 0.1, cx, cy, globeR * state.zoom);
-  cloud.addColorStop(0, "rgba(255,255,255,0.44)");
-  cloud.addColorStop(0.34, "rgba(255,255,255,0.16)");
-  cloud.addColorStop(0.72, "rgba(255,255,255,0.05)");
+  cloud.addColorStop(0, "rgba(255,255,255,0.5)");
+  cloud.addColorStop(0.32, "rgba(255,255,255,0.18)");
+  cloud.addColorStop(0.72, "rgba(255,255,255,0.06)");
   cloud.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = cloud;
   ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
   ctx.restore();
 
   ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom + 1.5, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(178, 236, 255, 0.75)";
-  ctx.lineWidth = 2;
+  ctx.arc(cx, cy, globeR * state.zoom + 2, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(181, 238, 255, 0.82)";
+  ctx.lineWidth = 2.4;
   ctx.stroke();
 
   // Subtle latitude and longitude lines retain interaction cues without overpowering the realistic Earth look.
