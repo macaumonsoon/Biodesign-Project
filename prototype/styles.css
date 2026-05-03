@@ -22,9 +22,9 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  cursor: grab;
+  cursor: pointer;
 }
-#globe-canvas:active { cursor: grabbing; }
+#globe-canvas:active { cursor: pointer; }
 .overlay {
   position: absolute;
   z-index: 3;

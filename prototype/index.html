@@ -8,7 +8,7 @@
 </head>
 <body data-page="home">
   <main class="immersive-home">
-    <canvas id="globe-canvas" aria-label="Extinction globe"></canvas>
+    <canvas id="globe-canvas" aria-label="Extinction dot world map"></canvas>
 
     <section class="overlay top-left">
       <p class="sorrow-mark" data-i18n="sorrowMark">EARTH'S SORROW</p>
@@ -17,7 +17,7 @@
       <p class="subtitle" data-i18n="subTagline">从地球上的光点，看见人类活动留下的物种空缺</p>
       <p class="intro-stat" id="species-count-line" aria-live="polite">载入中…</p>
       <p class="tiny intro-stat-note" data-i18n="countNote">位置依据公开资料中的历史分布与灭绝记录整理，显示的是大致范围，不是精确坐标。</p>
-      <p class="lede" data-i18n="lede">你可以拖动地球、点击光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。</p>
+      <p class="lede" data-i18n="lede">你可以点击世界地图上的闪烁光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。</p>
       <ol class="journey-steps" aria-label="Experience flow">
         <li><strong data-i18n="step1Title">先看地图</strong><span data-i18n="step1Body">理解 54 个纪念点如何分布在地球上</span></li>
         <li><strong data-i18n="step2Title">再点物种</strong><span data-i18n="step2Body">打开档案，查看消失原因、地区与证据来源</span></li>
@@ -27,7 +27,7 @@
         <a class="solid-btn" href="./archive.html" data-i18n="primaryArchive">浏览 54 个物种档案</a>
         <a class="soft-btn" href="./webxr/index.html" data-i18n="primaryWebxr">进入 WebXR 深度体验</a>
       </div>
-      <p class="tiny" data-i18n="hint">拖动旋转 · 滚轮缩放 · 点击光点查看档案</p>
+      <p class="tiny" data-i18n="hint">点击闪烁光点查看物种档案</p>
     </section>
 
     <section class="overlay top-right lang-switch" aria-label="Language">
@@ -36,7 +36,7 @@
     </section>
 
     <section class="overlay bottom-center controls-row">
-      <button id="toggle-autorotate" data-i18n="pause">暂停旋转</button>
+      <button id="toggle-autorotate" data-i18n="pause">暂停闪烁</button>
       <a class="ghost-btn" href="./webxr/index.html" data-i18n="webxr">沉浸星球</a>
       <a class="ghost-btn" href="./archive.html" data-i18n="archive">物种档案</a>
       <a class="ghost-btn" href="./hero.html" data-i18n="hero">重点案例</a>
@@ -52,8 +52,8 @@
         eyebrow: "Biodesign · 原型",
         mainTitle: "灭绝档案：失落物种的人工智能纪念馆",
         subTagline: "从地球上的光点，看见人类活动留下的物种空缺",
-        lede: "你可以拖动地球、点击光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。",
-        hint: "拖动旋转 · 滚轮缩放 · 点击光点查看档案",
+        lede: "你可以点击世界地图上的闪烁光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。",
+        hint: "点击闪烁光点查看物种档案",
         countNote: "位置依据公开资料中的历史分布与灭绝记录整理，显示的是大致范围，不是精确坐标。",
         step1Title: "先看地图",
         step1Body: "理解 54 个纪念点如何分布在地球上",
@@ -63,12 +63,12 @@
         step3Body: "进入 WebXR / 重点案例，感知节律、声音与伦理选择",
         primaryArchive: "浏览 54 个物种档案",
         primaryWebxr: "进入 WebXR 深度体验",
-        pause: "暂停旋转",
-        resume: "继续旋转",
+        pause: "暂停闪烁",
+        resume: "继续闪烁",
         webxr: "WebXR 深度体验",
         archive: "物种卡片库",
         hero: "重点案例",
-        count: (n) => `这张地球图收录了 ${n} 个与人类活动相关的灭绝物种。每一枚光点，都是它们曾经生活过的地方。`,
+        count: (n) => `这张点阵世界地图标出了 ${n} 个与人类活动相关的灭绝物种。每一枚闪烁光点，都是它们曾经生活过的地方。`,
         open: "打开物种档案"
       },
       en: {
@@ -77,8 +77,8 @@
         eyebrow: "Biodesign · Prototype",
         mainTitle: "Extinction Archive: An AI Memorial for Lost Species",
         subTagline: "Points of light reveal the species gaps left by human activity",
-        lede: "Drag the globe and select a light to open a species dossier: what disappeared, how people were involved, and what the loss can still teach us. The links below open the immersive globe, the full card archive, and selected deep dives.",
-        hint: "Drag to rotate · Scroll to zoom · Select a light to open the dossier",
+        lede: "Select a blinking point on the world map to open a species dossier: what disappeared, how people were involved, and what the loss can still teach us. The links below open the immersive globe, the full card archive, and selected deep dives.",
+        hint: "Select a blinking memorial point to open the dossier",
         countNote: "Locations are compiled from public records of historical range and extinction. They show approximate areas, not exact coordinates.",
         step1Title: "Read the map",
         step1Body: "See how the 54 memorial points sit across the planet",
@@ -88,12 +88,12 @@
         step3Body: "Move into WebXR / hero cases for rhythm, sound, and ethics",
         primaryArchive: "Browse 54 species cards",
         primaryWebxr: "Enter WebXR depth",
-        pause: "Pause Rotate",
-        resume: "Resume Rotate",
+        pause: "Pause Blink",
+        resume: "Resume Blink",
         webxr: "WebXR Depth",
         archive: "Species Cards",
         hero: "Hero Dossiers",
-        count: (n) => `This globe includes ${n} extinct species linked to human activity. Each light marks a place they once lived.`,
+        count: (n) => `This dotted world map marks ${n} extinct species linked to human activity. Each blinking light marks a place they once lived.`,
         open: "Open species dossier"
       }
     };

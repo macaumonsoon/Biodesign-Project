@@ -238,6 +238,17 @@ async function loadImageManifest() {
   }
 }
 
+async function loadMigrationManifest() {
+  try {
+    const res = await fetch("./webxr/assets/animal-migration-manifest.json");
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Array.isArray(data.sources) ? data.sources : [];
+  } catch {
+    return [];
+  }
+}
+
 function imageSourceForSpecies(row, imageSources = []) {
   const slug = slugify(row.scientific_name || row.common_name_en || row.row_id);
   return imageSources.find(source => source.slug === slug) || null;
@@ -553,16 +564,25 @@ function seededRand(seed) {
   return x - Math.floor(x);
 }
 
-function speciesToPoints(species) {
+function migrationPointForSpecies(row, migrationSources = []) {
+  const rowSlug = slugify(row.scientific_name || row.common_name_en || row.row_id);
+  const match = migrationSources.find(source => source.slug === rowSlug || source.scientificName === row.scientific_name);
+  const waypoint = match?.waypoints?.[Math.floor((match.waypoints?.length || 1) / 2)];
+  if (!waypoint) return null;
+  return { lat: waypoint.lat, lon: waypoint.lon };
+}
+
+function speciesToPoints(species, migrationSources = []) {
   return species.map((s, idx) => {
+    const migrationPoint = migrationPointForSpecies(s, migrationSources);
     const anchor = regionToAnchor(s.region || "");
     const jitterLat = (seededRand(idx + 1) - 0.5) * 10;
     const jitterLon = (seededRand(idx + 91) - 0.5) * 14;
     return {
       ...s,
       slug: slugify(s.scientific_name),
-      lat: Math.max(-75, Math.min(75, anchor.lat + jitterLat)),
-      lon: anchor.lon + jitterLon
+      lat: migrationPoint ? migrationPoint.lat : Math.max(-75, Math.min(75, anchor.lat + jitterLat)),
+      lon: migrationPoint ? migrationPoint.lon : anchor.lon + jitterLon
     };
   });
 }
@@ -605,6 +625,68 @@ function projectPoint(latDeg, lonDeg, rotDeg, cx, cy, radius, zoom = 1) {
     y: cy - y3 * radius * zoom,
     z: z3
   };
+}
+
+function mapProject(lat, lon, bounds) {
+  return {
+    x: bounds.left + ((lon + 180) / 360) * bounds.width,
+    y: bounds.top + ((90 - lat) / 180) * bounds.height
+  };
+}
+
+function drawDottedEllipse(ctx, bounds, lat, lon, rxDeg, ryDeg, color, density = 4.8) {
+  const center = mapProject(lat, lon, bounds);
+  const rx = (rxDeg / 360) * bounds.width;
+  const ry = (ryDeg / 180) * bounds.height;
+  for (let y = -ry; y <= ry; y += density) {
+    for (let x = -rx; x <= rx; x += density) {
+      const nx = x / rx;
+      const ny = y / ry;
+      if (nx * nx + ny * ny > 1) continue;
+      const keep = seededRand((center.x + x) * 0.17 + (center.y + y) * 0.31) > 0.18;
+      if (!keep) continue;
+      ctx.beginPath();
+      ctx.fillStyle = color;
+      ctx.arc(center.x + x, center.y + y, 1.25, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+}
+
+function drawDottedWorldMap(ctx, bounds) {
+  const colors = {
+    america: "rgba(88, 190, 213, 0.72)",
+    europe: "rgba(155, 207, 73, 0.74)",
+    asia: "rgba(242, 176, 52, 0.74)",
+    africa: "rgba(234, 199, 71, 0.72)",
+    oceania: "rgba(228, 155, 174, 0.7)"
+  };
+
+  // Compound dotted blobs, tuned to read like a friendly continent-divided dot map.
+  drawDottedEllipse(ctx, bounds, 52, -108, 48, 28, colors.america);
+  drawDottedEllipse(ctx, bounds, 37, -82, 35, 20, colors.america);
+  drawDottedEllipse(ctx, bounds, 67, -42, 20, 12, colors.america);
+  drawDottedEllipse(ctx, bounds, 5, -70, 20, 16, colors.america);
+  drawDottedEllipse(ctx, bounds, -22, -60, 24, 38, colors.america);
+  drawDottedEllipse(ctx, bounds, -48, -71, 10, 20, colors.america);
+
+  drawDottedEllipse(ctx, bounds, 52, 12, 25, 14, colors.europe);
+  drawDottedEllipse(ctx, bounds, 60, 28, 18, 10, colors.europe);
+  drawDottedEllipse(ctx, bounds, 40, 25, 22, 12, colors.europe);
+
+  drawDottedEllipse(ctx, bounds, 53, 83, 70, 28, colors.asia);
+  drawDottedEllipse(ctx, bounds, 34, 92, 62, 26, colors.asia);
+  drawDottedEllipse(ctx, bounds, 23, 78, 28, 16, colors.asia);
+  drawDottedEllipse(ctx, bounds, 15, 110, 30, 18, colors.asia);
+  drawDottedEllipse(ctx, bounds, 39, 138, 13, 16, colors.asia);
+  drawDottedEllipse(ctx, bounds, -3, 118, 28, 14, colors.asia);
+
+  drawDottedEllipse(ctx, bounds, 9, 22, 32, 42, colors.africa);
+  drawDottedEllipse(ctx, bounds, -23, 28, 20, 30, colors.africa);
+  drawDottedEllipse(ctx, bounds, -19, 47, 10, 18, colors.africa);
+
+  drawDottedEllipse(ctx, bounds, -26, 134, 28, 18, colors.oceania);
+  drawDottedEllipse(ctx, bounds, -42, 172, 9, 7, colors.oceania);
 }
 
 function drawLandBlob(ctx, lat, lon, width, height, rotationDeg, cx, cy, radius, zoom, color) {
@@ -674,158 +756,69 @@ function drawCityLights(ctx, rotation, cx, cy, radius, zoom) {
 function drawGlobe(ctx, canvas, state) {
   const w = canvas.clientWidth || window.innerWidth;
   const h = canvas.clientHeight || window.innerHeight;
-  const cx = w * 0.67 + state.offsetX;
-  const cy = h * 0.51 + state.offsetY;
-  const globeR = Math.min(w, h) * 0.34;
+  const now = state.blinkTime ?? performance.now();
 
   ctx.clearRect(0, 0, w, h);
-
-  const pageBg = ctx.createRadialGradient(cx, cy, globeR * 0.2, cx, cy, Math.max(w, h) * 0.78);
-  pageBg.addColorStop(0, "#ffffff");
-  pageBg.addColorStop(0.48, "#f1f8f7");
-  pageBg.addColorStop(1, "#e9f2f1");
-  ctx.fillStyle = pageBg;
+  const bg = ctx.createLinearGradient(0, 0, w, h);
+  bg.addColorStop(0, "#ffffff");
+  bg.addColorStop(0.55, "#fbfdfb");
+  bg.addColorStop(1, "#f1f8f7");
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
 
-  // Very subtle archive-dust points: keeps a clean white page while adding depth.
-  for (let i = 0; i < 120; i++) {
-    const x = (seededRand(i * 13.3) * w) | 0;
-    const y = (seededRand(i * 71.7) * h) | 0;
-    const a = 0.04 + seededRand(i * 2.7) * 0.12;
-    ctx.fillStyle = `rgba(42, 98, 112, ${a})`;
-    ctx.fillRect(x, y, 1.4, 1.4);
-  }
+  const bounds = {
+    left: w * 0.25,
+    top: h * 0.18,
+    width: w * 0.7,
+    height: h * 0.62
+  };
 
   ctx.save();
-  ctx.shadowColor = "rgba(78, 203, 255, 0.55)";
-  ctx.shadowBlur = 40;
-  ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom + 4, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(131, 224, 255, 0.62)";
-  ctx.lineWidth = 6;
-  ctx.stroke();
+  ctx.globalCompositeOperation = "source-over";
+  drawDottedWorldMap(ctx, bounds);
   ctx.restore();
-
-  // Globe body: ocean, sunlit left/top edge, darker night side.
-  const g = ctx.createRadialGradient(cx - globeR * 0.36, cy - globeR * 0.34, globeR * 0.05, cx, cy, globeR * state.zoom);
-  g.addColorStop(0, "#d6fbff");
-  g.addColorStop(0.18, "#4bbce8");
-  g.addColorStop(0.45, "#0a67a5");
-  g.addColorStop(0.72, "#06325b");
-  g.addColorStop(1, "#010716");
-  ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
-  ctx.fillStyle = g;
-  ctx.fill();
 
   ctx.save();
-  ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
-  ctx.clip();
-  drawEarthSurface(ctx, state.rotation, cx, cy, globeR, state.zoom);
-  drawCityLights(ctx, state.rotation, cx, cy, globeR, state.zoom);
-
-  const night = ctx.createRadialGradient(cx - globeR * 0.3, cy - globeR * 0.34, globeR * 0.18, cx + globeR * 0.32, cy + globeR * 0.14, globeR * 1.08);
-  night.addColorStop(0, "rgba(255,255,255,0)");
-  night.addColorStop(0.42, "rgba(2,15,28,0.1)");
-  night.addColorStop(1, "rgba(0,0,0,0.68)");
-  ctx.fillStyle = night;
-  ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
-
-  const cloud = ctx.createRadialGradient(cx - globeR * 0.32, cy - globeR * 0.35, globeR * 0.1, cx, cy, globeR * state.zoom);
-  cloud.addColorStop(0, "rgba(255,255,255,0.5)");
-  cloud.addColorStop(0.32, "rgba(255,255,255,0.18)");
-  cloud.addColorStop(0.72, "rgba(255,255,255,0.06)");
-  cloud.addColorStop(1, "rgba(255,255,255,0)");
-  ctx.fillStyle = cloud;
-  ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
+  ctx.fillStyle = "rgba(243, 159, 18, 0.86)";
+  ctx.font = `700 ${Math.max(24, Math.min(58, w * 0.044))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
+  ctx.letterSpacing = "0.08em";
+  ctx.textAlign = "center";
+  ctx.fillText("EXTINCTION DOT MAP", bounds.left + bounds.width * 0.5, h * 0.105);
+  ctx.fillStyle = "rgba(130, 190, 72, 0.9)";
+  ctx.font = `700 ${Math.max(12, Math.min(24, w * 0.018))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
+  ctx.fillText("54 MEMORIAL POINTS · EXTINCT SPECIES", bounds.left + bounds.width * 0.5, h * 0.15);
   ctx.restore();
 
-  ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom + 2, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(181, 238, 255, 0.82)";
-  ctx.lineWidth = 2.4;
-  ctx.stroke();
+  // latitude and longitude guides are intentionally removed for the flat dot-map style.
 
-  // Subtle latitude and longitude lines retain interaction cues without overpowering the realistic Earth look.
-  ctx.strokeStyle = "rgba(210,245,255,0.16)";
-  ctx.lineWidth = 1;
-  for (let lat = -60; lat <= 60; lat += 15) {
-    ctx.beginPath();
-    for (let lon = -180; lon <= 180; lon += 4) {
-      const p = projectPoint(lat, lon, state.rotation, cx, cy, globeR, state.zoom);
-      if (!p) continue;
-      if (lon === -180) ctx.moveTo(p.x, p.y);
-      else ctx.lineTo(p.x, p.y);
-    }
-    ctx.stroke();
-  }
-  for (let lon = -150; lon <= 180; lon += 15) {
-    ctx.beginPath();
-    for (let lat = -80; lat <= 80; lat += 3) {
-      const p = projectPoint(lat, lon, state.rotation, cx, cy, globeR, state.zoom);
-      if (!p) continue;
-      if (lat === -80) ctx.moveTo(p.x, p.y);
-      else ctx.lineTo(p.x, p.y);
-    }
-    ctx.stroke();
-  }
-
-  // continent labels (stylized)
-  ctx.fillStyle = "rgba(245,251,252,0.56)";
-  // Medium-size baseline; scale with globe zoom for readability.
-  ctx.font = `${Math.max(12, 18 * state.zoom)}px Georgia, serif`;
-  [
-    { text: "NORTH AMERICA", lat: 38, lon: -100 },
-    { text: "SOUTH AMERICA", lat: -23, lon: -62 },
-    { text: "EUROPE", lat: 51, lon: 12 },
-    { text: "ASIA", lat: 33, lon: 90 },
-    { text: "AFRICA", lat: 5, lon: 18 }
-  ].forEach(lbl => {
-    const p = projectPoint(lbl.lat, lbl.lon, state.rotation, cx, cy, globeR, state.zoom);
-    if (p) ctx.fillText(lbl.text, p.x - 40, p.y);
-  });
-
-  // species points
+  // blinking memorial points
   state.screenPoints = [];
   for (const item of state.points) {
-    const p = projectPoint(item.lat, item.lon, state.rotation, cx, cy, globeR, state.zoom);
-    if (!p) continue;
-    const thumbW = 10 + p.z * 7;
-    const thumbH = 10 + p.z * 7;
-    const x = p.x - thumbW / 2;
-    const y = p.y - thumbH / 2;
-    const bg = categoryColor(item.category);
-    const icon = categoryIcon(item.category);
+    const p = mapProject(item.lat, item.lon, bounds);
+    const pulse = 0.5 + 0.5 * Math.sin(now / 520 + item.lat * 0.37 + item.lon * 0.11);
+    const r = 3.5 + pulse * 3.2;
 
-    if (item.markerImage?.complete) {
-      ctx.save();
-      ctx.shadowColor = "rgba(125,211,252,0.8)";
-      ctx.shadowBlur = 8;
-      ctx.drawImage(item.markerImage, x - thumbW * 0.8, y - thumbH * 0.8, thumbW * 2.6, thumbH * 2.6);
-      ctx.restore();
-    } else {
-      ctx.fillStyle = bg;
-      ctx.strokeStyle = "rgba(20,28,38,0.6)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.roundRect(x, y, thumbW, thumbH, 2.5);
-      ctx.fill();
-      ctx.stroke();
-
-      ctx.fillStyle = "#1d2833";
-      ctx.font = `${Math.max(7, thumbH * 0.58)}px Inter, sans-serif`;
-      ctx.fillText(icon, x + thumbW * 0.3, y + thumbH * 0.74);
-    }
+    ctx.save();
+    ctx.shadowColor = `rgba(28, 178, 224, ${0.55 + pulse * 0.35})`;
+    ctx.shadowBlur = 10 + pulse * 14;
+    ctx.fillStyle = `rgba(19, 148, 190, ${0.72 + pulse * 0.24})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, Math.max(1.4, r * 0.36), 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
 
     if (item.slug === state.hoverSlug) {
       ctx.beginPath();
-      ctx.roundRect(x - 3, y - 3, thumbW + 6, thumbH + 6, 4);
-      ctx.strokeStyle = "rgba(118,210,255,0.95)";
-      ctx.lineWidth = 1.4;
+      ctx.arc(p.x, p.y, r + 8, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(241, 143, 28, 0.95)";
+      ctx.lineWidth = 2;
       ctx.stroke();
     }
-    state.screenPoints.push({ x, y, w: thumbW, h: thumbH, item });
+    state.screenPoints.push({ x: p.x - 12, y: p.y - 12, w: 24, h: 24, item });
   }
 }
 
@@ -924,9 +917,13 @@ async function initHome() {
   const toggle = document.getElementById("toggle-autorotate");
   if (!canvas || !popup || !countLine || !toggle) return;
 
-  const [{ species, archival }, imageSources] = await Promise.all([loadData(), loadImageManifest()]);
+  const [{ species, archival }, imageSources, migrationSources] = await Promise.all([
+    loadData(),
+    loadImageManifest(),
+    loadMigrationManifest()
+  ]);
   const archivalMap = buildArchivalMap(archival);
-  const points = attachMarkerImages(speciesToPoints(species), imageSources);
+  const points = attachMarkerImages(speciesToPoints(species, migrationSources), imageSources);
   const updateChrome = () => {
     countLine.textContent =
       prototypeCopy("count", species.length) ||
@@ -945,6 +942,7 @@ async function initHome() {
     points,
     screenPoints: [],
     hoverSlug: null,
+    blinkTime: 0,
     autoRotate: true,
     dragging: false,
     dragStartX: 0,
@@ -962,7 +960,7 @@ async function initHome() {
   window.addEventListener("resize", resize);
 
   function frame() {
-    if (state.autoRotate && !state.dragging) state.rotation += 0.08;
+    if (state.autoRotate) state.blinkTime += 16.7;
     drawGlobe(ctx, canvas, state);
     requestAnimationFrame(frame);
   }
@@ -972,48 +970,6 @@ async function initHome() {
     state.autoRotate = !state.autoRotate;
     updateChrome();
   });
-
-  canvas.addEventListener("wheel", e => {
-    e.preventDefault();
-    state.zoom += e.deltaY > 0 ? -0.04 : 0.04;
-    state.zoom = Math.max(0.72, Math.min(1.38, state.zoom));
-  }, { passive: false });
-
-  canvas.addEventListener("mousedown", e => {
-    state.dragging = true;
-    state.dragStartX = e.clientX;
-    state.dragStartY = e.clientY;
-  });
-  window.addEventListener("mouseup", () => { state.dragging = false; });
-  window.addEventListener("mousemove", e => {
-    if (!state.dragging) return;
-    const dx = e.clientX - state.dragStartX;
-    const dy = e.clientY - state.dragStartY;
-    state.dragStartX = e.clientX;
-    state.dragStartY = e.clientY;
-
-    // Keep the globe anchored in the designed screen position; drag only rotates it.
-    state.rotation += dx * 0.18;
-  });
-
-  // touch drag support
-  canvas.addEventListener("touchstart", e => {
-    if (!e.touches.length) return;
-    state.dragging = true;
-    state.dragStartX = e.touches[0].clientX;
-    state.dragStartY = e.touches[0].clientY;
-  }, { passive: true });
-  canvas.addEventListener("touchmove", e => {
-    if (!state.dragging || !e.touches.length) return;
-    const x = e.touches[0].clientX;
-    const y = e.touches[0].clientY;
-    const dx = x - state.dragStartX;
-    const dy = y - state.dragStartY;
-    state.dragStartX = x;
-    state.dragStartY = y;
-    state.rotation += dx * 0.2;
-  }, { passive: true });
-  canvas.addEventListener("touchend", () => { state.dragging = false; }, { passive: true });
 
   canvas.addEventListener("click", e => {
     const rect = canvas.getBoundingClientRect();
