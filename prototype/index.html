@@ -18,6 +18,15 @@
       <p class="intro-stat" id="species-count-line" aria-live="polite">载入中…</p>
       <p class="tiny intro-stat-note" data-i18n="countNote">位置依据公开资料中的历史分布与灭绝记录整理，显示的是大致范围，不是精确坐标。</p>
       <p class="lede" data-i18n="lede">你可以拖动地球、点击光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。</p>
+      <ol class="journey-steps" aria-label="Experience flow">
+        <li><strong data-i18n="step1Title">先看地图</strong><span data-i18n="step1Body">理解 54 个纪念点如何分布在地球上</span></li>
+        <li><strong data-i18n="step2Title">再点物种</strong><span data-i18n="step2Body">打开档案，查看消失原因、地区与证据来源</span></li>
+        <li><strong data-i18n="step3Title">最后进入深度体验</strong><span data-i18n="step3Body">进入 WebXR / 重点案例，感知节律、声音与伦理选择</span></li>
+      </ol>
+      <div class="primary-actions" aria-label="Primary actions">
+        <a class="solid-btn" href="./archive.html" data-i18n="primaryArchive">浏览 54 个物种档案</a>
+        <a class="soft-btn" href="./webxr/index.html" data-i18n="primaryWebxr">进入 WebXR 深度体验</a>
+      </div>
       <p class="tiny" data-i18n="hint">拖动旋转 · 滚轮缩放 · 点击光点查看档案</p>
     </section>
 
@@ -46,10 +55,18 @@
         lede: "你可以拖动地球、点击光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。",
         hint: "拖动旋转 · 滚轮缩放 · 点击光点查看档案",
         countNote: "位置依据公开资料中的历史分布与灭绝记录整理，显示的是大致范围，不是精确坐标。",
+        step1Title: "先看地图",
+        step1Body: "理解 54 个纪念点如何分布在地球上",
+        step2Title: "再点物种",
+        step2Body: "打开档案，查看消失原因、地区与证据来源",
+        step3Title: "最后进入深度体验",
+        step3Body: "进入 WebXR / 重点案例，感知节律、声音与伦理选择",
+        primaryArchive: "浏览 54 个物种档案",
+        primaryWebxr: "进入 WebXR 深度体验",
         pause: "暂停旋转",
         resume: "继续旋转",
-        webxr: "沉浸星球",
-        archive: "物种档案",
+        webxr: "WebXR 深度体验",
+        archive: "物种卡片库",
         hero: "重点案例",
         count: (n) => `这张地球图收录了 ${n} 个与人类活动相关的灭绝物种。每一枚光点，都是它们曾经生活过的地方。`,
         open: "打开物种档案"
@@ -63,10 +80,18 @@
         lede: "Drag the globe and select a light to open a species dossier: what disappeared, how people were involved, and what the loss can still teach us. The links below open the immersive globe, the full card archive, and selected deep dives.",
         hint: "Drag to rotate · Scroll to zoom · Select a light to open the dossier",
         countNote: "Locations are compiled from public records of historical range and extinction. They show approximate areas, not exact coordinates.",
+        step1Title: "Read the map",
+        step1Body: "See how the 54 memorial points sit across the planet",
+        step2Title: "Select a species",
+        step2Body: "Open a dossier with drivers, region, and evidence links",
+        step3Title: "Enter depth",
+        step3Body: "Move into WebXR / hero cases for rhythm, sound, and ethics",
+        primaryArchive: "Browse 54 species cards",
+        primaryWebxr: "Enter WebXR depth",
         pause: "Pause Rotate",
         resume: "Resume Rotate",
-        webxr: "WebXR Planet",
-        archive: "Card Archive",
+        webxr: "WebXR Depth",
+        archive: "Species Cards",
         hero: "Hero Dossiers",
         count: (n) => `This globe includes ${n} extinct species linked to human activity. Each light marks a place they once lived.`,
         open: "Open species dossier"

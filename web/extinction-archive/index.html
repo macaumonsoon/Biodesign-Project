@@ -33,6 +33,13 @@
     <div id="load-error" class="error-banner" style="display:none" role="alert"></div>
 
     <section id="view-landing" class="view active">
+      <div class="flow-map" aria-label="Experience flow">
+        <div class="flow-step active"><span>01</span><strong>进入档案</strong><small>Enter archive</small></div>
+        <div class="flow-step"><span>02</span><strong>选择物种</strong><small>Select species</small></div>
+        <div class="flow-step"><span>03</span><strong>看证据层</strong><small>Read evidence tiers</small></div>
+        <div class="flow-step"><span>04</span><strong>伦理反思</strong><small>Ethics + reflection</small></div>
+      </div>
+
       <p class="lead biline-p">
         <span class="biline-zh">文献对齐原型：为两类深度 WebXR 物种（猛犸、袋狼）探索<strong>时间表现型</strong>代理，并以<strong>旅鸽</strong>复音隐喻；每层标注</span>
         <span class="badge cited">Cited</span>
@@ -44,19 +51,19 @@
         <span class="biline-en">A literature-grounded prototype: explore <strong>temporal phenotype</strong> proxies for mammoth &amp; thylacine plus a <strong>passenger pigeon</strong> polyphony metaphor; layers tagged Cited / Interpolated / Speculative — then complete one <strong>ethics fork</strong> and reflection (MVP journey).</span>
       </p>
       <button type="button" class="btn primary" id="btn-enter">进入档案 · Enter archive</button>
-      <p class="run-hint biline-p">
-        <strong>本地运行 · Run locally：</strong> 在仓库根目录执行 <code>python3 -m http.server 8080</code>，再打开 <code>http://localhost:8080/web/extinction-archive/index.html</code>
-        （需 HTTP 才能加载 <code>archive.json</code>；<code>file://</code> 会失败）。
-        <span class="biline-en"><strong>En:</strong> Serve from repo root so <code>archive.json</code> loads; <code>file://</code> fails.</span>
-      </p>
-      <p class="run-hint biline-p">
-        <strong>GitHub Pages：</strong> 发布<strong>整仓根目录</strong>以便解析 <code>/data/extinction_archive/archive.json</code>；或在页面头部设置
-        <code>&lt;meta name="ea-asset-base" content="https://…your-site…/"&gt;</code>。
-        <span class="biline-en"><strong>Pages:</strong> publish whole repo root so JSON resolves, or set <code>ea-asset-base</code>.</span>
-      </p>
+      <div class="clarity-note">
+        <strong>如何阅读这个交互：</strong>先选一个物种，再在 Cited / Interpolated / Speculative 三层之间切换，最后进入伦理选择与反思。
+        <span class="biline-en"><strong>How to read it:</strong> choose a species, switch between evidence tiers, then move to ethics and reflection.</span>
+      </div>
     </section>
 
     <section id="view-hub" class="view">
+      <div class="flow-map" aria-label="Experience flow">
+        <div class="flow-step done"><span>01</span><strong>进入档案</strong><small>Enter archive</small></div>
+        <div class="flow-step active"><span>02</span><strong>选择物种</strong><small>Select species</small></div>
+        <div class="flow-step"><span>03</span><strong>看证据层</strong><small>Read evidence tiers</small></div>
+        <div class="flow-step"><span>04</span><strong>伦理反思</strong><small>Ethics + reflection</small></div>
+      </div>
       <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">物种中枢</span><span class="biline-en">Species hub</span></h2>
       <p class="lead">计划书 P0 物种 · Dataset：<span id="archive-count">—</span> taxa in <code>archive.json</code>. <span class="biline-en">P0 taxa per plan.</span></p>
       <div id="hub-grid" class="card-grid"></div>
@@ -66,6 +73,12 @@
     </section>
 
     <section id="view-species" class="view">
+      <div class="flow-map" aria-label="Experience flow">
+        <div class="flow-step done"><span>01</span><strong>进入档案</strong><small>Enter archive</small></div>
+        <div class="flow-step done"><span>02</span><strong>选择物种</strong><small>Select species</small></div>
+        <div class="flow-step active"><span>03</span><strong>看证据层</strong><small>Read evidence tiers</small></div>
+        <div class="flow-step"><span>04</span><strong>伦理反思</strong><small>Ethics + reflection</small></div>
+      </div>
       <p><button type="button" class="btn" id="btn-back-species">← 物种中枢 · Species hub</button></p>
       <h2 id="species-title" style="margin:0.25rem 0 0">—</h2>
       <p id="species-sci" class="lead" style="margin:0 0 0.5rem;font-style:italic">—</p>
@@ -162,6 +175,12 @@
     </section>
 
     <section id="view-ethics" class="view">
+      <div class="flow-map" aria-label="Experience flow">
+        <div class="flow-step done"><span>01</span><strong>进入档案</strong><small>Enter archive</small></div>
+        <div class="flow-step done"><span>02</span><strong>选择物种</strong><small>Select species</small></div>
+        <div class="flow-step done"><span>03</span><strong>看证据层</strong><small>Read evidence tiers</small></div>
+        <div class="flow-step active"><span>04</span><strong>伦理反思</strong><small>Ethics + reflection</small></div>
+      </div>
       <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">UI_Ethics_Fork — 单次选择</span><span class="biline-en">UI_Ethics_Fork — one choice</span></h2>
       <p class="lead">Sherkow &amp; Greely 式张力（转述）。演示阶段选项仅存于 <code>sessionStorage</code>。<span class="biline-en">Sherkow &amp; Greely–style tension (paraphrase). Stored in <code>sessionStorage</code> for demo only.</span></p>
       <div id="ethics-options" class="ethics-options"></div>
@@ -172,6 +191,12 @@
     </section>
 
     <section id="view-reflection" class="view">
+      <div class="flow-map" aria-label="Experience flow">
+        <div class="flow-step done"><span>01</span><strong>进入档案</strong><small>Enter archive</small></div>
+        <div class="flow-step done"><span>02</span><strong>选择物种</strong><small>Select species</small></div>
+        <div class="flow-step done"><span>03</span><strong>看证据层</strong><small>Read evidence tiers</small></div>
+        <div class="flow-step active"><span>04</span><strong>伦理反思</strong><small>Ethics + reflection</small></div>
+      </div>
       <h2 style="margin-top:0;font-size:1.1rem"><span class="biline-zh">UI_Reflection_Log · 反思日志</span><span class="biline-en">UI_Reflection_Log</span></h2>
       <p class="lead">内嵌模板：启发式关键词匹配 · <code>postMessage</code> 桥接（父页 ↔ iframe）。<span class="biline-en">Embedded template: keyword heuristic · <code>postMessage</code> bridge.</span></p>
       <div id="reflection-bridge" class="reflection-bridge" aria-live="polite">

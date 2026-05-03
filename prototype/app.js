@@ -615,30 +615,30 @@ function drawGlobe(ctx, canvas, state) {
   const globeR = Math.min(w, h) * 0.31;
 
   ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "#070c12";
+  ctx.fillStyle = "#eef5f3";
   ctx.fillRect(0, 0, w, h);
 
-  // star field
+  // Pale dust field: keeps the map readable while implying archive fragments.
   for (let i = 0; i < 120; i++) {
     const x = (seededRand(i * 13.3) * w) | 0;
     const y = (seededRand(i * 71.7) * h) | 0;
-    const a = 0.12 + seededRand(i * 2.7) * 0.35;
-    ctx.fillStyle = `rgba(210,230,255,${a})`;
-    ctx.fillRect(x, y, 1.3, 1.3);
+    const a = 0.08 + seededRand(i * 2.7) * 0.14;
+    ctx.fillStyle = `rgba(42, 98, 112, ${a})`;
+    ctx.fillRect(x, y, 1.6, 1.6);
   }
 
   // globe body
   const g = ctx.createRadialGradient(cx - globeR * 0.2, cy - globeR * 0.25, globeR * 0.2, cx, cy, globeR);
-  g.addColorStop(0, "#2e3f50");
-  g.addColorStop(0.55, "#162330");
-  g.addColorStop(1, "#0b1219");
+  g.addColorStop(0, "#a5cbd5");
+  g.addColorStop(0.55, "#477887");
+  g.addColorStop(1, "#17313b");
   ctx.beginPath();
   ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
   ctx.fillStyle = g;
   ctx.fill();
 
   // latitude and longitude lines
-  ctx.strokeStyle = "rgba(172,198,230,0.18)";
+  ctx.strokeStyle = "rgba(236,248,250,0.34)";
   ctx.lineWidth = 1;
   for (let lat = -60; lat <= 60; lat += 15) {
     ctx.beginPath();
@@ -662,7 +662,7 @@ function drawGlobe(ctx, canvas, state) {
   }
 
   // continent labels (stylized)
-  ctx.fillStyle = "rgba(234,240,248,0.35)";
+  ctx.fillStyle = "rgba(245,251,252,0.56)";
   // Medium-size baseline; scale with globe zoom for readability.
   ctx.font = `${Math.max(12, 18 * state.zoom)}px Georgia, serif`;
   [
