@@ -645,7 +645,7 @@ function drawGlobe(ctx, canvas, state) {
   const h = canvas.height;
   const cx = w / 2 + state.offsetX;
   const cy = h / 2 + state.offsetY;
-  const globeR = Math.min(w, h) * 0.42;
+  const globeR = Math.min(w, h) * 0.34;
 
   ctx.clearRect(0, 0, w, h);
   ctx.fillStyle = "#eef5f3";
