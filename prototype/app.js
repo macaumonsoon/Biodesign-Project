@@ -643,27 +643,26 @@ function drawEarthSurface(ctx, rotation, cx, cy, radius, zoom) {
 function drawGlobe(ctx, canvas, state) {
   const w = canvas.clientWidth || window.innerWidth;
   const h = canvas.clientHeight || window.innerHeight;
-  const cx = w * 0.56 + state.offsetX;
-  const cy = h * 0.5 + state.offsetY;
+  const cx = w * 0.67 + state.offsetX;
+  const cy = h * 0.51 + state.offsetY;
   const globeR = Math.min(w, h) * 0.34;
 
   ctx.clearRect(0, 0, w, h);
 
-  const space = ctx.createRadialGradient(cx, cy, globeR * 0.2, cx, cy, Math.max(w, h) * 0.78);
-  space.addColorStop(0, "#102737");
-  space.addColorStop(0.42, "#07131f");
-  space.addColorStop(1, "#010409");
-  ctx.fillStyle = space;
+  const pageBg = ctx.createRadialGradient(cx, cy, globeR * 0.2, cx, cy, Math.max(w, h) * 0.78);
+  pageBg.addColorStop(0, "#ffffff");
+  pageBg.addColorStop(0.48, "#f1f8f7");
+  pageBg.addColorStop(1, "#e9f2f1");
+  ctx.fillStyle = pageBg;
   ctx.fillRect(0, 0, w, h);
 
-  // Star field behind the complete Earth sphere.
-  for (let i = 0; i < 260; i++) {
+  // Very subtle archive-dust points: keeps a clean white page while adding depth.
+  for (let i = 0; i < 120; i++) {
     const x = (seededRand(i * 13.3) * w) | 0;
     const y = (seededRand(i * 71.7) * h) | 0;
-    const a = 0.18 + seededRand(i * 2.7) * 0.58;
-    const size = seededRand(i * 5.1) > 0.88 ? 1.8 : 1;
-    ctx.fillStyle = `rgba(220, 242, 255, ${a})`;
-    ctx.fillRect(x, y, size, size);
+    const a = 0.04 + seededRand(i * 2.7) * 0.12;
+    ctx.fillStyle = `rgba(42, 98, 112, ${a})`;
+    ctx.fillRect(x, y, 1.4, 1.4);
   }
 
   ctx.save();
