@@ -643,9 +643,9 @@ function drawEarthSurface(ctx, rotation, cx, cy, radius, zoom) {
 function drawGlobe(ctx, canvas, state) {
   const w = canvas.width;
   const h = canvas.height;
-  const cx = w * 0.68 + state.offsetX;
-  const cy = h * 0.54 + state.offsetY;
-  const globeR = Math.min(w, h) * 0.45;
+  const cx = w / 2 + state.offsetX;
+  const cy = h / 2 + state.offsetY;
+  const globeR = Math.min(w, h) * 0.42;
 
   ctx.clearRect(0, 0, w, h);
   ctx.fillStyle = "#eef5f3";

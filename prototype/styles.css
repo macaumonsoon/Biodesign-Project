@@ -29,13 +29,12 @@ body {
 }
 .top-left {
   left: max(24px, env(safe-area-inset-left));
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: min(480px, calc(100vw - 48px));
-  padding: 24px 26px;
+  top: max(24px, env(safe-area-inset-top));
+  max-width: min(360px, calc(100vw - 48px));
+  padding: 20px 22px;
   border: 1px solid rgba(31, 58, 68, 0.12);
-  border-radius: 26px;
-  background: rgba(255, 252, 246, 0.9);
+  border-radius: 24px;
+  background: rgba(255, 252, 246, 0.92);
   backdrop-filter: saturate(160%) blur(22px);
   box-shadow: 0 24px 70px rgba(31, 58, 68, 0.16);
 }
