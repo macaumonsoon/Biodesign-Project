@@ -648,24 +648,41 @@ function drawGlobe(ctx, canvas, state) {
   const globeR = Math.min(w, h) * 0.34;
 
   ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "#eef5f3";
+
+  const space = ctx.createRadialGradient(cx, cy, globeR * 0.2, cx, cy, Math.max(w, h) * 0.78);
+  space.addColorStop(0, "#102737");
+  space.addColorStop(0.42, "#07131f");
+  space.addColorStop(1, "#010409");
+  ctx.fillStyle = space;
   ctx.fillRect(0, 0, w, h);
 
-  // Pale dust field: keeps the map readable while implying archive fragments.
-  for (let i = 0; i < 120; i++) {
+  // Star field behind the complete Earth sphere.
+  for (let i = 0; i < 260; i++) {
     const x = (seededRand(i * 13.3) * w) | 0;
     const y = (seededRand(i * 71.7) * h) | 0;
-    const a = 0.08 + seededRand(i * 2.7) * 0.14;
-    ctx.fillStyle = `rgba(42, 98, 112, ${a})`;
-    ctx.fillRect(x, y, 1.6, 1.6);
+    const a = 0.18 + seededRand(i * 2.7) * 0.58;
+    const size = seededRand(i * 5.1) > 0.88 ? 1.8 : 1;
+    ctx.fillStyle = `rgba(220, 242, 255, ${a})`;
+    ctx.fillRect(x, y, size, size);
   }
 
-  // globe body
-  const g = ctx.createRadialGradient(cx - globeR * 0.2, cy - globeR * 0.25, globeR * 0.2, cx, cy, globeR);
-  g.addColorStop(0, "#8fd7eb");
-  g.addColorStop(0.36, "#2b9ac6");
-  g.addColorStop(0.72, "#096a9a");
-  g.addColorStop(1, "#05344f");
+  ctx.save();
+  ctx.shadowColor = "rgba(92, 205, 255, 0.45)";
+  ctx.shadowBlur = 34;
+  ctx.beginPath();
+  ctx.arc(cx, cy, globeR * state.zoom + 3, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(136, 225, 255, 0.5)";
+  ctx.lineWidth = 5;
+  ctx.stroke();
+  ctx.restore();
+
+  // Globe body: ocean, sunlit left/top edge, darker night side.
+  const g = ctx.createRadialGradient(cx - globeR * 0.36, cy - globeR * 0.34, globeR * 0.05, cx, cy, globeR * state.zoom);
+  g.addColorStop(0, "#d8fbff");
+  g.addColorStop(0.16, "#59c9ec");
+  g.addColorStop(0.42, "#117ebd");
+  g.addColorStop(0.7, "#074675");
+  g.addColorStop(1, "#021324");
   ctx.beginPath();
   ctx.arc(cx, cy, globeR * state.zoom, 0, Math.PI * 2);
   ctx.fillStyle = g;
@@ -677,22 +694,30 @@ function drawGlobe(ctx, canvas, state) {
   ctx.clip();
   drawEarthSurface(ctx, state.rotation, cx, cy, globeR, state.zoom);
 
-  const cloud = ctx.createRadialGradient(cx - globeR * 0.22, cy - globeR * 0.28, globeR * 0.12, cx, cy, globeR * state.zoom);
-  cloud.addColorStop(0, "rgba(255,255,255,0.24)");
-  cloud.addColorStop(0.58, "rgba(255,255,255,0.08)");
+  const night = ctx.createRadialGradient(cx - globeR * 0.18, cy - globeR * 0.18, globeR * 0.18, cx + globeR * 0.28, cy + globeR * 0.2, globeR * 1.05);
+  night.addColorStop(0, "rgba(255,255,255,0)");
+  night.addColorStop(0.55, "rgba(2,15,28,0.08)");
+  night.addColorStop(1, "rgba(0,0,0,0.58)");
+  ctx.fillStyle = night;
+  ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
+
+  const cloud = ctx.createRadialGradient(cx - globeR * 0.32, cy - globeR * 0.35, globeR * 0.1, cx, cy, globeR * state.zoom);
+  cloud.addColorStop(0, "rgba(255,255,255,0.44)");
+  cloud.addColorStop(0.34, "rgba(255,255,255,0.16)");
+  cloud.addColorStop(0.72, "rgba(255,255,255,0.05)");
   cloud.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = cloud;
   ctx.fillRect(cx - globeR * state.zoom, cy - globeR * state.zoom, globeR * 2 * state.zoom, globeR * 2 * state.zoom);
   ctx.restore();
 
   ctx.beginPath();
-  ctx.arc(cx, cy, globeR * state.zoom + 2, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(174, 232, 250, 0.58)";
+  ctx.arc(cx, cy, globeR * state.zoom + 1.5, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(178, 236, 255, 0.75)";
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // latitude and longitude lines
-  ctx.strokeStyle = "rgba(235,250,255,0.24)";
+  // Subtle latitude and longitude lines retain interaction cues without overpowering the realistic Earth look.
+  ctx.strokeStyle = "rgba(210,245,255,0.16)";
   ctx.lineWidth = 1;
   for (let lat = -60; lat <= 60; lat += 15) {
     ctx.beginPath();
