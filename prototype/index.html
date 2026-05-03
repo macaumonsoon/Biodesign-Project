@@ -11,8 +11,8 @@
     <canvas id="globe-canvas" aria-label="Extinction dot world map"></canvas>
 
     <section class="overlay top-left">
-      <p class="sorrow-mark" data-i18n="sorrowMark">EARTH'S SORROW</p>
-      <p class="eyebrow" data-i18n="eyebrow">Biodesign · 原型</p>
+      <p class="sorrow-mark" data-i18n="sorrowMark">地球之殇</p>
+      <p class="eyebrow" data-i18n="eyebrow">生物设计 · 原型</p>
       <h1 data-i18n="mainTitle">灭绝档案：失落物种的人工智能纪念馆</h1>
       <p class="subtitle" data-i18n="subTagline">从地球上的光点，看见人类活动留下的物种空缺</p>
       <p class="intro-stat" id="species-count-line" aria-live="polite">载入中…</p>
@@ -48,8 +48,10 @@
     window.PROTOTYPE_COPY = {
       zh: {
         title: "灭绝档案：失落物种的人工智能纪念馆",
-        sorrowMark: "EARTH'S SORROW",
-        eyebrow: "Biodesign · 原型",
+        sorrowMark: "地球之殇",
+        eyebrow: "生物设计 · 原型",
+        mapTitle: "灭绝点阵地图",
+        mapSubtitle: "54 个纪念点 · 灭绝物种",
         mainTitle: "灭绝档案：失落物种的人工智能纪念馆",
         subTagline: "从地球上的光点，看见人类活动留下的物种空缺",
         lede: "你可以点击世界地图上的闪烁光点，进入物种档案，了解它们如何消失、与我们有什么关系，以及今天还能从中学到什么。下方入口可查看沉浸星球、完整卡片和重点案例。",
@@ -75,6 +77,8 @@
         title: "Extinction Archive: An AI Memorial for Lost Species",
         sorrowMark: "EARTH'S SORROW",
         eyebrow: "Biodesign · Prototype",
+        mapTitle: "EXTINCTION DOT MAP",
+        mapSubtitle: "54 MEMORIAL POINTS · EXTINCT SPECIES",
         mainTitle: "Extinction Archive: An AI Memorial for Lost Species",
         subTagline: "Points of light reveal the species gaps left by human activity",
         lede: "Select a blinking point on the world map to open a species dossier: what disappeared, how people were involved, and what the loss can still teach us. The links below open the immersive globe, the full card archive, and selected deep dives.",
@@ -122,6 +126,6 @@
     });
     window.setPrototypeLanguage(localStorage.getItem("ea-lang") || localStorage.getItem("prototype-lang") || "zh");
   </script>
-  <script src="./app.js?v=dotted-world-map-20260503"></script>
+  <script src="./app.js?v=dotted-world-map-lang-20260503"></script>
 </body>
 </html>

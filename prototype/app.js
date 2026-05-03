@@ -779,14 +779,16 @@ function drawGlobe(ctx, canvas, state) {
   ctx.restore();
 
   ctx.save();
+  const mapTitle = prototypeCopy("mapTitle") || "EXTINCTION DOT MAP";
+  const mapSubtitle = prototypeCopy("mapSubtitle") || "54 MEMORIAL POINTS · EXTINCT SPECIES";
   ctx.fillStyle = "rgba(243, 159, 18, 0.86)";
   ctx.font = `700 ${Math.max(24, Math.min(58, w * 0.044))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
   ctx.letterSpacing = "0.08em";
   ctx.textAlign = "center";
-  ctx.fillText("EXTINCTION DOT MAP", bounds.left + bounds.width * 0.5, h * 0.105);
+  ctx.fillText(mapTitle, bounds.left + bounds.width * 0.5, h * 0.105);
   ctx.fillStyle = "rgba(130, 190, 72, 0.9)";
   ctx.font = `700 ${Math.max(12, Math.min(24, w * 0.018))}px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
-  ctx.fillText("54 MEMORIAL POINTS · EXTINCT SPECIES", bounds.left + bounds.width * 0.5, h * 0.15);
+  ctx.fillText(mapSubtitle, bounds.left + bounds.width * 0.5, h * 0.15);
   ctx.restore();
 
   // latitude and longitude guides are intentionally removed for the flat dot-map style.
