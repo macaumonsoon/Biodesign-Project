@@ -634,20 +634,36 @@ function mapProject(lat, lon, bounds) {
   };
 }
 
-function drawDottedEllipse(ctx, bounds, lat, lon, rxDeg, ryDeg, color, density = 4.8) {
-  const center = mapProject(lat, lon, bounds);
-  const rx = (rxDeg / 360) * bounds.width;
-  const ry = (ryDeg / 180) * bounds.height;
-  for (let y = -ry; y <= ry; y += density) {
-    for (let x = -rx; x <= rx; x += density) {
-      const nx = x / rx;
-      const ny = y / ry;
-      if (nx * nx + ny * ny > 1) continue;
-      const keep = seededRand((center.x + x) * 0.17 + (center.y + y) * 0.31) > 0.18;
+function pointInPolygon(lon, lat, polygon) {
+  let inside = false;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const xi = polygon[i][0];
+    const yi = polygon[i][1];
+    const xj = polygon[j][0];
+    const yj = polygon[j][1];
+    const intersects = ((yi > lat) !== (yj > lat)) && (lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi);
+    if (intersects) inside = !inside;
+  }
+  return inside;
+}
+
+function drawDottedPolygon(ctx, bounds, polygon, color, dotStep = 3.2) {
+  const lons = polygon.map(p => p[0]);
+  const lats = polygon.map(p => p[1]);
+  const minLon = Math.floor(Math.min(...lons));
+  const maxLon = Math.ceil(Math.max(...lons));
+  const minLat = Math.floor(Math.min(...lats));
+  const maxLat = Math.ceil(Math.max(...lats));
+
+  for (let lat = minLat; lat <= maxLat; lat += dotStep) {
+    for (let lon = minLon; lon <= maxLon; lon += dotStep) {
+      if (!pointInPolygon(lon, lat, polygon)) continue;
+      const keep = seededRand(lon * 12.9898 + lat * 78.233) > 0.08;
       if (!keep) continue;
+      const p = mapProject(lat, lon, bounds);
       ctx.beginPath();
       ctx.fillStyle = color;
-      ctx.arc(center.x + x, center.y + y, 1.25, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, 1.35, 0, Math.PI * 2);
       ctx.fill();
     }
   }
@@ -661,32 +677,66 @@ function drawDottedWorldMap(ctx, bounds) {
     africa: "rgba(234, 199, 71, 0.72)",
     oceania: "rgba(228, 155, 174, 0.7)"
   };
+  const land = [
+    {
+      color: colors.america,
+      polygon: [[-168, 62], [-150, 72], [-120, 74], [-88, 68], [-56, 52], [-67, 34], [-83, 20], [-104, 16], [-125, 28], [-150, 45]]
+    },
+    {
+      color: colors.america,
+      polygon: [[-74, 83], [-22, 79], [-18, 64], [-42, 58], [-65, 66]]
+    },
+    {
+      color: colors.america,
+      polygon: [[-111, 31], [-86, 23], [-78, 8], [-84, 7], [-100, 18]]
+    },
+    {
+      color: colors.america,
+      polygon: [[-80, 12], [-60, 6], [-36, -14], [-48, -55], [-67, -55], [-78, -22]]
+    },
+    {
+      color: colors.europe,
+      polygon: [[-11, 36], [0, 58], [25, 70], [48, 58], [40, 42], [18, 34]]
+    },
+    {
+      color: colors.africa,
+      polygon: [[-18, 34], [30, 36], [52, 12], [42, -34], [18, -36], [-8, -28], [-17, 5]]
+    },
+    {
+      color: colors.asia,
+      polygon: [[32, 36], [46, 58], [75, 70], [145, 70], [168, 56], [150, 38], [130, 28], [114, 12], [96, 6], [78, 8], [62, 24], [45, 26]]
+    },
+    {
+      color: colors.asia,
+      polygon: [[65, 31], [89, 30], [95, 8], [78, 6]]
+    },
+    {
+      color: colors.asia,
+      polygon: [[100, 22], [122, 22], [128, 3], [112, -8], [98, 8]]
+    },
+    {
+      color: colors.asia,
+      polygon: [[128, 43], [146, 46], [146, 32], [132, 31]]
+    },
+    {
+      color: colors.asia,
+      polygon: [[95, 4], [136, 7], [150, -8], [126, -13], [104, -6]]
+    },
+    {
+      color: colors.oceania,
+      polygon: [[112, -12], [154, -11], [153, -39], [132, -44], [114, -31]]
+    },
+    {
+      color: colors.oceania,
+      polygon: [[166, -34], [179, -39], [174, -47], [166, -45]]
+    },
+    {
+      color: colors.africa,
+      polygon: [[43, -13], [51, -17], [49, -26], [44, -25]]
+    }
+  ];
 
-  // Compound dotted blobs, tuned to read like a friendly continent-divided dot map.
-  drawDottedEllipse(ctx, bounds, 52, -108, 48, 28, colors.america);
-  drawDottedEllipse(ctx, bounds, 37, -82, 35, 20, colors.america);
-  drawDottedEllipse(ctx, bounds, 67, -42, 20, 12, colors.america);
-  drawDottedEllipse(ctx, bounds, 5, -70, 20, 16, colors.america);
-  drawDottedEllipse(ctx, bounds, -22, -60, 24, 38, colors.america);
-  drawDottedEllipse(ctx, bounds, -48, -71, 10, 20, colors.america);
-
-  drawDottedEllipse(ctx, bounds, 52, 12, 25, 14, colors.europe);
-  drawDottedEllipse(ctx, bounds, 60, 28, 18, 10, colors.europe);
-  drawDottedEllipse(ctx, bounds, 40, 25, 22, 12, colors.europe);
-
-  drawDottedEllipse(ctx, bounds, 53, 83, 70, 28, colors.asia);
-  drawDottedEllipse(ctx, bounds, 34, 92, 62, 26, colors.asia);
-  drawDottedEllipse(ctx, bounds, 23, 78, 28, 16, colors.asia);
-  drawDottedEllipse(ctx, bounds, 15, 110, 30, 18, colors.asia);
-  drawDottedEllipse(ctx, bounds, 39, 138, 13, 16, colors.asia);
-  drawDottedEllipse(ctx, bounds, -3, 118, 28, 14, colors.asia);
-
-  drawDottedEllipse(ctx, bounds, 9, 22, 32, 42, colors.africa);
-  drawDottedEllipse(ctx, bounds, -23, 28, 20, 30, colors.africa);
-  drawDottedEllipse(ctx, bounds, -19, 47, 10, 18, colors.africa);
-
-  drawDottedEllipse(ctx, bounds, -26, 134, 28, 18, colors.oceania);
-  drawDottedEllipse(ctx, bounds, -42, 172, 9, 7, colors.oceania);
+  land.forEach(piece => drawDottedPolygon(ctx, bounds, piece.polygon, piece.color));
 }
 
 function drawLandBlob(ctx, lat, lon, width, height, rotationDeg, cx, cy, radius, zoom, color) {
@@ -798,18 +848,23 @@ function drawGlobe(ctx, canvas, state) {
   for (const item of state.points) {
     const p = mapProject(item.lat, item.lon, bounds);
     const pulse = 0.5 + 0.5 * Math.sin(now / 520 + item.lat * 0.37 + item.lon * 0.11);
-    const r = 3.5 + pulse * 3.2;
+    const r = 2.6 + pulse * 1.8;
 
     ctx.save();
-    ctx.shadowColor = `rgba(28, 178, 224, ${0.55 + pulse * 0.35})`;
-    ctx.shadowBlur = 10 + pulse * 14;
-    ctx.fillStyle = `rgba(19, 148, 190, ${0.72 + pulse * 0.24})`;
+    ctx.shadowColor = `rgba(28, 178, 224, ${0.4 + pulse * 0.28})`;
+    ctx.shadowBlur = 6 + pulse * 10;
+    ctx.strokeStyle = `rgba(15, 145, 184, ${0.72 + pulse * 0.22})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r + 1.5, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = `rgba(19, 148, 190, ${0.62 + pulse * 0.18})`;
     ctx.beginPath();
     ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = "rgba(255,255,255,0.92)";
     ctx.beginPath();
-    ctx.arc(p.x, p.y, Math.max(1.4, r * 0.36), 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, Math.max(1.1, r * 0.32), 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 
